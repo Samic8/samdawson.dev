@@ -54,7 +54,7 @@ const Header = ({ siteTitle }) => (
     <SocialButtons>
       <SocialButton href="https://codepen.io/Samic8/"><Codepen /></SocialButton>
       <SocialButton href="https://github.com/samic8"><Github /></SocialButton>
-      <SocialButton><Twitter /></SocialButton>
+      <SocialButton href="https://twitter.com/sam__dawson"><Twitter /></SocialButton>
     </SocialButtons>
     <Row>
       {['react', 'CSS'].map(techName => (
