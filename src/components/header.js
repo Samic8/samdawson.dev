@@ -4,6 +4,7 @@ import React from "react"
 import styled from "styled-components"
 import HeadshotImage from './image'
 import SocialButton from './SocialButton'
+import TechTag from './TechTag'
 import Github from '../svgs/github.svg'
 import Codepen from '../svgs/Codepen.svg'
 import Twitter from '../svgs/Twitter.svg'
@@ -30,6 +31,14 @@ const SocialButtons = styled(Row)`
   }
 `
 
+const TechTagHeader = styled.div`
+  display: inline-block;
+  margin-bottom: ${({ theme }) => theme.quaterGap};
+  &:not(:first-child) {
+    margin-left: ${({ theme }) => theme.quaterGap};
+  }
+`
+
 const Header = ({ siteTitle }) => (
   <HeaderElement>
     <Row>
@@ -48,7 +57,9 @@ const Header = ({ siteTitle }) => (
       <SocialButton><Twitter /></SocialButton>
     </SocialButtons>
     <Row>
-      
+      {['react', 'CSS'].map(techName => (
+        <TechTagHeader><TechTag key={techName} techName={techName} /></TechTagHeader>
+      ))}
     </Row>
   </HeaderElement>
 )

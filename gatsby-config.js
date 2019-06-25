@@ -39,7 +39,7 @@ module.exports = {
         fonts: [
           {
             family: `Muli`,
-            variants: [`400`, `500`]
+            variants: [`400`]
           },
         ],
       },
