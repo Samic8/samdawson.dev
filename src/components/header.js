@@ -58,7 +58,7 @@ const Header = ({ siteTitle }) => (
     </SocialButtons>
     <Row>
       {['react', 'CSS'].map(techName => (
-        <TechTagHeader><TechTag key={techName} techName={techName} /></TechTagHeader>
+        <TechTagHeader key={techName}><TechTag techName={techName} /></TechTagHeader>
       ))}
     </Row>
   </HeaderElement>
