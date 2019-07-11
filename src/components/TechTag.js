@@ -1,11 +1,7 @@
 import React from 'react'
-import styled from 'styled-components'
-import Tag from './tag'
+import styles from './TechTag.module.css'
+import Tag from './Tag'
 
-const TechTagAnchor = styled(Tag)`
-    background-color: ${props => props.theme.colorAlias.tech[props.techName]};
-`
-
-export default ({techName}) => (
-    <TechTagAnchor techName={techName}>{techName}</TechTagAnchor>
+export default ({techName, className}) => (
+    <Tag className={`${styles[techName]} ${className}`}>{techName}</Tag>
 )

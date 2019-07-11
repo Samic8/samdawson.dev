@@ -1,26 +1,10 @@
 
 import React from "react"
-import styled, {ThemeProvider} from 'styled-components'
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import theme from '../styles/theme'
 
-import Header from "./header"
-import "./layout.css"
-
-
-const PageWrapper = styled.div`
-  display: flex;
-  margin: 0 auto;
-  max-width: 1240px;
-  font-size: ${props => props.theme.fontSizeContent};
-`
-
-const Content = styled.div`
-  flex: 1 1 auto;
-  max-width: 940px;
-  margin-left: auto;
-`
+import Header from "./Header"
+import styles from "./layout.module.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -34,19 +18,17 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <ThemeProvider theme={theme}>
-      <PageWrapper>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <Content>
-          <main>{children}</main>
-          <footer>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer>
-        </Content>
-      </PageWrapper>
-    </ThemeProvider>
+    <div className={styles.pageWrapper}>
+      <Header siteTitle={data.site.siteMetadata.title} />
+      <div className={styles.rightHandSide}>
+        <main>{children}</main>
+        <footer>
+          © {new Date().getFullYear()}, Built with
+          {` `}
+          <a href="https://www.gatsbyjs.org">Gatsby</a>
+        </footer>
+      </div>
+    </div>
   )
 }
 

@@ -1,0 +1,12 @@
+.tag {
+    display: inline-block;
+    padding: 7px 12px;
+    color: var(--color-white);
+    border-radius: 5px;
+    font-family: var(--font-family-content);
+    font-size: var(--font-size-tag);
+    font-weight: bold;
+    line-height: 1em;
+    text-transform: capitalize;
+    cursor: pointer;
+}

@@ -1,66 +1,36 @@
 import PropTypes from "prop-types"
 import React from "react"
-import styled from "styled-components"
-import HeadshotImage from './image'
+import HeadshotImage from './Image'
 import SocialButton from './SocialButton'
 import TechTag from './TechTag'
 import Github from '../svgs/github.svg'
 import Codepen from '../svgs/Codepen.svg'
 import Twitter from '../svgs/Twitter.svg'
-
-const HeaderElement = styled.header`
-  display: block;
-  width: 230px;
-  padding: 40px 20px;
-  /* TODO figure out font organisation */
-  font-family: 'Muli';
-`
-
-const Paragraph = styled.p`
-  margin: 0;
-`
-
-const Row = styled.div`
-  margin-bottom: ${props => props.theme.gap};
-`
-
-const SocialButtons = styled(Row)`
-  > * {
-    margin-right: ${props => props.theme.halfGap};
-  }
-`
-
-const TechTagHeader = styled.div`
-  display: inline-block;
-  margin-bottom: ${({ theme }) => theme.quaterGap};
-  &:not(:first-child) {
-    margin-left: ${({ theme }) => theme.quaterGap};
-  }
-`
+import styles from './header.module.css'
 
 const Header = ({ siteTitle }) => (
-  <HeaderElement>
-    <Row>
+  <div className={styles.header}>
+    <div className={styles.row}>
       <HeadshotImage />
-    </Row>
-    <Row>
-      <Paragraph>
+    </div>
+    <div className={styles.row}>
+      <p className={styles.paragraph}>
         Hi, I'm Sam.
         I build pretty good
         websites and apps.
-      </Paragraph>
-    </Row>
-    <SocialButtons>
-      <SocialButton href="https://codepen.io/Samic8/"><Codepen /></SocialButton>
-      <SocialButton href="https://github.com/samic8"><Github /></SocialButton>
-      <SocialButton href="https://twitter.com/sam__dawson"><Twitter /></SocialButton>
-    </SocialButtons>
-    <Row>
+      </p>
+    </div>
+    <div className={`${styles.row}`}>
+      <SocialButton className={styles.socialButton} href="https://codepen.io/Samic8/"><Codepen /></SocialButton>
+      <SocialButton className={styles.socialButton} href="https://github.com/samic8"><Github /></SocialButton>
+      <SocialButton className={styles.socialButton} href="https://twitter.com/sam__dawson"><Twitter /></SocialButton>
+    </div>
+    <div className={styles.row}>
       {['react', 'CSS'].map(techName => (
-        <TechTagHeader key={techName}><TechTag techName={techName} /></TechTagHeader>
+        <TechTag key={techName} techName={techName} className={styles.techTag} />
       ))}
-    </Row>
-  </HeaderElement>
+    </div>
+  </div>
 )
 
 Header.propTypes = {

@@ -1,0 +1,25 @@
+:root {
+    /* Spacing */
+    --spacing-unit: 5px;
+    --spacing-small: var(--spacing-unit);
+    --spacing-medium: calc(var(--spacing-unit) * 2);
+    --spacing-large: calc(var(--spacing-unit) * 4);
+
+    /* Fonts Families */
+    --system-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --font-family-header: "Muli", var(--system-font);
+    --font-family-content: var(--system-font);
+
+    /* Font Sizes */
+    --font-size-content: 1.25rem;
+    --font-size-tag: 1rem;
+
+    /* Colors */
+    --color-white: #fff;
+    --color-light-blue: #61DAFB;
+    --color-light-brown: #AB5321;
+
+    /* Color Aliases */
+    --color-alias-tech-react: var(--color-light-blue);
+    --color-alias-tech-css: var(--color-light-brown);
+}

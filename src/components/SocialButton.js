@@ -1,19 +1,10 @@
 import React from 'react'
-import styled from 'styled-components'
+import styles from './SocialButton.module.css'
 
-const HoverButton = styled.a`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  padding: 5px;
-  cursor: pointer;
-`
-
-export default function SocialButton({href, children}) {
+export default function SocialButton({href, children, className}) {
     return (
-        <HoverButton target={'_blank'} href={href}>
+        <a target={'_blank'} href={href} className={`${styles.socialButton} ${className}`}>
             {children}
-        </HoverButton>
+        </a>
     )
 }

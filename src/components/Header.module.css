@@ -1,0 +1,27 @@
+.header {
+  display: block;
+  width: 230px;
+  padding: 40px 20px;
+  font-family: var(--font-family-header);
+}
+
+.paragraph {
+    margin: 0;
+}
+
+.row {
+  margin-bottom: var(--spacing-large);
+}
+
+.socialButton {
+  margin-right: var(--spacing-medium);
+}
+
+.techTag {
+  display: inline-block;
+  margin-bottom: var(--spacing-medium);
+}
+
+.techTag:not(:first-child) {
+  margin-left: var(--spacing-medium);
+}
