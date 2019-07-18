@@ -16,7 +16,7 @@ const Image = () => {
     }
   `)
 
-  return <Img className={'max-w-xs rounded'} fluid={data.placeholderImage.childImageSharp.fluid} />
+  return <Img className={'max-w-xs rounded-lg'} fluid={data.placeholderImage.childImageSharp.fluid} />
 }
 
 export default Image
