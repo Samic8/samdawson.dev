@@ -8,7 +8,7 @@ export default function Button({children, className, size, ...props}) {
     }
     return (
         <GatsbyLink
-            className={`inline-block text-white rounded-sm font-content font-bold capitalize cursor-pointer ${sizes[size]} ${className}`}
+            className={`inline-block text-white rounded-sm font-bold capitalize cursor-pointer ${sizes[size]} ${className}`}
             {...props}>
             {children}
         </GatsbyLink>

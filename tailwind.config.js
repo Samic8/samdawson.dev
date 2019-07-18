@@ -27,8 +27,7 @@ module.exports = {
       xl: '2.5rem',
     },
     fontFamily: {
-      header: `Muli ${systemFontStack}`,
-      content: systemFontStack,
+      sans: `Muli ${systemFontStack}`,
     },
     extend: {}
   },

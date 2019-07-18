@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <div className={'flex mx-auto max-w-6xl py-12'}>
+    <div className={'flex mx-auto max-w-6xl py-12 font-sans'}>
       <Header siteTitle={data.site.siteMetadata.title} />
       <div className={'flex-grow max-w-3xl ml-auto'}>
         <main>{children}</main>

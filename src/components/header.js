@@ -12,7 +12,7 @@ const Header = ({ siteTitle }) => (
   <div className={'block w-64 px-10'}>
     <Row>
       <HeadshotImage />
-      <p className={'text-base font-header text-gray-900 mt-3'}>
+      <p className={'text-base text-gray-900 mt-3'}>
         Hi, I'm Sam.
         I build pretty good
         websites and apps.
