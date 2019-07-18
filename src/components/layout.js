@@ -17,14 +17,11 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <div className={'flex mx-auto max-w-6xl'}>
+    <div className={'flex mx-auto max-w-6xl py-12'}>
       <Header siteTitle={data.site.siteMetadata.title} />
       <div className={'flex-grow max-w-3xl ml-auto'}>
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
       </div>
     </div>

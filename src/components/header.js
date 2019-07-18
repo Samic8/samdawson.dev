@@ -2,13 +2,14 @@ import PropTypes from "prop-types"
 import React from "react"
 import HeadshotImage from './Image'
 import SocialButton from './SocialButton'
-import TechTag from './TechTag'
+import TechList from './TechList'
 import Github from '../svgs/github.svg'
 import Codepen from '../svgs/Codepen.svg'
 import Twitter from '../svgs/Twitter.svg'
 
+
 const Header = ({ siteTitle }) => (
-  <div className={'block w-64 py-12 px-10'}>
+  <div className={'block w-64 px-10'}>
     <Row>
       <HeadshotImage />
       <p className={'text-base font-header text-gray-900 mt-3'}>
@@ -23,9 +24,7 @@ const Header = ({ siteTitle }) => (
       <SocialButton className={'mr-5'} href="https://twitter.com/sam__dawson"><Twitter /></SocialButton>
     </Row>
     <Row>
-      {['react', 'CSS'].map(techName => (
-        <TechTag key={techName} techName={techName} className={'mr-2'} />
-      ))}
+      <TechList techs={['react', 'CSS']} size={'medium'} />
     </Row>
   </div>
 )

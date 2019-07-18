@@ -6,6 +6,6 @@ const backgroundColor = {
     react: 'bg-teal-500 hover:bg-teal-400'
 }
 
-export default ({techName, className}) => (
-    <Button className={`${backgroundColor[techName]} ${className}`}>{techName}</Button>
+export default ({techName, className, ...props}) => (
+    <Button className={`${backgroundColor[techName]} ${className}`} {...props}>{techName}</Button>
 )

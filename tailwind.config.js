@@ -5,6 +5,7 @@ module.exports = {
     colors: {
       white: '#fff',
       gray: {
+        100: '#EEECF3',
         500: '#96939F',
         700: '#686473',
         900: '#2C2839'
@@ -20,7 +21,10 @@ module.exports = {
       }
     },
     fontSize: {
+      sm: '1rem',
       base: '1.25rem',
+      lg: '1.75rem',
+      xl: '2.5rem',
     },
     fontFamily: {
       header: `Muli ${systemFontStack}`,

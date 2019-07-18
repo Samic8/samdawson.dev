@@ -1,10 +1,14 @@
 import React from 'react'
 import GatsbyLink from 'gatsby-link'
 
-export default function Button({children, className, ...props}) {
+export default function Button({children, className, size, ...props}) {
+    const sizes = {
+        small: 'py-1 p-2 text-sm',
+        medium: 'py-2 p-3 text-base',
+    }
     return (
         <GatsbyLink
-            className={`inline-block py-2 p-3 text-white rounded-sm text-base font-content font-bold capitalize cursor-pointer ${className}`}
+            className={`inline-block text-white rounded-sm font-content font-bold capitalize cursor-pointer ${sizes[size]} ${className}`}
             {...props}>
             {children}
         </GatsbyLink>
