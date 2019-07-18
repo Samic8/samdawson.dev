@@ -1,7 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-import styles from './Image.module.css'
 
 
 const Image = () => {
@@ -9,7 +8,7 @@ const Image = () => {
     query {
       placeholderImage: file(relativePath: { eq: "grey-headshot.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 130) {
+          fluid(maxWidth: 180) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -17,7 +16,7 @@ const Image = () => {
     }
   `)
 
-  return <Img className={styles.image} fluid={data.placeholderImage.childImageSharp.fluid} />
+  return <Img className={'max-w-xs rounded'} fluid={data.placeholderImage.childImageSharp.fluid} />
 }
 
 export default Image

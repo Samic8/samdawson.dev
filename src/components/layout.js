@@ -4,7 +4,6 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./Header"
-import styles from "./layout.module.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -18,9 +17,9 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <div className={styles.pageWrapper}>
+    <div className={'flex mx-auto max-w-6xl'}>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div className={styles.rightHandSide}>
+      <div className={'flex-grow max-w-3xl ml-auto'}>
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with

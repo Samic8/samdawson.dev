@@ -1,7 +1,11 @@
 import React from 'react'
-import styles from './TechTag.module.css'
-import Tag from './Tag'
+import Button from './Button'
+
+const backgroundColor = {
+    CSS: 'bg-brown-600 hover:bg-brown-500',
+    react: 'bg-teal-500 hover:bg-teal-400'
+}
 
 export default ({techName, className}) => (
-    <Tag className={`${styles[techName]} ${className}`}>{techName}</Tag>
+    <Button className={`${backgroundColor[techName]} ${className}`}>{techName}</Button>
 )
