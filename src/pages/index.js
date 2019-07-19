@@ -27,7 +27,7 @@ export const pageQuery = graphql`
 const mapEdgesToNode = (data) => data.edges.map((edge) => edge.node);
 
 const IndexPage = ({data}) => (
-  <Layout>
+  <Layout center>
     <SEO title="Home" />
     <PostHeader title="All Posts" />
     <PostList posts={mapEdgesToNode(data.allMarkdownRemark)} />

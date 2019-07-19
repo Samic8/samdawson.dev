@@ -9,7 +9,7 @@ import Twitter from '../svgs/Twitter.svg'
 
 
 const Header = ({ siteTitle }) => (
-  <div className={'block w-64 px-10'}>
+  <div className={'block w-56 pl-10'}>
     <Row>
       <HeadshotImage />
       <p className={'text-base text-gray-800 mt-3 leading-tight antialiased'}>

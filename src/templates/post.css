@@ -1,15 +1,19 @@
-p {
-    @apply mb-6;
-}
+.post {
+    @apply text-base;
 
-h2 {
-    @apply text-md font-bold mt-20 mb-3;
-}
-
-img {
-    @apply mx-auto;
-}
-
-.gatsby-highlight {
-    @apply mb-6;
+    p {
+        @apply mb-6;
+    }
+    
+    h2 {
+        @apply text-md font-bold mt-20 mb-3;
+    }
+    
+    img {
+        @apply mx-auto;
+    }
+    
+    .gatsby-highlight {
+        @apply mb-6;
+    }
 }

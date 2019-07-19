@@ -9,9 +9,7 @@ export default function post({data}) {
     return (
         <Layout>
           <PostHeader title={data.markdownRemark.frontmatter.title}></PostHeader>
-          <div className={'text-base'} dangerouslySetInnerHTML={{__html: data.markdownRemark.html }}>
-              
-          </div>
+          <article className={'post'} dangerouslySetInnerHTML={{__html: data.markdownRemark.html }} />
         </Layout>
     )
 }
