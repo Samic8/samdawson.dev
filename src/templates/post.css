@@ -3,7 +3,7 @@ p {
 }
 
 h2 {
-    @apply text-base font-bold mt-20;
+    @apply text-md font-bold mt-20 mb-3;
 }
 
 img {
