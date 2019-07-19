@@ -16,8 +16,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         }
     `)
 
-    console.log(result)
-
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
         reporter.info(`Creating post: ${node.frontmatter.slug}`)
         createPage({

@@ -8,6 +8,7 @@ module.exports = {
         100: '#EEECF3',
         500: '#96939F',
         700: '#686473',
+        800: '#494554',
         900: '#2C2839'
       },
       brown: {
@@ -21,6 +22,7 @@ module.exports = {
       }
     },
     fontSize: {
+      xsm: '.85rem',
       sm: '1rem',
       base: '1.25rem',
       lg: '1.75rem',
