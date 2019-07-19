@@ -1,0 +1,15 @@
+p {
+    @apply mb-6;
+}
+
+h2 {
+    @apply text-base font-bold mt-20;
+}
+
+img {
+    @apply mx-auto;
+}
+
+.gatsby-highlight {
+    @apply mb-6;
+}

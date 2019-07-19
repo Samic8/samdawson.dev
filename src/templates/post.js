@@ -1,7 +1,9 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from "../components/layout"
-import PostHeader from '../components/PostHeader';
+import PostHeader from '../components/PostHeader'
+import 'prism-themes/themes/prism-atom-dark.css'
+import './post.css'
 
 export default function post({data}) {
     return (

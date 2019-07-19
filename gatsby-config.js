@@ -37,6 +37,16 @@ module.exports = {
         // Plugins configs
         plugins: [
           {
+            resolve: `gatsby-remark-images`,
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 590,
+            },
+          },
+          'gatsby-remark-static-images',
+          {
             resolve: `gatsby-remark-prismjs`,
             options: {
               // Class prefix for <pre> tags containing syntax highlighting;
@@ -75,6 +85,14 @@ module.exports = {
               // found under the header "Add new language definition or extend an
               // existing language" below.
             },
+          },
+          `gatsby-remark-autolink-headers`,
+          {
+            resolve:"@weknow/gatsby-remark-codepen",
+            options: {
+              theme: "dark",
+              height: 400
+            }
           }
         ],
       },
@@ -91,18 +109,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-      },
-    },
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Muli`,
-            variants: [`400`, '500', '600', '700']
-          },
-        ],
+        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
     {

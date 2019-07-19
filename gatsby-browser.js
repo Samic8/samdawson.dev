@@ -5,4 +5,3 @@
  */
 
 import './src/styles/global.css'
-require("prism-themes/themes/prism-atom-dark.css")

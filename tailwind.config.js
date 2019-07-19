@@ -29,7 +29,7 @@ module.exports = {
       xl: '2.5rem',
     },
     fontFamily: {
-      sans: `Muli ${systemFontStack}`,
+      sans: `${systemFontStack}`,
     },
     extend: {}
   },
