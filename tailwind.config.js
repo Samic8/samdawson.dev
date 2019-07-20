@@ -35,5 +35,20 @@ module.exports = {
     extend: {}
   },
   variants: {},
-  plugins: []
+  plugins: [
+    function({ addUtilities }) {
+      const newUtilities = {
+        '.ltr': {
+          direction: 'ltr',
+        },
+        '.rtl': {
+          direction: 'rtl',
+        },
+      }
+
+      addUtilities(newUtilities, {
+        variants: ['responsive']
+      })
+    }
+  ]
 }

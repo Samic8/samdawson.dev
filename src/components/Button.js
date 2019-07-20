@@ -4,7 +4,7 @@ import GatsbyLink from 'gatsby-link'
 export default function Button({children, className, size, ...props}) {
     const sizes = {
         small: 'py-1 p-2 text-sm',
-        medium: 'py-2 p-3 text-base',
+        medium: 'py-1 p-2 text-sm md:py-2 md:p-3 md:text-base',
     }
     return (
         <GatsbyLink

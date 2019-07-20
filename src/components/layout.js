@@ -15,12 +15,12 @@ const Layout = ({ children, center }) => {
       }
     }
   `)
-  const extraClasses = center ? 'mr-auto' : '';
+
   return (
-    <div className={'flex mx-auto max-w-6xl py-12 font-sans'}>
+    <div className={'flex flex-col items-stretch sm:flex-row mx-auto max-w-6xl pt-4 sm:pt-12 font-sans'}>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div className={`px-10 ml-auto ${extraClasses}`}>
-        <div className={'flex-grow max-w-3xl'}>
+      <div className={`flex flex-shrink flex-grow min-w-0 px-5 sm:px-10`}>
+        <div className={`ml-auto w-full max-w-3xl`}>
           <main>{children}</main>
           <footer>
           </footer>
