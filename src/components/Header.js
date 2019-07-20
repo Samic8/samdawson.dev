@@ -4,7 +4,7 @@ import SocialButton from './SocialButton'
 import TechList from './TechList'
 import Github from '../svgs/github.svg'
 import Codepen from '../svgs/codepen.svg'
-import Twitter from '../svgs/Twitter.svg'
+import Twitter from '../svgs/twitter.svg'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import { dedupeTechs } from "../utility/data";
 
