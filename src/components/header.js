@@ -1,4 +1,3 @@
-import PropTypes from "prop-types"
 import React from "react"
 import HeadshotImage from './Image'
 import SocialButton from './SocialButton'
