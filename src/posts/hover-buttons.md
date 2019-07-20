@@ -1,7 +1,7 @@
 ---
 title: Better button hover states
 slug: hover-buttons
-techs: react CSS
+techs: CSS
 ---
 
 I like buttons that move on hover, it's nice. A problem with this pattern is "flickering" that can happen when hovering over the space left behind.
