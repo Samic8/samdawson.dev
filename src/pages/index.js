@@ -28,7 +28,7 @@ export const pageQuery = graphql`
 
 const IndexPage = ({data}) => (
   <Layout center>
-    <SEO title="Home" />
+    <SEO title="All Posts" />
     <div className={'max-w-xl'}>
       <PostHeader title="All Posts" />
       <PostList posts={mapEdgesToNode(data.allMarkdownRemark)} />

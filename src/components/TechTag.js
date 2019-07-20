@@ -7,5 +7,5 @@ const backgroundColor = {
 }
 
 export default ({techName, className, ...props}) => (
-    <Button className={`${backgroundColor[techName]} ${className}`} {...props}>{techName}</Button>
+    <Button to={`category/${techName}`} className={`${backgroundColor[techName]} ${className}`} {...props}>{techName}</Button>
 )

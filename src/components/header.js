@@ -7,7 +7,7 @@ import Github from '../svgs/github.svg'
 import Codepen from '../svgs/Codepen.svg'
 import Twitter from '../svgs/Twitter.svg'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-import { mapEdgesToNode, techsToArray, dedupeTechs } from "../utility/data";
+import { dedupeTechs } from "../utility/data";
 
 const Header = ({ siteTitle }) => {
   const data = useStaticQuery(graphql`
