@@ -6,12 +6,14 @@ import TechList from './TechList'
 import Github from '../svgs/github.svg'
 import Codepen from '../svgs/Codepen.svg'
 import Twitter from '../svgs/Twitter.svg'
-
+import { Link } from 'gatsby'
 
 const Header = ({ siteTitle }) => (
   <div className={'block mb-4 sm:w-56 sm:mb-0 lg:pl-10 px-5 flex sm:block'}>
     <Row className={'flex sm:block items-start flex-grow'}>
-      <HeadshotImage />
+      <Link to={'/'}>
+        <HeadshotImage />
+      </Link>
       <div className={'ml-5 text-sm w-48 sm:w-auto sm:ml-0 md:text-base text-gray-800 sm:mt-3 leading-tight antialiased'}>
         <p>
           Hi, I'm Sam.

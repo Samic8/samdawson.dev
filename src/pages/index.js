@@ -29,8 +29,10 @@ const mapEdgesToNode = (data) => data.edges.map((edge) => edge.node);
 const IndexPage = ({data}) => (
   <Layout center>
     <SEO title="Home" />
-    <PostHeader title="All Posts" />
-    <PostList posts={mapEdgesToNode(data.allMarkdownRemark)} />
+    <div className={'max-w-xl'}>
+      <PostHeader title="All Posts" />
+      <PostList posts={mapEdgesToNode(data.allMarkdownRemark)} />
+    </div>
   </Layout>
 )
 

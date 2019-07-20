@@ -16,7 +16,7 @@ export default function PostList({posts = []}) {
 
 const techsToArray = techs => techs ? techs.split(' ') : []
 const PostRow = ({post}) => (
-    <li className='max-w-xl border-b-2 border-gray-100 border-dashed pb-3 sm:pb-6'>
+    <li className='border-b-2 border-gray-100 border-dashed pb-3 sm:pb-6'>
         <article className='flex-col flex sm:flex-row'>
             <div className='mr-8'>
                 <Link to={post.frontmatter.slug}>

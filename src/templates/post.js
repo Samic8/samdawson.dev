@@ -8,7 +8,7 @@ import './post.css'
 export default function post({data}) {
     return (
         <Layout>
-          <PostHeader title={data.markdownRemark.frontmatter.title}></PostHeader>
+          <PostHeader title={data.markdownRemark.frontmatter.title} shouldShowBackButton={true}></PostHeader>
           <article className={'post'} dangerouslySetInnerHTML={{__html: data.markdownRemark.html }} />
         </Layout>
     )
