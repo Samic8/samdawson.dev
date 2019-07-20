@@ -7,7 +7,7 @@ import Github from '../svgs/github.svg'
 import Codepen from '../svgs/Codepen.svg'
 import Twitter from '../svgs/Twitter.svg'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-import { mapEdgesToNode, techsToArray } from "../utility/data";
+import { mapEdgesToNode, techsToArray, dedupeTechs } from "../utility/data";
 
 const Header = ({ siteTitle }) => {
   const data = useStaticQuery(graphql`
@@ -23,9 +23,7 @@ const Header = ({ siteTitle }) => {
       }
     }
   `);
-  const allTechs = mapEdgesToNode(data.allMarkdownRemark, node => techsToArray(node.frontmatter.techs))
-  const flatteredTechs = [].concat.apply([], allTechs)
-  const dedupedTechs = Array.from(new Set(flatteredTechs))
+  const dedupedTechs = dedupeTechs(data.allMarkdownRemark)
 
   return (
     <div className={'block mb-4 flex-shrink-0 sm:w-40 md:w-56 sm:mb-0 lg:pl-8 px-5 flex sm:block'}>
