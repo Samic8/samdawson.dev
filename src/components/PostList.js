@@ -1,6 +1,6 @@
 import React from 'react'
-import TechList from './techList'
 import { Link } from 'gatsby'
+import { techsToArray } from '../utility/data';
 
 export default function PostList({posts = []}) {
     return (
@@ -14,7 +14,6 @@ export default function PostList({posts = []}) {
     )
 }
 
-const techsToArray = techs => techs ? techs.split(' ') : []
 const PostRow = ({post}) => (
     <li className='border-b-2 border-gray-100 border-dashed pb-3 sm:pb-6'>
         <article className='flex-col flex sm:flex-row'>

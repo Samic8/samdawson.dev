@@ -5,10 +5,11 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PostHeader from "../components/PostHeader"
 import PostList from "../components/PostList"
+import { mapEdgesToNode } from "../utility/data";
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
           id
@@ -16,6 +17,7 @@ export const pageQuery = graphql`
             title
             techs
             slug
+            date
           }
           excerpt
         }
@@ -23,8 +25,6 @@ export const pageQuery = graphql`
     }
   }
 `
-
-const mapEdgesToNode = (data) => data.edges.map((edge) => edge.node);
 
 const IndexPage = ({data}) => (
   <Layout center>

@@ -2,6 +2,7 @@
 title: Better button hover states
 slug: hover-buttons
 techs: CSS
+date: "2019-07-20"
 ---
 
 I like buttons that move on hover, it's nice. A problem with this pattern is "flickering" that can happen when hovering over the space left behind.
