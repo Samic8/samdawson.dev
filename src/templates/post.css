@@ -16,4 +16,8 @@
     .gatsby-highlight {
         @apply mb-6;
     }
+
+    pre[class*="language-"] {
+        @apply leading-snug;
+    }
 }
