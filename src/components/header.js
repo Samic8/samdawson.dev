@@ -9,7 +9,7 @@ import Twitter from '../svgs/Twitter.svg'
 import { Link } from 'gatsby'
 
 const Header = ({ siteTitle }) => (
-  <div className={'block mb-4 sm:w-56 sm:mb-0 lg:pl-10 px-5 flex sm:block'}>
+  <div className={'block mb-4 flex-shrink-0 sm:w-40 md:w-56 sm:mb-0 lg:pl-10 px-5 flex sm:block'}>
     <Row className={'flex sm:block items-start flex-grow'}>
       <Link to={'/'}>
         <HeadshotImage />
