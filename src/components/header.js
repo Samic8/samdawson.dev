@@ -9,7 +9,7 @@ import Twitter from '../svgs/Twitter.svg'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import { dedupeTechs } from "../utility/data";
 
-const Header = ({ siteTitle }) => {
+const Header = () => {
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark {
@@ -61,13 +61,5 @@ const SocialButtons = () => (
     <SocialButton className={'mr-3 md:mr-5'} href="https://twitter.com/sam__dawson"><Twitter /></SocialButton>
   </>
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header
