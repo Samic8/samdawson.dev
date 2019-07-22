@@ -30,6 +30,6 @@
     }
 
     li {
-        @apply mb-5;
+        @apply mb-5 ml-5;
     }
 }
