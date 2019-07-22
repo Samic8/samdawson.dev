@@ -1,5 +1,5 @@
 .post {
-    @apply text-base;
+    @apply text-base text-gray-800;
 
     p {
         @apply mb-6;
