@@ -7,9 +7,10 @@ date: "2019-07-22"
 
 My approach to color usage is similar to a "no magic numbers" rule that you might find in javascript, where colors are always referenced from a variable.
 
-Its useful to think about color usage throughout a site as a theme, even if there are not multiple themes. This is one system for theming color usage which has two parts *named colors* and aliases, experiment and see what works for you. 
+Its useful to think about color usage throughout a site as a theme, even if there are not multiple themes. This system for theming has two parts *named colors* and aliases, experiment and see what works for you.
+
 ## Named Colors
-Colors need unique names, we are going to store them as CSS custom properties but you could use preprocessor variables too. A convention that has worked well for me is prefixing all colors with color (how inventive!). These colors should be stored globally on the **:root** level so they are available everywhere.
+We are going to store our colors as CSS variables and prefix all colors with **color** (how inventive!). These colors are stored on the **:root** scope so they are globally accessible.
 
 ```css
 :root {
@@ -25,15 +26,14 @@ Colors need unique names, we are going to store them as CSS custom properties bu
 }
 ```
 
-The numbering system is a design system too, it provides constrains to work by, its easy to see when there are too many types of one color shade. The numbering system starts from the lightest version of the shade and increases in darkness with each number. The "lightness" and "darkness" are not calculated just pick some colors that look good manually. 
+The numbering system is a design system too, it provides constrains to work by and its easy to see when there are too many types of one color shade.
 
-*Hot Tip:* Instead of darkening or lightening colors using preprocessor functions, increment or decrement your color number. Using the functions will leave you with inconsistencies across your site of colors that are slightly different from one another.
+The numbering system goes from lightest to darkest version of the color. The "lightness" and "darkness" are not calculated just pick some colors that look good manually. 
+
 
 ## Aliases
 
-Ok now we have the named colors in place and are ready to use those colors. Thats where color *aliases* come in, they give you a way to give meaning to color usage.
-
-Aliases are a tool for keeping colors in sync across multiple usages that have the same **meaning**.
+Color *aliases* provide a way to give meaning to color usage and keeping colors in sync across multiple usages that have the same **meaning**.
 
 ```css
 :root {
@@ -42,7 +42,9 @@ Aliases are a tool for keeping colors in sync across multiple usages that have t
 }
 ```
 
-Aliases can have varying levels of specificity in their naming, in this example we have **--color-alias-cta-button** color which does not apply to a specific element instead a concept. Then we have **--color-alias-page-header** which applies to a very specific element in our site.
+Aliases can have varying levels of specificity in their naming
+* **--color-alias-cta-button** is concept that might appear in multiple classes.
+* **--color-alias-page-header** applies to a specific element.
 
 ```css
 .page-header {
@@ -58,7 +60,7 @@ Aliases can have varying levels of specificity in their naming, in this example 
 }
 ```
 
-Not everything needs to be an alias, for a one off usages use the color variable. If you use a particular background color on the **page-header** and it uses one of the shades of blue maybe it does not need to be in sync with anywhere else.
+Not everything needs to be an alias. If you use a background color on the **page-header** and it uses one of the shades of blue maybe it does not need to be in sync with anywhere else.
 
 ```css
 .page-header {
@@ -70,4 +72,4 @@ Not everything needs to be an alias, for a one off usages use the color variable
 * Does this color convey any meaning?
 * Does this color need to be in sync with another element?
 
-Thats it. Depending on your flavour of CSS (pre-processors, CSS-in-JS etc) your implementation will look different. However you do it, think in systems with your colors, both yourself for maintainability and your users for consistency will thank you.
+Thats it. Depending on your flavour of CSS (pre-processors, CSS-in-JS etc) your implementation will look different. However you do it, come up with a system for your color usage. Both yourself for maintainability and your users for consistency will thank you.
