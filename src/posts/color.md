@@ -5,7 +5,7 @@ techs: CSS
 date: "2019-07-22"
 ---
 
-Using raw color values like hex codes through your CSS is not very maintainable. My approach to color usage is similar to a "no magic numbers" rule that you might of used in javascript, where colors are always referenced from a variable.
+My approach to color usage is similar to a "no magic numbers" rule that you might find in javascript, where colors are always referenced from a variable.
 
 Its useful to think about color usage throughout a site as a theme, even if there are not multiple themes. This is one system for theming color usage which has two parts *named colors* and aliases, experiment and see what works for you. 
 ## Named Colors
