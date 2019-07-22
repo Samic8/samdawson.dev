@@ -7,7 +7,7 @@ date: "2019-07-22"
 
 My approach to color usage is similar to a "no magic numbers" rule that you might find in javascript, where colors are always referenced from a variable.
 
-Its useful to think about color usage throughout a site as a theme, even if there are not multiple themes. This system for theming has two parts *named colors* and aliases, experiment and see what works for you.
+It's useful to think about color usage throughout a site as a theme, even if there are not multiple themes. This system for theming has two parts *named colors* and aliases, experiment and see what works for you.
 
 ## Named Colors
 We are going to store our colors as CSS variables and prefix all colors with **color** (how inventive!). These colors are stored on the **:root** scope so they are globally accessible.
@@ -26,9 +26,9 @@ We are going to store our colors as CSS variables and prefix all colors with **c
 }
 ```
 
-The numbering system is a design system too, it provides constrains to work by and its easy to see when there are too many types of one color shade.
+The numbering system is a design system too, it provides constraints to work by and it's easy to see when there are too many types of one color shade.
 
-The numbering system goes from lightest to darkest version of the color. The "lightness" and "darkness" are not calculated just pick some colors that look good manually. 
+The numbering system goes from lightest to the darkest version of the color. The "lightness" and "darkness" are not calculated just pick some colors that look good manually. 
 
 
 ## Aliases
@@ -43,7 +43,7 @@ Color *aliases* provide a way to give meaning to color usage and keeping colors 
 ```
 
 Aliases can have varying levels of specificity in their naming
-* **--color-alias-cta-button** is concept that might appear in multiple classes.
+* **--color-alias-cta-button** is a concept that might appear in multiple classes.
 * **--color-alias-page-header** applies to a specific element.
 
 ```css
@@ -72,4 +72,4 @@ Not everything needs to be an alias. If you use a background color on the **page
 * Does this color convey any meaning?
 * Does this color need to be in sync with another element?
 
-Thats it. Depending on your flavour of CSS (pre-processors, CSS-in-JS etc) your implementation will look different. However you do it, come up with a system for your color usage. Both yourself for maintainability and your users for consistency will thank you.
+That's it. Depending on your flavor of CSS (pre-processors, CSS-in-JS) your implementation will look different. However you do it, come up with a system for your color usage. Both yourself for maintainability and your users for consistency will thank you.
