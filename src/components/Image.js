@@ -2,7 +2,6 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-
 const Image = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -16,7 +15,12 @@ const Image = () => {
     }
   `)
 
-  return <Img className={' flex-shrink-0 w-16 sm:w-full rounded-lg'} fluid={data.placeholderImage.childImageSharp.fluid} />
+  return (
+    <Img
+      className={" flex-shrink-0 w-16 sm:w-full rounded-lg"}
+      fluid={data.placeholderImage.childImageSharp.fluid}
+    />
+  )
 }
 
 export default Image
