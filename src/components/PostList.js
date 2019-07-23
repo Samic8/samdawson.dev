@@ -25,7 +25,7 @@ const PostRow = ({ post }) => (
         </Link>
         <p className="text-xsm text-gray-700 leading-tight">{post.excerpt}</p>
       </div>
-      <div className="mt-3 sm:mt-0 w-24 flex-shrink-0 flex items-end rtl">
+      <div className="mt-3 sm:mt-0 w-24 flex-shrink-0 flex items-end sm:rtl">
         {techsToArray(post.frontmatter.techs).map(tech => (
           <Link
             to={`category/${tech}`}
