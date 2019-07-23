@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@fullhuman/postcss-purgecss": "^1.2.0",
     "@weknow/gatsby-remark-codepen": "^0.1.0",
     "autoprefixer": "^9.6.1",
     "gatsby": "^2.10.0",

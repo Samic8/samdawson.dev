@@ -1,6 +1,19 @@
 const tailwind = require('tailwindcss')
 
-// TODO: Add purgeCSS
+const purgecss = require('@fullhuman/postcss-purgecss')({
+    content: [
+      './src/**/*.js',
+      './node_modules/prismjs/prism.js'
+    ],
+    defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || [],
+    whitelistPatternsChildren: [/post.*/]
+  })
+  
 module.exports = () => ({
-    plugins: [tailwind('./tailwind.config.js'), require('postcss-nested'), require('autoprefixer')],
+    plugins: [
+        tailwind('./tailwind.config.js'),
+        require('postcss-nested'),
+        require('autoprefixer'),
+        ...process.env.NODE_ENV === 'production' ? [purgecss] : []
+    ],
 })
