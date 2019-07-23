@@ -9,7 +9,7 @@ import SEO from '../components/SEO';
 export default function post({data}) {
     return (
         <Layout>
-          <SEO title={data.markdownRemark.frontmatter.title} />
+          <SEO title={data.markdownRemark.frontmatter.title} description={data.markdownRemark.excerpt} />
           <PostHeader title={data.markdownRemark.frontmatter.title} shouldShowBackButton={true}></PostHeader>
           <article className={'post'} dangerouslySetInnerHTML={{__html: data.markdownRemark.html }} />
         </Layout>
@@ -23,6 +23,7 @@ export const query = graphql`
       frontmatter {
         title
       }
+      excerpt
     }
   }
 `
