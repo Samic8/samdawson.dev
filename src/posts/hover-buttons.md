@@ -16,7 +16,7 @@ button:hover {
 ```
 Without any other additions we will end up with the mentioned "flickering" when hovering over the space left behind.
 
-![Flickering](flicker.gif)
+![Flickering](hover-buttons.gif)
 
 To improve this we could add an element to fill in the space left behind.
 ```css

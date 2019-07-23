@@ -16,6 +16,10 @@
     img {
         @apply mx-auto;
     }
+
+    .gatsby-resp-image-wrapper {
+        @apply mt-5;
+    }
     
     .gatsby-highlight {
         @apply mb-6;
