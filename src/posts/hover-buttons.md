@@ -1,11 +1,11 @@
 ---
-title: Better button hover states
-slug: hover-buttons
+title: Elements that move on hover
+slug: elements-that-move-on-hover
 techs: CSS
 date: "2019-07-20"
 ---
 
-I like buttons that move on hover, it's nice. A problem with this pattern is "flickering" that can happen when hovering over the space left behind.
+I like elements that move on hover to convey interactivity. A problem with this pattern is "flickering" that can happen when hovering over the space left behind.
 
 
 First lets make the button move up on hover.
