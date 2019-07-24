@@ -17,7 +17,7 @@ const Image = () => {
 
   return (
     <Img
-      className={" flex-shrink-0 w-16 sm:w-full rounded-lg"}
+      className={"flex-shrink-0 w-16 sm:w-32 rounded-lg"}
       fluid={data.placeholderImage.childImageSharp.fluid}
     />
   )
