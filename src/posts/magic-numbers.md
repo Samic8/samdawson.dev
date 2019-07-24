@@ -15,7 +15,7 @@ A magic number is a number or value in code that does not have an explicit meani
 
 In CSS maybe we don't have to be too strict and not every number usage needs to be a variable. But I think the more we can move towards using variables to represent meaning behind the numbers in our CSS the more maintainable our code will be.
 
-One problem that using variables can help us solve is keeping values consistent
+One problem that using variables can help us solve is keeping values consistent.
 ```css
 :root {
     --select-button-height: 40px;
@@ -31,7 +31,7 @@ This is the lowest level of variable usage, which can use as building block for 
 This is the components we will be building, a custom select since we decided not to go with the browser default. We have opened up our design tool of choice and started doing some measurements.
 ![Measuring Distances](./magic-numbers.png)
 
-Here is some HTML that we will be working with
+Here is some HTML that we will be working with.
 
 ```html
 <div class="select-group">
@@ -50,7 +50,7 @@ Here is some HTML that we will be working with
 </div>
 ```
 
-On first pass we might code up some CSS like this, which achieves the desired layout
+On first pass we might code up some CSS like this, which achieves the desired layout.
 
 ```css
 .select-group {
@@ -75,7 +75,7 @@ On first pass we might code up some CSS like this, which achieves the desired la
 
 But what happens when someone else changes the gap between the selects but forgets (or never knew, because it was not explicit) that the **select-options** is meant to have the same distance between the **select-button** and the **select-options** as the gap been the selects. When the gap is changed and the **top** position of the **select-options** is not updated we end up with an "out of sync" issue. 
 
-To solve this we can be more explicit and calculate our calculated values
+To solve this we can be more explicit and calculate our calculated values.
 
 ```css
 :root {
