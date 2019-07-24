@@ -7,9 +7,9 @@ date: "2019-07-22"
 
 My approach to color usage is similar to a "no magic numbers" rule that you might find in javascript, where colors are always referenced from a variable.
 
-It's useful to think about color usage throughout a site as a theme, even if there are not multiple themes. This system for theming has two parts *named colors* and aliases, experiment and see what works for you.
+It's useful to think about color usage throughout a site as a theme, even if there are not multiple themes. This system for theming has two parts *numbered colors* and aliases, experiment and see what works for you.
 
-## Named Colors
+## Numbered Colors
 We are going to store our colors as CSS variables and prefix all colors with **color** (how inventive!). These colors are stored on the **:root** scope so they are globally accessible.
 
 ```css
