@@ -19,6 +19,10 @@ module.exports = {
         300: '#61DAFB',
         400: '#28ADD2',
         500: '#218EAB'
+      },
+      purple: {
+        100: '#CECAD3',
+        500: '#9875c3'
       }
     },
     fontSize: {
