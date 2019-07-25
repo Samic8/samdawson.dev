@@ -36,4 +36,30 @@
     li {
         @apply mb-5 ml-5;
     }
+
+    a {
+        @apply inline-block text-gray-900 font-bold;
+
+        cursor: pointer;
+        transition: .1s background-color ease;
+    }
+
+    a:not(.anchor)::after {
+        content: '';
+        display: block;
+        margin-top: -8px;
+        height: 4px;
+        width: 80%;
+        @apply bg-purple-100;
+        transition: .15s width ease, .1s background-color ease;
+    }
+
+    a:hover {
+        @apply text-gray-800;
+    }
+
+    a:hover::after {
+        width: 100%;
+        @apply bg-purple-500;
+    }
 }
