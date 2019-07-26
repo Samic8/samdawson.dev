@@ -26,7 +26,7 @@
     }
 
     pre[class*="language-"] {
-        @apply leading-snug;
+        @apply leading-snug text-sm;
     }
 
     ul {
