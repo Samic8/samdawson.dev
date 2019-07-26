@@ -5,7 +5,7 @@ techs: CSS
 date: "2019-07-27"
 ---
 
-Its possible to override CSS variables with inheritance.
+It's possible to override CSS variables with inheritance.
 
 Lets set up some variables.
 
@@ -104,7 +104,7 @@ Overriding may not always possible because you may need to introduce new propert
 }
 ```
 
-When you can pull off a media query by only overriding variables it keeps the all of what a class is concerned with in one place:
+When you can pull off a media query by only overriding variables it keeps all of what a class is concerned within one place:
 
 ```css
 .header {
