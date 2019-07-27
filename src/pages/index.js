@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
+import PostPage from '../components/PostPage'
 import PostHeader from "../components/PostHeader"
 import PostList from "../components/PostList"
 import { mapEdgesToNode } from "../utility/data"
@@ -29,10 +30,10 @@ export const pageQuery = graphql`
 const IndexPage = ({ data }) => (
   <Layout center>
     <SEO title="All Posts" />
-    <div className={"max-w-xl"}>
+    <PostPage>
       <PostHeader title="All Posts" />
       <PostList posts={mapEdgesToNode(data.allMarkdownRemark)} />
-    </div>
+    </PostPage>
   </Layout>
 )
 

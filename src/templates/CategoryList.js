@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
+import PostPage from '../components/PostPage'
 import PostHeader from "../components/PostHeader"
 import PostList from "../components/PostList"
 import { mapEdgesToNode } from "../utility/data"
@@ -12,10 +13,10 @@ const CategoryList = ({ pageContext: { allMarkdownRemark, tech } }) => {
   return (
     <Layout center>
       <SEO title={title} />
-      <div className={"max-w-xl"}>
+      <PostPage>
         <PostHeader title={title} />
         <PostList posts={mapEdgesToNode(allMarkdownRemark)} />
-      </div>
+      </PostPage>
     </Layout>
   )
 }
