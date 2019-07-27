@@ -31,7 +31,7 @@ const Header = () => {
       }
     >
       <Row className={"flex sm:block items-start flex-grow"}>
-        <Link to={"/"} className={'sm:shadow-md inline-block'}>
+        <Link to={"/"} className={'sm:shadow-md inline-block rounded-lg'}>
           <HeadshotImage />
         </Link>
         <div
