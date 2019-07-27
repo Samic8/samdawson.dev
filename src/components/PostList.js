@@ -19,7 +19,7 @@ const PostRow = ({ post }) => (
     <article className="flex-col flex sm:flex-row">
       <div className="mr-8">
         <Link to={`post/${post.frontmatter.slug}`}>
-          <h1 className="text-base leading-none text-gray-900 mb-2 font-semibold hover:text-teal-500">
+          <h1 className="link text-base mb-2">
             {post.frontmatter.title}
           </h1>
         </Link>

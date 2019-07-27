@@ -1,0 +1,25 @@
+.link {
+    @apply inline-block text-gray-900 font-bold;
+
+    cursor: pointer;
+    transition: .1s background-color ease;
+}
+
+.link:not(.anchor)::after {
+    content: '';
+    display: block;
+    margin-top: -8px;
+    height: 3px;
+    width: 80%;
+    @apply bg-purple-100;
+    transition: .15s width ease, .1s background-color ease;
+}
+
+.link:hover {
+    @apply text-gray-800;
+}
+
+.link:hover::after {
+    width: 100%;
+    @apply bg-purple-500;
+}

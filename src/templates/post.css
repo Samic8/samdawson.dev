@@ -37,6 +37,7 @@
         @apply mb-5 ml-5;
     }
 
+    /* TODO: a tag styling is duplicated with style/components/link.css figure out a way to make DRY */
     a {
         @apply inline-block text-gray-900 font-bold;
 

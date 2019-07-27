@@ -1,6 +1,6 @@
 ---
-title: Inheritance and media queries with CSS variables
-slug: css-variables-media-queries
+title: Inheritance, media queries and CSS variables
+slug: css-variables-inheritance-media-queries
 techs: CSS
 date: "2019-07-27"
 ---
