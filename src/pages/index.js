@@ -33,7 +33,7 @@ const IndexPage = ({ data }) => (
     <div className={'mt-16 mb-24'}>
       <div class="max-w-3xl mx-auto">
         <p className={'text-lg sm:text-xl font-bold text-gray-800 leading-tight'}>
-          Hi, I'm a web designer and builder from Wollongong, Australia. I work for <a href="https://www.accelo.com" class={'text-purple-500'}>accelo</a>.
+          Hi, I'm a web designer and builder from Wollongong, Australia. I work for <a href="https://www.accelo.com" class={'text-purple-500 hover:text-purple-700'}>accelo</a>.
         </p>
         <div className={'text-xsm mt-2 font-bold tracking-wide'}>
           <a className={"pr-2 border-r border-gray-100 text-gray-500 hover:text-gray-700"} href="https://codepen.io/Samic8/">
