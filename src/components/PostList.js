@@ -4,9 +4,9 @@ import { techsToArray } from "../utility/data"
 
 export default function PostList({ posts = [] }) {
   return (
-    <ul>
+    <ul className={'mx-auto'}>
       {posts.map((post, index) => (
-        <div key={post.id} className={index > 0 ? "mt-5" : ""}>
+        <div key={post.id} className={index > 0 ? "mt-10" : ""}>
           <PostRow post={post} />
         </div>
       ))}
@@ -15,7 +15,7 @@ export default function PostList({ posts = [] }) {
 }
 
 const PostRow = ({ post }) => (
-  <li className="border-b-2 border-gray-100 border-dashed pb-3 sm:pb-6">
+  <li className="pb-3 sm:pb-6">
     <article className="flex-col flex sm:flex-row">
       <div className="mr-8">
         <Link to={`post/${post.frontmatter.slug}`}>
@@ -26,16 +26,7 @@ const PostRow = ({ post }) => (
         <p className="text-xsm text-gray-700 leading-tight">{post.excerpt}</p>
       </div>
       <div className="mt-3 sm:mt-0 w-24 flex-shrink-0 flex sm:rtl">
-        {techsToArray(post.frontmatter.techs).map(tech => (
-          <Link
-            to={`category/${tech}`}
-            className={
-              "capitalize mr-2 font-bold text-gray-500 hover:text-gray-900"
-            }
-          >
-            {tech}
-          </Link>
-        ))}
+        <span className={'mr-2 font-bold text-gray-500 uppercase'}>{post.frontmatter.date}</span>
       </div>
     </article>
   </li>

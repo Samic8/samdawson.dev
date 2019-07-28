@@ -13,7 +13,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                             slug
                             techs
                             title
-                            date
+                            date(formatString: "MMM YY")
                         }
                         excerpt
                     }

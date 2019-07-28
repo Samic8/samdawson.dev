@@ -6,6 +6,7 @@ module.exports = {
       white: '#fff',
       gray: {
         100: '#EEECF3',
+        200: '#e2e0e5',
         500: '#96939F',
         700: '#686473',
         800: '#494554',
@@ -35,13 +36,6 @@ module.exports = {
     },
     fontFamily: {
       sans: `${systemFontStack}`,
-    },
-    extend: {
-      screens: {
-        sm: '800px',
-        md: '1024px',
-        lg: '1280px',
-      }
     }
   },
   variants: {},

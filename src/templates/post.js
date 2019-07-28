@@ -15,7 +15,6 @@ export default function post({ data }) {
       />
       <PostHeader
         title={data.markdownRemark.frontmatter.title}
-        shouldShowBackButton={true}
       ></PostHeader>
       <article
         className={"post"}

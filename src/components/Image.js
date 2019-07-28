@@ -1,11 +1,12 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import Mountain from '../svgs/mountain.svg'
 
 const Image = () => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "grey-headshot.jpg" }) {
+      placeholderImage: file(relativePath: { eq: "mountain.svg" }) {
         childImageSharp {
           fluid(maxWidth: 180) {
             ...GatsbyImageSharpFluid
@@ -16,10 +17,7 @@ const Image = () => {
   `)
 
   return (
-    <Img
-      className={"flex-shrink-0 w-16 sm:w-32 rounded-lg"}
-      fluid={data.placeholderImage.childImageSharp.fluid}
-    />
+    <Mountain class='w-16 h-10' />
   )
 }
 
