@@ -31,7 +31,9 @@ export const pageQuery = graphql`
 const IndexPage = ({ data }) => (
   <Layout center>
     <SEO title="All Posts" />
-    <Wave className={' absolute top-0 z-0'} style={{marginLeft: '-33rem', marginTop: '-33rem'}} />
+    <div className={'absolute top-0 left-0 right-0 overflow-hidden z-0'}>
+      <Wave className={'relative'} style={{left: '50%', marginLeft: '-60rem', marginTop: '-33rem'}} />
+    </div>
     <div className={'mt-16 mb-48 z-10 relative'}>
       <div class="max-w-3xl mx-auto">
         <p className={'text-lg sm:text-xl font-bold text-gray-800 leading-tight'}>

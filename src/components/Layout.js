@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
   return (
     <div
       className={
-        "flex flex-col items-stretch mx-auto max-w-5xl font-sans w-full overflow-x-hidden relative"
+        "flex flex-col items-stretch mx-auto max-w-5xl font-sans"
       }
     >
       <Header siteTitle={data.site.siteMetadata.title} />
