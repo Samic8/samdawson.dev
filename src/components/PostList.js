@@ -4,7 +4,7 @@ import { techsToArray } from "../utility/data"
 
 export default function PostList({ posts = [] }) {
   return (
-    <ul className={'mx-auto'}>
+    <ul className={'mx-auto relative z-10'}>
       {posts.map((post, index) => (
         <div key={post.id} className={index > 0 ? "mt-10" : ""}>
           <PostRow post={post} />

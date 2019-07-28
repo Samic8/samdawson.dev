@@ -22,7 +22,7 @@ const Header = () => {
   return (
     <div
       className={
-        "block flex px-5 border-b h-16 border-gray-100 justify-between"
+        "block flex px-5 border-b h-16 border-gray-100 justify-between relative z-10"
       }
     >
       <Link to={"/"} className={'flex items-center self-center'}>

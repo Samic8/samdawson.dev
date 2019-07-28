@@ -7,6 +7,7 @@ import PostPage from '../components/PostPage'
 import PostHeader from "../components/PostHeader"
 import PostList from "../components/PostList"
 import { mapEdgesToNode } from "../utility/data"
+import Wave from '../svgs/wave.svg'
 
 export const pageQuery = graphql`
   query {
@@ -30,16 +31,17 @@ export const pageQuery = graphql`
 const IndexPage = ({ data }) => (
   <Layout center>
     <SEO title="All Posts" />
-    <div className={'mt-16 mb-24'}>
+    <Wave className={' absolute top-0 z-0'} style={{marginLeft: '-33rem', marginTop: '-33rem'}} />
+    <div className={'mt-16 mb-48 z-10 relative'}>
       <div class="max-w-3xl mx-auto">
         <p className={'text-lg sm:text-xl font-bold text-gray-800 leading-tight'}>
           Hi, I'm a web designer and builder from Wollongong, Australia. I work for <a href="https://www.accelo.com" class={'text-purple-500 hover:text-purple-700'}>accelo</a>.
         </p>
         <div className={'text-xsm mt-2 font-bold tracking-wide'}>
-          <a className={"pr-2 border-r border-gray-100 text-gray-500 hover:text-gray-700"} href="https://codepen.io/Samic8/">
+          <a className={"pr-2 border-r border-gray-200 text-gray-500 hover:text-gray-700"} href="https://codepen.io/Samic8/">
             CODEPEN
           </a>
-          <a className={"px-2 border-r border-gray-100 text-gray-500 hover:text-gray-700"} href="https://github.com/samic8">
+          <a className={"px-2 border-r border-gray-200 text-gray-500 hover:text-gray-700"} href="https://github.com/samic8">
             GITHUB
           </a>
           <a
