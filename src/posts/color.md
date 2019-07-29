@@ -1,5 +1,5 @@
 ---
-title: A color system for CSS
+title: My CSS Color System
 slug: color-system
 techs: CSS
 date: "2019-07-22"

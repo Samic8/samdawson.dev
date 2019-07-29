@@ -1,5 +1,5 @@
 ---
-title: Theming with currentColor
+title: Theming with CurrentColor
 slug: current-color
 techs: CSS
 date: "2019-07-25"

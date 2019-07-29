@@ -1,5 +1,5 @@
 ---
-title: Magic numbers in CSS
+title: Magic Numbers in CSS
 slug: magic-numbers-css
 techs: CSS
 date: "2019-07-24"
