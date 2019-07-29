@@ -2,3 +2,7 @@
 @tailwind components;
 @import './components/link.css';
 @tailwind utilities;
+
+body {
+    margin: 0;
+}
