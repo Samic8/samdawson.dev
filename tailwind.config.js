@@ -7,6 +7,7 @@ module.exports = {
       gray: {
         100: '#EEECF3',
         200: '#e2e0e5',
+        300: '#acabb0',
         500: '#96939F',
         700: '#686473',
         800: '#494554',
@@ -40,20 +41,5 @@ module.exports = {
     }
   },
   variants: {},
-  plugins: [
-    function({ addUtilities }) {
-      const newUtilities = {
-        '.ltr': {
-          direction: 'ltr',
-        },
-        '.rtl': {
-          direction: 'rtl',
-        },
-      }
-
-      addUtilities(newUtilities, {
-        variants: ['responsive']
-      })
-    }
-  ]
+  plugins: []
 }

@@ -15,19 +15,17 @@ export default function PostList({ posts = [] }) {
 }
 
 const PostRow = ({ post }) => (
-  <li className="pb-3 sm:pb-6">
-    <article className="flex-col flex sm:flex-row">
-      <div className="mr-8">
-        <Link to={`post/${post.frontmatter.slug}`}>
-          <h1 className="link text-base mb-2">
-            {post.frontmatter.title}
-          </h1>
-        </Link>
-        <p className="text-xsm text-gray-700 leading-tight">{post.excerpt}</p>
-      </div>
-      <div className="mt-3 sm:mt-0 w-24 flex-shrink-0 flex sm:rtl">
-        <span className={'mr-2 font-bold text-gray-500 uppercase'}>{post.frontmatter.date}</span>
-      </div>
-    </article>
+  <li>
+    <Link to={`post/${post.frontmatter.slug}`} className="py-6 sm:px-6 hover:bg-gray-100 block rounded-lg">
+      <article className="">
+          <div className='mb-2'>
+            <h1 className="font-medium text-base text-gray-800 leading-none">
+              {post.frontmatter.title}
+            </h1>
+            <time className={'text-xsm tracking-wide font-bold text-gray-300 uppercase'}>{post.frontmatter.date}</time>
+          </div>
+          <p className="text-sm text-gray-700 leading-tight">{post.excerpt}<span className={'link link--xsm inline-block'}>read more</span></p>
+      </article>
+    </Link>
   </li>
 )

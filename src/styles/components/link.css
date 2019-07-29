@@ -15,6 +15,10 @@
     transition: .15s width ease, .1s background-color ease;
 }
 
+.link--xsm:not(.anchor)::after {
+    margin-top: -3px;
+}
+
 .link:hover {
     @apply text-gray-800;
 }

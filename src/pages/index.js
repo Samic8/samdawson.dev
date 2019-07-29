@@ -19,7 +19,7 @@ export const pageQuery = graphql`
             title
             techs
             slug
-            date(formatString: "MMM YY")
+            date(formatString: "MMM D, YYYY")
           }
           excerpt
         }
