@@ -15,7 +15,7 @@ export default function PostList({ posts = [] }) {
 
 const PostRow = ({ post }) => (
   <li>
-    <Link to={`post/${post.frontmatter.slug}`} className="py-10 sm:px-6 hover:bg-gray-100 block rounded-lg">
+    <Link to={`post/${post.frontmatter.slug}`} className="py-10 sm:px-6 sm:hover:bg-gray-100 block rounded-lg">
       <article className="">
           <div className='mb-2'>
             <h1 className="font-bold text-base text-lg text-gray-700 leading-none">
