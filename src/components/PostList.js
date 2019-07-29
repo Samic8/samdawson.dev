@@ -1,6 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-import { techsToArray } from "../utility/data"
 
 export default function PostList({ posts = [] }) {
   return (
@@ -16,15 +15,15 @@ export default function PostList({ posts = [] }) {
 
 const PostRow = ({ post }) => (
   <li>
-    <Link to={`post/${post.frontmatter.slug}`} className="py-6 sm:px-6 hover:bg-gray-100 block rounded-lg">
+    <Link to={`post/${post.frontmatter.slug}`} className="py-10 sm:px-6 hover:bg-gray-100 block rounded-lg">
       <article className="">
           <div className='mb-2'>
-            <h1 className="font-medium text-base text-gray-800 leading-none">
+            <h1 className="font-bold text-base text-lg text-gray-700 leading-none">
               {post.frontmatter.title}
             </h1>
             <time className={'text-xsm tracking-wide font-bold text-gray-300 uppercase'}>{post.frontmatter.date}</time>
           </div>
-          <p className="text-sm text-gray-700 leading-tight">{post.excerpt}<span className={'link link--xsm inline-block'}>read more</span></p>
+          <p className="text-base text-gray-700">{post.excerpt}<span className={'link link--xsm inline-block'}>read more</span></p>
       </article>
     </Link>
   </li>

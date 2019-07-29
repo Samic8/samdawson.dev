@@ -21,7 +21,7 @@ export const pageQuery = graphql`
             slug
             date(formatString: "MMM D, YYYY")
           }
-          excerpt
+          excerpt(pruneLength: 200)
         }
       }
     }
