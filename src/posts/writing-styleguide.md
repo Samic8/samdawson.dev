@@ -1,6 +1,6 @@
 ---
-title: Writing Styleguide
-slug: writing-styleguide
+title: My Writing Styleguide
+slug: my-writing-styleguide
 techs: writing
 date: "2019-07-30"
 ---
