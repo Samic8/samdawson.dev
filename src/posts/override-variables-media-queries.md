@@ -5,75 +5,48 @@ techs: CSS
 date: "2019-07-27"
 ---
 
-It's possible to override CSS variables with inheritance.
+This article aims to show an alternative to overriding properties directly. Instead we can use CSS variables with the help of *inheritance* and *media queries*. I think that this approach leads to CSS that is easier to read, where all of the properties that appear on a class are all defined in one place.
 
-Lets set up some variables.
-
+To demonstrate [**inheritance**](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties#Inheritance_of_custom_properties) we need a class that uses some variables 
 ```css
-:root {
-    /* Colors */
-    --color-blue-1: #4287f5;
-
-    /* Color Aliases */
-    --color-alias-cta-button: var(--color-blue);
-}
-```
-More about the color naming in a [previous post](./color-system).
-
-We might have a **cta-button** class that then uses our color aliases variable.
-
-```css
-.cta-button {
-    background-color: var(--color-alias-cta-button);
+.sign-up-button {
+    background-color: var(--color-alias-sign-up-button);
     color: var(--color-white);
 }
 ```
 
-and we can use it.
-
-```html
-<button class="cta-button">Sign up!</button>
-```
-some pretty basic stuff!
-
-Maybe we have a section of our site where we want to apply a dark theme, we could take advantage of inheritance by creating a class with the variable override.
+Maybe we have a section of our site where we want to apply a dark theme to our sign up button, we can create a class to override the variable used in the **sign-up-button** class
 
 ```css
 .dark-theme {
-    --color-alias-cta-button: var(--color-black);
+    --color-alias-sign-up-button: var(--color-black);
 }
 ```
 
-Then applying it anywhere as a parent to our cta-button which makes use of the same variable we are overriding.
+To override through **inheritance** we can use our *dark-theme* class as a parent element to our button
 
 ```html
 <div>
-    <h2>Default Theme</h2>
-    <button class="cta-button">Sign up!</button>
+    <h2>DEFAULT</h2>
+    <button class="sign-up-button">SIGN UP</button>
 </div>
 <div class="dark-theme">
-    <h2>Dark Theme</h2>
-    <button class="cta-button">Sign up!</button>
+    <h2>DARK THEME</h2>
+    <button class="sign-up-button">SIGN UP</button>
 </div>
 ```
-This does not just work for colors we can use this pattern for any property.
+This will only override the variable usage for the children elements of our override class. If we wanted to override the variable for all elements we can use the `:root` selector
+```css
+:root {
+    --color-alias-sign-up-button: var(--color-black);
+}
+```
+https://codepen.io/Samic8/pen/jjdJXR
+
 
 ## Media Queries 
 
-We can also override variables with media queries. Instead of overriding properties directly:
-
-```css
-.header {
-    height: 50px;
-}
-
-@media screen and (min-width: 900px) {
-    .header {
-        height: 30px;
-    }
-}
-```
-We can override the variables used within a class:
+Similar to inheritance through parent elements we can also override variables with [**media queries**](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
 
 ```css
 .header {
@@ -88,7 +61,7 @@ We can override the variables used within a class:
 }
 ```
 
-Overriding may not always possible because you may need to introduce new properties within a media query and not just override:
+Only overriding variables may not always possible because you may need to introduce new properties within a media query
 ```css
 .header {
     --header-height: 50px;
@@ -104,7 +77,7 @@ Overriding may not always possible because you may need to introduce new propert
 }
 ```
 
-When you can pull off a media query by only overriding variables it keeps all of what a class is concerned within one place:
+When you can pull off a media query by only overriding variables it keeps all of what a class is concerned within one place
 
 ```css
 .header {
@@ -124,9 +97,9 @@ When you can pull off a media query by only overriding variables it keeps all of
 }
 ```
 
-I think this pattern of the base class always having the defaults for every property it will use throughout its life on a page leads to CSS that is easier to reason about.
+I think this pattern of the base class always having the defaults for every property it will use throughout its life on a page leads to CSS that is easier to read.
 
-This pattern is a similar concept that you might find in javascript where what the function does is in the first few lines of the function then it runs other functions which become the implementation details.
+This pattern is a similar concept that you might use in Javascript where what the function does is in the first few lines of the function then it runs other functions
 
 ```js
 function setup() {
@@ -140,13 +113,16 @@ function draw { /* ... */ }
 function print { /* ... */ }
 ```
 
-### Inheritance and media queries
-The inheritance and the media query techniques can be used in combination too.
+### Combination
+The **inheritance** and the **media query** techniques can be used in combination too
 
 ```css
 @media screen and (min-width: 900px) {
     .dark-theme {
-        --color-alias-cta-button: var(--color-black);
+        --color-alias-sign-up-button: var(--color-black);
     }
 }
 ```
+
+## Other Resources
+More about the color naming pattern in [another article](./color-system).
