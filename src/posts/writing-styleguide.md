@@ -20,3 +20,6 @@ The sentence before code examples should not end with a period
 <!-- GOOD:
 
 BAD:C -->
+
+## Related Resources
+Resources that are related but not essential to the article should be linked at the bottom of the article under the heading "Related Resources".

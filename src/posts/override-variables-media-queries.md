@@ -124,5 +124,5 @@ The **inheritance** and the **media query** techniques can be used in combinatio
 }
 ```
 
-## Other Resources
+## Related Resources
 More about the color naming pattern in [another article](./color-system).

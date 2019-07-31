@@ -1,3 +1,12 @@
+%syntax-label {
+    display: block;
+    right: 1rem;
+    bottom: 1em;
+    margin-top: -.5em;
+    margin-bottom: .5rem;
+    font-size: .8em;
+}
+
 .post {
     @apply text-base text-gray-800;
 
@@ -26,7 +35,17 @@
     }
 
     pre[class*="language-"] {
-        @apply leading-snug text-sm;
+        @apply leading-snug text-sm relative;
+    }
+
+    pre.language-css::before {
+        @extend %syntax-label;
+        content: 'CSS';
+    }
+
+    pre.language-html::before {
+        @extend %syntax-label;
+        content: 'HTML';
     }
 
     ul {

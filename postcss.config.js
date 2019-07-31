@@ -13,6 +13,7 @@ module.exports = () => ({
     plugins: [
         tailwind('./tailwind.config.js'),
         require('postcss-nested'),
+        require('postcss-extend-rule')(),
         require('autoprefixer'),
         ...process.env.NODE_ENV === 'production' ? [purgecss] : []
     ],
