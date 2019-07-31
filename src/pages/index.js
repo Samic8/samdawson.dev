@@ -30,7 +30,7 @@ export const pageQuery = graphql`
 
 const IndexPage = ({ data }) => (
   <Layout center>
-    <SEO />
+    <SEO title="Home" />
     <div className={'absolute top-0 left-0 right-0 overflow-hidden z-0'}>
       <Wave className={'relative'} style={{left: '50%', marginLeft: '-110rem', marginTop: '-33rem'}} />
     </div>
