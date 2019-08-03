@@ -2,7 +2,7 @@
 title: Markdown Category Pages with Gatsby
 slug: gatsby-categories
 techs: ['GatsbyJS', 'React']
-date: "2019-08-02"
+date: "2019-08-03"
 ---
 
 This article walks through a strategy for creating category list pages from categories defined in markdown frontmatter. There is an assumption of some basic knowledge of gatsby and that you already have some [article pages generated](https://www.gatsbyjs.org/tutorial/part-seven/#creating-pages) with markdown.
