@@ -41,6 +41,12 @@ module.exports = {
     },
     fontFamily: {
       sans: `${systemFontStack}`,
+    },
+    extend: {
+      margin: {
+        '-1xl': '-28rem',
+        '-2xl': '-33rem',
+      }
     }
   },
   variants: {},
