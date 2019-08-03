@@ -1,7 +1,7 @@
 ---
 title: Theming with CurrentColor
 slug: current-color
-techs: CSS
+techs: ['CSS']
 date: "2019-07-25"
 
 todos: "

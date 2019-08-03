@@ -4,7 +4,6 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import PostPage from '../components/PostPage'
-import PostHeader from "../components/PostHeader"
 import PostList from "../components/PostList"
 import { mapEdgesToNode } from "../utility/data"
 import Wave from '../svgs/wave.svg'

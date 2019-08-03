@@ -1,7 +1,7 @@
 ---
 title: Moving Elements on Hover
 slug: elements-that-move-on-hover
-techs: CSS
+techs: ['CSS']
 date: "2019-07-20"
 ---
 

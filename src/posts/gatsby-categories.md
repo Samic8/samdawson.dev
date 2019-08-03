@@ -1,7 +1,7 @@
 ---
 title: Markdown Category Pages with Gatsby
 slug: gatsby-categories
-techs: GatsbyJS React
+techs: ['GatsbyJS', 'React']
 date: "2019-08-02"
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: My Writing Styleguide
 slug: my-writing-styleguide
-techs: writing
+techs: []
 date: "2019-07-30"
 ---
 
