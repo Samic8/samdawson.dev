@@ -3,6 +3,7 @@ module.exports = {
     title: `samdawson.dev`,
     description: `I build pretty good websites and apps.`,
     author: `Sam Dawson`,
+    siteUrl: 'https://www.samdawson.dev'
   },
   plugins: [
     `gatsby-plugin-postcss`,
@@ -90,6 +91,13 @@ module.exports = {
             },
           },
           `gatsby-remark-autolink-headers`,
+          {
+            resolve: `gatsby-plugin-sitemap`,
+            options: {
+              output: '/sitemap.xml',
+              createLinkInHead: true,
+            }
+          }
         ],
       },
     },
