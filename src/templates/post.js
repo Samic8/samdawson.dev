@@ -17,7 +17,7 @@ export default function post({ data }) {
         title={data.markdownRemark.frontmatter.title}
       ></PostHeader>
       <article
-        className={"post"}
+        className={"post text-base sm:text-md text-gray-800"}
         dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
       />
     </Layout>

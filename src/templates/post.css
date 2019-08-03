@@ -8,12 +8,6 @@
 }
 
 .post {
-    @apply text-md text-gray-800;
-
-    p {
-        @apply mb-6;
-    }
-    
     h2 {
         @apply text-md font-bold mt-20 mb-3;
     }
