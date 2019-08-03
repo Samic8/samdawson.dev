@@ -15,7 +15,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                             title
                             date(formatString: "MMM D, YYYY")
                         }
-                        excerpt
+                        excerpt(pruneLength: 200)
                     }
                 }
             }
