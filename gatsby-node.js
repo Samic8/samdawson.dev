@@ -23,6 +23,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     `)
     
     createCategories(result.data.allMarkdownRemark)
+    createAllArticlePage(result.data.allMarkdownRemark)
     createPosts(result.data.allMarkdownRemark)
 
     function createCategories(allMarkdownRemark) {
@@ -40,6 +41,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                     }
                 },
             })
+        })
+    }
+
+    function createCategories(allMarkdownRemark) {
+        reporter.info(`Creating all articles page`)
+        createPage({
+            path: `all-articles`,
+            component: require.resolve("./src/templates/CategoryList.js"),
+            context: {
+                tech: 'All',
+                allMarkdownRemark,
+            },
         })
     }
     

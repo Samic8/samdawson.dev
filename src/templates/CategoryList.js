@@ -14,7 +14,7 @@ const CategoryList = ({ pageContext: { allMarkdownRemark, tech } }) => {
     <Layout center>
       <SEO title={title} />
       <PostPage>
-        <PostHeader title={title} />
+        <PostHeader title={title} tech={tech} />
         <PostList posts={mapEdgesToNode(allMarkdownRemark)} />
       </PostPage>
     </Layout>

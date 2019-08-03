@@ -35,8 +35,7 @@ const Header = () => {
           <span className={'tracking-wide text-gray-700 pl-2 font-bold text-xsm hover:text-gray-500'}>SAMDAWSON.DEV</span>
         </Link>
         <div className={'border-l border-gray-100 my-3 flex items-center tracking-wide text-gray-700 pl-6 font-bold text-xsm'}>
-          {/* TODO: Add dropdown with TechList component to jump to categories */}
-          <Link to={'/'} className='mr-2 hover:text-gray-500'>ARTICLES</Link>
+          <Link to={'/all-articles'} className='mr-2 hover:text-gray-500'>ARTICLES</Link>
           <button className={'appearance-none'} onClick={() => setCategoriesOpen(true)}>
             <DownArrow></DownArrow>
           </button>

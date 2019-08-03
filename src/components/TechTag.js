@@ -1,16 +1,11 @@
 import React from "react"
 import Button from "./Button"
-
-const backgroundColor = {
-  CSS: "bg-brown-600 hover:bg-brown-500",
-  React: "bg-teal-500 hover:bg-teal-400",
-  GatsbyJS: "bg-purple-500 hover:bg-purple-400",
-}
+import { techToBgColor } from "../utility/techColors"
 
 export default ({ techName, className, ...props }) => (
   <Button
     to={`category/${techName}`}
-    className={`${backgroundColor[techName]} ${className}`}
+    className={`${techToBgColor[techName]} ${className}`}
     {...props}
   >
     {techName}
