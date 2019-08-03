@@ -33,7 +33,7 @@
     }
 
     pre[class*="language-"] {
-        @apply leading-snug text-base mb-20 mt-10;
+        @apply leading-snug mb-20 mt-10;
     }
 
     pre[class*="language-"], iframe {
