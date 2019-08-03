@@ -17,6 +17,8 @@ BAD: -->
 ## Code Examples
 The sentence before code examples should not end with a period
 
+Code examples should be use 2 spaces are tabs. TODO: can this be auto mated with prettier?
+
 <!-- GOOD:
 
 BAD:C -->

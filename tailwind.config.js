@@ -26,13 +26,16 @@ module.exports = {
         100: '#CECAD3',
         500: '#9875c3',
         700: '#7042a9'
+      },
+      yellow: {
+        100: '#f6f2ec',
       }
     },
     fontSize: {
       xsm: '.85rem',
       sm: '1rem',
       base: '1.25rem',
-      md: '1.5rem',
+      md: '1.38rem',
       lg: '1.75rem',
       xl: '2.5rem',
     },

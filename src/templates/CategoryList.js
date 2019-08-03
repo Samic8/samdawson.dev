@@ -8,7 +8,7 @@ import { mapEdgesToNode } from "../utility/data"
 
 const CategoryList = ({ pageContext: { allMarkdownRemark, tech } }) => {
   const title = `${tech.substring(0, 1).toUpperCase() +
-    tech.substring(1)} Posts`
+    tech.substring(1)} Articles`
 
   return (
     <Layout center>

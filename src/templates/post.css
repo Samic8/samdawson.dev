@@ -8,7 +8,7 @@
 }
 
 .post {
-    @apply text-base text-gray-800;
+    @apply text-md text-gray-800;
 
     p {
         @apply mb-6;
@@ -35,7 +35,13 @@
     }
 
     pre[class*="language-"] {
-        @apply leading-snug text-sm relative;
+        @apply leading-snug text-base mb-20 mt-10;
+    }
+
+    pre[class*="language-"], iframe {
+        @apply leading-snug relative;
+        width: calc(100% + 2.5rem) !important;
+        left: -1.25rem;
     }
 
     pre.language-css::before {

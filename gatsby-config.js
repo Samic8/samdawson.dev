@@ -37,6 +37,9 @@ module.exports = {
         // Plugins configs
         plugins: [
           {
+            resolve: `@raae/gatsby-remark-oembed`,
+          },
+          {
             resolve: `gatsby-remark-images`,
             options: {
               // It's important to specify the maxWidth (in pixels) of
@@ -63,7 +66,7 @@ module.exports = {
               // stripping.
               // A suggested value for English speakers is the non-ascii
               // character '›'.
-              inlineCodeMarker: null,
+              inlineCodeMarker: ',',
               // This lets you set up language aliases.  For example,
               // setting this to '{ sh: "bash" }' will let you use
               // the language "sh" which will highlight using the
@@ -87,13 +90,6 @@ module.exports = {
             },
           },
           `gatsby-remark-autolink-headers`,
-          {
-            resolve:"@weknow/gatsby-remark-codepen",
-            options: {
-              theme: "dark",
-              height: 400
-            }
-          }
         ],
       },
     },

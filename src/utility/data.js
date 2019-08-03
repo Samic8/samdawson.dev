@@ -13,9 +13,13 @@ function techsToArray(techs) {
 }
 
 function dedupeTechs(allMarkdownRemark) {
-  const allTechs = mapEdgesToNode(allMarkdownRemark, node =>
-    techsToArray(node.frontmatter.techs)
-  )
-  const flatteredTechs = [].concat.apply([], allTechs)
-  return Array.from(new Set(flatteredTechs))
+  const uniqueCategories = new Set();
+  allMarkdownRemark.edges.forEach(({ node }) => {
+    // Transform space separated categories into an array
+    node.frontmatter.techs.split(" ").forEach(category => {
+      uniqueCategories.add(category);
+    })
+  })
+  // Create new array with duplicates removed
+  return Array.from(uniqueCategories);
 }
