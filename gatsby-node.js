@@ -21,21 +21,21 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             }
         }
     `)
-    
+
     createCategories(result.data.allMarkdownRemark)
     createAllArticlePage(result.data.allMarkdownRemark)
     createPosts(result.data.allMarkdownRemark)
 
     function createCategories(allMarkdownRemark) {
         dedupeTechs(allMarkdownRemark).map(tech => {
-            reporter.info(`Creating category: ${tech}`)
+            reporter.info(`Creating category/${tech}`)
             createPage({
                 path: `category/${tech}`,
                 component: require.resolve("./src/templates/CategoryList.js"),
                 context: {
                     tech,
                     allMarkdownRemark: {
-                        edges: allMarkdownRemark.edges.filter(({node}) => {
+                        edges: allMarkdownRemark.edges.filter(({ node }) => {
                             return node.frontmatter.techs.includes(tech);
                         })
                     }
@@ -44,8 +44,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         })
     }
 
-    function createCategories(allMarkdownRemark) {
-        reporter.info(`Creating all articles page`)
+    function createAllArticlePage(allMarkdownRemark) {
+        reporter.info(`Creating all-articles`)
         createPage({
             path: `all-articles`,
             component: require.resolve("./src/templates/CategoryList.js"),
@@ -55,7 +55,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             },
         })
     }
-    
+
     function createPosts(allMarkdownRemark) {
         allMarkdownRemark.edges.forEach(({ node }) => {
             reporter.info(`Creating post: ${node.frontmatter.slug}`)
