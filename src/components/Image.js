@@ -17,7 +17,7 @@ const Image = () => {
   `)
 
   return (
-    <Mountain class='w-10 sm:w-16 h-10' />
+    <Mountain className='w-10 sm:w-16 h-10' />
   )
 }
 
