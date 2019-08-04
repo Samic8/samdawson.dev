@@ -33,7 +33,7 @@ const IndexPage = ({ data }) => (
     <div className={'absolute top-0 left-0 right-0 overflow-hidden z-0'}>
       <Wave className={'relative -mt-2xl sm:-mt-1xl md:-mt-2xl'} style={{ left: '50%', marginLeft: '-110rem' }} />
     </div>
-    <div className={'mt-16 mb-32 sm:mb-48 z-10 relative'}>
+    <div className={'mt-10 sm:mt-16 mb-32 sm:mb-48 z-10 relative'}>
       <div className="max-w-3xl mx-auto">
         <p className={'text-lg sm:text-xl font-bold text-gray-800 leading-tight'}>
           Hi, I'm a web designer and builder from Wollongong, Australia. I work for <a href="https://www.accelo.com" className={'text-purple-500 hover:text-purple-700'}>accelo</a>.
