@@ -103,7 +103,7 @@ We can add **currentColor** as a value to the fill attribute
 ```
 This is not limited to the fill attribute, it can also be used with the **stroke** attribute or in CSS with the **fill** or **stroke** property.
 
-What I would do to color the icons is to create [color aliases](./post/color-system/#aliases) classes to represent the spice levels then include them in the HTML
+What I would do to color the icons is to create [color aliases](./article/color-system/#aliases) classes to represent the spice levels then include them in the HTML
 
 ```html
 <li class="color-alias-spice-mild">

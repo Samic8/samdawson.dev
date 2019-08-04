@@ -1,9 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
-import PostHeader from "../components/PostHeader"
+import ArticleHeader from "../components/ArticleHeader"
 import "prism-themes/themes/prism-atom-dark.css"
-import "./post.css"
+import "./Article.css"
 import SEO from "../components/SEO"
 
 export default function post({ data }) {
@@ -13,11 +13,11 @@ export default function post({ data }) {
         title={data.markdownRemark.frontmatter.title}
         description={data.markdownRemark.excerpt}
       />
-      <PostHeader
+      <ArticleHeader
         title={data.markdownRemark.frontmatter.title}
-      ></PostHeader>
+      ></ArticleHeader>
       <article
-        className={"post text-sm sm:text-md text-gray-800"}
+        className={"article text-sm sm:text-md text-gray-800"}
         dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
       />
     </Layout>

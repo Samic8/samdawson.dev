@@ -1,9 +1,9 @@
 import React from "react"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
-import PostPage from '../components/PostPage'
-import PostHeader from "../components/PostHeader"
-import PostList from "../components/PostList"
+import Content from '../components/Content'
+import ArticleHeader from "../components/ArticleHeader"
+import ArticleList from "../components/ArticleList"
 import { mapEdgesToNode } from "../utility/data"
 
 const CategoryList = ({ pageContext: { allMarkdownRemark, tech } }) => {
@@ -13,10 +13,10 @@ const CategoryList = ({ pageContext: { allMarkdownRemark, tech } }) => {
   return (
     <Layout center>
       <SEO title={title} />
-      <PostPage>
-        <PostHeader title={title} tech={tech} />
-        <PostList posts={mapEdgesToNode(allMarkdownRemark)} />
-      </PostPage>
+      <Content>
+        <ArticleHeader title={title} tech={tech} />
+        <ArticleList posts={mapEdgesToNode(allMarkdownRemark)} />
+      </Content>
     </Layout>
   )
 }

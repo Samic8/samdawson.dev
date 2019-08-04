@@ -45,9 +45,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
 
     function createAllArticlePage(allMarkdownRemark) {
-        reporter.info(`Creating all-articles`)
+        reporter.info(`Creating articles`)
         createPage({
-            path: `all-articles`,
+            path: `articles`,
             component: require.resolve("./src/templates/CategoryList.js"),
             context: {
                 tech: 'All',
@@ -58,10 +58,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     function createPosts(allMarkdownRemark) {
         allMarkdownRemark.edges.forEach(({ node }) => {
-            reporter.info(`Creating post: ${node.frontmatter.slug}`)
+            reporter.info(`Creating article: ${node.frontmatter.slug}`)
             createPage({
-                path: `post/${node.frontmatter.slug}`,
-                component: require.resolve("./src/templates/post.js"),
+                path: `article/${node.frontmatter.slug}`,
+                component: require.resolve("./src/templates/Article.js"),
                 context: {
                     id: node.id,
                 },

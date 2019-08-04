@@ -3,8 +3,8 @@ import { graphql, Link } from "gatsby"
 
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
-import PostPage from '../components/PostPage'
-import PostList from "../components/PostList"
+import Content from '../components/Content'
+import ArticleList from "../components/ArticleList"
 import { mapEdgesToNode } from "../utility/data"
 import Wave from '../svgs/wave.svg'
 
@@ -31,7 +31,7 @@ const IndexPage = ({ data }) => (
   <Layout center>
     <SEO title="Home" />
     <div className={'absolute top-0 left-0 right-0 overflow-hidden z-0'}>
-      <Wave className={'relative -mt-2xl sm:-mt-1xl md:-mt-2xl'} style={{left: '50%', marginLeft: '-110rem'}} />
+      <Wave className={'relative -mt-2xl sm:-mt-1xl md:-mt-2xl'} style={{ left: '50%', marginLeft: '-110rem' }} />
     </div>
     <div className={'mt-16 mb-32 sm:mb-48 z-10 relative'}>
       <div className="max-w-3xl mx-auto">
@@ -51,12 +51,12 @@ const IndexPage = ({ data }) => (
           >
             TWITTER
           </a>
-      </div>
+        </div>
       </div>
     </div>
-    <PostPage>
-      <PostList posts={mapEdgesToNode(data.allMarkdownRemark)} />
-    </PostPage>
+    <Content>
+      <ArticleList posts={mapEdgesToNode(data.allMarkdownRemark)} />
+    </Content>
   </Layout>
 )
 

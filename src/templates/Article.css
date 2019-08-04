@@ -7,7 +7,7 @@
     font-size: .8em;
 }
 
-.post {
+.article {
     h2 {
         @apply text-md font-bold mt-20 mb-3;
     }
