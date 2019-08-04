@@ -8,8 +8,8 @@ date: "2019-08-03"
 This article walks through a strategy for creating category list pages from categories defined in markdown frontmatter. There is an assumption of some basic knowledge of gatsby and that you already have some [article pages generated](https://www.gatsbyjs.org/tutorial/part-seven/#creating-pages) with markdown.
 
 Our end goal is to generate the pages **/category/GatsbyJS** and **/category/React** which both list any articles that are within that category with links to the article. For the GastbyJS category page we want a list of articles that include it as a category
-<!-- TODO: Get oembed plugin working for codesandbox -->
-<iframe src="https://codesandbox.io/embed/category-pages-with-gatsby-ugj4m?autoresize=1&fontsize=14&initialpath=%2Fcategory%2FGatsbyJS&view=preview" title="Markdown Category Pages with Gatsby" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden; margin-bottom: 100px; margin-top: 50px;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
+![Screenshot of a list of articles in the GatsbyJS category](./gatsby-categories.png)
 
 ## Markdown Frontmatter
 To categorize our articles we are going to include a property in our frontmatter called **categories**, which is an array of categories that the article belongs to
