@@ -16,6 +16,10 @@
         @apply mb-8;
     }
 
+    strong {
+        @apply font-semibold;
+    }
+
     h3 {
         @apply text-base font-bold mt-10 mb-3;
     }
@@ -52,6 +56,11 @@
         content: 'HTML';
     }
 
+    pre.language-js::before {
+        @extend %syntax-label;
+        content: 'JS';
+    }
+
     ul {
         @apply list-disc;
     }
@@ -62,28 +71,28 @@
 
     /* TODO: a tag styling is duplicated with style/components/link.css figure out a way to make DRY */
     a {
-        @apply inline-block text-gray-900 font-bold;
+        @apply inline-block text-gray-900 relative;
 
         cursor: pointer;
         transition: .1s background-color ease;
     }
 
-    a:not(.anchor)::after {
+    a:not(.anchor):not(.gatsby-resp-image-link)::after {
         content: '';
         display: block;
-        margin-top: -8px;
-        height: 4px;
-        width: 80%;
-        @apply bg-purple-100;
+        margin-top: -3px;
+        height: 2px;
+        width: 100%;
+        @apply bg-purple-400 absolute;
         transition: .15s width ease, .1s background-color ease;
     }
 
     a:hover {
-        @apply text-gray-800;
+        @apply text-purple-700;
     }
-
-    a:hover::after {
+    
+    a:not(.anchor):not(.gatsby-resp-image-link):hover::after {
         width: 100%;
-        @apply bg-purple-500;
+        @apply bg-purple-500 h-1;
     }
 }

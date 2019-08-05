@@ -1,29 +1,25 @@
 .link {
-    @apply inline-block text-gray-900 font-bold;
+    @apply inline-block text-gray-900 relative;
 
     cursor: pointer;
     transition: .1s background-color ease;
 }
 
-.link:not(.anchor)::after {
+.link:not(.anchor):not(.gatsby-resp-image-link)::after {
     content: '';
     display: block;
-    margin-top: -8px;
-    height: 3px;
-    width: 80%;
-    @apply bg-purple-100;
+    margin-top: -3px;
+    height: 2px;
+    width: 100%;
+    @apply bg-purple-400 absolute;
     transition: .15s width ease, .1s background-color ease;
 }
 
-.link--xsm:not(.anchor)::after {
-    margin-top: -3px;
-}
-
 .link:hover {
-    @apply text-gray-800;
+    @apply text-purple-700;
 }
 
-.link:hover::after {
+.link:not(.anchor):not(.gatsby-resp-image-link):hover::after {
     width: 100%;
-    @apply bg-purple-500;
+    @apply bg-purple-500 h-1;
 }

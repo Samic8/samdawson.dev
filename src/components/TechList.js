@@ -9,7 +9,7 @@ export default function TechList({ techs, size = "small" }) {
   return (
     <ul>
       {techs.map(techName => (
-        <li key={techName} className={`inline-block ${sizes[size]}`}>
+        <li key={techName} className={`inline-block font-header ${sizes[size]}`}>
           <TechTag key={techName} techName={techName} size={size} />
         </li>
       ))}

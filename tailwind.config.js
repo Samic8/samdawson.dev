@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     colors: {
       white: '#fff',
+      black: '#100',
       gray: {
         100: '#EEECF3',
         200: '#e2e0e5',
@@ -36,12 +37,13 @@ module.exports = {
       xsm: '.85rem',
       sm: '1.1rem',
       base: '1.25rem',
-      md: '1.38rem',
+      md: '1.30rem',
       lg: '1.75rem',
       xl: '2.5rem',
     },
     fontFamily: {
-      sans: `${systemFontStack}`,
+      header: `${systemFontStack}`,
+      sans: `"Montserrat", ${systemFontStack}`,
     },
     extend: {
       margin: {

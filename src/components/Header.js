@@ -27,7 +27,7 @@ const Header = () => {
     <div className={'z-10'}>
       <div
         className={
-          "block flex px-5 border-b h-16 border-gray-100 justify-between relative"
+          "block flex px-5 border-b h-16 border-gray-100 justify-between relative font-header"
         }
       >
         <Link to={"/"} className={'flex items-center self-center'}>
@@ -43,7 +43,8 @@ const Header = () => {
           {/* <Link to={'/'}>NOTES</Link> */}
         </div>
       </div>
-      {isCategoriesOpen && <div className={'flex justify-end pt-6 px-5'}>
+      {isCategoriesOpen && <div className={'flex justify-end pt-6 px-5 font-header'}>
+        {/* TODO make font-header family apply here */}
         <TechList techs={dedupedTechs} />
       </div>}
     </div>
