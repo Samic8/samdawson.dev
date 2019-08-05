@@ -9,7 +9,7 @@ import Content from "../components/Content";
 
 export default function post({ data }) {
   return (
-    <Layout>
+    <Layout useColoredBackground>
       <SEO
         title={data.markdownRemark.frontmatter.title}
         description={data.markdownRemark.excerpt}
