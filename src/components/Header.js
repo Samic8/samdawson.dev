@@ -44,7 +44,6 @@ const Header = () => {
         </div>
       </div>
       {isCategoriesOpen && <div className={'flex justify-end pt-6 px-5 font-header'}>
-        {/* TODO make font-header family apply here */}
         <TechList techs={dedupedTechs} />
       </div>}
     </div>

@@ -17,8 +17,8 @@ const PostRow = ({ post }) => (
   <li key={post.frontmatter.title}>
     <Link to={`article/${post.frontmatter.slug}`} className="py-10 sm:px-6 sm:hover:bg-gray-100 block rounded-lg">
       <article>
-        <div>
-          <h1 className="font-bold text-md sm:text-lg text-gray-700 leading-none font-header">
+        <div className={'font-header'}>
+          <h1 className="font-bold text-md sm:text-lg text-gray-700 leading-none">
             {post.frontmatter.title}
           </h1>
           <time className={'text-xsm tracking-wide font-bold text-gray-300 uppercase'}>{post.frontmatter.date}</time>
