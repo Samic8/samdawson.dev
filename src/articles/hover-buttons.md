@@ -1,5 +1,5 @@
 ---
-title: Moving Elements on Hover
+title: Moving elements on hover pattern
 slug: elements-that-move-on-hover
 techs: ['CSS']
 date: "2019-07-20"

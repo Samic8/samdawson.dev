@@ -1,5 +1,5 @@
 ---
-title: My Writing Styleguide
+title: My writing styleguide
 slug: my-writing-styleguide
 techs: []
 date: "2019-07-30"

@@ -1,5 +1,5 @@
 ---
-title: My CSS Color System
+title: My css color system
 slug: color-system
 techs: ['CSS']
 date: "2019-07-22"
