@@ -5,9 +5,9 @@ techs: ['GatsbyJS', 'React']
 date: "2019-08-03"
 ---
 
-This article walks through a strategy for creating category list pages from categories defined in markdown frontmatter. There is an assumption of some basic knowledge of gatsby and that you already have some [article pages generated](https://www.gatsbyjs.org/tutorial/part-seven/#creating-pages) with markdown.
+This article contains a strategy for creating category list pages from categories defined in a markdown article. There is an assumption of some basic knowledge of gatsby and that you already have some [article pages generated](https://www.gatsbyjs.org/tutorial/part-seven/#creating-pages) from markdown files.
 
-Our end goal is to generate the pages **/category/GatsbyJS** and **/category/React** which both list any articles that are within that category with links to the article. For the GastbyJS category page we want a list of articles that include it as a category
+Our end goal is to generate the pages **/category/GatsbyJS** and **/category/React** which both list links to any articles within the category. For example for a "GastbyJS" category we want to generate a list of articles
 
 ![Screenshot of a list of articles in the GatsbyJS category](./gatsby-categories.png)
 
