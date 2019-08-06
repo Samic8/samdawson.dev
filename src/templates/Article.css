@@ -9,7 +9,7 @@
 
 .article {
     h2 {
-        @apply text-md font-bold mt-20 mb-3;
+        @apply text-md font-bold mt-20 mb-3 font-header;
     }
 
     p {
@@ -21,7 +21,7 @@
     }
 
     h3 {
-        @apply text-base font-bold mt-10 mb-3;
+        @apply text-base font-header font-bold mt-10 mb-3;
     }
     
     img {

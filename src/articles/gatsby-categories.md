@@ -29,7 +29,7 @@ This strategy is for creating category list pages from categories defined in mar
 We are going to skip over the generating of the article pages themselves, the [Gatsby tutorials](https://www.gatsbyjs.org/tutorial/part-seven/#creating-pages) have a section on that or you can copy from the CodeSandbox embed at the bottom of this article. 
 
 ## Gatsby Configuration
-In the **gatsby-config.js** file you should already have **gatsby-transformer-remark** included in your plugins with **gatsby-source-filesystem** pointing to the location of your markdown files
+In the **gatsby-config.js** file you should have **gatsby-transformer-remark** included in your plugins with **gatsby-source-filesystem** pointing to the location of your markdown files
 ```js
 // gatsby-config.js
 module.exports = {
