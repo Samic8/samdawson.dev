@@ -1,0 +1,7 @@
+.postListItem {
+  transition: transform 0.2s ease-out;
+}
+
+.postListItem:hover {
+  transform: scale(1.02);
+}

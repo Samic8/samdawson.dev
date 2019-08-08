@@ -3,7 +3,7 @@ module.exports = {
     title: `samdawson.dev`,
     description: `Sam Dawsons blog. Sam is a web designer and developer from Australia.`,
     author: `Sam Dawson`,
-    siteUrl: 'https://www.samdawson.dev'
+    siteUrl: "https://www.samdawson.dev",
   },
   plugins: [
     `gatsby-plugin-postcss`,
@@ -13,6 +13,13 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `svgs`,
+        path: `${__dirname}/src/svgs`,
       },
     },
 
@@ -49,7 +56,7 @@ module.exports = {
               maxWidth: 590,
             },
           },
-          'gatsby-remark-static-images',
+          "gatsby-remark-static-images",
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
@@ -67,7 +74,7 @@ module.exports = {
               // stripping.
               // A suggested value for English speakers is the non-ascii
               // character '›'.
-              inlineCodeMarker: ',',
+              inlineCodeMarker: ",",
               // This lets you set up language aliases.  For example,
               // setting this to '{ sh: "bash" }' will let you use
               // the language "sh" which will highlight using the
@@ -94,10 +101,10 @@ module.exports = {
           {
             resolve: `gatsby-plugin-sitemap`,
             options: {
-              output: '/sitemap.xml',
+              output: "/sitemap.xml",
               createLinkInHead: true,
-            }
-          }
+            },
+          },
         ],
       },
     },
@@ -120,9 +127,9 @@ module.exports = {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: /svgs/ // See below to configure properly
-        }
-      }
+          include: /svgs/, // See below to configure properly
+        },
+      },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
