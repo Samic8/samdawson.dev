@@ -10,9 +10,9 @@ export default function ArticleList({ posts = [] }) {
       {posts.map((post, index) => (
         <>
           {post.frontmatter.featuredImage ? (
-            <PostRowImage post={post} className={index > 0 ? "mt-24" : ""} />
+            <PostRowImage post={post} className={index > 0 ? "mt-16" : ""} />
           ) : (
-            <PostRow post={post} className={index > 0 ? "mt-24" : ""} />
+            <PostRow post={post} className={index > 0 ? "mt-16" : ""} />
           )}
         </>
       ))}
