@@ -1,1 +1,4 @@
 @tailwind base;
+html {
+  -webkit-font-smoothing: antialiased;
+}
