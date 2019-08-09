@@ -4,7 +4,8 @@ const purgecss = require("@fullhuman/postcss-purgecss")({
   content: [
     "./src/**/*.js",
     "./node_modules/prismjs/prism.js",
-    "./public/**/*.html",
+    "./public/article/**/*.html",
+    "./public/category/**/*.html",
   ],
   defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || [],
   whitelistPatternsChildren: [/article.*/, /body/, /html/],
