@@ -16,8 +16,8 @@ module.exports = {
         ignore: [
           "/src/styles/base.css",
           "prismjs/",
-          "Article.css",
           "prism-themes/",
+          "Article.css",
         ],
       },
     },
