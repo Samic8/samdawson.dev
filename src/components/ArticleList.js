@@ -48,7 +48,9 @@ const PostRow = ({ post, className }) => (
           className={`absolute right-0 bottom-0 ${styles.extraInfoContainer} flex justify-end`}
         >
           <div
-            className={`${styles.extraInfoGroup} transition-transform transition-250 transition-ease-out inline-block`}
+            className={
+              "transition-transform transition-250 transition-ease-out inline-block -translate-y-1 group-hover:translate-y-0"
+            }
           >
             <div
               className={

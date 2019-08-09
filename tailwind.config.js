@@ -56,5 +56,21 @@ module.exports = {
   variants: {
     opacity: ["responsive", "hover", "focus", "group-hover"],
   },
-  plugins: [require("tailwindcss-transitions")()],
+  plugins: [
+    require("tailwindcss-transitions")(),
+    function({ addUtilities }) {
+      const newUtilities = {
+        ".translate-y-0": {
+          transform: "translateY(0)",
+        },
+        ".-translate-y-1": {
+          transform: "translateY(-8px)",
+        },
+      }
+
+      addUtilities(newUtilities, {
+        variants: ["group-hover"],
+      })
+    },
+  ],
 }
