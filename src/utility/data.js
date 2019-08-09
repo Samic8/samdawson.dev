@@ -8,13 +8,13 @@ function mapEdgesToNode(data, generator = val => val) {
 }
 
 function dedupeTechs(allMarkdownRemark) {
-  const uniqueCategories = new Set();
+  const uniqueCategories = new Set()
   allMarkdownRemark.edges.forEach(({ node }) => {
     // Transform space separated categories into an array
     node.frontmatter.techs.forEach(category => {
-      uniqueCategories.add(category);
+      uniqueCategories.add(category)
     })
   })
   // Create new array with duplicates removed
-  return Array.from(uniqueCategories);
+  return Array.from(uniqueCategories)
 }
