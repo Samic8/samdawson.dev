@@ -37,7 +37,7 @@
   }
 
   pre[class*="language-"] {
-    @apply leading-snug mb-20 mt-10;
+    @apply leading-snug mb-20 mt-10 rounded-none;
   }
 
   pre[class*="language-"],
