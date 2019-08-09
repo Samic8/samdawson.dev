@@ -19,7 +19,7 @@ export default function ArticleList({ posts = [] }) {
 const PostRow = ({ post, className }) => (
   <li
     key={post.frontmatter.title}
-    className={`group relative ${styles.postListItemImage} ${className}`}
+    className={`group relative ${styles.postListItem} ${className}`}
   >
     <Link
       to={`article/${post.frontmatter.slug}`}

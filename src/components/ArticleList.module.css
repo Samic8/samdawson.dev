@@ -1,4 +1,4 @@
-.postListItemImage::after {
+.postListItem::after {
   content: "";
   right: 10px;
   top: 10px;
@@ -6,19 +6,19 @@
   @apply absolute block left-0 bg-yellow-100 z-0 rounded border-gray-100 border transition-250 transition-ease transition-all;
 }
 
-.postListItemImage:hover::after {
+.postListItem:hover::after {
   left: -10px;
   top: -10px;
   bottom: -30px;
 }
 
-.postListItemImage:not(:last-child)::before {
+.postListItem:not(:last-child)::before {
   content: "";
   left: 50%;
   transform: translateX(-50%);
   top: 100%;
   width: 2px;
-  @apply absolute block bg-gray-100 h-64;
+  @apply absolute block bg-gray-100 h-32;
 }
 
 .extraInfoContainer {
