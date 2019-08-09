@@ -4,6 +4,7 @@ slug: current-color
 techs: ['CSS']
 date: "2019-07-25"
 
+
 todos: "
   1. Create an article in the works on creating color class utilities and link it here.
 "
@@ -15,42 +16,44 @@ In cases where you have an element that needs to have a few different colors the
 
 ```css
 .select-option-spice-mild {
-    background-color: var(--color-green-5);
+  background-color: var(--color-green-5);
 }
 
 .select-option-spice-medium {
-    background-color: var(--color-yellow-5);
+  background-color: var(--color-yellow-5);
 }
 
 /* etc. */
 ```
 
-Instead, we can create a single class, I am using "themed" to distinguish the class as making use of **currentColor** 
+Instead, we can create a single class, I am using "themed" to distinguish the class as making use of **currentColor**
 
 ```css
 .select-option-spice-themed {
-    background-color: currentColor;
+  background-color: currentColor;
 }
 
 /* Another class we are about to make use of */
 .color-alias-spice-mild {
-    color: var(--color-alias-spice-mild)
+  color: var(--color-alias-spice-mild);
 }
 ```
 
 We can then use our "themed" class with a utility class includes a color property
+
 ```html
 <li class="select-option-spice-themed color-alias-spice-mild">Mild</li>
 ```
 
 This method only works well when combined with utility color classes, otherwise, we are just creating the same amount of classes plus a "themed" class.
+
 <!-- TODO: Link to color utility class article -->
 
 <!-- TODO: Create codepen with example -->
 
 ## SVG's and currentColor
 
-The **currentColor** property is handy within SVG's too. By making icons "themable" without having to *reach* into the SVG using class or ID selectors. This approach works well when there is only one element within an SVG to color, otherwise, a class or ID selectors are a better tool.
+The **currentColor** property is handy within SVG's too. By making icons "themable" without having to _reach_ into the SVG using class or ID selectors. This approach works well when there is only one element within an SVG to color, otherwise, a class or ID selectors are a better tool.
 
 Say we want to color a chili icon with different colors for each spice level
 
@@ -90,6 +93,7 @@ Say we want to color a chili icon with different colors for each spice level
 One approach would be to create a new SVG for each spice level but creating many SVG's might also create an "out of sync" issue in the future where one icon is updated but the others are not.
 
 We can add **currentColor** as a value to the fill attribute
+
 ```xml
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
     <!-- Use currentColor for the main fill of the icon -->
@@ -101,27 +105,30 @@ We can add **currentColor** as a value to the fill attribute
     </g>
 </svg>
 ```
+
 This is not limited to the fill attribute, it can also be used with the **stroke** attribute or in CSS with the **fill** or **stroke** property.
 
 What I would do to color the icons is to create [color aliases](./article/color-system/#aliases) classes to represent the spice levels then include them in the HTML
 
 ```html
 <li class="color-alias-spice-mild">
-    <svg>
-        <!-- All the svg stuff you would expect in here -->
-    </svg>
-    <span>Mild</span>
+  <svg>
+    <!-- All the svg stuff you would expect in here -->
+  </svg>
+  <span>Mild</span>
 </li>
 <li class="color-alias-spice-hot">
-    <svg>
-        <!-- All the svg stuff you would expect in here -->
-    </svg>
-    <span>Hot</span>
+  <svg>
+    <!-- All the svg stuff you would expect in here -->
+  </svg>
+  <span>Hot</span>
 </li>
 ```
+
 There are [many ways to include an SVG](https://css-tricks.com/using-svg/) but for this example we are including it inline.
 
 Our icons will then appear colored with the colors in our color classes
+
 <ul style="list-style: none; text-align: center">
     <li class="color-alias-spice-mild">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" width="50" height="50" style="display: inline-block">
@@ -167,10 +174,10 @@ What if we don't want to color the text as well? We can prevent the color from b
 
 ```html
 <li class="color-alias-spice-mild">
-    <svg>
-        <!-- All the svg stuff you would expect in here -->
-    </svg>
-    <span class="color-alias-body-text">Mild</span>
+  <svg>
+    <!-- All the svg stuff you would expect in here -->
+  </svg>
+  <span class="color-alias-body-text">Mild</span>
 </li>
 ```
 
@@ -214,4 +221,5 @@ What if we don't want to color the text as well? We can prevent the color from b
 </ul>
 
 ## Related Resources
+
 This color naming system was talked about in a [previous post](./color-system/#numbered-colors) of mine.

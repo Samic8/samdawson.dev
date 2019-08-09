@@ -1,7 +1,7 @@
 ---
 title: Creating category pages for gatsby markdown blogs
 slug: gatsby-categories
-techs: ['GatsbyJS', 'React']
+techs: ["GatsbyJS", "React"]
 date: "2019-08-03"
 ---
 
@@ -12,6 +12,7 @@ Our end goal is to generate the pages **/category/GatsbyJS** and **/category/Rea
 ![Screenshot of a list of articles in the GatsbyJS category](./gatsby-categories.png)
 
 ## Markdown Frontmatter
+
 To categorize our articles we are going to include a property in our frontmatter called **categories**, which is an array of categories that the article belongs to
 
 ```yaml
@@ -19,17 +20,18 @@ To categorize our articles we are going to include a property in our frontmatter
 ---
 title: Markdown Category Pages with Gatsby
 slug: gatsby-categories
-categories: ['GatsbyJS', 'React']
+categories: ["GatsbyJS", "React"]
 date: "2019-08-01"
 ---
-
 This strategy is for creating category list pages from categories defined in markdown frontmatter...
 ```
 
-We are going to skip over the generating of the article pages themselves, the [Gatsby tutorials](https://www.gatsbyjs.org/tutorial/part-seven/#creating-pages) have a section on that or you can copy from the CodeSandbox embed at the bottom of this article. 
+We are going to skip over the generating of the article pages themselves, the [Gatsby tutorials](https://www.gatsbyjs.org/tutorial/part-seven/#creating-pages) have a section on that or you can copy from the CodeSandbox embed at the bottom of this article.
 
 ## Gatsby Configuration
+
 In the **gatsby-config.js** file you should have **gatsby-transformer-remark** included in your plugins with **gatsby-source-filesystem** pointing to the location of your markdown files
+
 ```js
 // gatsby-config.js
 module.exports = {
@@ -46,7 +48,7 @@ module.exports = {
 }
 ```
 
-All of our articles will go into the *src/articles* directory with the frontmatter format including *title*, *slug*, *categories* and *date*.
+All of our articles will go into the _src/articles_ directory with the frontmatter format including _title_, _slug_, _categories_ and _date_.
 
 Next in the **gatsby-node.js** file is where we want to build the pages. First, let's create a utility function that is going to do most of the work, it iterates over all of our articles and builds an array that only contains one of each category
 
@@ -66,8 +68,8 @@ function dedupeCategories(allMarkdownRemark) {
 }
 ```
 
-
 Then we are going to make use of the **dedupeCategories** function to generate our category pages
+
 ```js
 // gatsby-node.js
 exports.createPages = async ({ graphql, actions, reporter }) => {
@@ -119,6 +121,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 ```
 
 In **src/templates/CategoryList.js** that we referenced in the **createPage** function call we can use the context properties in our CategoryList props to generate the list of links to our articles
+
 ```js
 import React from "react"
 import { Link } from "gatsby"
@@ -144,8 +147,6 @@ export default CategoryList
 ```
 
 There you have it! we have category list pages being generated at build time in gatsby. Next up you just need to figure out how you want to link users to those category pages, maybe each post has a tag that the user can click on or your home page has a list of categories. Heres a full example on CodeSandbox with both the category list and article pages generated, with the homepage linking to each category
+
 <!-- TODO: Get oembed plugin working for codesandbox -->
 <iframe src="https://codesandbox.io/embed/category-pages-with-gatsby-ugj4m?fontsize=14" title="Category Pages with Gatsby" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden; margin-top: 50px" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
-
-
-

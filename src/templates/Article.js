@@ -5,7 +5,7 @@ import ArticleHeader from "../components/ArticleHeader"
 import "prism-themes/themes/prism-atom-dark.css"
 import "./Article.css"
 import SEO from "../components/SEO"
-import Content from "../components/Content";
+import Content from "../components/Content"
 
 export default function post({ data }) {
   return (
@@ -18,7 +18,6 @@ export default function post({ data }) {
         title={data.markdownRemark.frontmatter.title}
       ></ArticleHeader>
       <Content>
-
         <article
           className={"article text-sm sm:text-md text-black"}
           dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
