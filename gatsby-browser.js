@@ -4,4 +4,5 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-import './src/styles/global.css'
+import "./src/styles/base.css"
+import "./src/styles/global.css"

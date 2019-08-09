@@ -1,12 +1,5 @@
-@tailwind base;
 @tailwind components;
 @import "./components/link.css";
 @tailwind utilities;
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,600i,800&display=swap");
-body,
-html {
-  padding: 0 !important;
-  margin: 0 !important;
-  -webkit-font-smoothing: antialiased;
-}
