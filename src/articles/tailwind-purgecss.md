@@ -1,6 +1,6 @@
 ---
 title: A gotcha when using gatsby, tailwind and purgecss
-slug: purge-css-generated-files
+slug: gatsby-tailwind-purgecss
 techs: ["CSS", "Tailwindcss"]
 date: "2019-08-09"
 ---
