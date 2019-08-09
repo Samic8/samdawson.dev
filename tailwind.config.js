@@ -43,7 +43,7 @@ module.exports = {
       xl: "2.5rem",
     },
     fontFamily: {
-      header: `${systemFontStack}`,
+      header: `"Montserrat", ${systemFontStack}`,
       sans: `"Montserrat", ${systemFontStack}`,
     },
     extend: {
