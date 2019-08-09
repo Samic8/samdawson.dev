@@ -3,7 +3,7 @@
   right: 10px;
   top: 10px;
   bottom: -10px;
-  @apply absolute block left-0 bg-yellow-100 z-0 rounded border-gray-100 border transition-250 transition-ease transition-all;
+  @apply absolute block left-0 bg-yellow-100 z-0 rounded-sm border-gray-100 border transition-250 transition-ease transition-all;
 }
 
 .postListItem:hover::after {

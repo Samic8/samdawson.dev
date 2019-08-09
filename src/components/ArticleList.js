@@ -8,9 +8,7 @@ export default function ArticleList({ posts = [] }) {
   return (
     <ul className={"mx-auto relative z-10"}>
       {posts.map((post, index) => (
-        <>
-          <PostRow post={post} className={index > 0 ? "mt-16" : ""} />
-        </>
+        <PostRow post={post} className={index > 0 ? "mt-16" : ""} />
       ))}
     </ul>
   )
