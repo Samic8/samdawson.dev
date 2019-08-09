@@ -1,14 +1,9 @@
 const tailwind = require("tailwindcss")
 
 const purgecss = require("@fullhuman/postcss-purgecss")({
-  content: [
-    "./src/**/*.js",
-    "./node_modules/prismjs/prism.js",
-    "./public/article/**/*.html",
-    "./public/category/**/*.html",
-  ],
+  content: ["./src/**/*.js", "./node_modules/prismjs/prism.js"],
   defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || [],
-  whitelistPatternsChildren: [/article.*/, /body/, /html/],
+  whitelistPatternsChildren: [/body/, /html/],
 })
 
 module.exports = () => ({
