@@ -8,17 +8,18 @@ export default function ArticleList({ posts = [] }) {
   return (
     <ul className={"mx-auto relative z-10"}>
       {posts.map((post, index) => (
-        <PostRow post={post} className={index > 0 ? "mt-16" : ""} />
+        <PostRow
+          key={post.frontmatter.title}
+          post={post}
+          className={index > 0 ? "mt-16" : ""}
+        />
       ))}
     </ul>
   )
 }
 
 const PostRow = ({ post, className }) => (
-  <li
-    key={post.frontmatter.title}
-    className={`group relative ${styles.postListItem} ${className}`}
-  >
+  <li className={`group relative ${styles.postListItem} ${className}`}>
     <Link
       to={`article/${post.frontmatter.slug}`}
       className={`px-3 sm:px-6 block`}
