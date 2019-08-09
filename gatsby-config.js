@@ -7,6 +7,20 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-postcss`,
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        printRejected: true,
+        develop: false,
+        tailwind: true,
+        ignore: [
+          "/src/styles/base.css",
+          "prismjs/",
+          "Article.css",
+          "prism-themes/",
+        ],
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
