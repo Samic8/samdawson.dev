@@ -77,4 +77,4 @@ Not everything needs to be an alias. If you use a background color on the **page
 
 That's it. Depending on your flavor of CSS (pre-processors, CSS-in-JS) your implementation will look different. However you do it, come up with a system for your color usage. Both yourself for maintainability and your users for consistency will thank you.
 
-![Crane putting color swatches on conveyer belt](color-transparent.svg)
+![Crane putting color swatches on conveyer belt](color.svg)
