@@ -20,13 +20,13 @@ export const pageQuery = graphql`
           date(formatString: "MMM D, YYYY")
           featuredImage {
             childImageSharp {
-              fixed(width: 240) {
-                ...GatsbyImageSharpFixed
+              fluid(maxWidth: 240) {
+                ...GatsbyImageSharpFluid
               }
             }
           }
         }
-        excerpt(pruneLength: 200)
+        excerpt(pruneLength: 130)
       }
     }
   }

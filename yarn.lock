@@ -10064,6 +10064,13 @@ table@^5.2.3:
     slice-ansi "^2.1.0"
     string-width "^3.0.0"
 
+tailwindcss-transitions@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/tailwindcss-transitions/-/tailwindcss-transitions-2.0.1.tgz#cded7017ce461e70ed63fe1af6e1f9870cab94a0"
+  integrity sha512-WQSW0eqVb/isP1uys2gQQE4jywjCMh73z+90tsQ3ckXDYy6jS5Jpub6uNSLPRrKZFbyLBSEg/gxU3uCH6ulB+Q==
+  dependencies:
+    lodash "^4.17.11"
+
 tailwindcss@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-1.0.5.tgz#5145fd61f251be06a77748819e12fb126914095d"
