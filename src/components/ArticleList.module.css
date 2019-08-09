@@ -35,3 +35,8 @@
 .extraInfoGroup {
   transform: translateY(-5px);
 }
+
+.extraInfoContainer {
+  bottom: -30px;
+  @apply left-0 right-0;
+}
