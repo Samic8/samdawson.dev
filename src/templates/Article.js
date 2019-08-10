@@ -12,6 +12,10 @@ export default function post({ data }) {
     <Layout useColoredBackground>
       <SEO
         title={data.markdownRemark.frontmatter.title}
+        imageUrl={
+          data.markdownRemark.frontmatter.featuredImage &&
+          data.markdownRemark.frontmatter.featuredImage.publicURL
+        }
         description={data.markdownRemark.excerpt}
       />
       <ArticleHeader
@@ -33,6 +37,9 @@ export const query = graphql`
       html
       frontmatter {
         title
+        featuredImage {
+          publicURL
+        }
       }
       excerpt
     }
