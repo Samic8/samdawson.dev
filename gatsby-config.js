@@ -12,7 +12,7 @@ module.exports = {
       options: {
         tailwind: true,
         printRejected: true,
-        purgeOnly: [`src/css/global.css`],
+        purgeOnly: [`${__dirname}src/css/global.css`],
       },
     },
     `gatsby-plugin-react-helmet`,
