@@ -12,7 +12,6 @@ module.exports = {
       options: {
         tailwind: true,
         printRejected: true,
-        develop: true,
         purgeOnly: [`src/css/global.css`],
       },
     },
