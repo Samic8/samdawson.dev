@@ -10,15 +10,10 @@ module.exports = {
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
-        printRejected: true,
-        develop: false,
         tailwind: true,
-        ignore: [
-          "/src/styles/base.css",
-          "prismjs/",
-          "prism-themes/",
-          "Article.css",
-        ],
+        printRejected: true,
+        develop: true,
+        purgeOnly: [`src/css/global.css`],
       },
     },
     `gatsby-plugin-react-helmet`,
