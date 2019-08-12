@@ -23,7 +23,7 @@ export default function post({ data }) {
       ></ArticleHeader>
       <Content>
         <article
-          className={"article text-sm sm:text-md text-black"}
+          className={"article text-sm sm:text-base text-black"}
           dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
         />
       </Content>
