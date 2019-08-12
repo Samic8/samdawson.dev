@@ -80,10 +80,10 @@
   a:not(.anchor):not(.gatsby-resp-image-link)::after {
     content: "";
     display: block;
-    margin-top: -3px;
+    margin-top: -1px;
     height: 2px;
     width: 100%;
-    @apply bg-purple-400 absolute;
+    @apply bg-purple-400 absolute opacity-75;
     transition: 0.15s width ease, 0.1s background-color ease;
   }
 
