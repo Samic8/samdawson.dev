@@ -47,7 +47,7 @@
     left: -1.25rem;
 
     @screen sm {
-      width: auto !important;
+      width: 100% !important;
       left: 0;
       @apply rounded-lg;
     }
