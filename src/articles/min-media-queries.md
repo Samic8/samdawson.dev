@@ -10,67 +10,69 @@ I didn't realize I was making media queries more complicated then they needed to
 <!-- TODO prevent formating? -->
 
 ```css
-/* sm */
 @media (min-width: 640px) {
+  /* sm */
 }
-/* md */
 @media (min-width: 768px) {
+  /* md */
 }
-/* lg */
 @media (min-width: 1024px) {
-}
-/* xl */
-@media (min-width: 1280px) {
+  /* lg */
 }
 ```
 
 Notice that they are all **min-width** media queries. I don't about you, but I normally am doing these kinds of media queries.
 
 ```css
-/* mobile */
 @media (min-width: 640px) and (max-width: 767px) {
+  /* mobile */
 }
-/* tablet */
 @media (min-width: 768px) and (max-width: 1023px) {
+  /* tablet */
 }
-/* medium */
-@media (min-width: 1024px) and (max-width: 1279px) {
-}
-/* desktop */
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
+  /* desktop */
 }
 ```
 
-Notice that I am also having to handle -1px from the next queries min-width in the max-width's to avoid overlap.
+Notice that I am also having to minus one pixel from the next queries min-width in the max-width's to avoid overlap.
 
-The reason I was defaulting to the min/max-width method was due to not having control over the [cascade](https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade). For example, if the **md** query appears after the **xl** query in the cascade it might not do what you expect.
+When using min-width only queries it helps you think in a mobile first way, the base properties of a class is for the smallest screen and then you make overrides from there. I found it also helps avoid duplication, instead of having to define the same properties for two different queries that are after one another in screen width.
+
+## Specificity and @media
+
+Media queries [don't increase specificity](https://css-tricks.com/how-much-specificity-do-rules-have-like-keyframes-and-media/) on their own. If a (min-width: 200px) query appears after a (min-width: 400px) query in the cascade it might not do what you expect.
 
 https://codepen.io/Samic8/pen/OJLyjNV
 
-The way tailwind gets away with using the min-width only approach is that all of the media queries are included in the order from smallest to largest.
+Tailwind includes all of its media queries after any other classes so that the classes containing queries will have a higher specificity.
 
 ```css
-/* sm */
+/* Other classes (components) */
+.btn {
+  color: blue;
+}
+
+/* Media Queries */
 @media (min-width: 640px) {
-  .sm:text-base {
+  .sm\:text-base {
     font-size: 16px;
   }
-  .sm:text-lg {
+  .sm\:text-lg {
     font-size: 20px;
   }
 }
-/* md */
 @media (min-width: 768px) {
-  .md:text-base {
+  .md\:text-base {
     font-size: 16px;
   }
-  .md:text-lg {
+  .md\:text-lg {
     font-size: 20px;
   }
 }
 ```
 
-_PLUS_ all of the media queries are included after any other classes so they will always have higher specificity. Tailwinds classes all have very low specificity which also makes this approach work, you can still create classes that have higher specificity even if they before the media queries.
+Tailwinds classes all have very low specificity which makes this approach work. If you really want you can still create classes that have higher specificity even if they before the media queries.
 
 ```css
 button.btn {
