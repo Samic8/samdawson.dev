@@ -55,6 +55,7 @@ module.exports = {
   },
   variants: {
     opacity: ["responsive", "hover", "focus", "group-hover"],
+    borderColor: ["responsive", "hover", "focus", "focus-within"],
   },
   plugins: [
     require("tailwindcss-transitions")(),
