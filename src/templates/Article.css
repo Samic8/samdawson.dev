@@ -9,7 +9,7 @@
 
 .article {
   h2 {
-    @apply text-md font-bold mt-20 mb-3;
+    @apply text-lg font-bold mt-20 mb-3;
   }
 
   p {
@@ -21,7 +21,7 @@
   }
 
   h3 {
-    @apply text-base font-bold mt-10 mb-3;
+    @apply text-md font-bold mt-10 mb-3;
   }
 
   img {
@@ -37,7 +37,7 @@
   }
 
   pre[class*="language-"] {
-    @apply leading-snug mb-20 mt-10 rounded-none;
+    @apply leading-snug mb-10 mt-10 rounded-none;
   }
 
   pre[class*="language-"],
@@ -45,6 +45,12 @@
     @apply leading-snug relative;
     width: calc(100% + 2.5rem) !important;
     left: -1.25rem;
+
+    @screen sm {
+      width: 100% !important;
+      left: 0;
+      @apply rounded-lg;
+    }
   }
 
   pre.language-css::before {
