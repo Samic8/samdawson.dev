@@ -1,9 +1,13 @@
 ---
-title: Using min-width media queries by default
-slug: min-media-queries
+title: Media queries
+slug: media-queries
 techs: ["CSS", "Tailwindcss"]
-date: "2019-08-12"
+date: "2019-08-19"
 ---
+
+<!-- TODO: Add intro -->
+
+## min-width media query approach
 
 I didn't realize I was making media queries more complicated then they needed to be before trying out [Tailwind](https://tailwindcss.com/). Tailwind is a CSS framework/library that generates utility classes. We don't need to go into any specifics about tailwind, but basically, it comes with some media queries built-in.
 
@@ -21,7 +25,7 @@ I didn't realize I was making media queries more complicated then they needed to
 }
 ```
 
-Notice that they are all **min-width** media queries. I don't about you, but I normally am doing these kinds of media queries.
+Notice that they are all _min-width_ media queries. I don't about you, but I normally am doing these kinds of media queries.
 
 ```css
 @media (min-width: 640px) and (max-width: 767px) {
@@ -35,17 +39,15 @@ Notice that they are all **min-width** media queries. I don't about you, but I n
 }
 ```
 
-Notice that I am also having to minus one pixel from the next queries min-width in the max-width's to avoid overlap.
-
-When using min-width only queries it helps you think in a mobile first way, the base properties of a class is for the smallest screen and then you make overrides from there. I found it also helps avoid duplication, instead of having to define the same properties for two different queries that are after one another in screen width.
+I realized using min-width only queries helps me think in a mobile first way. All of the queries start at the smallest resolution and then you only do overrides from there. I find that it also reduces duplication compared to my min/max approach, e.g. if I don't override "sm" size then it will flow through to the larger size media queries too.
 
 ## Specificity and @media
 
-Media queries [don't increase specificity](https://css-tricks.com/how-much-specificity-do-rules-have-like-keyframes-and-media/) on their own. If a (min-width: 200px) query appears after a (min-width: 400px) query in the cascade it might not do what you expect.
+Media queries [don't increase specificity](https://css-tricks.com/how-much-specificity-do-rules-have-like-keyframes-and-media/) on their own. If a (min-width: 200px) query appears after a (min-width: 400px) query the _200px_ query will take precedence.
 
 https://codepen.io/Samic8/pen/OJLyjNV
 
-Tailwind includes all of its media queries after any other classes so that the classes containing queries will have a higher specificity.
+Tailwind includes all of its media queries after any other classes which means that the classes containing queries will have a higher specificity.
 
 ```css
 /* Other classes (components) */
@@ -87,15 +89,13 @@ button.btn {
 }
 ```
 
-## How can we use this knowledge for to use practically?
+## How can this knowledge improve your codebase?
 
-### Cascade and media queries
+It depends what type of CSS you are writing, lets look at the different types:
 
-The main thing I have learnt here is that
+### Componentized CSS
 
-### Componentised CSS
-
-When writting CSS where you are not using many utility classes the cascade issue is less of a problem. Because you just write all of your queries together and controll the order
+In cases where your not using many utility classes the cascade issue is less of a problem. Because you just write all of your queries together and control the order.
 
 ```scss
 .btn {
@@ -109,38 +109,9 @@ When writting CSS where you are not using many utility classes the cascade issue
 }
 ```
 
-### Utility CSS
+### Utility + Componentized CSS
 
-<!-- TODO: Link this to CSS-group about our utility classes -->
-
-If you are using lots of utility classes then like tailwind the best approach here might be to include all of your utility classes after your component CSS.
-
-```scss
-// Utility Classes
-.large-text {
-  @media screen and (min-width: 700px) {
-    font-size: 20px;
-  }
-  @media screen and (min-width: 700px) {
-    font-size: 24px;
-  }
-}
-
-// Component Classes
-.btn {
-  font-size: 16px;
-}
-```
-
-Because the `@media` at-rule does not increase specificity (nor do any other at-rules) if both of those classes were applied it might not do what you expect
-
-<!-- TODO: maybe something more visual then font size -->
-
-```html
-<div class="btn large-text">Hi!</div>
-```
-
-but if the utility classes are included after it might do more of what you want. Because the cascade increases the specificity.
+If you are using lots of utility classes then like tailwind the best approach might be to include all of your utility classes after your component CSS.
 
 ```scss
 // Component Classes
@@ -159,32 +130,6 @@ but if the utility classes are included after it might do more of what you want.
 }
 ```
 
-but if you want to use two class on a element and both of those have media queries then the cascade becomes a problem again
+Because the @media at-rule does not increase specificity (nor do any other at-rules) if the utility classes appeared first in the cascade adding both the 'btn' and 'large-text' classes to a element would result in the font-size always being 16px.
 
-```css
-.large-font {
-  @screen sm {
-    font-size: 22px;
-  }
-
-  @screen md {
-    font-size: 30px;
-  }
-}
-```
-
-<!-- TODO: test this out in a codepen -->
-
-```html
-<button class="btn large-font"></button>
-```
-
-You could get around this by including all of your media queries in the one file, but with that approach you would have to jump between files when editing CSS for class.
-
-<!-- TODO: example? -->
-
-There might be inventive ways that you could achieve the min-width only approach in non-tailwind projects. Maybe with a webpack loader that extracts all your media queries and puts them in order. But that seems a bit magical.
-
-I found that the min-width only media query made my CSS easier to understand, it kind of forces you to think about things in a mobile-first way. All of your queries start at the smallest resolution and then you only do overrides from there. I find that it also reduces duplication compared to my other approach, e.g. if I don't override "sm" size then it will flow through to the larger size media queries too.
-
-<!-- TODO: Does this still apply if you use the @screen approach in tailwind? https://codesandbox.io/s/tailwindcss-template-y6nne -->
+<!-- TODO: Add conclusion -->
