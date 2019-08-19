@@ -87,11 +87,11 @@ button.btn {
 }
 ```
 
-## How can this knowledge improve your CSS outside of Tailwind?
+## How can this knowledge improve your CSS outside of tailwind?
 
 It depends on what type of CSS you are writing, let's look at the different types:
 
-### Componentized Classes
+### Componentized classes
 
 In cases where your not using many utility classes the cascade issue is less of a problem. Because you just write all of your queries together and control the order.
 
@@ -107,7 +107,7 @@ In cases where your not using many utility classes the cascade issue is less of 
 }
 ```
 
-### Utility + Componentized Classes
+### Utility + componentized classes
 
 If you are using lots of utility classes then like in tailwind the best approach might be to include all of your utility classes after your component CSS.
 
