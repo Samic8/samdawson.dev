@@ -1,15 +1,15 @@
 ---
-title: Media queries
-slug: media-queries
+title: Things I learnt about media queries from Tailwind
+slug: media-queries-tailwind
 techs: ["CSS", "Tailwindcss"]
 date: "2019-08-19"
 ---
 
-<!-- TODO: Add intro -->
+I learnt some things about media queries while looking into how they are used in [Tailwind](https://tailwindcss.com/). It's a CSS framework/library that generates utility classes, no prior knowledge about it is needed to follow along.
 
 ## min-width media query approach
 
-I didn't realize I was making media queries more complicated then they needed to be before trying out [Tailwind](https://tailwindcss.com/). Tailwind is a CSS framework/library that generates utility classes. We don't need to go into any specifics about tailwind, but basically, it comes with some media queries built-in.
+I didn't realize I was making media queries more complicated then they needed to be. Tailwind comes with some media queries built-in.
 
 <!-- TODO prevent formating? -->
 
@@ -25,7 +25,7 @@ I didn't realize I was making media queries more complicated then they needed to
 }
 ```
 
-Notice that they are all _min-width_ media queries. I don't about you, but I normally am doing these kinds of media queries.
+Notice that they are all _min-width_ media queries. I don't about you, but I normally do these kinds of media queries.
 
 ```css
 @media (min-width: 640px) and (max-width: 767px) {
@@ -39,7 +39,7 @@ Notice that they are all _min-width_ media queries. I don't about you, but I nor
 }
 ```
 
-I realized using min-width only queries helps me think in a mobile first way. All of the queries start at the smallest resolution and then you only do overrides from there. I find that it also reduces duplication compared to my min/max approach, e.g. if I don't override "sm" size then it will flow through to the larger size media queries too.
+I realized using min-width only queries helps me think in a mobile first way. All of the queries start at the smallest resolution and then I only do overrides from there. I find that it also reduces duplication compared to my min/max approach _e.g._ if I don't override "sm" size then it will flow through to larger screens as well.
 
 ## Specificity and @media
 
@@ -89,11 +89,11 @@ button.btn {
 }
 ```
 
-## How can this knowledge improve your codebase?
+## How can this knowledge improve your CSS outside of Tailwind?
 
 It depends what type of CSS you are writing, lets look at the different types:
 
-### Componentized CSS
+### Componentized Classes
 
 In cases where your not using many utility classes the cascade issue is less of a problem. Because you just write all of your queries together and control the order.
 
@@ -109,17 +109,17 @@ In cases where your not using many utility classes the cascade issue is less of 
 }
 ```
 
-### Utility + Componentized CSS
+### Utility + Componentized Classes
 
-If you are using lots of utility classes then like tailwind the best approach might be to include all of your utility classes after your component CSS.
+If you are using lots of utility classes then like in tailwind the best approach might be to include all of your utility classes after your component CSS.
 
 ```scss
-// Component Classes
+/* Component Classes */
 .btn {
   font-size: 16px;
 }
 
-// Utility Classes
+/* Utility Classes */
 .large-text {
   @media screen and (min-width: 700px) {
     font-size: 20px;
@@ -130,6 +130,6 @@ If you are using lots of utility classes then like tailwind the best approach mi
 }
 ```
 
-Because the @media at-rule does not increase specificity (nor do any other at-rules) if the utility classes appeared first in the cascade adding both the 'btn' and 'large-text' classes to a element would result in the font-size always being 16px.
+Because the _@media_ [at-rule](https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule) does not increase specificity (nor do any other at-rules) if the utility classes appeared first in the cascade adding both the "btn" and "large-text" classes to a element would result in the font-size always being 16px.
 
-<!-- TODO: Add conclusion -->
+I think the main takeaway from all of this is to be more aware of how the cascade effects media queries and learn how to work with that instead of fighting against it with **!important**.
