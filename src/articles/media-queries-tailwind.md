@@ -1,17 +1,15 @@
 ---
-title: Things I learnt about media queries from Tailwind
+title: Things I learned about media queries from Tailwind
 slug: media-queries-tailwind
 techs: ["CSS", "Tailwindcss"]
 date: "2019-08-19"
 ---
 
-I learnt some things about media queries while looking into how they are used in [Tailwind](https://tailwindcss.com/). It's a CSS framework/library that generates utility classes, no prior knowledge about it is needed to follow along.
+I learned some things about media queries while looking into how they are used in [Tailwind](https://tailwindcss.com/). It's a CSS framework/library that generates utility classes, no prior knowledge about it is needed to follow along.
 
 ## min-width media query approach
 
 I didn't realize I was making media queries more complicated then they needed to be. Tailwind comes with some media queries built-in.
-
-<!-- TODO prevent formating? -->
 
 ```css
 @media (min-width: 640px) {
@@ -74,7 +72,7 @@ Tailwind includes all of its media queries after any other classes which means t
 }
 ```
 
-Tailwinds classes all have very low specificity which makes this approach work. If you really want you can still create classes that have higher specificity even if they before the media queries.
+Tailwinds classes all have very low specificity which makes this approach work. If you want you can still create classes that have higher specificity even if they before the media queries.
 
 ```css
 button.btn {
@@ -91,7 +89,7 @@ button.btn {
 
 ## How can this knowledge improve your CSS outside of Tailwind?
 
-It depends what type of CSS you are writing, lets look at the different types:
+It depends on what type of CSS you are writing, let's look at the different types:
 
 ### Componentized Classes
 
@@ -130,6 +128,6 @@ If you are using lots of utility classes then like in tailwind the best approach
 }
 ```
 
-Because the _@media_ [at-rule](https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule) does not increase specificity (nor do any other at-rules) if the utility classes appeared first in the cascade adding both the "btn" and "large-text" classes to a element would result in the font-size always being 16px.
+Because the _@media_ [at-rule](https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule) does not increase specificity (nor do any other at-rules) if the utility classes appeared first in the cascade adding both the "btn" and "large-text" classes to an element would result in the font-size always being 16px.
 
 I think the main takeaway from all of this is to be more aware of how the cascade effects media queries and learn how to work with that instead of fighting against it with **!important**.
