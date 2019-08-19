@@ -5,7 +5,7 @@ techs: ["CSS", "Tailwindcss"]
 date: "2019-08-19"
 ---
 
-I learned some things about media queries while looking into how they are used in [Tailwind](https://tailwindcss.com/). It's a CSS framework/library that generates utility classes, no prior knowledge about it is needed to follow along.
+I learned some things about media queries while looking into how they are used in [Tailwind](https://tailwindcss.com/). It's a CSS library that generates utility classes, no prior knowledge about it is needed to follow along.
 
 ## min-width media query approach
 
