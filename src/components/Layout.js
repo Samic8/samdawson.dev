@@ -52,7 +52,7 @@ const Layout = ({ children, useColoredBackground }) => {
           {success === null && (
             <form
               onSubmit={handleSubmit}
-              className="h-16 max-w-sm flex mx-auto mt-8 border border-gray-100 rounded focus-within:border-gray-500"
+              className="h-16 max-w-sm flex mx-auto mt-8 border border-gray-100 rounded focus-within:border-gray-500 bg-white"
             >
               <input
                 className="flex-grow flex-shrink min-w-0 pl-4 text-gray-800 outline-none rounded"
