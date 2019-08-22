@@ -2,7 +2,7 @@
 title: Just in time thinking
 slug: just-in-time-thinking
 techs: ["React"]
-date: "2019-09-22"
+date: "2019-08-22"
 ---
 
 "Just in time thinking" is a tool for determining how much of a component to build. It's a lazy approach, only building as much as you need of a component (or function, etc.) when you need it.
