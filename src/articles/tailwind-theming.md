@@ -86,7 +86,7 @@ I wanted each section to be independent so that the built websites colors didn't
 
 Similar to the examples earlier in the post I used both a :root theme and a class selector
 
-````html
+```html
 <body>
   <section>
     <h1>Single Product Store</h1>
@@ -97,7 +97,8 @@ Similar to the examples earlier in the post I used both a :root theme and a clas
     <!-- This uses "website-preview" color theme -->
   </section>
 </body>
-```html Let me know of any other approaches you have come up with for tailwind
+```
+
+Let me know of any other approaches you have come up with for tailwind
 theming maybe there is a sweet tailwind plugin that abstracts some of the class
 creation away, or you have come up with a different approach altogether.
-````
