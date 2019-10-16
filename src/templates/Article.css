@@ -83,22 +83,14 @@
     transition: 0.1s background-color ease;
   }
 
-  a:not(.anchor):not(.gatsby-resp-image-link)::after {
-    content: "";
-    display: block;
-    margin-top: -1px;
-    height: 2px;
-    width: 100%;
-    @apply bg-purple-400 absolute opacity-75;
-    transition: 0.15s width ease, 0.1s background-color ease;
+  a:not(.anchor) {
+    text-decoration-color: theme("colors.purple.400");
+    text-decoration-thickness: 0.125em;
+    text-underline-offset: 3px;
+    @apply underline;
   }
 
   a:hover {
     @apply text-purple-700;
-  }
-
-  a:not(.anchor):not(.gatsby-resp-image-link):hover::after {
-    width: 100%;
-    @apply bg-purple-500 h-1;
   }
 }
