@@ -76,13 +76,6 @@
     @apply mb-5 ml-5;
   }
 
-  a {
-    @apply inline-block text-gray-900 relative;
-
-    cursor: pointer;
-    transition: 0.1s background-color ease;
-  }
-
   a:not(.anchor) {
     text-decoration-color: theme("colors.purple.400");
     text-decoration-thickness: 0.125em;
