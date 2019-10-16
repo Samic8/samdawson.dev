@@ -41,10 +41,7 @@ const Layout = ({ children, useColoredBackground }) => {
           </div>
         </div>
       </div>
-      <footer
-        className="pt-12 pb-20 mt-10"
-        style={{ backgroundColor: "#FAFAFA" }}
-      >
+      <footer className="pt-12 pb-20 mt-10 bg-yellow-100">
         <h2 className="text-gray-800 text-md sm:text-lg font-bold max-w-xs leading-tight mx-auto text-center">
           Get a summary of my articles every month
         </h2>

@@ -26,10 +26,16 @@ const PostRow = ({ post, className }) => (
     >
       <article className={"flex flex-col sm:flex-row z-10 relative"}>
         <div className={"pt-6"}>
-          <div className={"font-header"}>
-            <h1 className="font-bold text-md mb-3 sm:text-lg text-gray-900 leading-tight font-extrabold">
+          <div className={"font-header mb-1"}>
+            <h1 className="font-bold underline text-md sm:text-lg text-gray-900 leading-tight font-extrabold hover:bg-yellow-100">
               {post.frontmatter.title}
             </h1>
+            <div className="flex items-center">
+              <Calendar className="mr-1 stroke-current text-gray-500 w-4 h-4" />
+              <time className="font-bold text-xsm text-gray-700">
+                {post.frontmatter.date}
+              </time>
+            </div>
           </div>
           <p className="text-sm leading-tight sm:leading-tight sm:text-base text-gray-800">
             {post.excerpt}
@@ -42,24 +48,6 @@ const PostRow = ({ post, className }) => (
               fluid={post.frontmatter.featuredImage.childImageSharp.fluid}
             />
           )}
-        </div>
-        <div
-          className={`absolute right-0 bottom-0 ${styles.extraInfoContainer} flex justify-end`}
-        >
-          <div
-            className={
-              "transition-transform transition-250 transition-ease-out inline-block -translate-y-1 group-hover:translate-y-0"
-            }
-          >
-            <div
-              className={
-                "flex items-center pl-2 py-1 mr-4 text-xsm tracking-wide font-bold text-gray-700 uppercase transition-opacity transition-250 transition-ease opacity-0 group-hover:opacity-100"
-              }
-            >
-              <Calendar className="mr-1 stroke-current text-gray-500" />
-              <time>{post.frontmatter.date}</time>
-            </div>
-          </div>
         </div>
       </article>
     </Link>
