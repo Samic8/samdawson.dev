@@ -40,13 +40,17 @@ Those color vars that are referenced in the config file then need to be created 
 Anything under root would be your "default" theme. When you want to apply the "funky-theme" you include that class at the top-level element that contains all of the elements you want to theme (this could be the body or a small section of the page).
 
 ```html
-    <body>
-    	<div>Pretty default themed in here<div>
-      <section class="funky-theme">All funky themed in here</section>
-    </body>
+<body>
+  <div>Pretty default themed in here<div>
+  <section class="funky-theme">All funky themed in here</section>
+</body>
 ```
 
-Thats it! Now if you want to instead want to create your theme with primary (and secondary etc) colors you can do that with some small differences in the config.
+Thats it!
+
+## Primary, Secondary etc approach
+
+Now if you want to instead want to create your theme with primary (and secondary etc) colors you can do that with some small differences in the config.
 
 ```js
 // tailwind.config.js
@@ -64,17 +68,17 @@ module.exports = {
 
 ```css
 :root {
-  --color-primary: #55d3b8;
-  --color-secondary: #2c947e;
+  --color-primary: theme("colors.teal.100");
+  --color-secondary: theme("colors.yellow.500");
 }
 
 .funky-theme {
-  --color-primary: #80f7dd;
-  --color-secondary: #5dd6bc;
+  --color-primary: theme("colors.red.800");
+  --color-secondary: theme("colors.green.500");
 }
 ```
 
-Most likely with theming (e.g dark theme) this approach is going to be more useful.
+Most likely with theming (e.g dark theme) this approach is going to be more useful. You also get to maintain your colors defined in the tailwind config and can reference them through the "theme" function.
 
 ## A real-world example
 
