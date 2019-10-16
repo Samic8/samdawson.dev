@@ -76,6 +76,10 @@
     @apply mb-5 ml-5;
   }
 
+  .anchor {
+    margin-top: 6px;
+  }
+
   a:not(.anchor) {
     text-decoration-color: theme("colors.purple.400");
     text-decoration-thickness: 0.125em;

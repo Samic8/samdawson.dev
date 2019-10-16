@@ -1,3 +1,5 @@
+const poundIcon = require("./pound-icon")
+
 module.exports = {
   siteMetadata: {
     title: `samdawson.dev`,
@@ -111,7 +113,12 @@ module.exports = {
               // existing language" below.
             },
           },
-          `gatsby-remark-autolink-headers`,
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              icon: poundIcon,
+            },
+          },
           {
             resolve: `gatsby-plugin-sitemap`,
             options: {
