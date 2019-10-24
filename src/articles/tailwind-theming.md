@@ -1,5 +1,5 @@
 ---
-title: Tailwind Theming with CSS Variables
+title: Tailwind theming with CSS variables
 slug: tailwind-theming
 techs: ["Tailwindcss"]
 date: "2019-10-14"

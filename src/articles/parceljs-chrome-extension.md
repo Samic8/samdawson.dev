@@ -1,5 +1,5 @@
 ---
-title: Creating a chrome extension with Parcel
+title: Creating a chrome extension with parcel
 slug: parceljs-chrome-extension
 techs: ["react"]
 date: "2019-10-24"
