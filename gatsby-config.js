@@ -62,6 +62,12 @@ module.exports = {
         plugins: [
           {
             resolve: `@raae/gatsby-remark-oembed`,
+            options: {
+              usePrefix: true,
+              providers: {
+                include: ["Codepen", "CodeSandbox"],
+              },
+            },
           },
           {
             resolve: `gatsby-remark-images`,
