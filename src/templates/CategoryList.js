@@ -14,7 +14,7 @@ const CategoryList = ({
   const title = `${tech.substring(0, 1).toUpperCase() + tech.substring(1)}`
 
   return (
-    <Layout center>
+    <Layout center isCategoriesOpenInitialState={true}>
       <SEO title={title} />
       <Content>
         <CategoryListHeader title={title} tech={tech} />

@@ -5,7 +5,7 @@ import { dedupeTechs } from "../utility/data"
 import TechList from "./TechList"
 import DownArrow from "../svgs/down-arrow.svg"
 
-const Header = () => {
+const Header = ({ isCategoriesOpenInitialState }) => {
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark {
@@ -21,7 +21,9 @@ const Header = () => {
   `)
   const dedupedTechs = dedupeTechs(data.allMarkdownRemark)
 
-  const [isCategoriesOpen, setCategoriesOpen] = useState(false)
+  const [isCategoriesOpen, setCategoriesOpen] = useState(
+    isCategoriesOpenInitialState || false
+  )
 
   return (
     <div className={"z-10"}>

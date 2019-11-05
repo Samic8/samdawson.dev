@@ -4,7 +4,11 @@ import addToMailchimp from "gatsby-plugin-mailchimp"
 
 import Header from "./Header"
 
-const Layout = ({ children, useColoredBackground }) => {
+const Layout = ({
+  children,
+  useColoredBackground,
+  isCategoriesOpenInitialState,
+}) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -32,7 +36,10 @@ const Layout = ({ children, useColoredBackground }) => {
           "flex flex-col items-stretch mx-auto max-w-5xl sm:overflow-hidden"
         }
       >
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header
+          siteTitle={data.site.siteMetadata.title}
+          isCategoriesOpenInitialState={isCategoriesOpenInitialState}
+        />
         <div
           className={`font-sans flex flex-shrink flex-grow min-w-0 px-5 sm:px-10 pb-10`}
         >
