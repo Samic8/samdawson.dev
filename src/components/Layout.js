@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import addToMailchimp from "gatsby-plugin-mailchimp"
+import ReactGA from "react-ga"
 
 import Header from "./Header"
 
@@ -29,6 +30,10 @@ const Layout = ({
       PATHNAME: window.location.href.replace("https://www.samdawson.dev", ""),
     })
     setSuccess(result.result === "success")
+    ReactGA.event({
+      category: "Subscription",
+      action: "User clicked subscribe button",
+    })
   }
 
   return (
