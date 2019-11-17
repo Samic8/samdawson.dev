@@ -1,7 +1,7 @@
 ---
 title: Reacts missing conditional class utility
 slug: reacts-missing-conditional-class-utility
-techs: ["react"]
+techs: ["React"]
 date: "2019-11-17"
 ---
 
