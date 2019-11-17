@@ -1,5 +1,6 @@
 import React from "react"
 import GatsbyLink from "gatsby-link"
+import { getActiveClasses } from "get-active-classes"
 
 export default function Button({ children, className, size, ...props }) {
   const sizes = {
@@ -8,7 +9,11 @@ export default function Button({ children, className, size, ...props }) {
   }
   return (
     <GatsbyLink
-      className={`inline-block text-white rounded-sm font-bold capitalize cursor-pointer ${sizes[size]} ${className}`}
+      className={getActiveClasses(
+        `inline-block text-white rounded-sm font-bold capitalize cursor-pointer`,
+        sizes[size],
+        className
+      )}
       {...props}
     >
       {children}
