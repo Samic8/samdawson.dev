@@ -25,7 +25,9 @@ const Layout = ({
   const handleSubmit = async e => {
     e.preventDefault()
     if (!email) return
-    const result = await addToMailchimp(email)
+    const result = await addToMailchimp(email, {
+      PATHNAME: window.location.href.replace("https://www.samdawson.dev/", ""),
+    })
     setSuccess(result.result === "success")
   }
 
