@@ -11,7 +11,7 @@ My first attempt was using vanilla JS, quickly I missed the convenience of React
 
 My extension needed three "entries" (stand-alone files/apps) options.html, popup.html and content.js.
 
-I gave parceljs a go and it seemed like a perfect fit. I could run
+I gave [parcel](https://parceljs.org/) a go and it seemed like a perfect fit. I could run
 
 ```
 parcel build src/content.tsx src/options.html src/popup.html
