@@ -4846,10 +4846,10 @@ gauge@~2.7.3:
     strip-ansi "^3.0.1"
     wide-align "^1.1.0"
 
-get-active-classes@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/get-active-classes/-/get-active-classes-0.0.6.tgz#46f16d8e18a1dcc05a7013b01c562f7c0df5f61d"
-  integrity sha512-4MPW2sZykThHYpjHgQxFhAPGKe6XhOUgo5q2P2JvWrZcqlD/73qV9hO7OMnSgD031dfnSxOoQzK5nCixa3zHgQ==
+get-active-classes@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/get-active-classes/-/get-active-classes-0.0.7.tgz#ba2693a5acaed9a5a0f5a2c8c8254be01c4c9803"
+  integrity sha512-03t5OAHocZwEQQdBJmPiGdZNZW1fUxzyTormjIlUtAf3F4ZzbrwOYFUL1VFJpPBCvOSn4twGqtnQ08RKXf9qvw==
 
 get-caller-file@^1.0.1:
   version "1.0.3"

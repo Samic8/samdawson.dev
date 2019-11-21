@@ -5,11 +5,11 @@ techs: ["React"]
 date: "2019-11-17"
 ---
 
-At [accelo](https://www.accelo.com/) we are in the process of transitioning from AngularJS to React. React does not come with a utility for conditionally applying classes the same way AngularJS has [ng-class](https://docs.angularjs.org/api/ng/directive/ngClass). For me, this is a replacement for [ng-class](https://docs.angularjs.org/api/ng/directive/ngClass) in React.
+AngularJS has [ng-class](https://docs.angularjs.org/api/ng/directive/ngClass) for conditionally applying classes. This is a replacement for that in React.
 
-We are opting to not introduce a CSS-in-JS library and continue with our existing CSS/Sass approach. With a CSS-in-JS library you might have your conditional styling in this Javascript itself.
+At [accelo](https://www.accelo.com/) we are in the process of transitioning from AngularJS to React. We are not using a CSS-in-JS library, where you might have your conditional styling in the Javascript itself and have no need for this utility.
 
-This utility is framework agnostic so it can be used in Vue (etc) despite the click-bait title of this article.
+This is framework agnostic so it can be used in Vue (etc) despite the click-bait title of this article.
 
 This replacement allows you to do the following (the classes use [BEM syntax](https://css-tricks.com/bem-101/)).
 
