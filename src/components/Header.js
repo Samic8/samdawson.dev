@@ -49,7 +49,7 @@ const Header = ({ isCategoriesOpenInitialState }) => {
         >
           <a
             href="#footer"
-            className="mr-5 hover:text-gray-500"
+            className="mr-5 hover:text-gray-500 hidden sm:inline"
             onClick={() => {
               ReactGA.event({
                 category: "Action",
