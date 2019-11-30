@@ -47,6 +47,12 @@ const Header = ({ isCategoriesOpenInitialState }) => {
             "border-l border-gray-100 my-3 flex items-center tracking-wide text-gray-700 pl-6 font-bold text-xsm"
           }
         >
+          <a
+            href="#footer"
+            className="mr-5 hover:text-gray-500 hidden sm:inline"
+          >
+            NEWSLETTER
+          </a>
           <Link to={"/articles"} className="mr-2 hover:text-gray-500">
             ARTICLES
           </Link>
