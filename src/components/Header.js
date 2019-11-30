@@ -3,6 +3,7 @@ import HeadshotImage from "./Image"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import { dedupeTechs } from "../utility/data"
 import TechList from "./TechList"
+import ReactGA from "react-ga"
 
 const Header = ({ isCategoriesOpenInitialState }) => {
   const data = useStaticQuery(graphql`
@@ -46,7 +47,16 @@ const Header = ({ isCategoriesOpenInitialState }) => {
             "border-l border-gray-100 my-3 flex items-center tracking-wide text-gray-700 pl-6 font-bold text-xsm"
           }
         >
-          <a href="#footer" className="mr-5 hover:text-gray-500">
+          <a
+            href="#footer"
+            className="mr-5 hover:text-gray-500"
+            onClick={() => {
+              ReactGA.event({
+                category: "Action",
+                action: "User clicked newsletter button",
+              })
+            }}
+          >
             NEWSLETTER
           </a>
           <Link to={"/articles"} className="hover:text-gray-500">
