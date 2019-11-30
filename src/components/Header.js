@@ -3,7 +3,6 @@ import HeadshotImage from "./Image"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import { dedupeTechs } from "../utility/data"
 import TechList from "./TechList"
-import DownArrow from "../svgs/down-arrow.svg"
 
 const Header = ({ isCategoriesOpenInitialState }) => {
   const data = useStaticQuery(graphql`
@@ -47,21 +46,12 @@ const Header = ({ isCategoriesOpenInitialState }) => {
             "border-l border-gray-100 my-3 flex items-center tracking-wide text-gray-700 pl-6 font-bold text-xsm"
           }
         >
-          <a
-            href="#footer"
-            className="mr-5 hover:text-gray-500 hidden sm:inline"
-          >
+          <a href="#footer" className="mr-5 hover:text-gray-500">
             NEWSLETTER
           </a>
-          <Link to={"/articles"} className="mr-2 hover:text-gray-500">
+          <Link to={"/articles"} className="hover:text-gray-500">
             ARTICLES
           </Link>
-          <button
-            className={"appearance-none"}
-            onClick={() => setCategoriesOpen(!isCategoriesOpen)}
-          >
-            <DownArrow></DownArrow>
-          </button>
           {/* TODO: Add notes, like tweets, short form articles */}
           {/* <Link to={'/'}>NOTES</Link> */}
         </div>
