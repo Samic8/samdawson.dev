@@ -61,23 +61,33 @@ const Layout = ({
         </h2>
         <div className="px-6">
           {success === null && (
-            <form
-              onSubmit={handleSubmit}
-              className="h-16 max-w-sm flex mx-auto mt-8 border border-gray-100 rounded focus-within:border-gray-500 bg-white"
-            >
-              <input
-                className="flex-grow flex-shrink min-w-0 pl-4 text-gray-800 outline-none rounded"
-                placeholder="email@email.com"
-                type="email"
-                onChange={e => setEmail(e.target.value)}
-              />
-              <button
-                type="submit"
-                className="bg-purple-500 hover:bg-purple-400 text-white font-bold text-md m-1 rounded px-4"
+            <>
+              <form
+                onSubmit={handleSubmit}
+                className="h-16 max-w-sm flex mx-auto mt-8 border border-gray-100 rounded focus-within:border-gray-500 bg-white"
               >
-                Subscribe
-              </button>
-            </form>
+                <input
+                  className="flex-grow flex-shrink min-w-0 pl-4 text-gray-800 outline-none rounded"
+                  placeholder="email@email.com"
+                  type="email"
+                  onChange={e => setEmail(e.target.value)}
+                />
+                <button
+                  type="submit"
+                  className="bg-purple-500 hover:bg-purple-400 text-white font-bold text-md m-1 rounded px-4"
+                >
+                  Subscribe
+                </button>
+              </form>
+              <div className="max-w-sm mx-auto text-xsm mt-8 text-center underline hover:text-purple-700">
+                <a
+                  href="https://us3.campaign-archive.com/home/?u=3fde574ccfe379668e02db78b&id=9b6d8a39fc"
+                  target="_blank"
+                >
+                  read past newsletters
+                </a>
+              </div>
+            </>
           )}
           {/* TODO: Style this up better */}
           <div className={"mx-auto max-w-xs"}>
