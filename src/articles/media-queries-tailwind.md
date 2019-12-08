@@ -43,7 +43,7 @@ I realized using min-width only queries helps me think in a mobile first way. Al
 
 Media queries [don't increase specificity](https://css-tricks.com/how-much-specificity-do-rules-have-like-keyframes-and-media/) on their own. If a (min-width: 200px) query appears after a (min-width: 400px) query the _200px_ query will take precedence.
 
-https://codepen.io/Samic8/pen/OJLyjNV
+`oembed: https://codepen.io/Samic8/pen/OJLyjNV`
 
 Tailwind includes all of its media queries after any other classes which means that the classes containing queries will have a higher specificity.
 

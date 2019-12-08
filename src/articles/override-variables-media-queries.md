@@ -45,7 +45,7 @@ This will only override the variable usage for the children elements of our over
 }
 ```
 
-https://codepen.io/Samic8/pen/jjdJXR
+`oembed: https://codepen.io/Samic8/pen/jjdJXR`
 
 ## Media Queries
 
