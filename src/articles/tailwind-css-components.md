@@ -13,7 +13,7 @@ We are going to be looking into an example of a component which is a visual indi
 
 Don't pay too much attention to the styling and classes in this Codepen, it's not exactly the same as some of the example code we are going to walk through.
 
-## Utility class only
+## Utility classes only approach
 
 My first attempt at this component used utility classes for the styling exclusively. It's not the most complex component, but it does have a few states which do make it a bit hard to understand at a glance what the different states are and what their styling will be under certain conditions.
 
@@ -75,7 +75,7 @@ Because of the lack of control of CSS specificity we have to make sure that cert
 
 When things get this complex it may be time to refactor to a [tailwind "CSS component"](https://tailwindcss.com/docs/extracting-components/#extracting-css-components-with-apply).
 
-## [Tailwind "CSS component"](https://tailwindcss.com/docs/extracting-components/#extracting-css-components-with-apply) version
+## [Tailwind "CSS component"](https://tailwindcss.com/docs/extracting-components/#extracting-css-components-with-apply) approach
 
 To reduce complexity in the component we are going to create some classes 😱
 
