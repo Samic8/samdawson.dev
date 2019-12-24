@@ -56,8 +56,9 @@ const Layout = ({
         </div>
       </div>
       <footer className="pt-12 pb-20 mt-10 bg-yellow-100" id="footer">
-        <h2 className="text-gray-800 text-md sm:text-lg font-bold max-w-xs leading-tight mx-auto text-center">
-          Get a summary of my articles every month
+        <h2 className="text-gray-800 text-md sm:text-lg max-w-xs leading-tight mx-auto text-center">
+          Get monthly summaries of my{" "}
+          <strong className="font-bold">frontend</strong> journey
         </h2>
         <div className="px-6">
           {success === null && (
@@ -68,7 +69,7 @@ const Layout = ({
               >
                 <input
                   className="flex-grow flex-shrink min-w-0 pl-4 text-gray-800 outline-none rounded"
-                  placeholder="email@email.com"
+                  placeholder="frontend@wizard.com.au"
                   type="email"
                   onChange={e => setEmail(e.target.value)}
                 />
