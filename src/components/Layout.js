@@ -58,7 +58,7 @@ const Layout = ({
       <footer className="pt-12 pb-20 mt-10 bg-yellow-100" id="footer">
         <h2 className="text-gray-800 text-md sm:text-lg max-w-xs leading-tight mx-auto text-center">
           Get monthly summaries of my{" "}
-          <strong className="font-bold">frontend</strong> journey
+          <strong className="font-bold">frontend</strong> articles
         </h2>
         <div className="px-6">
           {success === null && (
@@ -69,7 +69,7 @@ const Layout = ({
               >
                 <input
                   className="flex-grow flex-shrink min-w-0 pl-4 text-gray-800 outline-none rounded"
-                  placeholder="frontend@wizard.com.au"
+                  placeholder="frontend@person.com"
                   type="email"
                   onChange={e => setEmail(e.target.value)}
                 />
@@ -80,14 +80,15 @@ const Layout = ({
                   Subscribe
                 </button>
               </form>
-              <div className="max-w-sm mx-auto text-xsm mt-8 text-center underline hover:text-purple-700">
+              {/* Turning off past newsletters for now to if it influences subscribers */}
+              {/* <div className="max-w-sm mx-auto text-xsm mt-8 text-center underline hover:text-purple-700">
                 <a
                   href="https://us3.campaign-archive.com/home/?u=3fde574ccfe379668e02db78b&id=9b6d8a39fc"
                   target="_blank"
                 >
                   read past newsletters
                 </a>
-              </div>
+              </div> */}
             </>
           )}
           {/* TODO: Style this up better */}
