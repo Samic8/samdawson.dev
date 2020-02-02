@@ -78,6 +78,7 @@
 
   .anchor {
     margin-top: 6px;
+    padding: 0;
   }
 
   a:not(.anchor) {
@@ -89,5 +90,31 @@
 
   a:hover {
     @apply text-purple-700;
+  }
+
+  blockquote {
+    position: relative;
+
+    p {
+      position: relative;
+      z-index: 1;
+      display: inline;
+    }
+  }
+  blockquote::after {
+    content: "";
+    display: block;
+    background-color: #ebeced4d;
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    left: -10px;
+    right: -10px;
+    z-index: 0;
+    border-radius: 10px;
+  }
+  blockquote::before {
+    content: "💡";
+    display: inline;
   }
 }
