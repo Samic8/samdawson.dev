@@ -5,7 +5,7 @@ techs: ["React"]
 date: "2020-02-02"
 ---
 
-### What **are "component components"?**
+### What **are _compound components_?**
 
 <br/>
 
