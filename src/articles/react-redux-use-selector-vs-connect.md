@@ -1,5 +1,5 @@
 ---
-title: "React-redux: react.memo and useSelector vs connect"
+title: "useSelector vs connect (react-redux)"
 slug: react-redux-use-selector-vs-connect
 techs: ["React"]
 date: "2019-12-24"
