@@ -9,7 +9,7 @@
 
 .article {
   h2 {
-    @apply text-lg font-bold mt-20 mb-3;
+    @apply text-lg font-semibold mt-20 mb-3;
   }
 
   p {
@@ -21,7 +21,7 @@
   }
 
   h3 {
-    @apply text-mdlg font-bold mt-10 mb-3;
+    @apply text-mdlg font-semibold mt-10 mb-3;
   }
 
   img {

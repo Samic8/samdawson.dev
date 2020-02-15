@@ -116,7 +116,7 @@ The high flexibility can be a disadvantage for consistency. Allowing coders to u
 
 On a similar note, it's easy to break design guidelines. For example putting groups before un-grouped options, if that was a design guideline of yours.
 
-## **Base/Variants (composed components)**
+## Base/Variants (composed components)
 
 This is mainly just the way you normally would build components, by composing other components to make a new component. Deciding to use a base/variant pattern would just be a way of formalize this for a particular component series.
 
