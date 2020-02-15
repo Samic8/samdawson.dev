@@ -134,7 +134,7 @@ You may need to implement a more flexible API for the base component so it can b
 
 ## Flexibility Modifiers
 
-Some React specific patterns can help designing more flexible APIs. They facility _parent to child_ and _child to parent_ communication. The way you use these factors into how flexible and potentially more complex components can become, so they are worth considering when designing a components API.
+Some React specific patterns can help designing more flexible APIs. They facility **parent to child** and **child to parent** communication. The way you use these factors into how flexible and potentially more complex components can become, so they are worth considering when designing a components API.
 
 You can read about how these work in the react documentation. Im not going to go into depth about what they are here.
 
