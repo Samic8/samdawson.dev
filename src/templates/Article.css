@@ -13,7 +13,7 @@
   }
 
   p {
-    @apply mb-8;
+    @apply mb-4;
   }
 
   strong {
@@ -21,7 +21,7 @@
   }
 
   h3 {
-    @apply text-md font-bold mt-10 mb-3;
+    @apply text-mdlg font-bold mt-10 mb-3;
   }
 
   img {
