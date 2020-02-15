@@ -20,6 +20,8 @@ export default function post({ data }) {
       />
       <ArticleHeader
         title={data.markdownRemark.frontmatter.title}
+        date={data.markdownRemark.frontmatter.date}
+        dateTime={data.markdownRemark.frontmatter.dateTime}
       ></ArticleHeader>
       <Content>
         <article
@@ -40,6 +42,8 @@ export const query = graphql`
         featuredImage {
           publicURL
         }
+        date(formatString: "MMM D, YYYY")
+        dateTime: date(formatString: "YYYY-MM-DD")
       }
       excerpt
     }

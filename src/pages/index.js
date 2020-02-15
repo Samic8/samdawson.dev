@@ -18,6 +18,7 @@ export const pageQuery = graphql`
           techs
           title
           date(formatString: "MMM D, YYYY")
+          dateTime: date(formatString: "YYYY-MM-DD")
           featuredImage {
             childImageSharp {
               fluid(maxWidth: 240) {

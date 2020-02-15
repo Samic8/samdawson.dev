@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 import styles from "./ArticleList.module.css"
-import Calendar from "../svgs/calendar.svg"
+import Time from "./Time"
 
 export default function ArticleList({ posts = [] }) {
   return (
@@ -30,12 +30,10 @@ const PostRow = ({ post, className }) => (
             <h1 className="font-bold underline text-md sm:text-lg text-gray-900 leading-tight font-extrabold hover:bg-yellow-100">
               {post.frontmatter.title}
             </h1>
-            <div className="flex items-center">
-              <Calendar className="mr-1 stroke-current text-gray-500 w-4 h-4" />
-              <time className="font-bold text-xsm text-gray-700">
-                {post.frontmatter.date}
-              </time>
-            </div>
+            <Time
+              date={post.frontmatter.date}
+              dateTime={post.frontmatter.dateTime}
+            />
           </div>
           <p className="text-sm leading-tight sm:leading-tight sm:text-base text-gray-800">
             {post.excerpt}
