@@ -1,4 +1,5 @@
 const { dedupeTechs } = require("./src/utility/data")
+const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
@@ -73,4 +74,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
 function getIdsFromEdges(edges) {
   return edges.map(({ node }) => node.id)
+}
+
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+  if (node.internal.type === `MarkdownRemark`) {
+    const value = createFilePath({ node, getNode })
+    createNodeField({
+      name: `slug`,
+      node,
+      value,
+    })
+  }
 }

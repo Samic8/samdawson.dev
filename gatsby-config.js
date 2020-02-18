@@ -135,7 +135,6 @@ module.exports = {
         ],
       },
     },
-
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -177,5 +176,6 @@ module.exports = {
           "https://protonmail.us3.list-manage.com/subscribe/post?u=3fde574ccfe379668e02db78b&amp;id=9b6d8a39fc", // add your MC list endpoint here; see instructions below
       },
     },
+    `gatsby-plugin-feed`,
   ],
 }
