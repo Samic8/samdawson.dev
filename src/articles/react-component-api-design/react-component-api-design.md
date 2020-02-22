@@ -42,7 +42,7 @@ Can become complex when the component has too many variations with lots of props
 **When to increase the flexibility?**
 
 When your component has lots of props and even worse when most of them are boolean flags e.g "shouldShowGroups" "shouldHaveBoldHeading".
-Too many flags can make extending the component hard in the future because you now need to account for each of those flags functionality changes and make sure you don't break them. See **Base/Variants** for ideas on how to avoid excessive flags.
+Too many flags can make extending the component hard because you now need to account for each flag when making changes to ensure you don't break them. See **Base/Variants** for ideas on how to avoid excessive flags.
 
 ### **Component as Props**
 
