@@ -29,7 +29,7 @@ Involves having well defined types of props.
 
     <Select options={[1, 2, 3]} selectedOption={1} onSelectedOptionChange={() => /* ... */}/>
 
-In this case the _options_ prop is array of values and _selectedOption_ is a single value.
+In this case the _options_ prop it is array of values and _selectedOption_ is a single value.
 
 **Advantages**
 
