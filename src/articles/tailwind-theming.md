@@ -10,7 +10,6 @@ This is a solution for implementing color themes with [tailwind](https://tailwin
 ```js
 // tailwind.config.js
 module.exports = {
-  important: true,
   theme: {
     colors: {
       teal: {
@@ -23,7 +22,7 @@ module.exports = {
 }
 ```
 
-Those color vars that are referenced in the config file then need to be created in CSS. Yeah so we have to write some CSS, which you might want to avoid when doing the tailwind utility class approach but I think of defining variables as configuration.
+Those CSS variables that are referenced in the **tailwind.config.js** file then need to be created in CSS. With tailwind, your instinct might be to avoid CSS files altogether but I think of defining these variables more as configuration.
 
 ```css
 :root {
@@ -37,25 +36,26 @@ Those color vars that are referenced in the config file then need to be created 
 }
 ```
 
-Anything under root would be your "default" theme. When you want to apply the "funky-theme" you include that class at the top-level element that contains all of the elements you want to theme (this could be the body or a small section of the page).
+Anything under **:root** would be the default theme. To apply the _funky-theme_ the class is used on a parent element then any children will use that theme.
 
 ```html
 <body>
-  <div>Pretty default themed in here<div>
-  <section class="funky-theme">All funky themed in here</section>
+  <span class="text-teal-100">Pretty default themed in here</span>
+  <section class="funky-theme">
+    <span class="text-teal-100">All funky themed in here<span>
+  </section>
 </body>
 ```
 
-Thats it!
+## Primary, secondary (etc) approach
 
-## Primary, Secondary etc approach
+The last approach where we had CSS variables for specific colors like _teal-100_ might not be that useful when your themes actually use very different colors. It wouldn't be ideal to have to override _teal-100_ with a red color.
 
-Now if you want to instead want to create your theme with primary (and secondary etc) colors you can do that with some small differences in the config.
+Instead, you can name colors more generically.
 
 ```js
 // tailwind.config.js
 module.exports = {
-  important: true,
   theme: {
     colors: {
       primary: "var(--color-primary)",
@@ -78,17 +78,17 @@ module.exports = {
 }
 ```
 
-Most likely with theming (e.g dark theme) this approach is going to be more useful. You also get to maintain your colors defined in the tailwind config and can reference them through the "theme" function.
+Most likely with theming (e.g dark theme) this approach is going to be more useful.
 
 ## A real-world example
 
-I used this pattern for the theming on a ["website builder" app](https://singleproduct.store/) where I wanted to use tailwind both for the "configuration" section and the "website preview" sections of the page.
+I used this pattern for the theming on a ["website builder" app](https://flamboyant-mahavira-c862f4.netlify.com/) where I wanted to use tailwind both for the "configuration" section and the "website preview" sections of the page.
 
 I wanted each section to be independent so that the built websites colors didn't get mixed up with the branding colors for the main application.
 
 ![](./tailwind-theming.png)
 
-Similar to the examples earlier in the post I used both a :root theme and a class selector
+Similar to the examples earlier in the post I used both a **:root** theme and a _website-preview_ theme.
 
 ```html
 <body>
@@ -102,7 +102,3 @@ Similar to the examples earlier in the post I used both a :root theme and a clas
   </section>
 </body>
 ```
-
-Let me know of any other approaches you have come up with for tailwind
-theming maybe there is a sweet tailwind plugin that abstracts some of the class
-creation away, or you have come up with a different approach altogether.
