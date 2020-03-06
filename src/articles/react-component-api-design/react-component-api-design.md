@@ -19,7 +19,7 @@ For components that you know, won't be used frequently, start with stricter flex
 
 For components that you know will be used many times opt for more flexible, to begin with. If you want to lock down specific usages you could create a variant for that case (see base/variants below).
 
-But overall the practice that will get the best results is to **talk first, code later.** Have a written plan for the props of the component that you can show other coders or designers and see what they think.
+But overall the practice that will get the best results is to [talk first, code later](https://blog.pragmaticengineer.com/talk-first-code-later/). Have a written plan for the props of the component that you can show other coders or designers and see what they think.
 
 ## Flexibility Design Patterns
 
