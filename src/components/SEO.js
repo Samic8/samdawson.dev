@@ -68,7 +68,7 @@ function SEO({ description, lang, meta: propMeta, title, imageUrl }) {
       htmlAttributes={{
         lang,
       }}
-      title={title}
+      title={title || site.siteMetadata.title}
       meta={meta}
     />
   )
