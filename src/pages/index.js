@@ -41,7 +41,7 @@ export const pageQuery = graphql`
 
 const IndexPage = ({ data }) => (
   <Layout center>
-    <SEO title="Home" />
+    <SEO />
     <div className={"absolute top-0 left-0 right-0 overflow-hidden z-0"}>
       <Wave
         className={"relative -mt-2xl sm:-mt-1xl md:-mt-2xl"}
