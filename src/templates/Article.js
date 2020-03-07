@@ -11,7 +11,6 @@ import WiggleDownLine from "../svgs/wiggle-down-line.svg"
 export default function post({ data }) {
   return (
     <Layout useColoredBackground>
-      {data.markdownRemark.frontmatter.title}
       <SEO
         title={data.markdownRemark.frontmatter.title}
         imageUrl={
