@@ -38,16 +38,19 @@ export default function post({ data }) {
         data-netlify-honeypot="bot-field"
         className="my-4 sm:my-10 font-systemFont"
       >
+        <input type="hidden" name="form-name" value="feedback" />
+        <input
+          type="hidden"
+          name="article"
+          value={data.markdownRemark.frontmatter.title}
+        />
         <h2 className="mb-3 text-md sm:text-lg leading-tight text-gray-800 text-center">
           Was this article helpful?
         </h2>
         <div className="max-w-md flex flex-col mx-auto mx-auto border border-gray-100 rounded focus-within:border-gray-500 bg-white">
-          <input type="hidden" name="form-name" value="feedback" />
           <textarea
             className="flex-grow flex-shrink min-w-0 p-4 text-gray-800 outline-none rounded"
-            name={`${data.markdownRemark.frontmatter.title
-              .split(" ")
-              .join()}-Feedback`}
+            name={`feedback-text`}
             placeholder="Make it better by having your say!"
           />
           <button
