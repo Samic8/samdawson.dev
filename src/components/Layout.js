@@ -57,8 +57,8 @@ const Layout = ({
       </div>
       <footer className="pt-12 pb-20 mt-10 bg-yellow-100" id="footer">
         <h2 className="text-gray-800 text-md sm:text-lg max-w-xs leading-tight mx-auto text-center">
-          Get monthly summaries of my{" "}
-          <strong className="font-bold">frontend</strong> articles
+          Keep up to date on all things{" "}
+          <strong className="font-bold">frontend</strong> dev.
         </h2>
         <div className="px-6">
           {success === null && (
