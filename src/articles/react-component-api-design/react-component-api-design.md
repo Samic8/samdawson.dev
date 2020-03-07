@@ -118,9 +118,7 @@ On a similar note, it's easy to break design guidelines. For example, with the m
 
 ## Base/Variants (composed components)
 
-This is mainly just the way you normally would build components, by composing other components to make a new component. Deciding to use a base/variant pattern would just be a way of formalize this for a particular component series.
-
-It can be combined with any of the mentioned flexibility patterns.
+This is mostly just the way you normally would build components, by composing other components to make a new component. Deciding to use a base/variant pattern would be a way of formalizing this for a particular component series.
 
 ```js
 // Base component
@@ -134,7 +132,7 @@ You may need to implement a more flexible API for the base component so it can b
 
 ## Flexibility Modifiers
 
-Some React specific patterns can help designing more flexible APIs. They facility **parent to child** and **child to parent** communication. The way you use these factors into how flexible and potentially more complex components can become, so they are worth considering when designing a components API.
+Some React specific patterns can help with designing more flexible APIs. They facility **parent to child** and **child to parent** communication. The way you use these factors into how flexible and potentially more complex components can become, so they are worth considering when designing a components API.
 
 You can read about how these work in the react documentation. Im not going to go into depth about what they are here.
 
