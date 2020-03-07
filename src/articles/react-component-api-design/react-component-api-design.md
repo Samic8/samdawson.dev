@@ -112,9 +112,9 @@ The high flexibility of this pattern allows the user (another developer) to make
 
 **Disadvantages**
 
-The high flexibility can be a disadvantage for consistency. Allowing coders to use the component in a very different way than intended might go against the reason for building the component in the first place (consistency).
+The high flexibility can be a disadvantage for consistency. It allows the developer to use the component in different ways than original intended, which might go against the reason for componentizing something the first place (consistency).
 
-On a similar note, it's easy to break design guidelines. For example putting groups before un-grouped options, if that was a design guideline of yours.
+On a similar note, it's easy to break design guidelines. For example, with the multi-select: putting grouped options before un-grouped options.
 
 ## Base/Variants (composed components)
 
