@@ -14,6 +14,7 @@ module.exports = {
     fontFamily: {
       header: `"Montserrat", ${systemFontStack}`,
       sans: `"Montserrat", ${systemFontStack}`,
+      systemFont: systemFontStack,
     },
     extend: {
       margin: {
