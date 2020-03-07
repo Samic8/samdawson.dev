@@ -44,7 +44,7 @@ Can become complex when the component has too many variations with lots of props
 When your component has lots of props and even worse when most of them are boolean flags e.g "shouldShowGroups" "shouldHaveBoldHeading".
 Too many flags can make extending the component hard because you now need to account for each flag when making changes to ensure you don't break them. See **Base/Variants** for ideas on how to avoid excessive flags.
 
-### **Component as Props**
+### **Component Props**
 
 This API design has a few different flavours.
 
