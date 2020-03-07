@@ -25,11 +25,11 @@ But overall the practice that will get the best results is to [talk first, code 
 
 ### **Strict Props**
 
-Involves having well defined types of props.
+Involves having well-defined types of props.
 
     <Select options={[1, 2, 3]} selectedOption={1} onSelectedOptionChange={() => /* ... */}/>
 
-In this case the _options_ prop it is array of values and _selectedOption_ is a single value.
+In this case the _options_ prop it is an array of values and _selectedOption_ is a single value.
 
 **Advantages**
 
@@ -37,7 +37,7 @@ Best for consistency, this design provides a limited number of ways to use the c
 
 **Disadvantages**
 
-Can become complex when the component has too many variations with lots of props.
+It can become complex when the component has too many variations with lots of props.
 
 **When to increase the flexibility?**
 
@@ -46,7 +46,7 @@ Too many flags can make extending the component hard because you now need to acc
 
 ### **Component Props**
 
-This API design has a few different flavours.
+This API design has a few different flavors.
 
 **Slots**: The ability to include JSX within a particular component. The base component then places that included JSX at a particular spot in its component tree.
 
@@ -112,7 +112,7 @@ The high flexibility of this pattern allows the user (another developer) to make
 
 **Disadvantages**
 
-The high flexibility can be a disadvantage for consistency. It allows the developer to use the component in different ways than original intended, which might go against the reason for componentizing something the first place (consistency).
+The high flexibility can be a disadvantage for consistency. It allows the developer to use the component in different ways than originally intended, which might go against the reason for componentizing something the first place (consistency).
 
 On a similar note, it's easy to break design guidelines. For example, with the multi-select: putting grouped options before un-grouped options.
 
@@ -134,7 +134,7 @@ You may need to implement a more flexible API for the base component so it can b
 
 Some React specific patterns can help with designing more flexible APIs. They facility **parent to child** and **child to parent** communication. The way you use these factors into how flexible and potentially more complex components can become, so they are worth considering when designing a components API.
 
-You can read about how these work in the react documentation. Im not going to go into depth about what they are here.
+You can read about how these work in the react documentation. I'm not going to go into depth about what they are here.
 
 ### Context
 
@@ -146,7 +146,7 @@ Can share functions for child to parent communication. For example, when an _Opt
 
 ### Render Props
 
-Render Props is a little less magical than context, though it requires more wiring up code to be written on each usage.
+Render props are a little less magical than context, though it requires more wiring up code to be written on each usage.
 
 Can share data for parent to child communication.
 
