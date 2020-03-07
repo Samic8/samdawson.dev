@@ -45,7 +45,8 @@ export default function post({ data }) {
           <input type="hidden" name="form-name" value="feedback" />
           <textarea
             className="flex-grow flex-shrink min-w-0 p-4 text-gray-800 outline-none rounded"
-            name={`${data.markdownRemark.frontmatter.title} Feedback`}
+            name={`${data.markdownRemark.frontmatter.title}-Feedback`}
+            id={`${data.markdownRemark.frontmatter.title}-Feedback`}
             placeholder="Make it better by having your say!"
           />
           <button
