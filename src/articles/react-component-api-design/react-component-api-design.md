@@ -108,7 +108,7 @@ In this case, the _Multiselect_ is the **base** component while the _Option_ and
 
 **Advantages**
 
-The high flexibility of this pattern allows the coder to make variations without having to extend the base component.
+The high flexibility of this pattern allows the user (another developer) to make variations without having to extend the base component.
 
 **Disadvantages**
 
