@@ -2,8 +2,8 @@ const poundIcon = require("./pound-icon")
 
 module.exports = {
   siteMetadata: {
-    title: `samdawson.dev`,
-    description: `Sam Dawsons blog. Sam is a web designer and developer from Australia.`,
+    title: `Sam Dawson's Blog`,
+    description: `Web Frontend Design and Development.`,
     author: `Sam Dawson`,
     siteUrl: "https://www.samdawson.dev",
   },

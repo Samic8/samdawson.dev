@@ -69,7 +69,6 @@ function SEO({ description, lang, meta: propMeta, title, imageUrl }) {
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={meta}
     />
   )
