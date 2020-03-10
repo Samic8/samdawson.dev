@@ -5,5 +5,5 @@ export const techToBgColor = {
   Tailwindcss: "bg-green-500 hover:bg-green-400",
   Git: "bg-pink-500 hover:bg-pink-400",
   Typescript: "bg-blue-500 hover:bg-blue-400",
-  Javascript: "bg-blue-800 hover:bg-blue-700",
+  Javascript: "bg-blue-700 hover:bg-blue-600",
 }
