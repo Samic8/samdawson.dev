@@ -63,6 +63,8 @@ I thought that reduce would also _reduce_ the number of loops.
 
 Compare them here: [https://jsperf.com/reduce-vs-filter-map-22](https://jsperf.com/reduce-vs-filter-map-22)
 
-<br/><br/>
+<br/>
+
+In some cases the over-optimizations I was making do tend to be faster. But barely, and are they really worth the compromise on code readability?
 
 I'm thinking now of JS as being more declarative (what I want the code to do) rather than the actual sequence of events that happen. This is not to say throw any performance optimizations out the window, but instead to test assumptions I make before they end up everywhere in my code.
