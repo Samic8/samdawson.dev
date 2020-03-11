@@ -61,7 +61,7 @@ const result = foo.filter(num => num > 3).map(num => num * 22)
 
 I thought that reduce would also _reduce_ the number of loops.
 
-Compare them here: [https://jsperf.com/reduce-vs-filter-map-22](https://slack-redir.net/link?url=https%3A%2F%2Fjsperf.com%2Freduce-vs-filter-map-22)
+Compare them here: [https://jsperf.com/reduce-vs-filter-map-22](https://jsperf.com/reduce-vs-filter-map-22)
 
 <br/><br/>
 
