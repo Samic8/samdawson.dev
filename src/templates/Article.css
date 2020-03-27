@@ -29,7 +29,7 @@
   }
 
   .gatsby-resp-image-wrapper {
-    @apply mt-16;
+    @apply mt-4;
   }
 
   .gatsby-highlight {
