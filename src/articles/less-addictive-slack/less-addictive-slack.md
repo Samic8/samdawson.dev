@@ -28,7 +28,7 @@ On occasions you do need to check reactions, for example when using them to vote
 
 ![Stylish Extension Toggle Button](images/Screenshot_2020-03-27_10.42.48.png)
 
-I think most of the time @ mentions draw more attention to messages then needed. We can dial down their noisiness with this styling tweak that removes the yellow background and bold font weight.
+I think most of the time @ mentions draw more attention to messages than needed. We can dial down their noisiness with this styling tweak that removes the yellow background and bold font weight.
 
 ```css
 .c-mrkdwn__broadcast--mention,
