@@ -13,7 +13,7 @@ If you use slack in the [browser](https://app.slack.com/) you can augment your e
 
 ## CSS Tweaks
 
-Reactions make slack more addictive then I would like. Often reactions don't add much to the experience either, do I really need to know that 10 people reacted with 😂? (or maybe I'm just no fun?)
+Reactions make slack more addictive than I would like. Often reactions don't add much to the experience either, do I really need to know that 10 people reacted with 😂? (or maybe I'm just no fun?)
 
 To turn off the _viewing_ of reactions this CSS does the trick. It won't stop you from reacting to posts from others either.
 
