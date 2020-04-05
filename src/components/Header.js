@@ -26,7 +26,7 @@ const Header = () => {
             "border-l border-gray-100 my-3 flex items-center tracking-wide text-gray-700 pl-6 font-bold text-xsm"
           }
         >
-          <a
+          {/* <a
             href="#footer"
             className="mr-5 hover:text-gray-500 hidden sm:inline"
             onClick={() => {
@@ -37,7 +37,7 @@ const Header = () => {
             }}
           >
             NEWSLETTER
-          </a>
+          </a> */}
           <Link to={"/articles"} className="hover:text-gray-500">
             ARTICLES
           </Link>
