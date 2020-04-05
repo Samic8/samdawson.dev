@@ -1,7 +1,7 @@
 ---
 title: Things I learned about media queries from Tailwind
 slug: media-queries-tailwind
-techs: ["CSS", "Tailwind"]
+techs: ["Tailwind"]
 date: "2019-08-19"
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: A gotcha when using gatsby, tailwind and purgecss
 slug: gatsby-tailwind-purgecss
-techs: ["CSS", "Tailwind", "Gatsby"]
+techs: ["Tailwind", "Gatsby"]
 date: "2019-08-09"
 ---
 
