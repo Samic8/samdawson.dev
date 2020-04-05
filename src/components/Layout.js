@@ -18,6 +18,8 @@ const Layout = ({ children, useColoredBackground }) => {
 
   const [email, setEmail] = useState(null)
   const [success, setSuccess] = useState(null)
+  // Turning off newsletters for now. Focusing on blog posts instead, people can subscribe through RSS.
+  const showNewsletter = false
 
   const handleSubmit = async e => {
     e.preventDefault()
@@ -36,7 +38,7 @@ const Layout = ({ children, useColoredBackground }) => {
     <div className={useColoredBackground ? "bg-yellow-100" : ""}>
       <div
         className={
-          "flex flex-col items-stretch mx-auto max-w-5xl sm:overflow-hidden"
+          "flex flex-col items-stretch mx-auto max-w-5xl sm:overflow-hidden pb-32"
         }
       >
         <Header siteTitle={data.site.siteMetadata.title} />
@@ -48,33 +50,34 @@ const Layout = ({ children, useColoredBackground }) => {
           </div>
         </div>
       </div>
-      <footer className="pt-12 pb-20 mt-10 bg-yellow-100" id="footer">
-        <h2 className="text-gray-800 text-md sm:text-lg max-w-xs leading-tight mx-auto text-center">
-          Keep up to date on all things{" "}
-          <strong className="font-bold">frontend</strong> dev.
-        </h2>
-        <div className="px-6">
-          {success === null && (
-            <>
-              <form
-                onSubmit={handleSubmit}
-                className="h-16 max-w-sm flex mx-auto mt-8 border border-gray-100 rounded focus-within:border-gray-500 bg-white"
-              >
-                <input
-                  className="flex-grow flex-shrink min-w-0 pl-4 text-gray-800 outline-none rounded"
-                  placeholder="frontend@person.com"
-                  type="email"
-                  onChange={e => setEmail(e.target.value)}
-                />
-                <button
-                  type="submit"
-                  className="bg-purple-500 hover:bg-purple-400 text-white font-bold text-md m-1 rounded px-4"
+      {showNewsletter && (
+        <footer className="pt-12 pb-20 mt-10 bg-yellow-100" id="footer">
+          <h2 className="text-gray-800 text-md sm:text-lg max-w-xs leading-tight mx-auto text-center">
+            Keep up to date on all things{" "}
+            <strong className="font-bold">frontend</strong> dev.
+          </h2>
+          <div className="px-6">
+            {success === null && (
+              <>
+                <form
+                  onSubmit={handleSubmit}
+                  className="h-16 max-w-sm flex mx-auto mt-8 border border-gray-100 rounded focus-within:border-gray-500 bg-white"
                 >
-                  Subscribe
-                </button>
-              </form>
-              {/* Turning off past newsletters for now to if it influences subscribers */}
-              {/* <div className="max-w-sm mx-auto text-xsm mt-8 text-center underline hover:text-purple-700">
+                  <input
+                    className="flex-grow flex-shrink min-w-0 pl-4 text-gray-800 outline-none rounded"
+                    placeholder="frontend@person.com"
+                    type="email"
+                    onChange={e => setEmail(e.target.value)}
+                  />
+                  <button
+                    type="submit"
+                    className="bg-purple-500 hover:bg-purple-400 text-white font-bold text-md m-1 rounded px-4"
+                  >
+                    Subscribe
+                  </button>
+                </form>
+                {/* Turning off past newsletters for now to if it influences subscribers */}
+                {/* <div className="max-w-sm mx-auto text-xsm mt-8 text-center underline hover:text-purple-700">
                 <a
                   href="https://us3.campaign-archive.com/home/?u=3fde574ccfe379668e02db78b&id=9b6d8a39fc"
                   target="_blank"
@@ -82,16 +85,18 @@ const Layout = ({ children, useColoredBackground }) => {
                   read past newsletters
                 </a>
               </div> */}
-            </>
-          )}
-          {/* TODO: Style this up better */}
-          <div className={"mx-auto max-w-xs"}>
-            {success &&
-              "Thanks! I will style this success message soon with a tick or something. I promise."}
-            {success === false && "Subscription failed. Reload and try again."}
+              </>
+            )}
+            {/* TODO: Style this up better */}
+            <div className={"mx-auto max-w-xs"}>
+              {success &&
+                "Thanks! I will style this success message soon with a tick or something. I promise."}
+              {success === false &&
+                "Subscription failed. Reload and try again."}
+            </div>
           </div>
-        </div>
-      </footer>
+        </footer>
+      )}
     </div>
   )
 }
