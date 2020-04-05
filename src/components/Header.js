@@ -1,30 +1,9 @@
-import React, { useState } from "react"
-import HeadshotImage from "./Image"
-import { Link, useStaticQuery, graphql } from "gatsby"
-import { dedupeTechs } from "../utility/data"
-import TechList from "./TechList"
+import React from "react"
+import LogoImage from "./Image"
+import { Link } from "gatsby"
 import ReactGA from "react-ga"
 
-const Header = ({ isCategoriesOpenInitialState }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      allMarkdownRemark {
-        edges {
-          node {
-            frontmatter {
-              techs
-            }
-          }
-        }
-      }
-    }
-  `)
-  const dedupedTechs = dedupeTechs(data.allMarkdownRemark)
-
-  const [isCategoriesOpen, setCategoriesOpen] = useState(
-    isCategoriesOpenInitialState || false
-  )
-
+const Header = () => {
   return (
     <div className={"z-10"}>
       <div
@@ -33,7 +12,7 @@ const Header = ({ isCategoriesOpenInitialState }) => {
         }
       >
         <Link to={"/"} className={"flex items-center self-center"}>
-          <HeadshotImage />
+          <LogoImage />
           <span
             className={
               "tracking-wide text-gray-700 pl-2 font-bold text-xsm hover:text-gray-500"
@@ -66,11 +45,6 @@ const Header = ({ isCategoriesOpenInitialState }) => {
           {/* <Link to={'/'}>NOTES</Link> */}
         </div>
       </div>
-      {isCategoriesOpen && (
-        <div className={"flex justify-end pt-6 px-5 font-header"}>
-          <TechList techs={dedupedTechs} />
-        </div>
-      )}
     </div>
   )
 }

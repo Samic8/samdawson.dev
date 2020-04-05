@@ -52,7 +52,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       path: `articles`,
       component: require.resolve("./src/templates/CategoryList.js"),
       context: {
-        tech: "All",
+        tech: "All Articles",
         ids: getIdsFromEdges(allMarkdownRemark.edges),
       },
     })
