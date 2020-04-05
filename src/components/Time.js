@@ -4,7 +4,7 @@ import { getActiveClasses } from "get-active-classes"
 
 export default function Time({ date, dateTime, className }) {
   return (
-    <div className={getActiveClasses("flex items-center", className)}>
+    <div className={getActiveClasses("inline-flex items-center", className)}>
       <Calendar className="mr-1 stroke-current text-gray-500 w-4 h-4" />
       <time dateTime={dateTime} className="font-bold text-xsm text-gray-700">
         {date}

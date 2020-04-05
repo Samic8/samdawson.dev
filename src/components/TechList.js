@@ -10,7 +10,7 @@ export default function TechList({ techs }) {
       <ul className="">
         {techs.map(techName => (
           <li key={techName} className={`inline-block font-header mr-2 mb-2`}>
-            <TechTag key={techName} techName={techName} />
+            <TechTag size="medium" key={techName} techName={techName} />
           </li>
         ))}
       </ul>

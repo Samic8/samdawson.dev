@@ -4,8 +4,8 @@ import { getActiveClasses } from "get-active-classes"
 
 export default function Button({ children, className, size, ...props }) {
   const sizes = {
-    small: "py-1 p-2 text-sm",
-    medium: "py-1 p-2 text-sm md:py-2 md:p-3 md:text-base",
+    small: "p-1 text-xsm",
+    medium: "py-1 p-2 text-sm",
   }
   return (
     <GatsbyLink

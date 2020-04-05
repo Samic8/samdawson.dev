@@ -2,11 +2,11 @@ import React from "react"
 import Button from "./Button"
 import { techToBgColor } from "../utility/techColors"
 
-export default ({ techName, className, ...props }) => (
+export default ({ techName, className, size, ...props }) => (
   <Button
     to={`category/${techName}`}
     className={`${techToBgColor[techName]} ${className} hover:underline`}
-    size="small"
+    size={size}
     {...props}
   >
     {techName}

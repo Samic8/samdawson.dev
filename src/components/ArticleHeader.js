@@ -8,7 +8,9 @@ export default function ArticleHeader({ title, date, dateTime }) {
     >
       <h1 className="font-bold text-gray-900 text-lg leading-tight max-w-xl mx-auto relative font-extrabold">
         {title}
-        <Time className="mt-2 self-start" date={date} dateTime={dateTime} />
+        <div>
+          <Time className="mt-2 self-start" date={date} dateTime={dateTime} />
+        </div>
       </h1>
     </div>
   )
