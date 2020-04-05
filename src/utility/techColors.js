@@ -6,5 +6,5 @@ export const techToBgColor = {
   Git: "bg-pink-300 text-pink-900",
   Typescript: "bg-blue-200 text-blue-900",
   Javascript: "bg-blue-300 text-blue-900",
-  Productivity: "bg-red-200 text-red-800",
+  Productivity: "bg-red-200 text-red-900",
 }
