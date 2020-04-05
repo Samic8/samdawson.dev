@@ -1,7 +1,7 @@
 ---
 title: When utility classes get out of control
 slug: tailwind-css-components
-techs: ["Tailwindcss"]
+techs: ["Tailwind"]
 date: "2019-12-08"
 ---
 

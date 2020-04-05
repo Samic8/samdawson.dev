@@ -1,7 +1,7 @@
 ---
 title: Creating category pages for gatsby markdown blogs
 slug: gatsby-categories
-techs: ["GatsbyJS", "React"]
+techs: ["Gatsby", "React"]
 date: "2019-08-03"
 ---
 

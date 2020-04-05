@@ -1,10 +1,10 @@
 export const techToBgColor = {
-  CSS: "bg-brown-600 hover:bg-brown-500",
-  React: "bg-teal-500 hover:bg-teal-400",
-  GatsbyJS: "bg-purple-500 hover:bg-purple-400",
-  Tailwindcss: "bg-green-500 hover:bg-green-400",
-  Git: "bg-pink-500 hover:bg-pink-400",
-  Typescript: "bg-blue-500 hover:bg-blue-400",
-  Javascript: "bg-blue-700 hover:bg-blue-600",
-  Productivity: "bg-red-500 hover:bg-red-400",
+  CSS: "bg-brown-200 text-brown-900",
+  React: "bg-teal-200 text-teal-900",
+  Gatsby: "bg-purple-300 text-purple-900",
+  Tailwind: "bg-green-200 text-green-900",
+  Git: "bg-pink-300 text-pink-900",
+  Typescript: "bg-blue-200 text-blue-900",
+  Javascript: "bg-blue-300 text-blue-900",
+  Productivity: "bg-red-200 text-red-800",
 }
