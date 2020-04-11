@@ -10,17 +10,15 @@ import WiggleDownLine from "../svgs/wiggle-down-line.svg"
 import ThumbsUpSvg from "../svgs/thumbs-up.svg"
 import ThumbsDownSvg from "../svgs/thumbs-down.svg"
 import { getActiveClasses } from "get-active-classes"
-import ReactGA from "react-ga"
+import axios from "axios"
 
 export default function post({ data }) {
   const [feedbackClickedFor, setFeedbackClickedFor] = useState(null)
 
   function submitFeedback(type) {
-    ReactGA.event({
-      category: "Feedback",
-      action: "Feedback Button Clicked",
-      label: data.markdownRemark.frontmatter.title,
-      value: type,
+    axios.get("/.netlify/functions/quick-feedback/quick-feedback", {
+      type,
+      page: data.markdownRemark.frontmatter.title,
     })
     setFeedbackClickedFor(type)
   }
@@ -136,15 +134,16 @@ function FeedbackButton({ type, activeFor, className, onClick }) {
 
   return (
     <button
+      disabled={!!activeFor}
       onClick={e => {
         e.preventDefault()
         onClick(type)
       }}
       className={getActiveClasses(
         "rounded-full",
-        typeColors[type],
-        className,
-        type === activeFor ? activeForClasses[activeFor] : ""
+        !activeFor ? typeColors[type] : "",
+        type === activeFor ? activeForClasses[activeFor] : "",
+        className
       )}
       aria-label={typeTexts[type]}
     >

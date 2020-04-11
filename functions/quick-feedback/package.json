@@ -1,0 +1,9 @@
+{
+  "name": "quick-feedback",
+  "version": "1.0.0",
+  "main": "quick-feedback.js",
+  "license": "MIT",
+  "dependencies": {
+    "universal-analytics": "^0.4.20"
+  }
+}
