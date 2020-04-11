@@ -5,7 +5,7 @@ exports.handler = (event, context, callback) => {
   const type = event.queryStringParameters.type
   const page = event.queryStringParameters.type
 
-  visitor.event("Test Quick Feedback", type, page).send(err => {
+  visitor.event("Quick Feedback", type, page).send(err => {
     if (err) {
       return callback(null, {
         statusCode: 500,
