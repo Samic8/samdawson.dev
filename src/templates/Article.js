@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import ArticleHeader from "../components/ArticleHeader"
@@ -7,8 +7,24 @@ import "./Article.css"
 import SEO from "../components/SEO"
 import Content from "../components/Content"
 import WiggleDownLine from "../svgs/wiggle-down-line.svg"
+import ThumbsUpSvg from "../svgs/thumbs-up.svg"
+import ThumbsDownSvg from "../svgs/thumbs-down.svg"
+import { getActiveClasses } from "get-active-classes"
+import ReactGA from "react-ga"
 
 export default function post({ data }) {
+  const [feedbackClickedFor, setFeedbackClickedFor] = useState(null)
+
+  function submitFeedback(type) {
+    ReactGA.event({
+      category: "Feedback",
+      action: "Feedback Button Clicked",
+      label: data.markdownRemark.frontmatter.title,
+      value: type,
+    })
+    setFeedbackClickedFor(type)
+  }
+
   return (
     <Layout useColoredBackground>
       <SEO
@@ -44,9 +60,21 @@ export default function post({ data }) {
           name="article"
           value={data.markdownRemark.frontmatter.title}
         />
-        <h2 className="mb-3 text-md sm:text-lg leading-tight text-gray-800 text-center">
-          Was this article helpful?
-        </h2>
+        <div className="flex justify-center items-center mb-3 text-gray-800">
+          <h2 className="text-md sm:text-lg leading-tight text-center mr-2">
+            Was this article helpful?
+          </h2>
+          <FeedbackButton
+            type="up"
+            activeFor={feedbackClickedFor}
+            onClick={submitFeedback}
+          />
+          <FeedbackButton
+            type="down"
+            activeFor={feedbackClickedFor}
+            onClick={submitFeedback}
+          />
+        </div>
         <div className="max-w-md flex flex-col mx-auto mx-auto border border-gray-100 rounded focus-within:border-gray-500 bg-white">
           <textarea
             className="flex-grow flex-shrink min-w-0 p-4 text-gray-800 outline-none rounded"
@@ -82,3 +110,45 @@ export const query = graphql`
     }
   }
 `
+
+function FeedbackButton({ type, activeFor, className, onClick }) {
+  const typeColors = {
+    up: "hover:text-green-900 hover:bg-green-200",
+    down: "hover:text-red-900 hover:bg-red-200",
+  }
+
+  const activeForClasses = {
+    up: "text-green-900 bg-green-200",
+    down: "text-red-900 bg-red-200",
+  }
+
+  const typeTexts = {
+    up: "I found this article helpful",
+    down: "I didn't find this article helpful",
+  }
+
+  const typeSvgs = {
+    up: ThumbsUpSvg,
+    down: ThumbsDownSvg,
+  }
+
+  const TypeSvg = typeSvgs[type]
+
+  return (
+    <button
+      onClick={e => {
+        e.preventDefault()
+        onClick(type)
+      }}
+      className={getActiveClasses(
+        "rounded-full",
+        typeColors[type],
+        className,
+        type === activeFor ? activeForClasses[activeFor] : ""
+      )}
+      aria-label={typeTexts[type]}
+    >
+      <TypeSvg className="fill-currentColor m-3" />
+    </button>
+  )
+}
