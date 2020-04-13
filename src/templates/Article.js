@@ -16,11 +16,26 @@ export default function Post({ data }) {
   const [feedbackClickedFor, setFeedbackClickedFor] = useState(null)
 
   function submitFeedback(type) {
-    axios.get("/.netlify/functions/quick-feedback/quick-feedback", {
+    if (window.ga) {
+      window.ga(tracker =>
+        saveFeedback({ clientId: tracker.get("clientId"), type })
+      )
+    } else {
+      saveFeedback({ type })
+    }
+
+    setFeedbackClickedFor(type)
+  }
+
+  function saveFeedback({ clientId, type }) {
+    const options = {
       type,
       page: data.markdownRemark.frontmatter.title,
-    })
-    setFeedbackClickedFor(type)
+    }
+
+    if (clientId) options.clientId = clientId
+
+    axios.post("/.netlify/functions/quick-feedback/quick-feedback")
   }
 
   return (
