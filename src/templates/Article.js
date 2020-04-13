@@ -12,7 +12,7 @@ import ThumbsDownSvg from "../svgs/thumbs-down.svg"
 import { getActiveClasses } from "get-active-classes"
 import axios from "axios"
 
-export default function post({ data }) {
+export default function Post({ data }) {
   const [feedbackClickedFor, setFeedbackClickedFor] = useState(null)
 
   function submitFeedback(type) {
