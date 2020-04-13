@@ -16,11 +16,26 @@ export default function Post({ data }) {
   const [feedbackClickedFor, setFeedbackClickedFor] = useState(null)
 
   function submitFeedback(type) {
-    axios.get("/.netlify/functions/quick-feedback/quick-feedback", {
+    if (window.ga) {
+      window.ga(tracker =>
+        saveFeedback({ clientId: tracker.get("clientId"), type })
+      )
+    } else {
+      saveFeedback({ type })
+    }
+
+    setFeedbackClickedFor(type)
+  }
+
+  function saveFeedback({ clientId, type }) {
+    const options = {
       type,
       page: data.markdownRemark.frontmatter.title,
-    })
-    setFeedbackClickedFor(type)
+    }
+
+    if (clientId) options.clientId = clientId
+
+    axios.post("/.netlify/functions/quick-feedback/quick-feedback")
   }
 
   return (
@@ -59,7 +74,10 @@ export default function Post({ data }) {
           value={data.markdownRemark.frontmatter.title}
         />
         <div className="flex justify-center items-center mb-3 text-gray-800">
-          <h2 className="text-md sm:text-lg leading-tight text-center mr-2">
+          <h2
+            id="helpful-question"
+            className="text-md sm:text-lg leading-tight text-center mr-2"
+          >
             Was this article helpful?
           </h2>
           <FeedbackButton
@@ -75,6 +93,7 @@ export default function Post({ data }) {
         </div>
         <div className="max-w-md flex flex-col mx-auto mx-auto border border-gray-100 rounded focus-within:border-gray-500 bg-white">
           <textarea
+            aria-labelledby="helpful-question"
             className="flex-grow flex-shrink min-w-0 p-4 text-gray-800 outline-none rounded"
             name={`feedback-text`}
             placeholder="Make it better by having your say!"

@@ -1,5 +1,5 @@
 <svg width="300" height="240" viewBox="0 0 300 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0)">
+<g clip-path="url(#clipColor)">
 <path d="M142.513 165.206C132.345 170.921 130.222 176.179 127.702 186.284H179.541C178.675 176.509 176.05 171.732 165.3 165.206C165.417 123.789 169.105 78.7647 165.3 60.958L127.702 36.4625C127.702 36.4625 110.345 60.0281 109.473 60.958C108.6 61.888 143.956 81.1056 142.513 81.4659C141.07 81.8262 142.513 165.206 142.513 165.206Z" fill="#9B9999" stroke="#575757"/>
 <circle cx="147.943" cy="160.858" r="1.13933" fill="#C4C4C4"/>
 <circle cx="147.943" cy="107.31" r="1.13933" fill="#C4C4C4"/>
@@ -109,7 +109,7 @@
 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
 </filter>
-<clipPath id="clip0">
+<clipPath id="clipColor">
 <rect width="300" height="240" fill="white"/>
 </clipPath>
 </defs>

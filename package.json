@@ -42,6 +42,7 @@
     "universal-analytics": "^0.4.20"
   },
   "devDependencies": {
+    "eslint-config-react-app": "^5.2.1",
     "prettier": "^1.18.2"
   },
   "keywords": [

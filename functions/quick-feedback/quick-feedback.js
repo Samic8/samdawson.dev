@@ -1,9 +1,12 @@
 const ua = require("universal-analytics")
-const visitor = ua("UA-93793174-3")
+const id = "UA-93793174-3"
 
 exports.handler = (event, context, callback) => {
+  const clientId = event.queryStringParameters.clientId
   const type = event.queryStringParameters.type
-  const page = event.queryStringParameters.type
+  const page = event.queryStringParameters.page
+
+  const visitor = clientId ? ua(id, clientId) : ua(id)
 
   visitor.event("Quick Feedback", type, page).send(err => {
     if (err) {
