@@ -21,7 +21,7 @@ export default function Post({ data }) {
       page: data.markdownRemark.frontmatter.title,
     }
 
-    axios.post("/.netlify/functions/quick-feedback/quick-feedback", options)
+    axios.get("/.netlify/functions/quick-feedback/quick-feedback", options)
 
     setFeedbackClickedFor(type)
   }
