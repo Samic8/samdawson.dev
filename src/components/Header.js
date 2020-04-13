@@ -1,7 +1,6 @@
 import React from "react"
 import LogoImage from "./Image"
 import { Link } from "gatsby"
-import ReactGA from "react-ga"
 
 const Header = () => {
   return (
@@ -26,23 +25,9 @@ const Header = () => {
             "border-l border-gray-100 my-3 flex items-center tracking-wide text-gray-700 pl-6 font-bold text-xsm"
           }
         >
-          {/* <a
-            href="#footer"
-            className="mr-5 hover:text-gray-500 hidden sm:inline"
-            onClick={() => {
-              ReactGA.event({
-                category: "Action",
-                action: "User clicked newsletter button",
-              })
-            }}
-          >
-            NEWSLETTER
-          </a> */}
           <Link to={"/articles"} className="hover:text-gray-500">
             ARTICLES
           </Link>
-          {/* TODO: Add notes, like tweets, short form articles */}
-          {/* <Link to={'/'}>NOTES</Link> */}
         </div>
       </div>
     </div>
