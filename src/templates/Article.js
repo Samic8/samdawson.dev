@@ -16,12 +16,12 @@ export default function Post({ data }) {
   const [feedbackClickedFor, setFeedbackClickedFor] = useState(null)
 
   function submitFeedback(type) {
-    const options = {
+    const params = {
       type,
       page: data.markdownRemark.frontmatter.title,
     }
 
-    axios.get("/.netlify/functions/quick-feedback/quick-feedback", options)
+    axios.get("/.netlify/functions/quick-feedback/quick-feedback", { params })
 
     setFeedbackClickedFor(type)
   }
