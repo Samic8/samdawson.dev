@@ -8,6 +8,9 @@ exports.handler = (event, context, callback) => {
 
   const visitor = clientId ? ua(id, clientId) : ua(id)
 
+  // Logging for netlify dev console
+  console.log(clientId)
+
   visitor.event("Quick Feedback", type, page).send(err => {
     if (err) {
       return callback(null, {
