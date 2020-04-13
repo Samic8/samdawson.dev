@@ -6,7 +6,7 @@ exports.handler = (event, context, callback) => {
   const type = event.queryStringParameters.type
   const page = event.queryStringParameters.page
 
-  const { _ga: clientId } = cookie.parse(event.cookie) || {}
+  const { _ga: clientId } = cookie.parse(event.headers.cookie) || {}
   const visitor = clientId ? ua(id, clientId) : ua(id)
 
   // Logging for netlify dev console
