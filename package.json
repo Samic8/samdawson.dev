@@ -9,7 +9,6 @@
     "@raae/gatsby-remark-oembed": "^0.1.1",
     "autoprefixer": "^9.6.1",
     "axios": "^0.19.2",
-    "cookie": "^0.4.0",
     "gatsby": "^2.10.0",
     "gatsby-image": "^2.2.1",
     "gatsby-plugin-feed": "^2.3.27",
