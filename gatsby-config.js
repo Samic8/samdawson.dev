@@ -177,5 +177,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-feed`,
+    `gatsby-plugin-percy`,
   ],
 }
