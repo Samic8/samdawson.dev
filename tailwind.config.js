@@ -66,7 +66,6 @@ module.exports = {
     borderColor: ["responsive", "hover", "focus", "focus-within"],
   },
   plugins: [
-    require("tailwindcss-transitions")(),
     function({ addUtilities }) {
       const newUtilities = {
         ".translate-y-0": {

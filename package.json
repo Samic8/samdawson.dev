@@ -42,7 +42,6 @@
     "react-ga": "^2.7.0",
     "react-helmet": "^5.2.1",
     "tailwindcss": "^1.0.5",
-    "tailwindcss-transitions": "^2.0.1",
     "universal-analytics": "^0.4.20"
   },
   "devDependencies": {
