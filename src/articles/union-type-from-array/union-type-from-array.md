@@ -8,14 +8,14 @@ date: "2020-04-16"
 Sometimes typescript can feel like duplication, describing code that is already static (constant). Heres one trick to mitigate that by generating a [string literal](https://mariusschulz.com/blog/string-literal-types-in-typescript) union type from an array.
 
 ```typescript
-// as const tells typescript that this array won't change
+// *as const* tells typescript that this array won't change
 const intervals = ["hour", "day", "week", "month", "year"] as const
 
 // *typeof* grabs all of the values with a *number* index and creates a union type
 type Intervals = typeof intervals[number]
 ```
 
-The resulting interface, if it was hardcoded would look like this
+The resulting type, if it was hard-coded would become a union type of string literals.
 
 ```typescript
 type Intervals = "hour" | "day" | "week" | "month" | "year"
