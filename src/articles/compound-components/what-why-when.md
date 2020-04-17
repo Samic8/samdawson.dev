@@ -65,5 +65,3 @@ It's when you really need that _flexibility_ benefit. Are you building something
 A stricter approach like props is better for consistency. If you want a component to look and behave the same everywhere that it is used then compound components should not be your first choice.
 
 When you don't know what the future will hold for a component then maybe its best to use stricter props to begin with and then pay the refactoring price later on to transform it into a composable component.
-
-> This is part of an article series on how to build a **compound component**. Subscribe to my newsletter below to get notified when the next articles are released.
