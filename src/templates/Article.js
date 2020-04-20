@@ -84,7 +84,7 @@ export default function Post({ data }) {
             aria-labelledby="helpful-question"
             className="flex-grow flex-shrink min-w-0 p-4 text-gray-800 outline-none rounded"
             name={`feedback-text`}
-            placeholder="Make it better by having your say!"
+            placeholder="Did you find what you were looking for?"
           />
           <button
             type="submit"
