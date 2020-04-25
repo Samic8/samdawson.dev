@@ -7,6 +7,7 @@ import Content from "../components/Content"
 import ArticleList from "../components/ArticleList"
 import { mapEdgesToNode } from "../utility/data"
 import Wave from "../svgs/wave.svg"
+import ExternalLinks from "../components/ExternalLinks"
 
 export const pageQuery = graphql`
   fragment ArticleList on MarkdownRemarkConnection {
@@ -63,38 +64,7 @@ const IndexPage = ({ data }) => (
           </a>
           .
         </p>
-        <div className={"text-xsm mt-2 font-bold tracking-wide"}>
-          <a
-            className={
-              "pr-2 border-r border-gray-200 text-gray-500 hover:text-gray-700"
-            }
-            href="https://codepen.io/Samic8/"
-          >
-            CODEPEN
-          </a>
-          <a
-            className={
-              "px-2 border-r border-gray-200 text-gray-500 hover:text-gray-700"
-            }
-            href="https://github.com/samic8"
-          >
-            GITHUB
-          </a>
-          <a
-            className={
-              "px-2 text-gray-500 border-r border-gray-200 hover:text-gray-700"
-            }
-            href="https://twitter.com/sam__dawson"
-          >
-            TWITTER
-          </a>
-          <a
-            className={"px-2 text-gray-500 hover:text-gray-700"}
-            href="/rss.xml"
-          >
-            RSS FEED
-          </a>
-        </div>
+        <ExternalLinks />
       </div>
     </div>
     <Content>
