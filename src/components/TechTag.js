@@ -4,7 +4,7 @@ import { techToBgColor } from "../utility/techColors"
 
 export default ({ techName, className, size, ...props }) => (
   <Button
-    to={`category/${techName}`}
+    to={`/category/${techName}`}
     className={`${techToBgColor[techName]} ${className} hover:underline`}
     size={size}
     {...props}
