@@ -65,7 +65,12 @@
 
   pre.language-js::before {
     @extend %syntax-label;
-    content: "JS";
+    content: "Javascript";
+  }
+
+  pre.language-typescript::before {
+    @extend %syntax-label;
+    content: "Typescript";
   }
 
   ul {
