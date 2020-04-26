@@ -82,6 +82,10 @@
     color: #ffef00;
   }
 
+  .token.comment {
+    color: #999999;
+  }
+
   ul {
     @apply list-disc;
   }
