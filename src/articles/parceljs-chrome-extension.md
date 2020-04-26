@@ -13,7 +13,7 @@ My extension needed three "entries" (stand-alone files/apps) options.html, popup
 
 I gave [parcel](https://parceljs.org/) a go and it seemed like a perfect fit. I could run
 
-```
+```bash
 parcel build src/content.tsx src/options.html src/popup.html
 ```
 
@@ -23,7 +23,7 @@ and it would generate the three files I needed. My extension was written in type
 
 Chrome extensions need a manifest.json and some images for the extension's icon. I used a parcel plugin [parcel-plugin-static-files-copy](https://github.com/elwin013/parcel-plugin-static-files-copy) for these files.
 
-```
+```bash
 yarn add parcel-plugin-static-files-copy
 ```
 
@@ -101,7 +101,7 @@ I wanted to add a position fixed element to the page, instead of modifying or ad
 
 When ready to publish you will want to run
 
-```
+```bash
 parcel build src/content.tsx src/options.html src/popup.html
 ```
 
@@ -111,7 +111,7 @@ Next, you just need to create **.zip** **file** of the dist directory and your c
 
 When developing the chrome extension you can use the command
 
-```
+```bash
 parcel src/content.tsx src/options.html src/popup.html
 ```
 

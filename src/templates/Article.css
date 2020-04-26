@@ -73,6 +73,11 @@
     content: "Typescript";
   }
 
+  pre.language-bash::before {
+    @extend %syntax-label;
+    content: "Bash";
+  }
+
   ul {
     @apply list-disc;
   }
