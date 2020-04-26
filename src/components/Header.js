@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 
 const Header = () => {
   return (
-    <div className={"z-10"}>
+    <nav className={"z-10"}>
       <div
         className={
           "block flex px-5 border-b h-16 border-gray-100 justify-between relative font-header"
@@ -30,7 +30,7 @@ const Header = () => {
           </Link>
         </div>
       </div>
-    </div>
+    </nav>
   )
 }
 

@@ -26,7 +26,7 @@ const PostRow = ({ post, className }) => (
             <div className={"font-header mb-1"}>
               <h1 className="font-bold underline text-md sm:text-lg text-gray-900 leading-tight font-extrabold">
                 <Link
-                  to={`article/${post.frontmatter.slug}`}
+                  to={`/article/${post.frontmatter.slug}`}
                   className="hover:text-purple-700"
                 >
                   {post.frontmatter.title}
