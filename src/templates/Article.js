@@ -6,6 +6,7 @@ import "prism-themes/themes/prism-atom-dark.css"
 import "./Article.css"
 import SEO from "../components/SEO"
 import Content from "../components/Content"
+import ExternalLinks from "../components/ExternalLinks"
 import WiggleDownLine from "../svgs/wiggle-down-line.svg"
 import ThumbsUpSvg from "../svgs/thumbs-up.svg"
 import ThumbsDownSvg from "../svgs/thumbs-down.svg"
@@ -95,6 +96,7 @@ export default function Post({ data }) {
         </div>
       </form>
       <WiggleDownLine className="mx-auto h-24 sm:h-auto" aria-hidden />
+      <ExternalLinks className="flex justify-center mt-12" />
     </Layout>
   )
 }
