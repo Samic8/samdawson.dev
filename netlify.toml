@@ -1,8 +1,9 @@
 [build]
   # Directory with the serverless Lambda functions to deploy to AWS.
+  base = "/public"
   functions = "functions/"
   command = "yarn build"
-
+  
 [[plugins]]
   package = "netlify-plugin-gatsby-cache"
 
