@@ -65,17 +65,21 @@
 
   pre.language-js::before {
     @extend %syntax-label;
-    content: "Javascript";
+    content: "JS";
   }
 
   pre.language-typescript::before {
     @extend %syntax-label;
-    content: "Typescript";
+    content: "TS";
   }
 
   pre.language-bash::before {
     @extend %syntax-label;
     content: "Bash";
+  }
+
+  pre[class^="language"]::before {
+    color: #ffef00;
   }
 
   ul {
