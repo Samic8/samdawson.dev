@@ -11,7 +11,7 @@ export default function ExternalLinks({ className }) {
     >
       <a
         className={
-          "pr-2 border-r-2 border-gray-200 text-gray-500 hover:text-gray-700"
+          "pr-2 border-r-2 border-gray-200 text-gray-700 hover:text-gray-700"
         }
         href="/rss.xml"
       >
@@ -19,7 +19,7 @@ export default function ExternalLinks({ className }) {
       </a>
       <a
         className={
-          "px-2 text-gray-500 border-r-2 border-gray-200 hover:text-gray-700"
+          "px-2 text-gray-700 border-r-2 border-gray-200 hover:text-gray-700"
         }
         href="https://twitter.com/sam__dawson"
       >
@@ -27,14 +27,14 @@ export default function ExternalLinks({ className }) {
       </a>
       <a
         className={
-          "px-2 border-r-2 border-gray-200 text-gray-500 hover:text-gray-700"
+          "px-2 border-r-2 border-gray-200 text-gray-700 hover:text-gray-700"
         }
         href="https://github.com/samic8"
       >
         GITHUB
       </a>
       <a
-        className={"text-gray-500 hover:text-gray-700 px-2"}
+        className={"text-gray-700 hover:text-gray-700 px-2"}
         href="https://codepen.io/Samic8/"
       >
         CODEPEN
