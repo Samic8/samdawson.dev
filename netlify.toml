@@ -1,6 +1,6 @@
 [build]
   # Directory with the serverless Lambda functions to deploy to AWS.
-  base = "/public"
+  base = "public/"
   functions = "functions/"
   command = "yarn build"
   
