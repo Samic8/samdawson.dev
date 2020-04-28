@@ -54,15 +54,7 @@ const IndexPage = ({ data }) => (
         <p
           className={"text-lg sm:text-xl font-bold text-gray-800 leading-tight"}
         >
-          Hi, I'm a web designer and builder from Wollongong, Australia. I work
-          for{" "}
-          <a
-            href="https://www.accelo.com"
-            className={"text-purple-500 hover:text-purple-700"}
-          >
-            accelo
-          </a>
-          .
+          Hi, I'm a web designer and builder from Wollongong, Australia.
         </p>
         <ExternalLinks />
       </div>
