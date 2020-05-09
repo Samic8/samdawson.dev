@@ -1,6 +1,6 @@
 ---
 title: "Taking advantage of CSS grid auto-flow: dense with metadata"
-slug: dense with metadata auto-flow-dense-metadata
+slug: auto-flow-dense-metadata
 techs: ["CSS"]
 date: "2020-05-09"
 draft: true
