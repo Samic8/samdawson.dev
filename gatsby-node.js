@@ -1,4 +1,5 @@
 const { dedupeTechs } = require("./src/utility/data")
+const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
@@ -14,6 +15,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               techs
               title
               date(formatString: "MMM D, YYYY")
+              dateTime: date(formatString: "YYYY-MM-DD")
             }
             excerpt(pruneLength: 200)
           }
@@ -50,7 +52,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       path: `articles`,
       component: require.resolve("./src/templates/CategoryList.js"),
       context: {
-        tech: "All",
+        tech: "All Articles",
         ids: getIdsFromEdges(allMarkdownRemark.edges),
       },
     })
@@ -72,4 +74,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
 function getIdsFromEdges(edges) {
   return edges.map(({ node }) => node.id)
+}
+
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+  if (node.internal.type === `MarkdownRemark`) {
+    const value = createFilePath({ node, getNode })
+    createNodeField({
+      name: `slug`,
+      node,
+      value,
+    })
+  }
 }

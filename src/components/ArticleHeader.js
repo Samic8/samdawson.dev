@@ -1,10 +1,16 @@
 import React from "react"
+import Time from "./Time"
 
-export default function ArticleHeader({ title }) {
+export default function ArticleHeader({ title, date, dateTime }) {
   return (
-    <div className={"flex justify-between max-w-xl mx-auto"}>
-      <h1 className="font-bold text-gray-900 left text-lg leading-tight my-10 sm:my-20 max-w-xl mx-auto relative font-extrabold">
+    <div
+      className={"flex flex-col items-center max-w-xl mx-auto my-10 sm:my-16"}
+    >
+      <h1 className="font-bold text-gray-900 text-lg leading-tight max-w-xl mx-auto relative font-extrabold">
         {title}
+        <div>
+          <Time className="mt-2 self-start" date={date} dateTime={dateTime} />
+        </div>
       </h1>
     </div>
   )

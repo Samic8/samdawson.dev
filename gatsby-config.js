@@ -1,7 +1,9 @@
+const poundIcon = require("./pound-icon")
+
 module.exports = {
   siteMetadata: {
-    title: `samdawson.dev`,
-    description: `Sam Dawsons blog. Sam is a web designer and developer from Australia.`,
+    title: `Sam Dawson's Blog`,
+    description: `Web Frontend Design and Development.`,
     author: `Sam Dawson`,
     siteUrl: "https://www.samdawson.dev",
   },
@@ -54,6 +56,12 @@ module.exports = {
         plugins: [
           {
             resolve: `@raae/gatsby-remark-oembed`,
+            options: {
+              usePrefix: true,
+              providers: {
+                include: ["Codepen", "CodeSandbox"],
+              },
+            },
           },
           {
             resolve: `gatsby-remark-images`,
@@ -105,7 +113,12 @@ module.exports = {
               // existing language" below.
             },
           },
-          `gatsby-remark-autolink-headers`,
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              icon: poundIcon,
+            },
+          },
           {
             resolve: `gatsby-plugin-sitemap`,
             options: {
@@ -116,7 +129,6 @@ module.exports = {
         ],
       },
     },
-
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -151,5 +163,7 @@ module.exports = {
         respectDNT: true,
       },
     },
+    `gatsby-plugin-feed`,
+    `gatsby-plugin-percy`,
   ],
 }

@@ -7,12 +7,14 @@ module.exports = {
       sm: "1.1rem",
       base: "1.20rem",
       md: "1.30rem",
+      mdlg: "1.45rem",
       lg: "1.75rem",
       xl: "2.5rem",
     },
     fontFamily: {
       header: `"Montserrat", ${systemFontStack}`,
       sans: `"Montserrat", ${systemFontStack}`,
+      systemFont: systemFontStack,
     },
     extend: {
       margin: {
@@ -32,32 +34,40 @@ module.exports = {
           900: "#2C2839",
         },
         brown: {
+          200: "#e29365",
           500: "#D86D31",
           600: "#c56026",
+          900: "#5c280a",
         },
         teal: {
+          200: "#78c4d9",
           300: "#61DAFB",
           400: "#28ADD2",
           500: "#218EAB",
+          900: "#104351",
         },
         purple: {
           100: "#CECAD3",
+          300: "#cfbae9",
           400: "#ad8fd1",
           500: "#9875c3",
           700: "#7042a9",
+          900: "#503d67",
         },
         yellow: {
           100: "#fcfaf8",
           200: "#f6f2ec",
+          300: "#faf089",
+          900: "#744210",
         },
       },
     },
   },
   variants: {
     opacity: ["responsive", "hover", "focus", "group-hover"],
+    borderColor: ["responsive", "hover", "focus", "focus-within"],
   },
   plugins: [
-    require("tailwindcss-transitions")(),
     function({ addUtilities }) {
       const newUtilities = {
         ".translate-y-0": {

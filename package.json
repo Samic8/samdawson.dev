@@ -1,17 +1,21 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "samdawson.dev",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "My personal blog",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Sam Dawson",
   "dependencies": {
+    "@percy/agent": "^0.26.2",
     "@raae/gatsby-remark-oembed": "^0.1.1",
     "autoprefixer": "^9.6.1",
+    "axios": "^0.19.2",
     "gatsby": "^2.10.0",
     "gatsby-image": "^2.2.1",
+    "gatsby-plugin-feed": "^2.3.27",
     "gatsby-plugin-google-analytics": "^2.1.4",
     "gatsby-plugin-manifest": "^2.2.0",
     "gatsby-plugin-offline": "^2.2.0",
+    "gatsby-plugin-percy": "^0.1.4",
     "gatsby-plugin-postcss": "^2.1.2",
     "gatsby-plugin-prefetch-google-fonts": "^1.4.2",
     "gatsby-plugin-purgecss": "^4.0.0",
@@ -26,18 +30,19 @@
     "gatsby-source-filesystem": "^2.1.0",
     "gatsby-transformer-remark": "^2.6.1",
     "gatsby-transformer-sharp": "^2.2.0",
+    "get-active-classes": "^0.0.11",
     "postcss-extend-rule": "^3.0.0",
     "postcss-nested": "^4.1.2",
     "prism-themes": "^1.1.0",
     "prismjs": "^1.16.0",
-    "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "tailwindcss": "^1.0.5",
-    "tailwindcss-transitions": "^2.0.1"
+    "universal-analytics": "^0.4.20"
   },
   "devDependencies": {
+    "eslint-config-react-app": "^5.2.1",
     "prettier": "^1.18.2"
   },
   "keywords": [
@@ -45,7 +50,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx,md}",
     "start": "npm run develop",

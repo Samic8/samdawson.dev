@@ -9,11 +9,11 @@
 
 .article {
   h2 {
-    @apply text-md font-bold mt-20 mb-3;
+    @apply text-lg font-semibold mt-20 mb-3;
   }
 
   p {
-    @apply mb-8;
+    @apply mb-4 text-justify;
   }
 
   strong {
@@ -21,7 +21,7 @@
   }
 
   h3 {
-    @apply text-base font-bold mt-10 mb-3;
+    @apply text-mdlg font-semibold mt-10 mb-3;
   }
 
   img {
@@ -29,7 +29,7 @@
   }
 
   .gatsby-resp-image-wrapper {
-    @apply mt-16;
+    @apply mt-4;
   }
 
   .gatsby-highlight {
@@ -37,7 +37,7 @@
   }
 
   pre[class*="language-"] {
-    @apply leading-snug mb-20 mt-10 rounded;
+    @apply leading-snug mb-10 mt-10 rounded;
   }
 
   pre[class*="language-"],
@@ -45,6 +45,12 @@
     @apply leading-snug relative;
     width: calc(100% + 2.5rem) !important;
     left: -1.25rem;
+
+    @screen sm {
+      width: 100% !important;
+      left: 0;
+      @apply rounded-lg;
+    }
   }
 
   pre.language-css::before {
@@ -62,6 +68,29 @@
     content: "JS";
   }
 
+  pre.language-jsx::before {
+    @extend %syntax-label;
+    content: "JSX";
+  }
+
+  pre.language-typescript::before {
+    @extend %syntax-label;
+    content: "TS";
+  }
+
+  pre.language-bash::before {
+    @extend %syntax-label;
+    content: "Bash";
+  }
+
+  pre[class^="language"]::before {
+    color: #ffef00;
+  }
+
+  .token.comment {
+    color: #999999;
+  }
+
   ul {
     @apply list-disc;
   }
@@ -70,29 +99,34 @@
     @apply mb-5 ml-5;
   }
 
-  a {
-    @apply inline-block text-gray-900 relative;
-
-    cursor: pointer;
-    transition: 0.1s background-color ease;
+  .anchor {
+    margin-top: 6px;
+    padding: 0;
   }
 
-  a:not(.anchor):not(.gatsby-resp-image-link)::after {
-    content: "";
-    display: block;
-    margin-top: -3px;
-    height: 2px;
-    width: 100%;
-    @apply bg-purple-400 absolute;
-    transition: 0.15s width ease, 0.1s background-color ease;
+  a:not(.anchor) {
+    text-decoration-color: theme("colors.purple.400");
+    text-decoration-thickness: 0.125em;
+    text-underline-offset: 3px;
+    @apply underline;
   }
 
   a:hover {
     @apply text-purple-700;
   }
 
-  a:not(.anchor):not(.gatsby-resp-image-link):hover::after {
-    width: 100%;
-    @apply bg-purple-500 h-1;
+  blockquote {
+    @apply text-mdlg;
+    position: relative;
+    margin-bottom: 14px;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+
+    p {
+      position: relative;
+      z-index: 1;
+      display: inline;
+    }
   }
 }

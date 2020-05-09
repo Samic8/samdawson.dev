@@ -1,21 +1,19 @@
 import React from "react"
 import TechTag from "./TechTag"
 
-export default function TechList({ techs, size = "small" }) {
-  const sizes = {
-    small: "mr-1 mb-1",
-    medium: "mr-1 mb-1 md:mr-2 md:mb-2",
-  }
+export default function TechList({ techs }) {
   return (
-    <ul>
-      {techs.map(techName => (
-        <li
-          key={techName}
-          className={`inline-block font-header ${sizes[size]}`}
-        >
-          <TechTag key={techName} techName={techName} size={size} />
-        </li>
-      ))}
-    </ul>
+    <section className="font-header max-w-lg mx-auto sm:mt-10 mt-6 rounded border-gray-200 border-2 border-dashed p-4">
+      <h2 className="uppercase font-bold text-gray-700 text-xsm mb-2">
+        Categories
+      </h2>
+      <ul className="">
+        {techs.map(techName => (
+          <li key={techName} className={`inline-block font-header mr-2 mb-2`}>
+            <TechTag size="medium" key={techName} techName={techName} />
+          </li>
+        ))}
+      </ul>
+    </section>
   )
 }

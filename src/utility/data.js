@@ -8,13 +8,20 @@ function mapEdgesToNode(data, generator = val => val) {
 }
 
 function dedupeTechs(allMarkdownRemark) {
+  const counts = {}
   const uniqueCategories = new Set()
   allMarkdownRemark.edges.forEach(({ node }) => {
     // Transform space separated categories into an array
     node.frontmatter.techs.forEach(category => {
+      if (!counts[category]) {
+        counts[category] = 1
+      } else {
+        counts[category]++
+      }
+
       uniqueCategories.add(category)
     })
   })
   // Create new array with duplicates removed
-  return Array.from(uniqueCategories)
+  return Array.from(uniqueCategories).sort((a, b) => counts[b] - counts[a])
 }
