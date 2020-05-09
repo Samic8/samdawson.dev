@@ -27,6 +27,7 @@ export const pageQuery = graphql`
               }
             }
           }
+          draft
         }
         excerpt(pruneLength: 130)
       }
