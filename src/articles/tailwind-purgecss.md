@@ -5,7 +5,7 @@ techs: ["Tailwind", "Gatsby"]
 date: "2019-08-09"
 ---
 
-**Update:** I found simpler solution then mentioned in the original article using the _purgeOnly_ option in [gatsby-plugin-purgecss](https://www.gatsbyjs.org/packages/gatsby-plugin-purgecss/?=purgecss).
+**Update:** I found a simpler solution then mentioned in the original article using the _purgeOnly_ option in [gatsby-plugin-purgecss](https://www.gatsbyjs.org/packages/gatsby-plugin-purgecss/?=purgecss).
 
 ```js
 // gatsby-config.js
@@ -22,7 +22,7 @@ module.exports = {
 }
 ```
 
-With the CSS file containing the core tailwind directives/imports.
+The **global.css** file contains the core tailwind directives/imports, which are purged of unused tailwind classes.
 
 ```css
 /* src/css/global.css */
