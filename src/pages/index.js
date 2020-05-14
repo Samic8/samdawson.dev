@@ -54,7 +54,15 @@ const IndexPage = ({ data }) => (
         <p
           className={"text-lg sm:text-xl font-bold text-gray-800 leading-tight"}
         >
-          Hi, I'm a web designer and builder from Wollongong, Australia.
+          Hi, I'm a web designer and builder from Wollongong, Australia. I work
+          for{" "}
+          <a
+            href="https://www.easyagile.com/careers"
+            className={"text-purple-500 hover:text-purple-700"}
+          >
+            easy agile
+          </a>
+          .
         </p>
         <ExternalLinks />
       </div>
