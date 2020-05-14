@@ -172,7 +172,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-feed`,
       options: {
-        custom_namespaces: [{ webfeeds: "http://webfeeds.org/rss/1.0" }],
+        custom_namespaces: { webfeeds: "http://webfeeds.org/rss/1.0" },
         custom_elements: [
           { "webfeeds:icon": "https://samdawson.dev/icon.png" },
           { "webfeeds:cover": "https://samdawson.dev/icon.png" },
