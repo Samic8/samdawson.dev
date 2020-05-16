@@ -5,7 +5,7 @@ export default function ExternalLinks({ className }) {
   return (
     <div
       className={getActiveClasses(
-        "text-xsm mt-2 font-bold tracking-wide",
+        "text-xsm mt-2 font-bold tracking-wide flex items-center",
         className
       )}
     >
