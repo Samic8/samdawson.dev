@@ -25,6 +25,9 @@ const Header = () => {
             "border-l border-gray-100 my-3 flex items-center tracking-wide text-gray-700 pl-6 font-bold text-xsm"
           }
         >
+          <Link to={"/subscribe"} className="hover:text-gray-500 mr-6">
+            SUBSCRIBE
+          </Link>
           <Link to={"/articles"} className="hover:text-gray-500">
             ARTICLES
           </Link>
