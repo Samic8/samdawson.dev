@@ -4,12 +4,12 @@ import SEO from "../components/SEO"
 import Content from "../components/Content"
 import CategoryListHeader from "../components/CategoryListHeader"
 import ArticleList from "../components/ArticleList"
-import TechList from "../components/TechList"
+import CategoryList from "../components/CategoryList"
 import { dedupeTechs } from "../utility/data"
 import { mapEdgesToNode } from "../utility/data"
 import { graphql } from "gatsby"
 
-const CategoryList = ({
+const CategoryListTemplate = ({
   pageContext: { tech },
   data: { allMarkdownRemark, allArticles },
 }) => {
@@ -19,7 +19,7 @@ const CategoryList = ({
   return (
     <Layout center>
       <SEO title={title} />
-      <TechList techs={dedupedTechs} />
+      <CategoryList techs={dedupedTechs} />
       <Content>
         <CategoryListHeader title={title} tech={tech} />
         <ArticleList posts={mapEdgesToNode(allMarkdownRemark)} />
@@ -48,4 +48,4 @@ export const query = graphql`
   }
 `
 
-export default CategoryList
+export default CategoryListTemplate
