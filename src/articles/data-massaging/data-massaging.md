@@ -13,7 +13,7 @@ I like to call this **data massaging** 💆.
 
 ## Without data massaging
 
-Say we had data about cars that needs to be displayed in a table
+Say we had data about cars that need to be displayed in a table
 
 ```js
 const cars = [
@@ -92,7 +92,7 @@ function CarTable({ cars }) {
 }
 ```
 
-That does not seem too complex but its not very future proof, every time you add a new column this component needs to change, and the unit tests for that component need to be updated. If in the future we wanted to allow users to configure what columns were shown, then we would have to add conditions for when each **td** is shown and make sure the corresponding **th** is too.
+That does not seem too complex but it's not very future proof, every time you add a new column this component needs to change, and the unit tests for that component need to be updated. If in the future we wanted to allow users to configure what columns were shown, then we would have to add conditions for when each **td** is shown and make sure the corresponding **th** is too.
 
 ```jsx
 function CarTable({ cars, shownColumns }) {
@@ -162,7 +162,7 @@ function App() {
 }
 ```
 
-The table component then becomes simpler, more generic and easier to unit test. Easier to test because you are not having to write unit tests for every unique data property.
+The table component then becomes simpler, more generic, and easier to unit test. Easier to test because you are not having to write unit tests for every unique data property.
 
 ```jsx
 function InfoTable({ tableData }) {
@@ -187,6 +187,6 @@ function InfoTable({ tableData }) {
 }
 ```
 
-As for the feature where users can select want columns they want displayed, the data massager (generateTableFromCars) function can handle filtering to only the columns needed before it gets to the component.
+As for the feature where users can select columns they want to be displayed, the data massager (generateTableFromCars) function can handle filtering to only the columns needed before it gets to the component.
 
 The component code no longer has to change when there are changes to the data it needs to display.
