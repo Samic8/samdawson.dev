@@ -17,22 +17,21 @@ For each of them you can push away from the code they want to guide you towards,
   </thead>
   <tbody>
     <tr>
-      <td>
-        - Less boilerplate.
-        - Couples components to redux
-        - Components are harder to test, can easily just test the "inner" component without connection to redux
-        - Tests cover more code, including redux. More comprehensive.
-        - Potential "Zombie Children" problem
-        - Reduction of separation of concerns?
-        - Less moving parts, easier to reason about each component.
+      <td style="padding: 5px; vertical-align: top">
+        <li><a href="#testing-components-using-react-redux-hooks">Less boilerplate</a></li>
+        <li><a href="#testing-components-using-react-redux-hooks">Couples components to redux</a></li>
+        <li><a href="#testing-components-using-react-redux-hooks">Components are more effort to test</a></li>
+        <li><a href="#testing-components-using-react-redux-hooks">Tests cover more code including redux</a></li>
+        <li><a href="#zombie-children-problem">Potential "Zombie Children" problem</a></li>
+        <li><a href="#unit-testing-and-separation-of-concerns">Less separation of concerns</a></li>
+        <li><a href="#testing-components-using-react-redux-hooks">Less moving parts, easier to reason about each component</a></li>
       </td>
-      <td>
-        - More boiler plate
-        - Likely less test coverage
-        - Components themselves are simpler and easier to test
-        - Can test connnected component the same as useSelector
-        - Leads to exporting "private" component
-        - [Better performance optimizations by default](#better-performance-optimizations-by-default)
+      <td style="padding: 5px; vertical-align: top">
+        <li><a href="#testing-components-using-the-connect-function">More boiler plate</a></li>
+        <li><a href="#testing-components-using-the-connect-function"><i>Nudged</i> to have less test coverage</a></li>
+        <li><a href="#testing-components-using-the-connect-function">"Inner" components themselves are simpler and easier to test</a></li>
+        <li><a href="#testing-components-using-the-connect-function">Can test connected component the same as useSelector</a></li>
+        <li><a href="#better-performance-optimizations-by-default">Better performance optimizations by default</a></li>
       </td>
     </tr>
 
@@ -84,3 +83,7 @@ Whether this will truly give your app better performance is best left decided to
 ## Read the docs for more in-depth understand
 
 This article provides a framework to compare the approaches through the theme of _nudging_. But to truly get an understanding of the details of the hooks API checkout the [official documentation](https://react-redux.js.org/api/hooks).
+
+### Zombie children problem
+
+The docs go into [detail about a problem](https://react-redux.js.org/api/hooks#stale-props-and-zombie-children) that can arise through React Redux hook usage. The docs have a lot of information on this issue and it's hard to a grasp of exactly how it would effect your code. Let me know if you would like a video tutorial on this problem, reach out through the text box below or twitter.
