@@ -6,7 +6,7 @@ date: "2019-12-24"
 updated: "2020-05-24"
 ---
 
-Redux hooks and connect have can have the same functional outcomes. The main difference between them is the ability to _nudge_ (guide) the way you write your component code. Understanding what each of them optimizes for will help you make your decision on what one to use.
+Redux hooks and connect can have the same functional outcomes. The main difference between them is the ability to _nudge_ (guide) the way you write your component code. Understanding what each of them optimizes for will help you make your decision on what one to use.
 
 For both approaches of them you can ignore the _nudge_, but it's best not to fight the API and instead choose the one that optimizes for what you want to optimize for.
 
