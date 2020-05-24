@@ -54,7 +54,7 @@ For a **connect** component we have the option of testing both the presentationa
 
 GITHUB-EMBED https://github.com/Samic8/react-redux-use-selector-vs-connect/blob/master/src/features/counter-connect/CounterConnect.js javascript 1-18,62-82 GITHUB-EMBED
 
-The first test example below is only concerned with the "inner" component which is simpler as we don't have to worry about the redux state. The second example tests both the component and the connection to redux, which is more comprehensive as we testing more lines of code, which includes the mapStateToProps setup code.
+The first test example below is only concerned with the "inner" component which is simpler as we don't have to worry about the redux state. The second example tests both the component and the connection to redux, which is more comprehensive as we are testing more lines of code which includes the mapStateToProps setup code.
 
 GITHUB-EMBED https://github.com/Samic8/react-redux-use-selector-vs-connect/blob/master/src/features/counter-connect/CounterConnect.test.js javascript 1-21 GITHUB-EMBED
 
