@@ -24,14 +24,7 @@ export default function ArticleHeader({
               </span>
             </>
           )}
-          <Time date={date} dateTime={dateTime} />
-          <span
-            className={getActiveClasses("text-xsm text-gray-700", {
-              "sr-only": !updated,
-            })}
-          >
-            &nbsp;(Originally Posted)
-          </span>
+          {!updated && <Time date={date} dateTime={dateTime} />}
         </div>
       </h1>
     </div>
