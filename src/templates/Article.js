@@ -41,6 +41,8 @@ export default function Post({ data }) {
         title={data.markdownRemark.frontmatter.title}
         date={data.markdownRemark.frontmatter.date}
         dateTime={data.markdownRemark.frontmatter.dateTime}
+        updated={data.markdownRemark.frontmatter.updated}
+        updatedDateTime={data.markdownRemark.frontmatter.updatedDateTime}
       ></ArticleHeader>
       <Content>
         <article
@@ -111,6 +113,8 @@ export const query = graphql`
           publicURL
         }
         date(formatString: "MMM D, YYYY")
+        updated(formatString: "MMM D, YYYY")
+        updatedDateTime: updated(formatString: "YYYY-MM-DD")
         dateTime: date(formatString: "YYYY-MM-DD")
       }
       excerpt
