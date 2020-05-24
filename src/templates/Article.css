@@ -129,4 +129,22 @@
       display: inline;
     }
   }
+
+  /* Use selector article table TODO replace with mdx for better table solution */
+  .mobile-table-header-replace {
+    display: none;
+  }
+  @media screen and (max-width: 768px) {
+    .mobile-table {
+      display: block;
+    }
+
+    .mobile-table-header {
+      display: none;
+    }
+
+    .mobile-table-header-replace {
+      display: block;
+    }
+  }
 }

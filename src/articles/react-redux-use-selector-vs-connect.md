@@ -12,12 +12,12 @@ For each of them you can push away from the code they want to guide you towards,
 
 <table>
   <thead>
-    <th>Hooks (useSelector etc)</th>
-    <th>Connect</th>
+    <th class="mobile-table">Hooks (useSelector etc)</th>
+    <th class="mobile-table-header">Connect</th>
   </thead>
   <tbody>
     <tr>
-      <td style="padding: 5px; vertical-align: top">
+      <td style="padding: 5px; vertical-align: top" class="mobile-table">
         <li><a href="#testing-components-using-react-redux-hooks">Less boilerplate</a></li>
         <li><a href="#testing-components-using-react-redux-hooks">Couples components to redux</a></li>
         <li><a href="#testing-components-using-react-redux-hooks">Components are more effort to test</a></li>
@@ -26,7 +26,8 @@ For each of them you can push away from the code they want to guide you towards,
         <li><a href="#unit-testing-and-separation-of-concerns">Less separation of concerns</a></li>
         <li><a href="#testing-components-using-react-redux-hooks">Less moving parts, easier to reason about each component</a></li>
       </td>
-      <td style="padding: 5px; vertical-align: top">
+      <td style="padding: 5px; vertical-align: top" class="mobile-table">
+        <li class="mobile-table-header-replace" style="text-align: center; font-weight: bold">Connect</li>
         <li><a href="#testing-components-using-the-connect-function">More boiler plate</a></li>
         <li><a href="#testing-components-using-the-connect-function"><i>Nudged</i> to have less test coverage</a></li>
         <li><a href="#testing-components-using-the-connect-function">"Inner" components themselves are simpler and easier to test</a></li>
