@@ -86,7 +86,7 @@ Whether this will truly give your app better performance is best left decided to
 
 Using react hooks forgoes the need to use the connect function and embeds that logic within the components themselves. The trade-off is a reduction on the _Separation of Concerns_ spectrum and the need to be are of when to use React.memo.
 
-## Read the docs for more in-depth understand
+## Read the docs for more in-depth understanding
 
 This article provides a framework to compare the approaches through the theme of _nudging_. But to truly get an understanding of the details of the hooks API checkout the [official documentation](https://react-redux.js.org/api/hooks).
 
