@@ -80,3 +80,7 @@ I am using the word _nudge_ here again, because it does not force us to test com
 The winner here is the connect function, since it won't re-render connected components unless the props included the props mapped from state are changed. Components using React Redux hooks can achieve the same functionality by making use of the [React.memo](https://reactjs.org/docs/react-api.html#reactmemo) API
 
 Whether this will truly give your app better performance is best left decided to [actual testing](/article/js-perf-assumptions).
+
+## Read the docs for more in-depth understand
+
+This article provides a framework to compare the approaches through the theme of _nudging_. But to truly get an understanding of the details of the hooks API checkout the [official documentation](https://react-redux.js.org/api/hooks).
