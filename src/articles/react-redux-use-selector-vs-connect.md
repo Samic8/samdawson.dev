@@ -87,3 +87,8 @@ This article provides a framework to compare the approaches through the theme of
 ### Zombie children problem
 
 The docs go into [detail about a problem](https://react-redux.js.org/api/hooks#stale-props-and-zombie-children) that can arise through React Redux hook usage. The docs have a lot of information on this issue and it's hard to a grasp of exactly how it would effect your code. Let me know if you would like a video tutorial on this problem, reach out through the text box below or twitter.
+
+## Additional Resources
+
+- [Full Code examples are from this article](https://codesandbox.io/s/github/Samic8/react-redux-use-selector-vs-connect)
+- [Thoughts on React Hooks, Redux and Separation of Concerns](https://blog.isquaredsoftware.com/2019/07/blogged-answers-thoughts-on-hooks/)
