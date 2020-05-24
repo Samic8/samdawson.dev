@@ -68,6 +68,11 @@
     content: "JS";
   }
 
+  pre.language-javascript::before {
+    @extend %syntax-label;
+    content: "JS";
+  }
+
   pre.language-jsx::before {
     @extend %syntax-label;
     content: "JSX";

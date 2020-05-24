@@ -6,9 +6,11 @@ date: "2019-12-24"
 updated: "2020-05-24"
 ---
 
-Mostly redux hooks and connect have similar outcomes (outcomes of what). They can both perform the same functionality. The main difference between them is the ability to nudge (guide) the way you write your component code, understanding what each of them optimises for will help you make your decision on what one to use.
+Redux hooks and connect have can have the same functional outcomes. The main difference between them is the ability to _nudge_ (guide) the way you write your component code. Understanding what each of them optimizes for will help you make your decision on what one to use.
 
-For each of them you can push away from the code they want to guide you towards, but it's best not to the fight the API and instead choose the one that optimises for what you want to optimise for.
+For both approaches of them you can ignore the _nudge_, but it's best not to the fight the API and instead choose the one that optimizes for what you want to optimize for.
+
+<br/>
 
 <table>
   <thead>
@@ -18,20 +20,19 @@ For each of them you can push away from the code they want to guide you towards,
   <tbody>
     <tr>
       <td style="padding: 5px; vertical-align: top" class="mobile-table">
-        <li><a href="#testing-components-using-react-redux-hooks">Less boilerplate</a></li>
+        <li><a href="#less-boilerplate">Less boilerplate</a></li>
         <li><a href="#testing-components-using-react-redux-hooks">Couples components to redux</a></li>
         <li><a href="#testing-components-using-react-redux-hooks">Components are more effort to test</a></li>
-        <li><a href="#testing-components-using-react-redux-hooks">Tests cover more code including redux</a></li>
-        <li><a href="#zombie-children-problem">Potential "Zombie Children" problem</a></li>
+        <li><a href="#testing-components-using-react-redux-hooks"><i>Nudged</i> to have more test coverage</a></li>
         <li><a href="#unit-testing-and-separation-of-concerns">Less separation of concerns</a></li>
-        <li><a href="#testing-components-using-react-redux-hooks">Less moving parts, easier to reason about each component</a></li>
+        <li><a href="#the-zombie-children-problem">Potential "Zombie Children" problem</a></li>
       </td>
       <td style="padding: 5px; vertical-align: top" class="mobile-table">
         <li class="mobile-table-header-replace" style="text-align: center; font-weight: bold">Connect</li>
         <li><a href="#testing-components-using-the-connect-function">More boiler plate</a></li>
         <li><a href="#testing-components-using-the-connect-function"><i>Nudged</i> to have less test coverage</a></li>
         <li><a href="#testing-components-using-the-connect-function">"Inner" components themselves are simpler and easier to test</a></li>
-        <li><a href="#testing-components-using-the-connect-function">Can test connected component the same as useSelector</a></li>
+        <li><a href="#testing-components-using-the-connect-function">Option to include redux in your component tests</a></li>
         <li><a href="#better-performance-optimizations-by-default">Better performance optimizations by default</a></li>
       </td>
     </tr>
@@ -43,9 +44,9 @@ For each of them you can push away from the code they want to guide you towards,
 
 A handy way to understand the differences between hooks and connect, is to understand how unit tests can be written for each and what direction of code style they _nudge_ you towards.
 
-The way you write your unit tests influences how your components are organised by their concerns. When following the _Separation of concerns_ principle your code becomes easier to test and reuse. There is a spectrum of separation of concerns and there are tradeoff's along that spectrum, maintainability becomes a problem at the extreme ends of the spectrum.
+The way you write your unit tests influences how your components are organised by their concerns. When following the _Separation of concerns_ principle your code becomes easier to test and reuse. There is a spectrum of _Separation of Concerns_ and there are trade offs along that spectrum, maintainability becomes a problem at the extreme ends of the spectrum. Too many small pieces of code to test, or code that is too large to test.
 
-Connect API is more and the hooks API is less separated by concerns. I don't think either fall at the extreme ends so you need to understand what trade offs you are making with each choice.
+Connect API improves separation and the hooks API reduces separated by concerns. I don't think either fall at the extreme ends so you need to understand what trade offs you are making with each choice.
 
 ### Testing components using the connect function
 
@@ -53,27 +54,27 @@ For a **connect** component we have the option of testing both the presentationa
 
 GITHUB-EMBED https://github.com/Samic8/react-redux-use-selector-vs-connect/blob/master/src/features/counter-connect/CounterConnect.js javascript 1-18,62-82 GITHUB-EMBED
 
-The first test example here is only concerned with the "inner" component is much simpler as we don't have to worry the redux state. The second example tests both the the component and the connection to redux, which is more comprehensive as we testing more lines of code.
+The first test example below is only concerned with the "inner" component which is simpler as we don't have to worry the redux state. The second example tests both the the component and the connection to redux, which is more comprehensive as we testing more lines of code, which includes the mapStateToProps setup code.
 
 GITHUB-EMBED https://github.com/Samic8/react-redux-use-selector-vs-connect/blob/master/src/features/counter-connect/CounterConnect.test.js javascript 1-21 GITHUB-EMBED
 
-The redux provider is setup in the test-util which allows the insertion on initial state for convenience when testing test.
+The redux provider is setup in the imported [test-util](https://github.com/Samic8/react-redux-use-selector-vs-connect/blob/master/src/test-util.js) which allows the insertion of initial state for convenience when testing test.
 
 ### Testing components using react-redux hooks
 
-For a component using useSelector we don't have as many options the way hooks work we are _nudged_ towards testing components that are connected to redux. When you use useSelector or any other redux hooks in a component we can consider it "connected" to redux, even though we are not using the explicit connect function.
-
-This version of the component is connected to redux using the React Redux hooks.
+For a component using useSelector we are _nudged_ towards testing components that are connected to redux. When you use useSelector or any other redux hooks in a component we can consider it "connected" to redux, even though we are not using the explicit connect function.
 
 GITHUB-EMBED https://github.com/Samic8/react-redux-use-selector-vs-connect/blob/master/src/features/counter-use-selector/CounterUseSelector.js javascript 1-14,60 GITHUB-EMBED
 
-When writing tests for it because we can't separate out the "inner" component as easily we are _nudged_ towards writing tests that are connected to the redux store.
+When writing tests for the component using hooks, because we can't separate out the "inner" component as easily we are _nudged_ towards writing tests that are connected to the redux store.
 
 GITHUB-EMBED https://github.com/Samic8/react-redux-use-selector-vs-connect/blob/master/src/features/counter-use-selector/CounterUseSelector.test.js javascript 1-13 GITHUB-EMBED
 
 We end up with less flexibility but it _nudges_ us to writing to more comprehensive tests that include redux state.
 
-I am using the word _nudge_ here again, because it does not force us to test components using hooks in this way. We could break this component into two components, one that uses the hooks and another that just receives props. But at that point we are replicating the connect functions purpose, so we may as well just use it because we are not confided to using only one approach unless you have a project style-guide that is very strict about using hooks or connect exclusively. If you are in that situation it might be worth starting a discussion after the decision makers have read this article.
+I am using the word _nudge_ here again, because it does not force us to test components using hooks in this way. We could break this component into two components, one that uses the hooks and another that just receives props. But at that point we are replicating the connect functions purpose, so we may as well just use it.
+
+We are not confided to using only one method, we can mix and match hooks and the connect function. Unless you have a project style-guide that is very strict about using hooks or connect exclusively. If you are in that situation it might be worth starting a discussion about why you are opting for one way over the other.
 
 ## Better performance optimizations by default
 
@@ -81,13 +82,21 @@ The winner here is the connect function, since it won't re-render connected comp
 
 Whether this will truly give your app better performance is best left decided to [actual testing](/article/js-perf-assumptions).
 
+## Less boilerplate
+
+Using react hooks forgoes the need to use the connect function and embeds that logic within the components themselves. The trade off is a reduction on the _Separation of Concerns_ spectrum and the need to be are of when to use React.memo.
+
 ## Read the docs for more in-depth understand
 
 This article provides a framework to compare the approaches through the theme of _nudging_. But to truly get an understanding of the details of the hooks API checkout the [official documentation](https://react-redux.js.org/api/hooks).
 
-### Zombie children problem
+### The "Zombie Children" problem
 
-The docs go into [detail about a problem](https://react-redux.js.org/api/hooks#stale-props-and-zombie-children) that can arise through React Redux hook usage. The docs have a lot of information on this issue and it's hard to a grasp of exactly how it would effect your code. Let me know if you would like a video tutorial on this problem, reach out through the text box below or twitter.
+The docs go into [detail about a problem](https://react-redux.js.org/api/hooks#stale-props-and-zombie-children) that can arise through React Redux hook usage. The docs have a lot of information on this issue but it's hard to a grasp of exactly how it would effect your code. Let me know if you would like a video tutorial on this problem, reach out through the text box below or twitter.
+
+## Conclusion
+
+Understand what you are optimizing for and choose the method that best suits that. If you don't know what that is and just want to get started using React Redux I recommend the hooks approach.
 
 ## Additional Resources
 
