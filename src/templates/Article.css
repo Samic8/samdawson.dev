@@ -68,6 +68,11 @@
     content: "JS";
   }
 
+  pre.language-javascript::before {
+    @extend %syntax-label;
+    content: "JS";
+  }
+
   pre.language-jsx::before {
     @extend %syntax-label;
     content: "JSX";
@@ -127,6 +132,24 @@
       position: relative;
       z-index: 1;
       display: inline;
+    }
+  }
+
+  /* Use selector article table TODO replace with mdx for better table solution */
+  .mobile-table-header-replace {
+    display: none;
+  }
+  @media screen and (max-width: 768px) {
+    .mobile-table {
+      display: block;
+    }
+
+    .mobile-table-header {
+      display: none;
+    }
+
+    .mobile-table-header-replace {
+      display: block;
     }
   }
 }

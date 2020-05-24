@@ -1,4 +1,7 @@
 const poundIcon = require("./pound-icon")
+require("dotenv").config({
+  path: `.env`,
+})
 
 module.exports = {
   siteMetadata: {
@@ -60,6 +63,17 @@ module.exports = {
         gfm: true,
         // Plugins configs
         plugins: [
+          {
+            resolve: "gatsby-remark-github",
+            options: {
+              marker: "GITHUB-EMBED",
+              insertEllipsisComments: true,
+              ellipsisPhrase: "...",
+              useCache: true,
+              cacheKey: "gatsby-remark-github-v1",
+              token: process.env.GITHUB_TOKEN,
+            },
+          },
           {
             resolve: `@raae/gatsby-remark-oembed`,
             options: {
@@ -163,7 +177,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-93793174-3",
+        trackingId: process.env.GA_TRACKING_ID,
         head: false,
         anonymize: true,
         respectDNT: true,
