@@ -1,4 +1,7 @@
 const poundIcon = require("./pound-icon")
+require("dotenv").config({
+  path: `.env`,
+})
 
 module.exports = {
   siteMetadata: {
@@ -68,7 +71,7 @@ module.exports = {
               ellipsisPhrase: "...",
               useCache: true,
               cacheKey: "gatsby-remark-github-v1",
-              token: "e5e29cd90141bf5b8af62c439d2446f742bf787e",
+              token: process.env.GITHUB_TOKEN,
             },
           },
           {
