@@ -61,6 +61,17 @@ module.exports = {
         // Plugins configs
         plugins: [
           {
+            resolve: "gatsby-remark-github",
+            options: {
+              marker: "GITHUB-EMBED",
+              insertEllipsisComments: true,
+              ellipsisPhrase: "...",
+              useCache: true,
+              cacheKey: "gatsby-remark-github-v1",
+              token: "e5e29cd90141bf5b8af62c439d2446f742bf787e",
+            },
+          },
+          {
             resolve: `@raae/gatsby-remark-oembed`,
             options: {
               usePrefix: true,
