@@ -10,26 +10,27 @@ const Header = () => {
           "block flex px-5 border-b h-16 border-gray-100 justify-between relative font-header"
         }
       >
-        <Link to={"/"} className={"flex items-center self-center"}>
+        <Link
+          to={"/"}
+          className={
+            "flex items-center self-center hover:scale-110 transform transition-transform duration-200 ease-in"
+          }
+        >
           <LogoImage />
-          <span
-            className={
-              "tracking-wide text-gray-700 pl-2 font-bold text-xsm hover:text-gray-500"
-            }
-          >
-            SAMDAWSON.DEV
-          </span>
         </Link>
         <div
           className={
-            "border-l border-gray-100 my-3 flex items-center tracking-wide text-gray-700 pl-6 font-bold text-xsm"
+            "sm:border-l border-gray-100 my-3 flex items-center tracking-wide text-gray-700 pl-6 font-bold text-xsm"
           }
         >
-          <Link to={"/subscribe"} className="hover:text-gray-500 mr-3 sm:mr-6">
-            SUBSCRIBE
+          <Link
+            to={"/subscribe"}
+            className="hover:text-gray-500 mr-6 uppercase"
+          >
+            Subscribe
           </Link>
-          <Link to={"/articles"} className="hover:text-gray-500">
-            ARTICLES
+          <Link to={"/articles"} className="hover:text-gray-500 uppercase">
+            Articles
           </Link>
         </div>
       </div>
