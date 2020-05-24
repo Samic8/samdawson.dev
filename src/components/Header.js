@@ -1,6 +1,7 @@
 import React from "react"
 import LogoImage from "./Image"
 import { Link } from "gatsby"
+import RssSvg from "../svgs/rss.svg"
 
 const Header = () => {
   return (
@@ -32,6 +33,10 @@ const Header = () => {
           <Link to={"/articles"} className="hover:text-gray-500 uppercase">
             Articles
           </Link>
+          <a href="/rss.xml">
+            <span className="sr-only">RSS Feed</span>
+            <RssSvg className="ml-6 hover:text-gray-500" aria-hidden />
+          </a>
         </div>
       </div>
     </nav>

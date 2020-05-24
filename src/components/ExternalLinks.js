@@ -1,5 +1,6 @@
 import React from "react"
 import { getActiveClasses } from "get-active-classes"
+import RssSvg from "../svgs/rss.svg"
 
 export default function ExternalLinks({ className }) {
   return (
@@ -35,10 +36,11 @@ export default function ExternalLinks({ className }) {
       </a>
       <a
         className={
-          "ml-2 p-1 border-gray-200 text-orange-900 bg-orange-400 hover:bg-orange-300 rounded hover:underline"
+          "flex items-center ml-2 p-1 border-gray-200 text-orange-900 bg-orange-400 hover:bg-orange-300 rounded hover:underline"
         }
         href="/rss.xml"
       >
+        <RssSvg className="mr-1 w-4 h-4" />
         RSS FEED
       </a>
     </div>
