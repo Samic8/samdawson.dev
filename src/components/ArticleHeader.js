@@ -26,7 +26,7 @@ export default function ArticleHeader({
           )}
           {!updated && <Time date={date} dateTime={dateTime} />}
           <span className="text-xsm text-gray-700 ml-auto">
-            {timeToRead} minutes to read
+            {timeToRead} min read
           </span>
         </div>
       </h1>
