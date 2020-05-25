@@ -54,7 +54,7 @@ const PostRow = ({ post, className }) => (
                 </ul>
               </div>
             </div>
-            <p className="text-sm leading-tight sm:leading-tight sm:text-base text-gray-800">
+            <p className="text-sm leading-tight text-gray-800">
               {post.excerpt}
             </p>
           </div>
