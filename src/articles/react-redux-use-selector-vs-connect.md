@@ -3,7 +3,7 @@ title: "useSelector vs connect (react-redux)"
 slug: react-redux-use-selector-vs-connect
 techs: ["React"]
 date: "2019-12-24"
-updated: "2020-05-24"
+updated: "2020-05-25"
 ---
 
 Redux hooks and connect can have the same functional outcomes. The main difference between them is the ability to _nudge_ (guide) the way you write your component code. Understanding what each of them optimizes for will help you make your decision on what one to use.
@@ -42,19 +42,23 @@ For both the connect function and hooks you can ignore _the nudge_ but it's best
 
 ## Unit testing and separation of concerns
 
-A handy way to understand the differences between hooks and connect is to understand how unit tests can be written for each and what direction of code style they _nudge_ you towards.
+A lens we can use to understand the differences between hooks and the connect function is to understand how unit tests can be written for each and what direction of code style they _nudge_ you towards.
 
-The way you write your unit tests influences how your components are organized by their concerns. When following the _Separation of concerns_ principle your code becomes easier to test and reuse. There is a spectrum of _Separation of Concerns_ and there are trade-offs along that spectrum, maintainability becomes a problem at the extreme ends of the spectrum. Too many small pieces of code to test, or code that is too large to test.
+I find that in testing code you realize how well it is organized by its concerns, you learn all of the dependencies you have introduced because now you have to mock them.
 
-Connect API improves separation and the hooks API reduces separated by concerns. I don't think either fall at the extreme ends so you need to understand what trade-offs you are making with each choice.
+When following the [_Separation of concerns_](https://simplicable.com/new/separation-of-concerns) principle your code becomes easier to test and reuse. There is a spectrum of _Separation of Concerns_ and there are trade-offs along that spectrum, maintainability becomes a problem at the extreme ends of the spectrum. You can end up with too many small pieces of code to maintain and it's a nightmare to figure out how they all work together, or at the other end large files where it's hard to reuse any one piece.
+
+![./seperation-concerns-redux.svg](./seperation-concerns-redux.svg)
+
+The connect function improves separation and the hooks reduce separation. I don't think either fall at the extreme ends so you need to understand what trade-offs you are making with each choice.
 
 ### Testing components using the connect function
 
-For a **connect** component we have the option of testing both the presentational component called "CounterConnectInner" or the connected "CounterConnect" where we will need to test its connection to redux too.
+For a component using the connect function we have the option of testing both the component called "CounterConnectInner" which is not coupled to redux because of its inherent _separation_. The option is also available to test the redux aware "CounterConnect" where we will need to test its relationship with the redux state too.
 
 GITHUB-EMBED https://github.com/Samic8/react-redux-use-selector-vs-connect/blob/master/src/features/counter-connect/CounterConnect.js javascript 1-18,62-82 GITHUB-EMBED
 
-The first test example below is only concerned with the "inner" component which is simpler as we don't have to worry about the redux state. The second example tests both the component and the connection to redux, which is more comprehensive as we are testing more lines of code which includes the mapStateToProps setup code.
+The first test example below is only concerned with the "inner" component which is simpler as we don't have to worry about the redux state. The second example tests both the component and its relationship to redux state, which is more comprehensive as we are testing more lines of code which includes the mapStateToProps setup code.
 
 GITHUB-EMBED https://github.com/Samic8/react-redux-use-selector-vs-connect/blob/master/src/features/counter-connect/CounterConnect.test.js javascript 1-21 GITHUB-EMBED
 
@@ -66,7 +70,7 @@ For a component using useSelector we are _nudged_ towards testing components tha
 
 GITHUB-EMBED https://github.com/Samic8/react-redux-use-selector-vs-connect/blob/master/src/features/counter-use-selector/CounterUseSelector.js javascript 1-14,60 GITHUB-EMBED
 
-When writing tests for the component using hooks, because we can't separate out the "inner" component as easily we are _nudged_ towards writing tests that are connected to the redux store.
+When writing tests for the component using hooks, because we can't separate the "inner" component as easily we are _nudged_ towards writing tests that are connected to the redux store.
 
 GITHUB-EMBED https://github.com/Samic8/react-redux-use-selector-vs-connect/blob/master/src/features/counter-use-selector/CounterUseSelector.test.js javascript 1-13 GITHUB-EMBED
 
@@ -86,7 +90,7 @@ Whether this will truly give your app better performance is best left decided to
 
 Using react hooks forgoes the need to use the connect function and embeds that logic within the components themselves. The trade-off is a reduction on the _Separation of Concerns_ spectrum and the need to be are of when to use React.memo.
 
-## Read the docs for more in-depth understanding
+## Read the docs for a more in-depth understanding
 
 This article provides a framework to compare the approaches through the theme of _nudging_. But to truly get an understanding of the details of the hooks API checkout the [official documentation](https://react-redux.js.org/api/hooks).
 
