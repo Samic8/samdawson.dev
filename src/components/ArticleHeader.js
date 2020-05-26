@@ -1,6 +1,5 @@
 import React from "react"
 import Time from "./Time"
-import { getActiveClasses } from "get-active-classes"
 
 export default function ArticleHeader({
   title,
@@ -8,6 +7,7 @@ export default function ArticleHeader({
   dateTime,
   updated,
   updatedDateTime,
+  timeToRead,
 }) {
   return (
     <div
@@ -25,6 +25,9 @@ export default function ArticleHeader({
             </>
           )}
           {!updated && <Time date={date} dateTime={dateTime} />}
+          <span className="text-xsm text-gray-700 ml-auto">
+            {timeToRead} min read
+          </span>
         </div>
       </h1>
     </div>

@@ -43,6 +43,7 @@ export default function Post({ data }) {
         dateTime={data.markdownRemark.frontmatter.dateTime}
         updated={data.markdownRemark.frontmatter.updated}
         updatedDateTime={data.markdownRemark.frontmatter.updatedDateTime}
+        timeToRead={data.markdownRemark.timeToRead}
       ></ArticleHeader>
       <Content>
         <article
@@ -107,6 +108,7 @@ export const query = graphql`
   query($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
+      timeToRead
       frontmatter {
         title
         featuredImage {
