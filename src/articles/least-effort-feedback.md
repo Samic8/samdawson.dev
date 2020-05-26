@@ -5,7 +5,7 @@ techs: ["Productivity"]
 date: "2020-05-26"
 ---
 
-A few months ago I added a feedback textbox to the bottom of every article. I wanted to know when finds there way to an article do they solve their problem.
+A few months ago I added a feedback textbox to the bottom of every article. I wanted to know when someone finds there way to an article do they solve their problem.
 
 I think the textbox was too much effort, who has the time to fill out feedback when they have a problem to solve. I didn't get any responses from this.
 
