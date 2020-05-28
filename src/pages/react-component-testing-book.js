@@ -86,7 +86,7 @@ export default function Subscribe({ data }) {
             </h2>
             <ul className="list-disc mx-auto text-sm">
               <li>
-                Integration tests that don't make one change break all of our
+                Integration tests where one change doesn't break all of your
                 tests
               </li>
               <li>Unit tests that don't accidentally test dependencies</li>
