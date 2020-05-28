@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/Layout"
 import ArticleHeader from "../components/ArticleHeader"
 import "prism-themes/themes/prism-atom-dark.css"
@@ -12,6 +12,7 @@ import ThumbsUpSvg from "../svgs/thumbs-up.svg"
 import ThumbsDownSvg from "../svgs/thumbs-down.svg"
 import { getActiveClasses } from "get-active-classes"
 import axios from "axios"
+import Book from "../components/Book"
 
 export default function Post({ data }) {
   const [feedbackClickedFor, setFeedbackClickedFor] = useState(null)
@@ -99,6 +100,18 @@ export default function Post({ data }) {
         </div>
       </form>
       <WiggleDownLine className="mx-auto h-24 sm:h-auto" aria-hidden />
+      <section className="flex items-center flex-col mt-6 max-w-sm mx-auto">
+        <Link to="/react-component-testing-book" className="text-md mb-4 link">
+          <Book />
+          <div className="mt-4">
+            Get chapters of my
+            <div className="text-gray-800 font-bold">
+              React Component Testing
+            </div>{" "}
+            e-book
+          </div>
+        </Link>
+      </section>
       <ExternalLinks className="flex justify-center mt-12" />
     </Layout>
   )
