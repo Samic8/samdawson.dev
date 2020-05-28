@@ -156,3 +156,14 @@
     }
   }
 }
+
+.link:not(.anchor) {
+  text-decoration-color: theme("colors.purple.400");
+  text-decoration-thickness: 0.125em;
+  text-underline-offset: 3px;
+  @apply underline;
+}
+
+.link:hover {
+  @apply text-purple-700;
+}
