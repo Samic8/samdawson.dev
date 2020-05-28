@@ -5,6 +5,16 @@ import TechList from "../components/TechList"
 import WiggleDownLine from "../svgs/wiggle-down-line.svg"
 import { graphql } from "gatsby"
 import Book from "../components/Book"
+import XCircleSvg from "../svgs/x-circle.svg"
+import CompassSvg from "../svgs/compass.svg"
+import LayersSvg from "../svgs/layers.svg"
+import MaximizeSvg from "../svgs/maximize.svg"
+import BarChartSvg from "../svgs/bar-chart.svg"
+import CheckCircleSvg from "../svgs/check-circle.svg"
+import LogInSvg from "../svgs/log-in.svg"
+import MinimizeSvg from "../svgs/minimize.svg"
+import MousePointerSvg from "../svgs/mouse-pointer.svg"
+import SendSvg from "../svgs/send.svg"
 
 export default function Subscribe({ data }) {
   const [email, setEmail] = useState(null)
@@ -84,28 +94,50 @@ export default function Subscribe({ data }) {
               </a>
               .
             </h2>
-            <ul className="list-disc mx-auto text-sm">
-              <li>
+            <ul className="mx-auto text-sm">
+              <Item>
+                <LayersSvg className="mr-2 flex-shrink-0" />
                 Integration tests where one change doesn't break all of your
                 tests
-              </li>
-              <li>Unit tests that don't accidentally test dependencies</li>
-              <li>When to use mocks and spy's to test your components</li>
-              <li>
+              </Item>
+              <Item>
+                <MaximizeSvg className="mr-2 flex-shrink-0" />
+                Unit tests that don't accidentally test dependencies
+              </Item>
+              <Item>
+                <CompassSvg className="mr-2 flex-shrink-0" />
+                When to use mocks and spy's to test your components
+              </Item>
+              <Item>
+                <MousePointerSvg className="mr-2 flex-shrink-0" />
                 How to test behaviour instead of implementation, to make code
                 changes not always break your tests
-              </li>
-              <li>When you need to test implementation</li>
-              <li>
+              </Item>
+              <Item>
+                <XCircleSvg className="mr-2 flex-shrink-0" />
+                When you need to test implementation
+              </Item>
+              <Item>
+                <BarChartSvg className="mr-2 flex-shrink-0" />
                 Strategies for testing code that generates SVGs for graphs
-              </li>
-              <li>Testing with Redux connected components</li>
-              <li>Testing with Apollo connected components</li>
-              <li>
+              </Item>
+              <Item>
+                <CheckCircleSvg className="mr-2 flex-shrink-0" />
+                Testing with Redux connected components
+              </Item>
+              <Item>
+                <SendSvg className="mr-2 flex-shrink-0" />
+                Testing with Apollo connected components
+              </Item>
+              <Item>
+                <LogInSvg className="mr-2 flex-shrink-0" />
                 Testing components that use common third party libraries without
                 reinventing the wheel
-              </li>
-              <li>Strategies for automated visual testing of components</li>
+              </Item>
+              <Item>
+                <MinimizeSvg className="mr-2 flex-shrink-0" />
+                Strategies for automated visual testing of components
+              </Item>
             </ul>
           </div>
           <div className={"mx-auto max-w-xs"}>
@@ -124,6 +156,10 @@ export default function Subscribe({ data }) {
       </article>
     </Layout>
   )
+}
+
+function Item({ children }) {
+  return <li className="flex mt-4">{children}</li>
 }
 
 export const pageQuery = graphql`
