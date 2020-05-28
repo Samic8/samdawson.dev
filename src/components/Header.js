@@ -25,10 +25,10 @@ const Header = () => {
           }
         >
           <Link
-            to={"/subscribe"}
+            to={"/react-component-testing-book"}
             className="hover:text-gray-500 mr-6 uppercase"
           >
-            Subscribe
+            e-book
           </Link>
           <Link to={"/articles"} className="hover:text-gray-500 uppercase">
             Articles

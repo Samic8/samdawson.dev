@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import addToMailchimp from "gatsby-plugin-mailchimp"
 import Layout from "../components/Layout"
 import TechList from "../components/TechList"
+import WiggleDownLine from "../svgs/wiggle-down-line.svg"
 
 export default function Subscribe() {
   const [email, setEmail] = useState(null)
@@ -19,9 +20,12 @@ export default function Subscribe() {
   return (
     <Layout>
       <article className="pt-12 pb-20 mt-10" id="footer">
-        <h2 className="text-gray-800 text-md sm:text-lg max-w-xs leading-tight mx-auto text-center">
-          Keep up to date on all things{" "}
-          <strong className="font-bold">frontend</strong> dev.
+        <h2 className="text-gray-800 text-md sm:text-lg max-w-lg leading-tight mx-auto text-center">
+          Get chapters from{" "}
+          <div>
+            <b>React Component Testing</b>
+          </div>{" "}
+          as it's being written
         </h2>
         <div className="px-6">
           {success === null && (
@@ -55,12 +59,36 @@ export default function Subscribe() {
             </>
           )}
           {/* TODO: Style this up better */}
+          <div className="max-w-lg mx-auto mt-16">
+            <h2 className="text-md text-center mb-6">
+              A go to <b>reference</b> book
+            </h2>
+            <ul className="list-disc mx-auto text-sm">
+              <li>Component Integration Tests</li>
+              <li>Component Unit Tests</li>
+              <li>When to use mocks and spies</li>
+              <li>Behaviour testing</li>
+              <li>Implementation testing</li>
+              <li>Testing Graph's made with SVG</li>
+              <li>Testing with Redux connected components</li>
+              <li>Testing with Apollo connected components</li>
+              <li>
+                Testing components that use common third party libraries without
+                reinventing the wheel
+              </li>
+              <li>Visually testing component styles</li>
+            </ul>
+          </div>
           <div className={"mx-auto max-w-xs"}>
             {success &&
               "Thanks! I will style this success message soon with a tick or something. I promise."}
             {success === false && "Subscription failed. Reload and try again."}
           </div>
         </div>
+        <WiggleDownLine
+          className="mx-auto h-24 sm:h-auto mt-6 mb-6"
+          aria-hidden
+        />
         <div className="max-w-lg mx-auto mt-10">
           <TechList className="flex justify-center flex-wrap" />
         </div>
