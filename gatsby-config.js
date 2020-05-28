@@ -197,7 +197,7 @@ module.exports = {
       resolve: `gatsby-plugin-percy`,
       options: {
         // Code sandbox causes problems
-        ignore: [`"/article/gatsby-categories/*`],
+        ignore: [`/article/gatsby-categories/*`],
       },
     },
     {
