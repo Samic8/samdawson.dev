@@ -15,6 +15,7 @@ import LogInSvg from "../svgs/log-in.svg"
 import MinimizeSvg from "../svgs/minimize.svg"
 import MousePointerSvg from "../svgs/mouse-pointer.svg"
 import SendSvg from "../svgs/send.svg"
+import SEO from "../components/SEO"
 
 export default function Subscribe({ data }) {
   const [email, setEmail] = useState(null)
@@ -31,6 +32,7 @@ export default function Subscribe({ data }) {
 
   return (
     <Layout>
+      <SEO title={"React Component Testing e-book"} />
       <article className="pt-12 pb-20 mt-10" id="footer">
         <h2 className="text-gray-800 text-md sm:text-lg max-w-lg leading-tight mx-auto text-center">
           Get FREE chapters from{" "}
