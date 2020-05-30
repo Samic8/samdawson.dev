@@ -15,6 +15,7 @@ import LogInSvg from "../svgs/log-in.svg"
 import MinimizeSvg from "../svgs/minimize.svg"
 import MousePointerSvg from "../svgs/mouse-pointer.svg"
 import SendSvg from "../svgs/send.svg"
+import ThumbsUpSvg from "../svgs/thumbs-up.svg"
 import SEO from "../components/SEO"
 
 export default function Subscribe({ data }) {
@@ -71,6 +72,12 @@ export default function Subscribe({ data }) {
                 </a>
               </div> */}
             </>
+          )}
+          {success && (
+            <div className="h-16 mx-auto w-20 mt-8 flex items-center">
+              <span>Subscribed</span>
+              <ThumbsUpSvg className="flex-shrink-0 ml-4" />
+            </div>
           )}
           <div className="max-w-lg flex sm:flex-row flex-col items-center sm:items-start mt-8 sm:mt-16 mx-auto">
             <p className="text-md sm:mb-0 mb-8">
@@ -141,11 +148,6 @@ export default function Subscribe({ data }) {
                 Strategies for automated visual testing of components
               </Item>
             </ul>
-          </div>
-          <div className={"mx-auto max-w-xs"}>
-            {success &&
-              "Thanks! I will style this success message soon with a tick or something. I promise."}
-            {success === false && "Subscription failed. Reload and try again."}
           </div>
         </div>
         <WiggleDownLine
