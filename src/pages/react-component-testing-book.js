@@ -81,16 +81,13 @@ export default function Subscribe({ data }) {
           )}
           <div className="max-w-lg flex sm:flex-row flex-col items-center sm:items-start mt-8 sm:mt-16 mx-auto">
             <p className="text-md sm:mb-0 mb-8">
-              Learn a toolkit of techniques and mental models to create testing
-              strategies for every UI component variation you come across.
+              A toolkit of techniques and strategies for testing react components.
             </p>
             <Book className="ml-0 sm:ml-4" />
           </div>
           <div className="max-w-lg mx-auto mt-8 sm:mt-16">
             <h2 className="text-md mb-4">
-              <span>
-                A go to reference book for testing React components with{" "}
-              </span>
+              <span>A reference book for testing React components with </span>
               <a className="link" href="https://jestjs.io/">
                 Jest
               </a>{" "}
@@ -103,51 +100,59 @@ export default function Subscribe({ data }) {
               </a>
               .
             </h2>
-            <ul className="mx-auto text-sm">
-              <Item>
-                <LayersSvg className="mr-2 flex-shrink-0" />
-                Integration tests where one change doesn't break all of your
-                tests
-              </Item>
-              <Item>
-                <MaximizeSvg className="mr-2 flex-shrink-0" />
-                Unit tests that don't accidentally test dependencies
-              </Item>
-              <Item>
-                <CompassSvg className="mr-2 flex-shrink-0" />
-                When to use mocks and spy's to test your components
-              </Item>
-              <Item>
-                <MousePointerSvg className="mr-2 flex-shrink-0" />
-                How to test behaviour instead of implementation, to make code
-                changes not always break your tests
-              </Item>
-              <Item>
-                <XCircleSvg className="mr-2 flex-shrink-0" />
-                When you need to test implementation
-              </Item>
-              <Item>
-                <BarChartSvg className="mr-2 flex-shrink-0" />
-                Strategies for testing code that generates SVGs for graphs
-              </Item>
-              <Item>
-                <CheckCircleSvg className="mr-2 flex-shrink-0" />
-                Testing with Redux connected components
-              </Item>
-              <Item>
-                <SendSvg className="mr-2 flex-shrink-0" />
-                Testing with Apollo connected components
-              </Item>
-              <Item>
-                <LogInSvg className="mr-2 flex-shrink-0" />
-                Testing components that use common third party libraries without
-                reinventing the wheel
-              </Item>
-              <Item>
-                <MinimizeSvg className="mr-2 flex-shrink-0" />
-                Strategies for automated visual testing of components
-              </Item>
-            </ul>
+            <div className="mx-auto text-sm">
+              <section>
+                <h2 className="font-semibold">Learn the fundamentals</h2>
+                <ul>
+                  <Item>
+                    <LayersSvg className="mr-2 flex-shrink-0" />
+                    Integration tests for testing components and their dependencies
+                  </Item>
+                  <Item>
+                    <MaximizeSvg className="mr-2 flex-shrink-0" />
+                    Unit tests that don't accidentally test dependencies
+                  </Item>
+                  <Item>
+                    <CompassSvg className="mr-2 flex-shrink-0" />
+                    How to best leverage mocks and spy's to test your components
+                  </Item>
+                  <Item>
+                    <MousePointerSvg className="mr-2 flex-shrink-0" />
+                    How to test behaviour instead of implementation to allow some flexibility in your code and ensure it does what users want
+                  </Item>
+                  <Item>
+                    <XCircleSvg className="mr-2 flex-shrink-0" />
+                    How best to test component implementation when its your only choice
+                  </Item>
+                </ul>
+              </section>
+              <section className="mt-4">
+                <h2 className="font-semibold">Then learn strategies for specific contexts</h2>
+                <ul>
+                  <Item>
+                    <BarChartSvg className="mr-2 flex-shrink-0" />
+                    Strategies for testing visual graphs made with SVG
+                  </Item>
+                  <Item>
+                    <CheckCircleSvg className="mr-2 flex-shrink-0" />
+                    Testing with Redux connected components
+                  </Item>
+                  <Item>
+                    <SendSvg className="mr-2 flex-shrink-0" />
+                    Testing with components using Apollo
+                  </Item>
+                  <Item>
+                    <LogInSvg className="mr-2 flex-shrink-0" />
+                    Testing components that use common third party libraries
+                    without reinventing the wheel
+                  </Item>
+                  <Item>
+                    <MinimizeSvg className="mr-2 flex-shrink-0" />
+                    Strategies for automated visual testing of components
+                  </Item>
+                </ul>
+              </section>
+            </div>
           </div>
         </div>
         <WiggleDownLine
