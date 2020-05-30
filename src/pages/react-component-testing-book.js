@@ -3,7 +3,7 @@ import addToMailchimp from "gatsby-plugin-mailchimp"
 import Layout from "../components/Layout"
 import TechList from "../components/TechList"
 import WiggleDownLine from "../svgs/wiggle-down-line.svg"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Book from "../components/Book"
 import XCircleSvg from "../svgs/x-circle.svg"
 import CompassSvg from "../svgs/compass.svg"
@@ -81,7 +81,8 @@ export default function Subscribe({ data }) {
           )}
           <div className="max-w-lg flex sm:flex-row flex-col items-center sm:items-start mt-8 sm:mt-16 mx-auto">
             <p className="text-md sm:mb-0 mb-8">
-              A toolkit of techniques and strategies for testing react components.
+              A toolkit of techniques and strategies for testing react
+              components.
             </p>
             <Book className="ml-0 sm:ml-4" />
           </div>
@@ -106,7 +107,8 @@ export default function Subscribe({ data }) {
                 <ul>
                   <Item>
                     <LayersSvg className="mr-2 flex-shrink-0" />
-                    Integration tests for testing components and their dependencies
+                    Integration tests for testing components and their
+                    dependencies
                   </Item>
                   <Item>
                     <MaximizeSvg className="mr-2 flex-shrink-0" />
@@ -118,16 +120,21 @@ export default function Subscribe({ data }) {
                   </Item>
                   <Item>
                     <MousePointerSvg className="mr-2 flex-shrink-0" />
-                    How to test behaviour instead of implementation to allow some flexibility in your code and ensure it does what users want
+                    How to test behaviour instead of implementation to allow
+                    some flexibility in your code and ensure it does what users
+                    want
                   </Item>
                   <Item>
                     <XCircleSvg className="mr-2 flex-shrink-0" />
-                    How best to test component implementation when its your only choice
+                    How best to test component implementation when its your only
+                    choice
                   </Item>
                 </ul>
               </section>
               <section className="mt-4">
-                <h2 className="font-semibold">Then learn strategies for specific contexts</h2>
+                <h2 className="font-semibold">
+                  Then learn strategies for specific contexts
+                </h2>
                 <ul>
                   <Item>
                     <BarChartSvg className="mr-2 flex-shrink-0" />
@@ -159,9 +166,12 @@ export default function Subscribe({ data }) {
           className="mx-auto h-24 sm:h-auto mt-6 mb-6"
           aria-hidden
         />
-        <div className="max-w-lg mx-auto mt-10">
+        <section className="max-w-lg mx-auto mt-10">
+          <h2 className="text-sm mb-4 text-center link">
+            <Link to="/articles">Other content from my blog</Link>
+          </h2>
           <TechList className="flex justify-center flex-wrap" />
-        </div>
+        </section>
       </article>
     </Layout>
   )
