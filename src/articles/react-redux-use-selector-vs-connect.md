@@ -1,7 +1,7 @@
 ---
 title: "useSelector vs connect (react-redux)"
 slug: react-redux-use-selector-vs-connect
-techs: ["React"]
+techs: ["React", "Jest"]
 date: "2019-12-24"
 updated: "2020-05-25"
 ---
