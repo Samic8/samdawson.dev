@@ -184,6 +184,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-plausible`,
+      options: {
+        domain: `samdawson.dev`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-feed`,
       options: {
         custom_namespaces: { webfeeds: "http://webfeeds.org/rss/1.0" },
