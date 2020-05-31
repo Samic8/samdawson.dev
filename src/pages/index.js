@@ -57,7 +57,7 @@ const IndexPage = ({ data }) => (
           Hi, I'm a web designer and builder from Wollongong, Australia. I work
           for{" "}
           <a
-            href="https://www.easyagile.com/careers"
+            href="https://www.easyagile.com/careers/?ref=samdawson.dev"
             className={"text-purple-500 hover:text-purple-700"}
           >
             easy agile
