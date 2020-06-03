@@ -124,12 +124,11 @@
   }
 
   blockquote {
-    @apply text-mdlg;
+    @apply text-md;
     position: relative;
     margin-bottom: 14px;
-    padding: 20px;
-    border: 1px solid black;
-    border-radius: 10px;
+    padding: 5px 10px;
+    border-left: 3px solid theme("colors.purple.500");
 
     p {
       position: relative;
