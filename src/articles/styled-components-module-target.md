@@ -21,6 +21,6 @@ After going down many rabbit holes reading the source code of Styled Components 
 
 It turns out it was the module compilation target of the component library that was causing the problem. It was being compiled to CommonJS, when I changed that to ES modules — ESnext in the case of the typescript compiler — it solved the issue.
 
-I still don't know the _how_ behind why this module target change caused the issue. But after a day of mucking around with webpack configuration, I think this is good enough for me.
+I still don't know the _why_ behind this problem or solution. But after a day of mucking around with webpack configuration, I think this is good enough for me.
 
 Disclaimer: I don't endorse the use of Styled Components.
