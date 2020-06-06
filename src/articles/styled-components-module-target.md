@@ -5,6 +5,8 @@ techs: ["Gatsby", "React", "Typescript"]
 date: "2020-06-03"
 ---
 
+> **Update:** I later discovered that the real problem was styled-components v5. By downgrading to v4 the issue went away.
+
 > "I spent all day on this" - Me
 
 Styled Components, Gatsby, a component library — which also used styled-components — were the trio that caused this type of day.
