@@ -11,7 +11,7 @@ export default function ArticleHeader({
 }) {
   return (
     <div
-      className={"flex flex-col items-center max-w-xl mx-auto my-10 sm:my-16"}
+      className={"flex flex-col items-center max-w-xl mx-auto my-10 sm:my-16 font-header"}
     >
       <h1 className="font-bold text-gray-900 text-lg leading-tight max-w-xl mx-auto relative font-extrabold">
         {title}
