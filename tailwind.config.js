@@ -13,7 +13,7 @@ module.exports = {
     },
     fontFamily: {
       header: `"Montserrat", ${systemFontStack}`,
-      sans: `"Montserrat", ${systemFontStack}`,
+      sans: `${systemFontStack}`,
       systemFont: systemFontStack,
     },
     extend: {

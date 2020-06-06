@@ -15,7 +15,7 @@ const Layout = ({ children, useColoredBackground }) => {
   `)
 
   return (
-    <div className={useColoredBackground ? "bg-yellow-100" : ""}>
+    <div>
       <div
         className={
           "flex flex-col items-stretch mx-auto max-w-5xl sm:overflow-hidden pb-32"

@@ -35,7 +35,7 @@ export default function Subscribe({ data }) {
     <Layout>
       <SEO title={"React Component Testing e-book"} />
       <article className="pt-12 pb-20 mt-10" id="footer">
-        <h2 className="text-gray-800 text-md sm:text-lg max-w-lg leading-tight mx-auto text-center">
+        <h2 className="font-header text-gray-800 text-md sm:text-lg max-w-lg leading-tight mx-auto text-center">
           Get FREE chapters from{" "}
           <div>
             <b>React Component Testing</b>
