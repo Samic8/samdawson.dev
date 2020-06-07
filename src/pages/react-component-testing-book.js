@@ -84,8 +84,7 @@ export default function Subscribe({ data }) {
           </div>
           <div className="max-w-lg mx-auto mt-8 sm:mt-16">
             <h2 className="text-md mb-4">
-              A toolkit of techniques and strategies for testing react
-              components with&nbsp;
+              A toolkit of strategies for testing React components with&nbsp;
               <a className="link" href="https://jestjs.io/">
                 Jest
               </a>{" "}
