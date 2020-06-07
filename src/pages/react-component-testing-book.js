@@ -79,16 +79,13 @@ export default function Subscribe({ data }) {
               <ThumbsUpSvg className="flex-shrink-0 ml-4" />
             </div>
           )}
-          <div className="max-w-lg flex sm:flex-row flex-col items-center sm:items-start mt-8 sm:mt-16 mx-auto">
-            <p className="text-md sm:mb-0 mb-8">
-              A toolkit of techniques and strategies for testing react
-              components.
-            </p>
+          <div className="max-w-lg flex sm:flex-row justify-center flex-col items-center sm:items-start mt-8 sm:mt-16 mx-auto">
             <Book className="ml-0 sm:ml-4" />
           </div>
           <div className="max-w-lg mx-auto mt-8 sm:mt-16">
             <h2 className="text-md mb-4">
-              <span>A reference book for testing React components with </span>
+              A toolkit of techniques and strategies for testing react
+              components with&nbsp;
               <a className="link" href="https://jestjs.io/">
                 Jest
               </a>{" "}
