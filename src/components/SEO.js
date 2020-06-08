@@ -9,6 +9,7 @@ function SEO({
   title,
   imageUrl,
   children,
+  twitterCardType = "summary",
 }) {
   const { site } = useStaticQuery(
     graphql`
@@ -46,7 +47,7 @@ function SEO({
     },
     {
       name: `twitter:card`,
-      content: `summary`,
+      content: twitterCardType,
     },
     {
       name: `twitter:creator`,
@@ -59,6 +60,14 @@ function SEO({
     {
       name: `twitter:description`,
       content: metaDescription,
+    },
+    {
+      name: `twitter:site`,
+      content: "@sam__dawson",
+    },
+    {
+      name: `twitter:creator`,
+      content: "@sam__dawson",
     },
   ].concat(propMeta)
 
