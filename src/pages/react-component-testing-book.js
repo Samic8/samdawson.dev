@@ -131,9 +131,8 @@ export default function Subscribe({ data }) {
                   </Item>
                   <Item>
                     <MousePointerSvg className="mr-2 flex-shrink-0" />
-                    How to test behaviour instead of implementation to allow
-                    some flexibility in your code and ensure it does what users
-                    want
+                    How to test behavior instead of implementation to allow some
+                    flexibility in your code and ensure it does what users want
                   </Item>
                   <Item>
                     <XCircleSvg className="mr-2 flex-shrink-0" />
