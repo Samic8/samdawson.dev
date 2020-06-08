@@ -34,7 +34,7 @@ export default function Subscribe({ data }) {
   return (
     <Layout>
       <SEO
-        title={"React Component Testing e-book"}
+        title={"Robust UI e-book"}
         description="A toolkit of strategies for testing React components with Jest and React Testing Library"
         imageUrl="https://static-2.gumroad.com/res/gumroad/2491236292092/asset_previews/13d644b9741a1fc745a40a49d67d1394/retina/Screenshot_202020-06-08_2009.33.08.png"
         twitterCardType="summary_large_image"
@@ -66,11 +66,8 @@ export default function Subscribe({ data }) {
             style={{ backgroundColor: "#f7f7f8" }}
           >
             <h2 className="font-header text-gray-800 text-md sm:text-lg leading-tight mx-auto text-center">
-              Get FREE chapters from{" "}
-              <div>
-                <b>React Component Testing</b>
-              </div>{" "}
-              as it's being written
+              Get FREE chapters via email as <b>Robust UI</b>&nbsp;is being
+              written
             </h2>
             {success === null && (
               <>

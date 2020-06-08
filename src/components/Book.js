@@ -31,7 +31,10 @@ export default function Book({ className }) {
     >
       <div className="z-10 relative flex-1 flex flex-col mb-4">
         <GridSvg className="w-20 h-20 m-auto" />
-        <div className="mt-auto text-md">React Component Testing</div>
+        <div className="mt-auto text-md">
+          Robust
+          <br /> UI
+        </div>
       </div>
       <div className="top-0 bottom-0 left-0 right-0 z-0 absolute">
         <Img fluid={hexImage.childImageSharp.fluid} />
