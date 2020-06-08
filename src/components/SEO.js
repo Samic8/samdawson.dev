@@ -67,6 +67,10 @@ function SEO({
       property: `og:image`,
       content: `${site.siteMetadata.siteUrl}${imageUrl}`,
     })
+    meta.push({
+      property: `twitter:image`,
+      content: `${site.siteMetadata.siteUrl}${imageUrl}`,
+    })
   }
 
   return (
