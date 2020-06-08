@@ -56,7 +56,7 @@ export default function Subscribe({ data }) {
             href="https://gum.co/lWvh"
             target="_blank"
           >
-            <span className="text-gray-800">Make Pre-order</span>
+            Make Pre-order
           </a>
         </div>
         <div className="flex justify-center mt-8 sm:mt-16 max-w-lg mx-auto">
