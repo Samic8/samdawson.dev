@@ -33,7 +33,10 @@ export default function Subscribe({ data }) {
 
   return (
     <Layout>
-      <SEO title={"React Component Testing e-book"}></SEO>
+      <SEO
+        title={"React Component Testing e-book"}
+        description="A toolkit of strategies for testing React components with Jest and React Testing Library"
+      ></SEO>
       <article className="pt-12 pb-20 mt-4" id="footer">
         <div className="max-w-lg flex justify-center flex-col items-center justify-center mx-auto">
           <Book />
