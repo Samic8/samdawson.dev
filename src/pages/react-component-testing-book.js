@@ -127,7 +127,7 @@ export default function Subscribe({ data }) {
                   </Item>
                   <Item>
                     <CompassSvg className="mr-2 flex-shrink-0" />
-                    How to best leverage mocks and spy's to test your components
+                    How to best leverage mocks and spies to test your components
                   </Item>
                   <Item>
                     <MousePointerSvg className="mr-2 flex-shrink-0" />
@@ -137,8 +137,8 @@ export default function Subscribe({ data }) {
                   </Item>
                   <Item>
                     <XCircleSvg className="mr-2 flex-shrink-0" />
-                    How best to test component implementation when its your only
-                    choice
+                    How best to test component implementation when it's your
+                    only choice
                   </Item>
                 </ul>
               </section>
