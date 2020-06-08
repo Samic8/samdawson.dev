@@ -49,7 +49,7 @@ export default function Subscribe({ data }) {
               $80
             </span>
             <span className="font-bold text-lg">&nbsp;$32</span>
-            <span>&nbsp;with code pre-order</span>
+            <span>&nbsp;with code "pre-order"</span>
           </div>
           <a
             className="gumroad-button mt-4"
