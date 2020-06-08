@@ -36,7 +36,7 @@ export default function Subscribe({ data }) {
       <SEO
         title={"Robust UI e-book"}
         description="A toolkit of strategies for testing React components with Jest and React Testing Library"
-        imageUrl="https://static-2.gumroad.com/res/gumroad/2491236292092/asset_previews/13d644b9741a1fc745a40a49d67d1394/retina/Screenshot_202020-06-08_2009.33.08.png"
+        imageUrl="/react-component-testing.png"
         twitterCardType="summary_large_image"
       ></SEO>
       <article className="pt-12 pb-20 mt-4" id="footer">
