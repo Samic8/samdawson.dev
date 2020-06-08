@@ -42,25 +42,22 @@ export default function Subscribe({ data }) {
       <article className="pt-12 pb-20 mt-4" id="footer">
         <div className="max-w-lg flex justify-center flex-col items-center justify-center mx-auto">
           <Book />
-          <div className="inline-flex items-center text-gray-800 mt-2">
-            <span
-              className="font-bold"
-              style={{ textDecoration: "line-through" }}
+          <h2 className="text-md mb-4 mt-4">
+            A toolkit of strategies for testing React components with&nbsp;
+            <a className="link" href="https://jestjs.io/">
+              Jest
+            </a>{" "}
+            and{" "}
+            <a
+              className="link"
+              href="https://testing-library.com/docs/react-testing-library/intro"
             >
-              $80
-            </span>
-            <span className="font-bold text-lg">&nbsp;$32</span>
-            <span>&nbsp;with code "pre-order"</span>
-          </div>
-          <a
-            className="gumroad-button mt-4"
-            href="https://gum.co/lWvh"
-            target="_blank"
-          >
-            Make Pre-order
-          </a>
+              React Testing Library
+            </a>
+            .
+          </h2>
         </div>
-        <div className="flex justify-center mt-8 sm:mt-16 max-w-lg mx-auto">
+        <div className="flex justify-center mt-8 max-w-lg mx-auto">
           <section
             className="border border-gray-400 inline-block p-4 sm:p-8 rounded-md w-full"
             style={{ backgroundColor: "#f7f7f8" }}
@@ -98,22 +95,26 @@ export default function Subscribe({ data }) {
             )}
           </section>
         </div>
+        <ul className="text-md max-w-xl mx-auto mt-16 block">
+          <Item>
+            <CheckCircleSvg className="mr-2 mt-1 flex-shrink-0" />
+            Prevent the afternoon tap on the shoulder or slack ping about a
+            critical bug in the new feature released last week.
+          </Item>
+          <Item>
+            <CheckCircleSvg className="mr-2 mt-1 flex-shrink-0" />
+            Everything you need in one place so you don't have to scrounge
+            around 20 different blog posts to get productive with component
+            testing.
+          </Item>
+          <Item>
+            <CheckCircleSvg className="mr-2 mt-1 flex-shrink-0" />
+            Master a TDD-like approach, and see the benefits people who don't
+            write UI code are always talking about.
+          </Item>
+        </ul>
         <div className="px-6">
           <div className="max-w-lg mx-auto mt-8 sm:mt-16">
-            <h2 className="text-md mb-4">
-              A toolkit of strategies for testing React components with&nbsp;
-              <a className="link" href="https://jestjs.io/">
-                Jest
-              </a>{" "}
-              and{" "}
-              <a
-                className="link"
-                href="https://testing-library.com/docs/react-testing-library/intro"
-              >
-                React Testing Library
-              </a>
-              .
-            </h2>
             <div className="mx-auto text-sm">
               <section>
                 <h2 className="font-semibold">Learn the fundamentals</h2>
@@ -178,12 +179,25 @@ export default function Subscribe({ data }) {
           className="mx-auto h-24 sm:h-auto mt-6 mb-6"
           aria-hidden
         />
-        <section className="max-w-lg mx-auto mt-10">
-          <h2 className="text-sm mb-4 text-center link">
-            <Link to="/articles">Other content from my blog</Link>
-          </h2>
-          <TechList className="flex justify-center flex-wrap" />
-        </section>
+        <div className="flex flex-col items-center">
+          <div className="inline-flex items-center text-gray-800 mt-2">
+            <span
+              className="font-bold"
+              style={{ textDecoration: "line-through" }}
+            >
+              $80
+            </span>
+            <span className="font-bold text-lg">&nbsp;$32</span>
+            <span>&nbsp;with code "pre-order"</span>
+          </div>
+          <a
+            className="gumroad-button mt-4"
+            href="https://gum.co/lWvh"
+            target="_blank"
+          >
+            Make Pre-order
+          </a>
+        </div>
       </article>
     </Layout>
   )
