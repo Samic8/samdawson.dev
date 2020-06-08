@@ -105,7 +105,7 @@ export default function Post({ data }) {
       <WiggleDownLine className="mx-auto h-24 sm:h-auto" aria-hidden />
       <section className="flex items-center flex-col mt-6 max-w-sm mx-auto">
         <Link to="/react-component-testing-book" className="text-md mb-4 link">
-          <Book />
+          <Book className="no-underline" />
           <div className="mt-4">
             Get chapters of my
             <div className="text-gray-800 font-bold">
