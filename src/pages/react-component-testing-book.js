@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useLayoutEffect, useEffect } from "react"
 import addToMailchimp from "gatsby-plugin-mailchimp"
 import Layout from "../components/Layout"
 import TechList from "../components/TechList"
@@ -33,55 +33,70 @@ export default function Subscribe({ data }) {
 
   return (
     <Layout>
-      <SEO title={"React Component Testing e-book"} />
-      <article className="pt-12 pb-20 mt-10" id="footer">
-        <h2 className="font-header text-gray-800 text-md sm:text-lg max-w-lg leading-tight mx-auto text-center">
-          Get FREE chapters from{" "}
-          <div>
-            <b>React Component Testing</b>
-          </div>{" "}
-          as it's being written
-        </h2>
-        <div className="px-6">
-          {success === null && (
-            <>
-              <form
-                onSubmit={handleSubmit}
-                className="h-16 max-w-sm flex mx-auto mt-8 border border-gray-100 rounded focus-within:border-gray-500 bg-white"
-              >
-                <input
-                  className="flex-grow flex-shrink min-w-0 pl-4 text-gray-800 outline-none rounded"
-                  placeholder="frontend@person.com"
-                  type="email"
-                  onChange={e => setEmail(e.target.value)}
-                />
-                <button
-                  type="submit"
-                  className="bg-purple-500 hover:bg-purple-400 text-white font-bold text-md m-1 rounded px-4"
-                >
-                  Subscribe
-                </button>
-              </form>
-              {/* Turning off past newsletters for now to if it influences subscribers */}
-              {/* <div className="max-w-sm mx-auto text-xsm mt-8 text-center underline hover:text-purple-700">
-                <a
-                  href="https://us3.campaign-archive.com/home/?u=3fde574ccfe379668e02db78b&id=9b6d8a39fc"
-                  target="_blank"
-                >
-                  read past newsletters
-                </a>
-              </div> */}
-            </>
-          )}
-          {success && (
-            <div className="h-16 mx-auto w-20 mt-8 flex items-center">
-              <span>Subscribed</span>
-              <ThumbsUpSvg className="flex-shrink-0 ml-4" />
-            </div>
-          )}
-          <div className="max-w-lg flex sm:flex-row justify-center flex-col items-center sm:items-start mt-8 sm:mt-16 mx-auto">
-            <Book className="ml-0 sm:ml-4" />
+      <SEO title={"React Component Testing e-book"}></SEO>
+      <article className="pt-12 pb-20 mt-4" id="footer">
+        <div className="max-w-lg flex justify-center flex-col items-center justify-center mx-auto">
+          <Book />
+          <div className="inline-flex items-center text-gray-800 mt-2">
+            <span
+              className="font-bold"
+              style={{ textDecoration: "line-through" }}
+            >
+              $80
+            </span>
+            <span className="font-bold text-lg">&nbsp;$32</span>
+            <span>&nbsp;with code pre-order</span>
           </div>
+          <a
+            className="gumroad-button mt-4"
+            href="https://gum.co/lWvh"
+            target="_blank"
+          >
+            <span className="text-gray-800">Make Pre-order</span>
+          </a>
+        </div>
+        <div className="flex justify-center mt-8 sm:mt-16 max-w-lg mx-auto">
+          <section
+            className="border border-gray-400 inline-block p-4 sm:p-8 rounded-md w-full"
+            style={{ backgroundColor: "#f7f7f8" }}
+          >
+            <h2 className="font-header text-gray-800 text-md sm:text-lg leading-tight mx-auto text-center">
+              Get FREE chapters from{" "}
+              <div>
+                <b>React Component Testing</b>
+              </div>{" "}
+              as it's being written
+            </h2>
+            {success === null && (
+              <>
+                <form
+                  onSubmit={handleSubmit}
+                  className="h-16 max-w-sm flex mx-auto mt-8 border border-gray-200 rounded focus-within:border-gray-500 bg-white"
+                >
+                  <input
+                    className="flex-grow flex-shrink min-w-0 pl-4 text-gray-800 outline-none rounded"
+                    placeholder="frontend@person.com"
+                    type="email"
+                    onChange={e => setEmail(e.target.value)}
+                  />
+                  <button
+                    type="submit"
+                    className="bg-purple-500 hover:bg-purple-400 text-white font-bold text-md m-1 rounded px-4"
+                  >
+                    Subscribe
+                  </button>
+                </form>
+              </>
+            )}
+            {success && (
+              <div className="h-16 mx-auto w-20 mt-8 flex items-center">
+                <span>Subscribed</span>
+                <ThumbsUpSvg className="flex-shrink-0 ml-4" />
+              </div>
+            )}
+          </section>
+        </div>
+        <div className="px-6">
           <div className="max-w-lg mx-auto mt-8 sm:mt-16">
             <h2 className="text-md mb-4">
               A toolkit of strategies for testing React components with&nbsp;

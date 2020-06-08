@@ -8,6 +8,7 @@ function SEO({
   meta: propMeta = [],
   title,
   imageUrl,
+  children,
 }) {
   const { site } = useStaticQuery(
     graphql`
@@ -75,7 +76,9 @@ function SEO({
       }}
       title={title || site.siteMetadata.title}
       meta={meta}
-    />
+    >
+      {children}
+    </Helmet>
   )
 }
 
