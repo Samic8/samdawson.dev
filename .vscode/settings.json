@@ -1,3 +1,6 @@
 {
-    "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#503d67" // Change this color!
+  }
 }
