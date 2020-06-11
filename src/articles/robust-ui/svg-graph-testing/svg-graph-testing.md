@@ -29,6 +29,8 @@ We always need setup code in our tests, heres some:
 
 GITHUB-EMBED https://github.com/Samic8/robust-ui-examples/blob/9372addf01d65620ea8a62c286041141887e66fd/src/components/BarGraph/BarGraph.test.js javascript 1-18,47-49 GITHUB-EMBED
 
+It's not ideal that we need to create the graphContainer variable, we will see why it's needed in a moment.
+
 Visually -- although we won't see it in these tests -- the bar graph with the variables we have set up would look like this:
 
 ![Bar Chart Example](./bar-graph.png)
