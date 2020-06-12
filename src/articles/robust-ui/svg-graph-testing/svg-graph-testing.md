@@ -39,6 +39,18 @@ First up let's get bars under tests. Jests test.each is super handing for testin
 
 GITHUB-EMBED https://github.com/Samic8/robust-ui-examples/blob/9372addf01d65620ea8a62c286041141887e66fd/src/components/BarGraph/BarGraph.test.js javascript 21-34 GITHUB-EMBED
 
-after thought about VRT testing combination
+Recharts bars are not immediately rendered so we need to do `await wait` which can cause delayed test failures because Jest will wait a few moments for the `expect` assertions to pass, on successful test runs it won't cause much of a slow down though.
+
+Here we also make use of the `graphContainer` element that we set earlier. As you will see in the next test, we will use `screen` instead. [Screen](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library#not-using-screen) makes tests simpler as we don't have to worry about destructing or scoping variables, but it's not available when you need to make use of `querySelector`. Having to use `querySelector` or `querySelector` in your tests should be a red flag that your testing implementation, but as we already discussed it's a necessary evil when testing SVG graphs.
+
+We are using getAttribute to test specifics of the bars. Notice how we are not trying to capture every attribute, this allows the implementation some flexibility to change without our tests breaking.
+
+Next let's add some tests for the "ticks" which are the value marks to the left of the bar graph.
+
+GITHUB-EMBED https://github.com/Samic8/robust-ui-examples/blob/9372addf01d65620ea8a62c286041141887e66fd/src/components/BarGraph/BarGraph.test.js javascript 36-46 GITHUB-EMBED
+
+Like the bars we have just choose a few key aspects of the ticks we want to test. We can also make use of `screen` because we are querying the elements in a user accessible way (not implementation), which the [Testing Library](https://testing-library.com/docs/intro) philosophy approves of. Just because we break the rules of Testing Library once, we don't have to for all of our tests.
+
+Hard coding the class for the rectangles is not ideal but its not
 
 TODO how to make graph auto size?
