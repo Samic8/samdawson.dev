@@ -207,5 +207,14 @@ module.exports = {
           "https://protonmail.us3.list-manage.com/subscribe/post?u=3fde574ccfe379668e02db78b&amp;id=9b6d8a39fc", // add your MC list endpoint here; see instructions below
       },
     },
+    {
+      resolve: "gatsby-plugin-fathom",
+      options: {
+        // Fathom server URL. Defaults to `cdn.usefathom.com`
+        trackingUrl: "cdn.usefathom.com",
+        // Unique site id
+        siteId: "ZMLWRGEY",
+      },
+    },
   ],
 }
