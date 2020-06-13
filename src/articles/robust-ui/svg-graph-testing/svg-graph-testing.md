@@ -3,6 +3,7 @@ title: "How to unit test SVG Graphs"
 slug: svg-graph-testing
 techs: ["React", "Jest"]
 date: "2020-06-13"
+featuredImage: "./bar-graph.png"
 ---
 
 This article a walk-through of testing a React Bar Graph with [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro). The style of tests documented here could also be called integration tests.
