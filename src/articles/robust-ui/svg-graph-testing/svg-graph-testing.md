@@ -19,13 +19,13 @@ Because we are testing implementation -- the SVG -- it's never going to be as si
 
 Let's take my own advice and start with a charting library. We are going to be using [recharts](https://github.com/recharts/recharts) to create a simple bar chart. For future flexibility we are also going to wrap the chart in our own custom component, everywhere that uses this type of graph will use this component.
 
-GITHUB-EMBED https://github.com/Samic8/robust-ui-examples/blob/dbd6fafbc14b0ff7524567db15de8374f787be78/src/components/BarGraph/index.js javascript GITHUB-EMBED
+GITHUB-EMBED https://github.com/Samic8/robust-ui-examples/blob/576e75028d462f01416f80f8bb0fc7699d57ea25/src/components/BarGraph/index.js javascript GITHUB-EMBED
 
 Its important that the props include width and height so that our tests can hard-code them. How the rechart components are used within our `BarChart` component are not important for the purposes of this article.
 
 We always need setup code in our tests, heres some:
 
-GITHUB-EMBED https://github.com/Samic8/robust-ui-examples/blob/9372addf01d65620ea8a62c286041141887e66fd/src/components/BarGraph/BarGraph.test.js javascript 1-18,47-49 GITHUB-EMBED
+GITHUB-EMBED https://github.com/Samic8/robust-ui-examples/blob/576e75028d462f01416f80f8bb0fc7699d57ea25/src/components/BarGraph/BarGraph.test.js javascript 1-18,48-49 GITHUB-EMBED
 
 It's not ideal that we need to create the graphContainer variable, we will see why it's needed in a moment.
 
@@ -35,7 +35,7 @@ Visually -- although we won't see it in these tests -- the bar graph with the va
 
 First up let's get bars under tests. Jests test.each is super handing for testing graphs, we can display the data we want to test for the bars in a tabular format.
 
-GITHUB-EMBED https://github.com/Samic8/robust-ui-examples/blob/9372addf01d65620ea8a62c286041141887e66fd/src/components/BarGraph/BarGraph.test.js javascript 21-34 GITHUB-EMBED
+GITHUB-EMBED https://github.com/Samic8/robust-ui-examples/blob/576e75028d462f01416f80f8bb0fc7699d57ea25/src/components/BarGraph/BarGraph.test.js javascript 5-6,20-34,48-49 GITHUB-EMBED
 
 Recharts bars are not immediately rendered so we need to do `await wait` which can cause delayed test failures because Jest will wait a few moments for the `expect` assertions to pass, on successful test runs it won't cause much of a slow down though.
 
@@ -45,7 +45,7 @@ We are using getAttribute to test specifics of the bars. Notice how we are not t
 
 Next let's add some tests for the "ticks" which are the value marks to the left of the bar graph.
 
-GITHUB-EMBED https://github.com/Samic8/robust-ui-examples/blob/9372addf01d65620ea8a62c286041141887e66fd/src/components/BarGraph/BarGraph.test.js javascript 36-46 GITHUB-EMBED
+GITHUB-EMBED https://github.com/Samic8/robust-ui-examples/blob/576e75028d462f01416f80f8bb0fc7699d57ea25/src/components/BarGraph/BarGraph.test.js javascript 5-6,36-47,48-49 GITHUB-EMBED
 
 Like the bars we have just choose a few key aspects of the ticks we want to test. We have also introduced another implementation detail, its that the parentNode handles the positioning, not the `tspan` that contains the text, again, not ideal but we get to have solid tests for the graph.
 
