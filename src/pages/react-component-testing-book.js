@@ -16,6 +16,7 @@ import MousePointerSvg from "../svgs/mouse-pointer.svg"
 import SendSvg from "../svgs/send.svg"
 import ThumbsUpSvg from "../svgs/thumbs-up.svg"
 import SEO from "../components/SEO"
+import { trackCustomEvent } from "gatsby-plugin-google-analytics"
 
 export default function Subscribe({ data }) {
   const [email, setEmail] = useState(null)
@@ -28,6 +29,20 @@ export default function Subscribe({ data }) {
       PATHNAME: window.location.href.replace("https://www.samdawson.dev", ""),
     })
     setSuccess(result.result === "success")
+    trackCustomEvent({
+      category: "Robust UI",
+      action: "Clicked",
+      label: "Subscription",
+    })
+  }
+
+  const onPreorderClick = version => {
+    trackCustomEvent({
+      category: "Robust UI",
+      action: "Clicked",
+      label: "Pre-order Button",
+      value: version,
+    })
   }
 
   return (
@@ -93,7 +108,12 @@ export default function Subscribe({ data }) {
             )}
             <span className="mt-3 text-sm inline-block">
               Or&nbsp;
-              <a className="link" href="https://gum.co/lWvh" target="_blank">
+              <a
+                className="link"
+                href="https://gum.co/lWvh"
+                onClick={() => onPreorderClick("link under subscribe")}
+                target="_blank"
+              >
                 pre-order
               </a>
               &nbsp;the e-book plus video tutorials
@@ -199,6 +219,7 @@ export default function Subscribe({ data }) {
             className="gumroad-button mt-4"
             href="https://gum.co/lWvh"
             target="_blank"
+            onClick={() => onPreorderClick("Make Pre-order CTA")}
           >
             Make Pre-order
           </a>
