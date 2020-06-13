@@ -24,7 +24,6 @@ export default function Post({ data }) {
     }
 
     axios.get("/.netlify/functions/quick-feedback/quick-feedback", { params })
-    window.plausible(`${params.type} ${params.page}`)
 
     setFeedbackClickedFor(type)
   }
@@ -127,6 +126,7 @@ export const query = graphql`
       timeToRead
       frontmatter {
         title
+        slug
         featuredImage {
           publicURL
         }
