@@ -214,7 +214,6 @@ module.exports = {
         trackingUrl: "cdn.usefathom.com",
         // Unique site id
         siteId: process.env.FATHOM_ID,
-        excludedDomains: ["percy.io"],
       },
     },
   ],
