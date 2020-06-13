@@ -213,7 +213,7 @@ module.exports = {
         // Fathom server URL. Defaults to `cdn.usefathom.com`
         trackingUrl: "cdn.usefathom.com",
         // Unique site id
-        siteId: "ZMLWRGEY",
+        siteId: process.env.FATHOM_ID,
       },
     },
   ],
