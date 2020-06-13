@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect, useEffect } from "react"
+import React, { useState } from "react"
 import addToMailchimp from "gatsby-plugin-mailchimp"
 import Layout from "../components/Layout"
 import WiggleDownLine from "../svgs/wiggle-down-line.svg"
@@ -16,13 +16,10 @@ import MousePointerSvg from "../svgs/mouse-pointer.svg"
 import SendSvg from "../svgs/send.svg"
 import ThumbsUpSvg from "../svgs/thumbs-up.svg"
 import SEO from "../components/SEO"
-import { useGoal } from "gatsby-plugin-fathom"
 
 export default function Subscribe({ data }) {
   const [email, setEmail] = useState(null)
   const [success, setSuccess] = useState(null)
-  const onSubscription = useGoal("YG7ZAANA")
-  const onPreorderClick = useGoal("WCUT1PHP")
 
   const handleSubmit = async e => {
     e.preventDefault()
@@ -31,7 +28,6 @@ export default function Subscribe({ data }) {
       PATHNAME: window.location.href.replace("https://www.samdawson.dev", ""),
     })
     setSuccess(result.result === "success")
-    onSubscription()
   }
 
   return (
@@ -97,12 +93,7 @@ export default function Subscribe({ data }) {
             )}
             <span className="mt-3 text-sm inline-block">
               Or&nbsp;
-              <a
-                className="link"
-                href="https://gum.co/lWvh"
-                target="_blank"
-                onClick={onPreorderClick}
-              >
+              <a className="link" href="https://gum.co/lWvh" target="_blank">
                 pre-order
               </a>
               &nbsp;the e-book plus video tutorials
@@ -208,7 +199,6 @@ export default function Subscribe({ data }) {
             className="gumroad-button mt-4"
             href="https://gum.co/lWvh"
             target="_blank"
-            onClick={onPreorderClick}
           >
             Make Pre-order
           </a>

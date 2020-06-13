@@ -13,12 +13,9 @@ import ThumbsDownSvg from "../svgs/thumbs-down.svg"
 import { getActiveClasses } from "get-active-classes"
 import axios from "axios"
 import Book from "../components/Book"
-import { useGoal } from "gatsby-plugin-fathom"
 
 export default function Post({ data }) {
   const [feedbackClickedFor, setFeedbackClickedFor] = useState(null)
-  const onUpFeedback = useGoal("R68L3LTG")
-  const onDownFeedback = useGoal("TLPCRBG9")
 
   function submitFeedback(type) {
     const params = {
@@ -27,8 +24,6 @@ export default function Post({ data }) {
     }
 
     axios.get("/.netlify/functions/quick-feedback/quick-feedback", { params })
-    const feedbackEvent = type === "up" ? onUpFeedback : onDownFeedback
-    feedbackEvent(data.markdownRemark.frontmatter.slug)
 
     setFeedbackClickedFor(type)
   }
