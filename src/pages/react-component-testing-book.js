@@ -1,9 +1,8 @@
-import React, { useState, useLayoutEffect, useEffect } from "react"
+import React, { useState } from "react"
 import addToMailchimp from "gatsby-plugin-mailchimp"
 import Layout from "../components/Layout"
-import TechList from "../components/TechList"
 import WiggleDownLine from "../svgs/wiggle-down-line.svg"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import Book from "../components/Book"
 import XCircleSvg from "../svgs/x-circle.svg"
 import CompassSvg from "../svgs/compass.svg"
@@ -17,6 +16,7 @@ import MousePointerSvg from "../svgs/mouse-pointer.svg"
 import SendSvg from "../svgs/send.svg"
 import ThumbsUpSvg from "../svgs/thumbs-up.svg"
 import SEO from "../components/SEO"
+import { trackCustomEvent } from "gatsby-plugin-google-analytics"
 
 export default function Subscribe({ data }) {
   const [email, setEmail] = useState(null)
@@ -29,6 +29,20 @@ export default function Subscribe({ data }) {
       PATHNAME: window.location.href.replace("https://www.samdawson.dev", ""),
     })
     setSuccess(result.result === "success")
+    trackCustomEvent({
+      category: "Robust UI",
+      action: "Clicked",
+      label: "Subscription",
+    })
+  }
+
+  const onPreorderClick = version => {
+    trackCustomEvent({
+      category: "Robust UI",
+      action: "Clicked",
+      label: "Pre-order Button",
+      value: version,
+    })
   }
 
   return (
@@ -63,14 +77,13 @@ export default function Subscribe({ data }) {
             style={{ backgroundColor: "#f7f7f8" }}
           >
             <h2 className="font-header text-gray-800 text-md sm:text-lg leading-tight mx-auto text-center">
-              Get FREE chapters via email as <b>Robust UI</b>&nbsp;is being
-              written
+              Get chapters via email as <b>Robust UI</b>&nbsp;is being written
             </h2>
             {success === null && (
               <>
                 <form
                   onSubmit={handleSubmit}
-                  className="h-16 max-w-sm flex mx-auto mt-8 border border-gray-200 rounded focus-within:border-gray-500 bg-white"
+                  className="h-16 flex mx-auto mt-8 border border-gray-200 rounded focus-within:border-gray-500 bg-white"
                 >
                   <input
                     className="flex-grow flex-shrink min-w-0 pl-4 text-gray-800 outline-none rounded"
@@ -80,19 +93,31 @@ export default function Subscribe({ data }) {
                   />
                   <button
                     type="submit"
-                    className="bg-purple-500 hover:bg-purple-400 text-white font-bold text-md m-1 rounded px-4"
+                    className="bg-purple-500 hover:bg-purple-400 text-white uppercase text-xsm tracking-wide m-1 rounded px-4"
                   >
-                    Subscribe
+                    Get Previews
                   </button>
                 </form>
               </>
             )}
             {success && (
               <div className="h-16 mx-auto w-20 mt-8 flex items-center">
-                <span>Subscribed</span>
+                <span>Sign Up</span>
                 <ThumbsUpSvg className="flex-shrink-0 ml-4" />
               </div>
             )}
+            <span className="mt-3 text-sm inline-block">
+              Or&nbsp;
+              <a
+                className="link"
+                href="https://gum.co/lWvh"
+                onClick={() => onPreorderClick("link under subscribe")}
+                target="_blank"
+              >
+                pre-order
+              </a>
+              &nbsp;the e-book plus video tutorials
+            </span>
           </section>
         </div>
         <ul className="text-md max-w-xl mx-auto mt-16 block">
@@ -194,6 +219,7 @@ export default function Subscribe({ data }) {
             className="gumroad-button mt-4"
             href="https://gum.co/lWvh"
             target="_blank"
+            onClick={() => onPreorderClick("Make Pre-order CTA")}
           >
             Make Pre-order
           </a>
