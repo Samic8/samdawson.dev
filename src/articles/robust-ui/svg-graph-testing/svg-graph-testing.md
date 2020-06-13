@@ -2,7 +2,7 @@
 title: "How to unit test SVG Graphs"
 slug: svg-graph-testing
 techs: ["React", "Jest"]
-date: "2020-06-11"
+date: "2020-06-13"
 ---
 
 This article a walk-through of testing a React Bar Graph with [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro). The style of tests documented here could also be called integration tests.
@@ -11,11 +11,11 @@ The gold standard for UI testing is to test user _behavior_ instead of code _imp
 
 Like all code, graphs can become complex over time as more and more features are piled on. Graphs also tend to be reused many times for different data sets so they usually succumb to many flags--with props like "shouldShowAverage" which adds a line to a bar graph.
 
-You've heard it a million times "don't reinvent the wheel". There are great open source libraries for graphs but eventually you might out-grow them. Writing great tests gives you the flexibility to swap out libraries or write your own with lower level libraries like [D3](https://d3js.org/) in the future.
+You've heard it a million times "don't reinvent the wheel". There are great open-source libraries for graphs but eventually, you might out-grow them. Writing great tests gives you the flexibility to swap out libraries or write your own with lower-level libraries like [D3](https://d3js.org/) in the future.
 
 ## Writing tests for a bar graph
 
-Let's take my own advice and start with a charting library. We are going to be using [recharts](https://github.com/recharts/recharts) to create a simple bar chart. For the future ability to swap out libraries we are also going to wrap the chart in our own custom component.
+Let's take my own advice and start with a charting library. We are going to be using [recharts](https://github.com/recharts/recharts) to create a simple bar chart. For the future ability to swap out libraries, we are also going to wrap the chart in our own custom component.
 
 GITHUB-EMBED https://github.com/Samic8/robust-ui-examples/blob/576e75028d462f01416f80f8bb0fc7699d57ea25/src/components/BarGraph/index.js javascript GITHUB-EMBED
 
@@ -41,13 +41,13 @@ Having to use `js,querySelector()` or `js,querySelectorAll()` is a red flag that
 
 Notice how we are not trying to capture every attribute and making use of `js,getAttribute()`, this allows the code some flexibility to change.
 
-Next let's add some tests for the y-axis value markers:
+Next, let's add some tests for the y-axis value markers:
 
 GITHUB-EMBED https://github.com/Samic8/robust-ui-examples/blob/576e75028d462f01416f80f8bb0fc7699d57ea25/src/components/BarGraph/BarGraph.test.js javascript 5-6,36-47,48-49 GITHUB-EMBED
 
 For this test we have introduced another implementation detail--like the `js,wait()` previously--because the `js,parentNode` contains the x and y attributes. Again, it's not ideal but we get to have solid tests for the graph.
 
-This second test is more in line the [Testing Library philosophy](https://testing-library.com/docs/intro), but we do lose points for the `parentNode` usage.
+This second test is more in line with the [Testing Library philosophy](https://testing-library.com/docs/intro), but we do lose points for the `parentNode` usage.
 
 We also made use of [screen](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library#not-using-screen) which makes tests simpler as we don't have to worry about destructing or scoping variables, which was not available in the first test as we needed access to the `container` element.
 
@@ -59,7 +59,7 @@ It's worth considering Jests [snapshot testing tool](/article/the-snapshot-testi
 expect(textNode).toMatchSnapshot()
 ```
 
-This further nudges us in the direction of testing _implementation_ (not good). It's worth considering if the elements attributes are minimal and you can accurately describe what your testing in the tests description. The saved snapshot from the previous assertions creates the output:
+This further nudges us in the direction of testing _implementation_ (not good). It's worth considering if the attributes of the element are minimal and you can accurately describe what your testing in the test description. The saved snapshot from the previous assertions creates the output:
 
 ```javascript
 exports[
@@ -89,7 +89,7 @@ I don't know how to describe all of those attributes in a description, so it's n
 
 ## What about TDD (Test Driven Development)?
 
-Yeah about that... it's hard with graphs, especially as showcased in this example when using a external library. I recommend first writing (or including a library) the code for a section of a graph (e.g the bars), making sure it visually looks right, then writing tests.
+Yeah about that... it's hard with graphs, especially as showcased in this example when using an external library. I recommend first writing (or including a library) the code for a section of a graph (e.g the bars), making sure it visually looks right, then writing tests.
 
 You can write test with empty values:
 
@@ -99,7 +99,7 @@ expect(textNode.getAttribute("y")).toBe("")
 expect(textNode.getAttribute("x")).toBe("")
 ```
 
-The tests will error when ran:
+The tests will error when run:
 
 ```
 BarGraph › given two data points at a particular size › displays 15 in the correct position
@@ -122,9 +122,9 @@ expect(textNode.getAttribute("x")).toMatchSnapshot()
 
 ## Conclusion
 
-Although testing _implementation_ goes against Testing Libraries philosophy it's worth being a bit awkward to make your graph code robust and future proof. SVG graphs are [not particular accessible](https://tink.uk/accessible-svg-line-graphs/) themselves, so it's hard to query by user accessible features, which is what Testing Library wants you to do.
+Although testing _implementation_ goes against Testing Libraries philosophy it's worth being a bit awkward to make your graph code robust and future proof. SVG graphs are [not particularly accessible](https://tink.uk/accessible-svg-line-graphs/) themselves, so it's hard to query by user-accessible features, which is what Testing Library wants you to do.
 
-On swapping out libraries as mentioned earlier: It's never going to be as simple as swapping libraries and the tests all pass because we are testing implementation (the SVG), but thats ok it's a intentional decision.
+On swapping out libraries as mentioned earlier: It's never going to be as simple as swapping libraries and the tests all pass because we are testing implementation (the SVG), but that's ok it's an intentional decision.
 
 ### Resources
 
@@ -135,4 +135,4 @@ On swapping out libraries as mentioned earlier: It's never going to be as simple
 
 ### Upcoming Related Articles
 
-- Visually testing SVG graphs to compliment unit tests
+- Visually testing SVG graphs to complement unit tests
