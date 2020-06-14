@@ -6,7 +6,7 @@ date: "2019-12-24"
 updated: "2020-05-25"
 ---
 
-Redux hooks and the connect function can have the same outcomes. The main difference between them is their ability to _nudge_ (guide) the way you write your components. Understanding what each of them _optimizes for_ is essential to helping you choose between them.
+React-redux hooks like `js,useSelector()` and the `js,connect()` can have the same outcomes. The main difference between them is their ability to _nudge_ (guide) the way you write your components. Understanding what each of them _optimizes for_ is essential to helping you choose between them.
 
 <br/>
 
@@ -40,67 +40,79 @@ Redux hooks and the connect function can have the same outcomes. The main differ
 
 ## Unit testing and separation of concerns
 
-A lens we can use to understand the differences between hooks and the connect function is to understand how unit tests can be written for each and what direction of code style they _nudge_ you towards.
+A lens we can use to understand the differences between hooks and the `js,connect()` is unit tests: How they differ for each and in-turn what direction of code style they _nudge_ you towards.
 
-I find that in testing code you realize how well it is organized by its concerns, you learn all of the dependencies you have introduced because now you have to mock them.
-
-When following the [_Separation of concerns_](https://simplicable.com/new/separation-of-concerns) principle your code becomes easier to test and reuse.
-
-There is a spectrum of _Separation_ where maintainability becomes a problem at the extreme ends.
+It becomes clear how organized your code is by its concerns when writing tests for it. When following the [_Separation of concerns_](https://simplicable.com/new/separation-of-concerns) principle your code becomes easier to test and reuse. There's a spectrum of _Separation_ where maintainability becomes a problem at the extreme ends.
 
 ![Separation of Concerns Spectrum](./seperation-concerns-redux.svg)
 
-At the "Not Separated" end we have large files where it's hard to reuse any one piece.
+When "Not Separated" we have large files where it's hard to reuse any one piece.
 
-At the "Very Separated" end we have too many small pieces of code and it's a nightmare to figure out how they all work together.
+Redux hooks such as `js,useSelector()` reduce separation because the components include the redux glue code. This can seem ironic because React hooks are a tool to help with separation and code reuse, but in react-redux they do couple redux to our components more than `js,connect()`.
 
-The connect function improves separation and the hooks reduce separation. I don't think either fall at the extreme ends so you need to understand what trade-offs you are making with each choice.
+When "Very Separated" we have small pieces of code and it's a nightmare to figure out how they all work together.
 
-Don't get me wrong, hooks themselves are a tool to help with separation and code reuse. But in React Redux they do couple redux to our components more than the connect function.
+Neither fall at the extreme ends.
 
-### Connect function testing
+### `js,connect()` testing
 
-When the connect function is used, our component code is _separated_ into two parts. The first being what we will call the "inner" component, this component on its own is unaware that redux even exists.
+When making use of the `js,connect()` our component code is _separated_ into two parts. The first being what we will call the inner component, this component on its own is unaware that redux even exists.
 
-The second is the "glue" code, it sticks redux and our inner component together. This code is written within the function parameters mapStateToProps and mapDispatchToProps of the connect function.
+The second is the glue code written by `js,connect()`, it _glues_ redux and our inner component together through the use of a Higher Order Component.
+
+Let's write some tests for this `js,connect()` example:
 
 GITHUB-EMBED https://github.com/Samic8/react-redux-use-selector-vs-connect/blob/master/src/features/counter-connect/CounterConnect.js javascript 1-18,62-82 GITHUB-EMBED
 
-The "inner" component we can test independent of redux because of its inherent _separation_. We don't have this option by default with hooks, because hooks mix the "glue" code within the component. This is not always true as we will explore later. The first `describe` test below only tests the "inner" component without Redux.
+The inner component we can test independent of redux because of its _separation_. We don't have this option with Redux hooks because the glue code is within the component.
 
-The option is also available to test the "inner" and the redux "glue" code together by testing the component returned by the connect function, which is shown in the second `describe` block. This type of test is more comprehensive because it tests more lines code. Testing more lines of code is not always better, the "glue" code is normally minimal and if you want to gamble with not testing it, your tests will be simpler but less complete.
+GITHUB-EMBED https://github.com/Samic8/react-redux-use-selector-vs-connect/blob/master/src/features/counter-connect/CounterConnect.test.js javascript 1-10,21 GITHUB-EMBED
 
-GITHUB-EMBED https://github.com/Samic8/react-redux-use-selector-vs-connect/blob/master/src/features/counter-connect/CounterConnect.test.js javascript 1-21 GITHUB-EMBED
+Like we would do with a Redux hooks component, we can also test the inner and Redux glue code together by testing the component returned by the connect function.
 
-I don't recommend doing both testing approaches like above instead, pick one and run with it. Different components may be better tested with one approach over.
+GITHUB-EMBED https://github.com/Samic8/react-redux-use-selector-vs-connect/blob/master/src/features/counter-connect/CounterConnect.test.js javascript 6,15-21 GITHUB-EMBED
 
-**Note:** The redux store is configured in the imported [test-util](https://github.com/Samic8/react-redux-use-selector-vs-connect/blob/master/src/test-util.js) which allows the insertion of the initial state for convenience.
+**Note:** The redux store is setup in the imported [test-util](https://github.com/Samic8/react-redux-use-selector-vs-connect/blob/master/src/test-util.js) which allows the insertion of the initial state for convenience.
+
+This test is more comprehensive because it tests more lines code. Testing more lines of code is not always better, the glue code is minimal and if you want to gamble with not testing it your tests will be simpler but less complete.
+
+Different components may be better tested with either approach.
 
 ### Hooks testing
 
-When using React Redux Hooks we are _nudged_ towards testing components that include their "glue" code connecting them to redux like the second example in the connect function example.
+When using Redux Hooks we are _nudged_ towards testing components that include their glue code like the second `js,connect()` example.
 
-Using React Redux hooks does not mean you can't write components that are unaware of Redux. You should do that whenever possible. It's the cases where you are writing a component that is very specific and it needs to communicate redux that you will need to include hooks to do that.
+Using Redux hooks does not mean you can't write components that are unaware of Redux, you should do that whenever possible.
 
-The equivalent to the connect function generated component in hooks looks like this:
+The Redux hooks version of the same component:
 
 GITHUB-EMBED https://github.com/Samic8/react-redux-use-selector-vs-connect/blob/master/src/features/counter-use-selector/CounterUseSelector.js javascript 1-14,60 GITHUB-EMBED
 
-With React Redux hooks we are _nudged_ towards writing tests that are inclusive of redux. Unlike the connect function which enforces the separation between the Redux glue code and our component.
+With Redux hooks we are _nudged_ towards writing tests that are inclusive of redux (glue code). Our tests will normally include redux state:
 
 GITHUB-EMBED https://github.com/Samic8/react-redux-use-selector-vs-connect/blob/master/src/features/counter-use-selector/CounterUseSelector.test.js javascript 1-13 GITHUB-EMBED
 
-We end up with less flexibility but it _nudges_ us to writing to more comprehensive tests.
+We end up with less flexibility but it _nudges_ us towards writing more comprehensive tests.
 
-I am using the word _nudge_ here again because it does not force us to test components using hooks in this way. We could break this component into two components, one that uses the hooks and another that just receives props. But at that point we are replicating the connect functions purpose, so we may as well just use it.
-
-You might choose to not confine yourself to using exclusively the connect function or hooks. If you don't make a decision upfront you might just be creating more decision fatigue as it is not always clear why one method is a better approach over another. As we have seen in this article the differences are subtle.
+I am using the word _nudge_ here again because it does not force us to test components that include Redux glue code. We could break this component into two components, one that includes Redux hooks and another that receives props. But at that point we are replicating the purpose of `js,connect()`, so we may as well use it.
 
 ## Better performance optimizations by default
 
-The winner here is the `js,connect()` since it won't re-render connected components unless the props mapped in `js,mapStateToProps()` are changed. Components using React Redux hooks can achieve the same functionality by making use of the [React.memo](https://reactjs.org/docs/react-api.html#reactmemo).
+`js,connect()` won't re-render the component passed to it unless the props change. Components using Redux hooks can achieve the same functionality by making use of the [React.memo](https://reactjs.org/docs/react-api.html#reactmemo).
 
-Whether this will truly give your app better performance is best left decided to [actual testing](/article/js-perf-assumptions).
+```jsx
+function CounterUseSelector({ allowValueChange }) {
+  const count = useSelector(selectCount)
+  const dispatch = useDispatch()
+  // ...
+}
+
+export default React.memo(CounterUseSelector)
+```
+
+`js,useSelector()` will cause re-renders if the value it produces has changed. When returning an object be aware that unless it's the same object by reference equality the component will re-render even if the objects properties are the same. You can get around this by always returning the same object.
+
+What approach truly give your app better performance is best left decided to [actual testing](/article/js-perf-assumptions).
 
 ## Less boilerplate
 
@@ -108,15 +120,17 @@ Using React hooks `javascript,useSelector()` forgoes the need to use the connect
 
 ## Read the docs for a more in-depth understanding
 
-This article provides a framework to compare the approaches through the theme of _nudging_. But to truly get an understanding of the details of the hooks API checkout the [official documentation](https://react-redux.js.org/api/hooks).
+This article provides a framework to compare the approaches through the theme of _nudging_. But to truly get an understanding of the details of the hooks read the [official documentation](https://react-redux.js.org/api/hooks).
 
 ### The "Zombie Children" problem
 
-The docs go into [detail about a problem](https://react-redux.js.org/api/hooks#stale-props-and-zombie-children) that can arise through React Redux hook usage. The docs have a lot of information on this issue but it's hard to grasp exactly how it would affect your code. Let me know if you would like a video tutorial on this problem, reach out through the text box below or twitter.
+The docs go into [detail about a problem](https://react-redux.js.org/api/hooks#stale-props-and-zombie-children) that can arise through Redux hook usage. The docs have a lot of information on this issue but it's hard to grasp exactly how it would affect your code. [Let me know](https://twitter.com/sam__dawson) if you would like a video tutorial on this problem.
 
 ## Conclusion
 
-Understand what you are optimizing for and choose the method that best suits that. If you don't know what that is and just want to get started using React-Redux I recommend the hooks approach.
+Understand what you are _optimizing for_ and choose the method that best suits that. If you don't know what that is and just want to get started using React-Redux I recommend the hooks approach.
+
+You might choose to not confine yourself to using the `js,connect()` or Redux hooks. If you don't make a decision upfront you might be creating more decision fatigue because it's not always clear why one method is a better approach over another. As we have seen in this article the differences are subtle.
 
 ## Additional Resources
 
