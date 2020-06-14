@@ -6,7 +6,7 @@ date: "2019-12-24"
 updated: "2020-05-25"
 ---
 
-Redux hooks and the connect function can have the same outcomes. The main difference between them is their ability to _nudge_ (guide) the way you write your component code. Understanding what each of them optimizes for is essential to help you make a decision on which method is best for you and your team's code style.
+Redux hooks and the connect function can have the same outcomes. The main difference between them is their ability to _nudge_ (guide) the way you write your components. Understanding what each of them _optimizes for_ is essential to helping you choose between them.
 
 <br/>
 
@@ -98,13 +98,13 @@ You might choose to not confine yourself to using exclusively the connect functi
 
 ## Better performance optimizations by default
 
-The winner here is the connect function since it won't re-render connected components unless the props included the props mapped from the state are changed. Components using React Redux hooks can achieve the same functionality by making use of the [React.memo](https://reactjs.org/docs/react-api.html#reactmemo) API.
+The winner here is the `js,connect()` since it won't re-render connected components unless the props mapped in `js,mapStateToProps()` are changed. Components using React Redux hooks can achieve the same functionality by making use of the [React.memo](https://reactjs.org/docs/react-api.html#reactmemo).
 
 Whether this will truly give your app better performance is best left decided to [actual testing](/article/js-perf-assumptions).
 
 ## Less boilerplate
 
-Using react hooks forgoes the need to use the connect function and embeds that logic within the components themselves. The trade-off is a reduction on the _Separation of Concerns_ spectrum and the need to be are of when to use React.memo.
+Using React hooks `javascript,useSelector()` forgoes the need to use the connect function and embeds that logic within the components themselves. The trade-off is a reduction on the _Separation of Concerns_ spectrum and the need to be aware of when to use [React.memo](https://reactjs.org/docs/react-api.html#reactmemo) to get the same performance optimizations.
 
 ## Read the docs for a more in-depth understanding
 
