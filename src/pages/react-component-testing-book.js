@@ -54,9 +54,10 @@ export default function Subscribe({ data }) {
         twitterCardType="summary_large_image"
       ></SEO>
       <article className="pt-12 pb-20 mt-4" id="footer">
+        <h1 className="sr-only">Robust UI e-book</h1>
         <div className="max-w-lg flex justify-center flex-col items-center justify-center mx-auto">
           <Book />
-          <h2 className="text-md mb-4 mt-4">
+          <p className="text-md mb-4 mt-4">
             A toolkit of strategies for testing React components with&nbsp;
             <a className="link" href="https://jestjs.io/">
               Jest
@@ -69,7 +70,7 @@ export default function Subscribe({ data }) {
               React Testing Library
             </a>
             .
-          </h2>
+          </p>
         </div>
         <div className="flex justify-center mt-8 max-w-lg mx-auto">
           <section
@@ -87,7 +88,7 @@ export default function Subscribe({ data }) {
                 >
                   <input
                     className="flex-grow flex-shrink min-w-0 pl-4 text-gray-800 outline-none rounded"
-                    placeholder="frontend@person.com"
+                    placeholder="dev@whodoesntbreakthings.com"
                     type="email"
                     onChange={e => setEmail(e.target.value)}
                   />
