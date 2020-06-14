@@ -13,6 +13,7 @@ import ThumbsDownSvg from "../svgs/thumbs-down.svg"
 import { getActiveClasses } from "get-active-classes"
 import axios from "axios"
 import Book from "../components/Book"
+import { trackCustomEvent } from "gatsby-plugin-google-analytics"
 
 export default function Post({ data }) {
   const [feedbackClickedFor, setFeedbackClickedFor] = useState(null)
@@ -26,6 +27,14 @@ export default function Post({ data }) {
     axios.get("/.netlify/functions/quick-feedback/quick-feedback", { params })
 
     setFeedbackClickedFor(type)
+  }
+
+  const onEbookClick = () => {
+    trackCustomEvent({
+      category: "Robust UI",
+      action: "Clicked",
+      label: "Article large e-book",
+    })
   }
 
   return (
@@ -103,7 +112,11 @@ export default function Post({ data }) {
       </form>
       <WiggleDownLine className="mx-auto h-24 sm:h-auto" aria-hidden />
       <section className="flex items-center flex-col mt-6 max-w-sm mx-auto">
-        <Link to="/react-component-testing-book" className="text-md mb-4 link">
+        <Link
+          to="/react-component-testing-book"
+          onClick={onEbookClick}
+          className="text-md mb-4 link"
+        >
           <Book className="no-underline" />
           <div className="mt-4">
             Get chapters of my

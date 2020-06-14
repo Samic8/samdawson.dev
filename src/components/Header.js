@@ -2,8 +2,17 @@ import React from "react"
 import LogoImage from "./Image"
 import { Link } from "gatsby"
 import RssSvg from "../svgs/rss.svg"
+import { trackCustomEvent } from "gatsby-plugin-google-analytics"
 
 const Header = () => {
+  const onEbookClick = () => {
+    trackCustomEvent({
+      category: "Robust UI",
+      action: "Clicked",
+      label: "Header e-book",
+    })
+  }
+
   return (
     <nav className={"z-10"}>
       <div
@@ -27,6 +36,7 @@ const Header = () => {
           <Link
             to={"/react-component-testing-book"}
             className="hover:text-gray-500 mr-6 uppercase"
+            onClick={onEbookClick}
           >
             e-book
           </Link>
