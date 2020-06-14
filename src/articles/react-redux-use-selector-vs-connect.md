@@ -98,7 +98,7 @@ You might choose to not confine yourself to using exclusively the connect functi
 
 ## Better performance optimizations by default
 
-The winner here is the connect function since it won't re-render connected components unless the props included the props mapped from the state are changed. Components using React Redux hooks can achieve the same functionality by making use of the [React.memo](https://reactjs.org/docs/react-api.html#reactmemo) API
+The winner here is the connect function since it won't re-render connected components unless the props included the props mapped from the state are changed. Components using React Redux hooks can achieve the same functionality by making use of the [React.memo](https://reactjs.org/docs/react-api.html#reactmemo) API.
 
 Whether this will truly give your app better performance is best left decided to [actual testing](/article/js-perf-assumptions).
 
