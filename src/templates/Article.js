@@ -12,8 +12,8 @@ import ThumbsUpSvg from "../svgs/thumbs-up.svg"
 import ThumbsDownSvg from "../svgs/thumbs-down.svg"
 import { getActiveClasses } from "get-active-classes"
 import axios from "axios"
-import Book from "../components/Book"
 import { trackCustomEvent } from "gatsby-plugin-google-analytics"
+import EmailSubscription from "../components/EmailSubscription"
 
 export default function Post({ data }) {
   const [feedbackClickedFor, setFeedbackClickedFor] = useState(null)
@@ -111,21 +111,18 @@ export default function Post({ data }) {
         )}
       </form>
       <WiggleDownLine className="mx-auto h-24 sm:h-auto" aria-hidden />
-      <section className="flex items-center flex-col mt-6 max-w-sm mx-auto">
-        <Link
-          to="/react-component-testing-book"
-          onClick={onEbookClick}
-          className="text-md mb-4 link"
-        >
-          <Book className="no-underline" />
-          <div className="mt-4">
-            Get chapters of my
-            <div className="text-gray-800 font-bold">
-              React Component Testing
-            </div>{" "}
-            e-book
-          </div>
-        </Link>
+      <section className="flex items-center flex-col mt-6 mx-auto max-w-lg">
+        <EmailSubscription
+          title={
+            <>
+              Get chapters via email as{" "}
+              <Link className="link" to="/react-component-testing-book">
+                <b>Robust UI</b>
+              </Link>
+              &nbsp;is being written
+            </>
+          }
+        ></EmailSubscription>
       </section>
       <ExternalLinks className="flex justify-center mt-12" />
     </Layout>
