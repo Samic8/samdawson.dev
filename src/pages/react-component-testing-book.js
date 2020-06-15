@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import addToMailchimp from "gatsby-plugin-mailchimp"
 import Layout from "../components/Layout"
 import WiggleDownLine from "../svgs/wiggle-down-line.svg"
 import { graphql } from "gatsby"
@@ -14,28 +13,11 @@ import LogInSvg from "../svgs/log-in.svg"
 import MinimizeSvg from "../svgs/minimize.svg"
 import MousePointerSvg from "../svgs/mouse-pointer.svg"
 import SendSvg from "../svgs/send.svg"
-import ThumbsUpSvg from "../svgs/thumbs-up.svg"
-import SEO from "../components/SEO"
 import { trackCustomEvent } from "gatsby-plugin-google-analytics"
+import SEO from "../components/SEO"
+import EmailSubscription from "../components/EmailSubscription"
 
 export default function Subscribe({ data }) {
-  const [email, setEmail] = useState(null)
-  const [success, setSuccess] = useState(null)
-
-  const handleSubmit = async e => {
-    e.preventDefault()
-    if (!email) return
-    const result = await addToMailchimp(email, {
-      PATHNAME: window.location.href.replace("https://www.samdawson.dev", ""),
-    })
-    setSuccess(result.result === "success")
-    trackCustomEvent({
-      category: "Robust UI",
-      action: "Clicked",
-      label: "Subscription",
-    })
-  }
-
   const onPreorderClick = version => {
     trackCustomEvent({
       category: "Robust UI",
@@ -73,53 +55,22 @@ export default function Subscribe({ data }) {
           </p>
         </div>
         <div className="flex justify-center mt-8 max-w-lg mx-auto">
-          <section
-            className="border border-gray-400 inline-block p-4 sm:p-8 rounded-md w-full"
-            style={{ backgroundColor: "#f7f7f8" }}
-          >
-            <h2 className="font-header text-gray-800 text-md sm:text-lg leading-tight mx-auto text-center">
-              Get chapters via email as <b>Robust UI</b>&nbsp;is being written
-            </h2>
-            {success === null && (
-              <>
-                <form
-                  onSubmit={handleSubmit}
-                  className="h-16 flex mx-auto mt-8 border border-gray-200 rounded focus-within:border-gray-500 bg-white"
+          <EmailSubscription version={"link under subscribe"} title={<>Get chapters via email as <b>Robust UI</b>&nbsp;is being written</>}>
+            <>
+              <span className="mt-3 text-sm inline-block">
+                Or&nbsp;
+                <a
+                  className="link"
+                  href="https://gum.co/lWvh"
+                  onClick={() => onPreorderClick("link under subscribe")}
+                  target="_blank"
                 >
-                  <input
-                    className="flex-grow flex-shrink min-w-0 pl-4 text-gray-800 outline-none rounded"
-                    placeholder="dev@whodoesntbreakthings.com"
-                    type="email"
-                    onChange={e => setEmail(e.target.value)}
-                  />
-                  <button
-                    type="submit"
-                    className="bg-purple-500 hover:bg-purple-400 text-white uppercase text-xsm tracking-wide m-1 rounded px-4"
-                  >
-                    Get Previews
-                  </button>
-                </form>
-              </>
-            )}
-            {success && (
-              <div className="h-16 mx-auto w-20 mt-8 flex items-center">
-                <span>Sign Up</span>
-                <ThumbsUpSvg className="flex-shrink-0 ml-4" />
-              </div>
-            )}
-            <span className="mt-3 text-sm inline-block">
-              Or&nbsp;
-              <a
-                className="link"
-                href="https://gum.co/lWvh"
-                onClick={() => onPreorderClick("link under subscribe")}
-                target="_blank"
-              >
-                pre-order
-              </a>
-              &nbsp;the e-book plus video tutorials
-            </span>
-          </section>
+                  pre-order
+                </a>
+                &nbsp;the e-book plus video tutorials
+              </span>
+            </>
+          </EmailSubscription>
         </div>
         <ul className="text-md max-w-xl mx-auto mt-16 block">
           <Item>
