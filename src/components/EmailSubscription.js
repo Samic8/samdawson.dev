@@ -38,7 +38,7 @@ export default function EmailSubscription({ title, children }) {
         className="h-16 flex mx-auto mt-8 border border-gray-200 rounded focus-within:border-gray-500 bg-white"
       >
         <input
-          className="flex-grow flex-shrink min-w-0 pl-4 text-gray-800 outline-none rounded"
+          className="flex-grow flex-shrink min-w-0 pl-4 text-gray-800 outline-none rounded placeholder-gray-700"
           placeholder="dev@whodoesntbreakthings.com"
           type="email"
           onChange={e => setEmail(e.target.value)}
