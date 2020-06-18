@@ -35,11 +35,11 @@ export default function Subscribe({ data }) {
         imageUrl="/react-component-testing.png"
         twitterCardType="summary_large_image"
       ></SEO>
-      <article className="pt-12 pb-20 mt-4" id="footer">
+      <article className="pt-12 pb-20 mt-4 text-black" id="footer">
         <h1 className="sr-only">Robust UI e-book</h1>
         <div className="max-w-lg flex justify-center flex-col items-center justify-center mx-auto">
           <Book />
-          <p className="text-md mb-4 mt-4">
+          <p className="text-lg font-bold mb-4 mt-6 font-header text-gray-900">
             A toolkit of strategies for testing React components with&nbsp;
             <a className="link" href="https://jestjs.io/">
               Jest
@@ -54,29 +54,11 @@ export default function Subscribe({ data }) {
             .
           </p>
         </div>
-        <div className="flex justify-center mt-8 max-w-lg mx-auto">
-          <EmailSubscription version={"link under subscribe"} title={<>Get chapters via email as <b>Robust UI</b>&nbsp;is being written</>}>
-            <>
-              <span className="mt-3 text-sm inline-block">
-                Or&nbsp;
-                <a
-                  className="link"
-                  href="https://gum.co/lWvh"
-                  onClick={() => onPreorderClick("link under subscribe")}
-                  target="_blank"
-                >
-                  pre-order
-                </a>
-                &nbsp;the e-book plus video tutorials
-              </span>
-            </>
-          </EmailSubscription>
-        </div>
-        <ul className="text-md max-w-xl mx-auto mt-16 block">
+        <ul className="text-md max-w-xl mx-auto mt-8 block">
           <Item>
             <CheckCircleSvg className="mr-2 mt-1 flex-shrink-0" />
             Prevent the afternoon tap on the shoulder or slack ping about a
-            critical bug in the new feature released last week.
+            critical bug in a feature you released last week.
           </Item>
           <Item>
             <CheckCircleSvg className="mr-2 mt-1 flex-shrink-0" />
@@ -91,10 +73,12 @@ export default function Subscribe({ data }) {
           </Item>
         </ul>
         <div className="px-6">
-          <div className="max-w-lg mx-auto mt-8 sm:mt-16">
+          <div className="max-w-lg mx-auto mt-16">
             <div className="mx-auto text-sm">
               <section>
-                <h2 className="font-semibold">Learn the fundamentals</h2>
+                <h2 className="font-bold font-header text-gray-900 mb-4">
+                  Learn the fundamentals
+                </h2>
                 <ul>
                   <Item>
                     <LayersSvg className="mr-2 flex-shrink-0" />
@@ -121,8 +105,8 @@ export default function Subscribe({ data }) {
                   </Item>
                 </ul>
               </section>
-              <section className="mt-4">
-                <h2 className="font-semibold">
+              <section className="mt-12">
+                <h2 className="font-bold font-header text-gray-900 mb-4">
                   Then learn strategies for specific contexts
                 </h2>
                 <ul>
@@ -152,29 +136,34 @@ export default function Subscribe({ data }) {
             </div>
           </div>
         </div>
-        <WiggleDownLine
-          className="mx-auto h-24 sm:h-auto mt-6 mb-6"
-          aria-hidden
-        />
-        <div className="flex flex-col items-center">
-          <div className="inline-flex items-center text-gray-800 mt-2">
-            <span
-              className="font-bold"
-              style={{ textDecoration: "line-through" }}
-            >
-              $80
-            </span>
-            <span className="font-bold text-lg">&nbsp;$32</span>
-            <span>&nbsp;with code "pre-order"</span>
-          </div>
-          <a
-            className="gumroad-button mt-4"
-            href="https://gum.co/lWvh"
-            target="_blank"
-            onClick={() => onPreorderClick("Make Pre-order CTA")}
+        <WiggleDownLine className="mx-auto h-24 sm:h-auto mt-6 mb-12" />
+        <div className="text-gray-700 flex justify-center max-w-lg mx-auto font-header uppercase font-bold text-md">
+          To be released in November
+        </div>
+        <div className="flex justify-center mt-12 max-w-lg mx-auto">
+          <EmailSubscription
+            version={"link under subscribe"}
+            title={
+              <>
+                Get chapters via email as <b>Robust UI</b>&nbsp;is being written
+              </>
+            }
           >
-            Make Pre-order
-          </a>
+            <>
+              <span className="mt-3 text-xsm sm:text-sm inline-block">
+                Or&nbsp;
+                <a
+                  className="link"
+                  href="https://gum.co/lWvh"
+                  onClick={() => onPreorderClick("link under subscribe")}
+                  target="_blank"
+                >
+                  pre-order
+                </a>
+                &nbsp;with the discount code "pre-order"
+              </span>
+            </>
+          </EmailSubscription>
         </div>
       </article>
     </Layout>
