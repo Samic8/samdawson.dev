@@ -6,7 +6,7 @@ date: "2020-06-13"
 featuredImage: "./bar-graph.png"
 ---
 
-This article a walk-through of testing a React Bar Graph with [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro). The style of tests documented here could also be called integration tests.
+This article is walk-through of testing a React Bar Graph with [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro). The style of tests documented here could also be called integration tests.
 
 The gold standard for UI testing is to test user _behavior_ instead of code _implementation_ because it makes the code flexible and ensures the user critical functionality works! Unfortunately with SVG graphs implementation testing comes with the territory, because the graph is _implemented_ as an SVG. That's OK, the trade-off is that we create robust graph code that will withstand time.
 
