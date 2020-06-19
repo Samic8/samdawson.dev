@@ -12,7 +12,7 @@ The gold standard for UI testing is to test user _behavior_ instead of code _imp
 
 Like all code, graphs can become complex over time as more and more features are piled on. Graphs also tend to be reused many times for different data sets so they usually succumb to many flags--with props like "shouldShowAverage" which adds a line to a bar graph.
 
-You've heard it a million times "don't reinvent the wheel". There are great open-source libraries for graphs but eventually, you might out-grow them. Writing great tests gives you the flexibility to swap out libraries or write your own with lower-level libraries like [D3](https://d3js.org/) in the future.
+You've heard it a million times "don't reinvent the wheel". There are great open-source libraries for graphs but eventually you might out-grow them. Tests give you the flexibility to swap out libraries in the future or write your own with lower-level libraries like [D3](https://d3js.org/).
 
 ## Writing tests for a bar graph
 
