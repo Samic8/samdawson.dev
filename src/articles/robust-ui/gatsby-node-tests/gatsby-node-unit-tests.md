@@ -45,10 +45,10 @@ GITHUB-EMBED https://github.com/Samic8/robust-ui/blob/f6ec18f0154ad02e3b0faae1f9
 
 We are opting for a unit test instead of integration by mocking the `js,path.resolve()` dependency, and the `js,graphql()` and `js,action.createPage()` parameters.
 
-Snapshot testing is for capturing the graphql query. Which is [borderline abuse](/article/the-snapshot-testing-tool) of the tool, but OK for small use cases like this.
+The tests the graphql query we used `js,toMatchSnapshot()`, which is [borderline abuse](/article/the-snapshot-testing-tool) of the tool, but I think it's OK for small use-cases like this.
 
 We have mocked the `js,action.createPages()` parameters, which we then assert that it has run with the parameters.
 
 ## Beyond unit testing
 
-Focusing exclusively on unit testing leaves us vulnerable breaking changes when upgrading gatsby. To assist with upgrades you could make use of visual regression tools like [percy](https://www.gatsbyjs.org/packages/gatsby-plugin-percy/) which are a better indicator of the whole website rendering as expected.
+Focusing exclusively on unit testing leaves us vulnerable to false-positive tests when upgrading the gatsby package or other dependencies. To assist with upgrades you could make use of visual regression tools like [percy](https://www.gatsbyjs.org/packages/gatsby-plugin-percy/) which are a better indicator of the whole website rendering as expected.
