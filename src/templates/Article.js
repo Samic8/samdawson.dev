@@ -93,24 +93,7 @@ export default function Post({ data }) {
             onClick={submitFeedback}
           />
         </div>
-        {feedbackClickedFor && (
-          <div className="max-w-md flex flex-col mx-auto mx-auto border border-gray-100 rounded focus-within:border-gray-500 bg-white">
-            <textarea
-              aria-labelledby="helpful-question"
-              className="flex-grow flex-shrink min-w-0 p-4 text-gray-800 outline-none rounded placeholder-gray-700"
-              name={`feedback-text`}
-              placeholder="Anything else to add? Detail is useful for improving this article"
-            />
-            <button
-              type="submit"
-              className="bg-gray-500 hover:bg-gray-400 text-white font-bold text-md m-1 rounded px-4"
-            >
-              Submit
-            </button>
-          </div>
-        )}
       </form>
-      <WiggleDownLine className="mx-auto h-24 sm:h-auto" aria-hidden />
       <section className="flex items-center flex-col mt-6 mx-auto max-w-lg">
         <EmailSubscription
           title={
