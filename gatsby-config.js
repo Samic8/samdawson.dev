@@ -194,13 +194,13 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-percy`,
-      options: {
-        // Code sandbox causes problems
-        ignore: [`/article/gatsby-categories/*`],
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-percy`,
+    //   options: {
+    //     // Code sandbox causes problems
+    //     ignore: [`/article/gatsby-categories/*`],
+    //   },
+    // },
     {
       resolve: "gatsby-plugin-mailchimp",
       options: {
