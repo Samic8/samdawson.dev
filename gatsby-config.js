@@ -69,7 +69,7 @@ module.exports = {
               marker: "GITHUB-EMBED",
               insertEllipsisComments: true,
               ellipsisPhrase: "...",
-              useCache: true,
+              useCache: false,
               cacheKey: "gatsby-remark-github-v1",
               token: process.env.GITHUB_TOKEN,
               includeLinkHeader: false,
