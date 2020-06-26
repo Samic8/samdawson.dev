@@ -2,6 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import ArrowRightSvg from "../svgs/arrow-right.svg"
 import Header from "./Header"
+import { trackCustomEvent } from "gatsby-plugin-google-analytics"
 
 const Layout = ({ children, showBanner = true }) => {
   const data = useStaticQuery(graphql`
@@ -14,15 +15,26 @@ const Layout = ({ children, showBanner = true }) => {
     }
   `)
 
+  const onBannerClick = () => {
+    trackCustomEvent({
+      category: "Robust UI",
+      action: "Clicked",
+      label: "Banner e-book",
+    })
+  }
+
   return (
     <div>
-      {showBanner && <Link
-        to="/react-component-testing-book"
-        className="banner font-header bg-indigo-600 relative hover:underline z-40 text-white font-bold h-10 text-xsm sm:text-sm left-0 right-0 flex items-center justify-center"
-      >
-        <span>Get chapters from Robust UI as it's being written</span>
-        <ArrowRightSvg className="h-6 ml-2" />
-      </Link>}
+      {showBanner && (
+        <Link
+          to="/react-component-testing-book"
+          onClick={onBannerClick}
+          className="banner font-header bg-indigo-600 relative hover:underline z-40 text-white font-bold h-10 text-xsm sm:text-sm left-0 right-0 flex items-center justify-center"
+        >
+          <span>Get chapters from Robust UI as it's being written</span>
+          <ArrowRightSvg className="h-6 ml-2" />
+        </Link>
+      )}
       <div
         className={
           "flex flex-col items-stretch mx-auto max-w-5xl sm:overflow-hidden pb-32"
