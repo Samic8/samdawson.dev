@@ -28,7 +28,7 @@ export default function Subscribe({ data }) {
   }
 
   return (
-    <Layout>
+    <Layout showBanner={false}>
       <SEO
         title={"Robust UI e-book"}
         description="A toolkit of strategies for testing React components with Jest and React Testing Library"

@@ -1,9 +1,9 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-
+import { useStaticQuery, graphql, Link } from "gatsby"
+import ArrowRightSvg from "../svgs/arrow-right.svg"
 import Header from "./Header"
 
-const Layout = ({ children, useColoredBackground }) => {
+const Layout = ({ children, showBanner = true }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -16,6 +16,13 @@ const Layout = ({ children, useColoredBackground }) => {
 
   return (
     <div>
+      {showBanner && <Link
+        to="/react-component-testing-book"
+        className="banner font-header bg-indigo-600 relative hover:underline z-40 text-white font-bold h-10 text-xsm sm:text-sm left-0 right-0 flex items-center justify-center"
+      >
+        <span>Get chapters from Robust UI as it's being written</span>
+        <ArrowRightSvg className="h-6 ml-2" />
+      </Link>}
       <div
         className={
           "flex flex-col items-stretch mx-auto max-w-5xl sm:overflow-hidden pb-32"

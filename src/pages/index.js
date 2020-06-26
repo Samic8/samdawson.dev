@@ -45,7 +45,7 @@ const IndexPage = ({ data }) => (
     <SEO />
     <div className={"absolute top-0 left-0 right-0 overflow-hidden z-0"}>
       <Wave
-        className={"relative -mt-2xl sm:-mt-1xl md:-mt-2xl"}
+        className={"relative -mt-1xl sm:-mt-xl md:-mt-1xl"}
         style={{ left: "50%", marginLeft: "-110rem" }}
       />
     </div>
