@@ -4,6 +4,7 @@ slug: react-redux-use-selector-vs-connect
 techs: ["React", "Jest"]
 date: "2019-12-24"
 updated: "2020-05-25"
+featuredImage: "./seperation-concerns-redux.svg"
 ---
 
 React-redux hooks like `js,useSelector()` and the `js,connect()` can have the same outcomes. The main difference between them is their ability to _nudge_ (guide) the way you write your components. Understanding what each of them _optimizes for_ is essential to helping you choose between them.
