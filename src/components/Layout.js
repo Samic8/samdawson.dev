@@ -31,7 +31,7 @@ const Layout = ({ children, showBanner = true }) => {
           onClick={onBannerClick}
           className="banner font-header bg-indigo-600 relative hover:underline z-40 text-white font-bold h-10 text-xsm sm:text-sm left-0 right-0 flex items-center justify-center"
         >
-          <span>Get chapters from Robust UI as it's being written</span>
+          <span>I'm writing an e-book! Check it out</span>
           <ArrowRightSvg className="h-6 ml-2" />
         </Link>
       )}

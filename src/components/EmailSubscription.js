@@ -39,7 +39,7 @@ export default function EmailSubscription({ title, children }) {
       >
         <input
           className="flex-grow flex-shrink min-w-0 pl-4 text-gray-800 outline-none rounded placeholder-gray-700"
-          placeholder="dev@whodoesntbreakthings.com"
+          placeholder="me@gmail.com"
           type="email"
           onChange={e => setEmail(e.target.value)}
         />
@@ -48,7 +48,7 @@ export default function EmailSubscription({ title, children }) {
             type="submit"
             className="bg-purple-500 hover:bg-purple-400 text-white uppercase text-xsm tracking-wide m-1 rounded px-4"
           >
-            Get Chapters
+            Get Snippets
           </button>
         )}
         {loading && (

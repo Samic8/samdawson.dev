@@ -98,11 +98,11 @@ export default function Post({ data }) {
         <EmailSubscription
           title={
             <>
-              Get chapters via email as{" "}
+              I'm writing an ebook called{" "}
               <Link className="link" to="/react-component-testing-book">
                 <b>Robust UI</b>
               </Link>
-              &nbsp;is being written
+              &nbsp;subscribe for snippets from it
             </>
           }
         ></EmailSubscription>

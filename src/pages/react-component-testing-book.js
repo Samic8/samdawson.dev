@@ -145,7 +145,7 @@ export default function Subscribe({ data }) {
             version={"link under subscribe"}
             title={
               <>
-                Get chapters via email as <b>Robust UI</b>&nbsp;is being written
+                Get <b>Robust UI</b> snippets via email as it's being written
               </>
             }
           >
