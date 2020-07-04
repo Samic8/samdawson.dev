@@ -100,9 +100,9 @@ export default function Post({ data }) {
             <>
               I'm writing an ebook called{" "}
               <Link className="link" to="/react-component-testing-book">
-                <b>Robust UI</b>
+                <b>Robust UI.</b>
               </Link>
-              &nbsp;subscribe for snippets from it
+              &nbsp;Subscribe to get chapters from it via email
             </>
           }
         ></EmailSubscription>

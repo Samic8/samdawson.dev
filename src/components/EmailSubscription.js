@@ -48,7 +48,7 @@ export default function EmailSubscription({ title, children }) {
             type="submit"
             className="bg-purple-500 hover:bg-purple-400 text-white uppercase text-xsm tracking-wide m-1 rounded px-4"
           >
-            Get Snippets
+            Get Chapters
           </button>
         )}
         {loading && (
