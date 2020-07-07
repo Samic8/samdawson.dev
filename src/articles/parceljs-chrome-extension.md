@@ -17,7 +17,7 @@ I gave [parcel](https://parceljs.org/) a go and it seemed like a perfect fit. I 
 parcel build src/content.tsx src/options.html src/popup.html
 ```
 
-and it would generate the three files I needed. My extension was written in typescript and react, but parcel mostly likely supports whatever flavor of JS you want to use.
+and it would generate the three files I needed. My extension was written in typescript and react, but parcel will support whatever flavor of JS you want to use.
 
 ## Static Files
 
