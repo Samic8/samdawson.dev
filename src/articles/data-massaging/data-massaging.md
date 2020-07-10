@@ -9,7 +9,7 @@ Often we can end up with complex logic in components because the shape of the da
 
 If we can simplify that data before it reaches the component, our component code can become simpler and therefore easier to maintain. With the side effect of making our data easier to test and understand.
 
-I like to call this **data massaging** 💆.
+I like to call this **data massaging** 💆
 
 ## Without data massaging
 
