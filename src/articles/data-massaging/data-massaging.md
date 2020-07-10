@@ -119,8 +119,6 @@ function CarTable({ cars, shownColumns }) {
 }
 ```
 
-Maybe you end up with new data structures like **shownColumns** too, which add to the complexity of the component and its unit tests.
-
 ## A better way
 
 In a perfect world what data structure would make this component simpler? Think it up. I think it might look something like this
