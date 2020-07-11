@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import Layout from "../components/Layout"
 import WiggleDownLine from "../svgs/wiggle-down-line.svg"
 import { graphql } from "gatsby"
@@ -16,6 +16,7 @@ import SendSvg from "../svgs/send.svg"
 import { trackCustomEvent } from "gatsby-plugin-google-analytics"
 import SEO from "../components/SEO"
 import EmailSubscription from "../components/EmailSubscription"
+import { getActiveClasses } from "get-active-classes"
 
 export default function Subscribe({ data }) {
   const onPreorderClick = version => {
@@ -40,18 +41,7 @@ export default function Subscribe({ data }) {
         <div className="max-w-lg flex justify-center flex-col items-center justify-center mx-auto">
           <Book />
           <p className="text-lg font-bold mb-4 mt-6 font-header text-gray-900">
-            A toolkit of strategies for testing React components with&nbsp;
-            <a className="link" href="https://jestjs.io/">
-              Jest
-            </a>{" "}
-            and{" "}
-            <a
-              className="link"
-              href="https://testing-library.com/docs/react-testing-library/intro"
-            >
-              React Testing Library
-            </a>
-            .
+            A toolkit of strategies for writing enduring components.
           </p>
         </div>
         <ul className="text-md max-w-xl mx-auto mt-8 block">
@@ -62,22 +52,23 @@ export default function Subscribe({ data }) {
           </Item>
           <Item>
             <CheckCircleSvg className="mr-2 mt-1 flex-shrink-0" />
-            Everything you need in one place so you don't have to scrounge
-            around 20 different blog posts to get productive with component
-            testing.
+            <span>
+              Avoid the dread you feel when a new feature needs to be added to{" "}
+              <span className="italic">that</span> part of the code.
+            </span>
           </Item>
-          <Item>
-            <CheckCircleSvg className="mr-2 mt-1 flex-shrink-0" />
-            Master a TDD-like approach, and see the benefits people who don't
-            write UI code are always talking about.
-          </Item>
+          {/* <WiggleRightLine className="mx-auto mt-4" /> */}
+          <li className="px-8 text-md mt-4 ">
+            <span className="font-bold">Because</span> you wrote components with
+            future you in mind.
+          </li>
         </ul>
         <div className="px-6">
           <div className="max-w-lg mx-auto mt-16">
             <div className="mx-auto text-sm">
               <section>
                 <h2 className="font-bold font-header text-gray-900 mb-4">
-                  Learn the fundamentals
+                  Learn Component Design Patterns
                 </h2>
                 <ul>
                   <Item>
@@ -107,7 +98,7 @@ export default function Subscribe({ data }) {
               </section>
               <section className="mt-12">
                 <h2 className="font-bold font-header text-gray-900 mb-4">
-                  Then learn strategies for specific contexts
+                  Then learn strategies for testing them
                 </h2>
                 <ul>
                   <Item>
@@ -170,8 +161,10 @@ export default function Subscribe({ data }) {
   )
 }
 
-function Item({ children }) {
-  return <li className="flex mt-4">{children}</li>
+function Item({ children, className }) {
+  return (
+    <li className={getActiveClasses("flex mt-4", className)}>{children}</li>
+  )
 }
 
 export const pageQuery = graphql`
