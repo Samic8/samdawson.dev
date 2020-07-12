@@ -11,6 +11,15 @@ import { trackCustomEvent } from "gatsby-plugin-google-analytics"
 import SEO from "../components/SEO"
 import EmailSubscription from "../components/EmailSubscription"
 import { getActiveClasses } from "get-active-classes"
+import {
+  Accordion,
+  AccordionItem,
+  AccordionHeader,
+  AccordionPanel,
+  AccordionIcon,
+  Box,
+} from "@chakra-ui/core"
+import { robustUiContents } from "../data/robust-ui-chapters"
 
 export default function Subscribe({ data }) {
   const onPreorderClick = version => {
@@ -106,9 +115,17 @@ export default function Subscribe({ data }) {
             </div>
           </div>
         </div>
-        <div>
-          
-        </div>
+        <WiggleDownLine className="mx-auto h-24 sm:h-auto mt-6 mb-6" />
+        <section className="max-w-lg mx-auto">
+          <h2 className="font-header font-bold text-lg text-gray-700 mb-4 text-center">
+            Table of Contents
+          </h2>
+          <Accordion>
+            {robustUiContents.map(item => (
+              <ContentsItem item={item} />
+            ))}
+          </Accordion>
+        </section>
         <WiggleDownLine className="mx-auto h-24 sm:h-auto mt-6 mb-12" />
         <div className="text-gray-700 flex justify-center max-w-lg mx-auto font-header uppercase font-bold text-md">
           To be released in November
@@ -147,6 +164,39 @@ function Item({ children, className }) {
   return (
     <li className={getActiveClasses("flex mt-4", className)}>{children}</li>
   )
+}
+
+function ContentsItem({ item }) {
+  if (!item.title && !item.children) {
+    return (
+      <AccordionItem>
+        <AccordionHeader>
+          <Box flex="1" textAlign="left">
+            {item}
+          </Box>
+          <AccordionIcon />
+        </AccordionHeader>
+      </AccordionItem>
+    )
+  } else {
+    return (
+      <AccordionItem>
+        <AccordionHeader>
+          <Box flex="1" textAlign="left">
+            {item.title}
+          </Box>
+          <AccordionIcon />
+        </AccordionHeader>
+        <AccordionPanel pb={4}>
+          <Accordion>
+            {item.children.map(itemChild => (
+              <ContentsItem item={itemChild} />
+            ))}
+          </Accordion>
+        </AccordionPanel>
+      </AccordionItem>
+    )
+  }
 }
 
 function ReactSvg({ className }) {
