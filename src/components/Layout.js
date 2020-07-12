@@ -27,7 +27,7 @@ const Layout = ({ children, showBanner = true }) => {
     <div>
       {showBanner && (
         <Link
-          to="/react-component-testing-book"
+          to="/robust-ui"
           onClick={onBannerClick}
           className="banner font-header bg-indigo-600 relative hover:underline z-40 text-white font-bold h-10 text-xsm sm:text-sm left-0 right-0 flex items-center justify-center"
         >
