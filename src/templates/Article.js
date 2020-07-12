@@ -99,7 +99,7 @@ export default function Post({ data }) {
           title={
             <>
               I'm writing an ebook called{" "}
-              <Link className="link" to="/react-component-testing-book">
+              <Link className="link" to="/robust-ui">
                 <b>Robust UI.</b>
               </Link>
               &nbsp;Subscribe to get chapters from it via email

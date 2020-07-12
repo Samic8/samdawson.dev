@@ -3,6 +3,12 @@
   publish = "public/"
   functions = "functions/"
   command = "yarn build"
+
+[[redirects]]
+  from = "/react-component-testing-book"
+  to = "/robust-ui"
+  status = 301
+  force = true
   
 [[plugins]]
   package = "netlify-plugin-gatsby-cache"
