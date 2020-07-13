@@ -66,7 +66,7 @@ export default function Subscribe({ data }) {
             <div className="mx-auto text-sm">
               <section>
                 <h2 className="font-bold font-header text-mdlg text-gray-900 mb-4">
-                  Learn Component Design Patterns
+                  Learn component code design patterns
                 </h2>
                 <ul>
                   <Item>
