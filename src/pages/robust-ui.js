@@ -60,17 +60,12 @@ export default function Subscribe({ data }) {
               <span className="italic">that</span> part of the code.
             </span>
           </Item>
-          {/* <WiggleRightLine className="mx-auto mt-4" /> */}
-          <li className="px-8 text-md mt-4 ">
-            <span className="font-bold">Because</span> you wrote components with
-            future you in mind.
-          </li>
         </ul>
         <div className="px-6">
           <div className="max-w-lg mx-auto mt-16">
             <div className="mx-auto text-sm">
               <section>
-                <h2 className="font-bold font-header text-gray-900 mb-4">
+                <h2 className="font-bold font-header text-mdlg text-gray-900 mb-4">
                   Learn Component Design Patterns
                 </h2>
                 <ul>
@@ -86,7 +81,7 @@ export default function Subscribe({ data }) {
                 </ul>
               </section>
               <section className="mt-12">
-                <h2 className="font-bold font-header text-gray-900 mb-4">
+                <h2 className="font-bold font-header text-mdlg text-gray-900 mb-4">
                   Then learn strategies for testing them
                 </h2>
                 <ul>
