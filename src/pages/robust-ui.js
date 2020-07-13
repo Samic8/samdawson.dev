@@ -44,7 +44,7 @@ export default function Subscribe({ data }) {
         <div className="max-w-lg flex justify-center flex-col items-center justify-center mx-auto">
           <Book />
           <p className="text-lg font-bold mb-4 mt-6 font-header text-gray-900">
-            A toolkit of strategies for writing enduring components.
+            A toolkit of strategies for writing enduring React components.
           </p>
         </div>
         <ul className="text-md max-w-xl mx-auto mt-8 block">
