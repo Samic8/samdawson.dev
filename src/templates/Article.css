@@ -101,7 +101,8 @@
   }
 
   pre[class^="language"]::before {
-    color: #ffef00;
+    font-weight: bold;
+    text-decoration: underline;
   }
 
   .token.comment {
