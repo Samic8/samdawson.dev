@@ -46,7 +46,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
-    "remark-github-plugin": "1.4.0",
+    "remark-github-plugin": "https://github.com/Samic8/remark-github-plugin/tarball/a894a5540d55f752f74b21ec0cd7467afd3c3b0c",
     "tailwindcss": "^1.0.5",
     "universal-analytics": "^0.4.20"
   },
