@@ -1,5 +1,5 @@
 ---
-title: "How to unit test gatsby-node"
+title: "How to test gatsby-node"
 slug: gatsby-node-unit-tests
 techs: ["Gatsby", "Jest"]
 date: "2020-06-21"

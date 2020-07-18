@@ -1,5 +1,5 @@
 ---
-title: "How to unit test SVG Graphs"
+title: "How to test SVG Graphs"
 slug: svg-graph-testing
 techs: ["React", "Jest"]
 date: "2020-06-13"
