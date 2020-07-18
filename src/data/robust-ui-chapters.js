@@ -29,6 +29,7 @@ export const robustUiContents = [
   { title: "Props", children: ["The Pattern", "Testing it"] },
   { title: "Component Props", children: ["The Pattern", "Testing it"] },
   { title: "Compound Components", children: ["The Pattern", "Testing it"] },
+  { title: "Base/Variants", children: ["The Pattern", "Testing it"] },
   { title: "Design Tokens", children: ["The Pattern", "Testing it"] },
   {
     title: "Data Design for Simpler Components",
