@@ -3,6 +3,7 @@ title: "Compound Components: What, Why and When."
 slug: compound-components-what-why-when
 techs: ["React"]
 date: "2020-02-02"
+updated: "2020-07-18"
 ---
 
 ## What **are _Compound Components_?**
