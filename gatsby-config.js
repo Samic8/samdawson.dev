@@ -12,7 +12,13 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-postcss`,
-    "gatsby-plugin-chakra-ui",
+    {
+      resolve: "gatsby-plugin-chakra-ui",
+      options: {
+        isResettingCSS: false,
+        isUsingColorMode: false,
+      },
+    },
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
