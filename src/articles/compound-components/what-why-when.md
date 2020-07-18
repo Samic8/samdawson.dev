@@ -5,15 +5,11 @@ techs: ["React"]
 date: "2020-02-02"
 ---
 
-### What **are _compound components_?**
+## What **are _Compound Components_?**
 
-<br/>
+It's a base component that expects to be combined with other specific components. Below the `jsx,<Multiselect />` is the _base_ component and the `jsx,<Option />` and `jsx,<Group />` components are the _specific_ components.
 
-First off I don't think there is a definite name for this pattern. I have heard [Sarah Federman](https://twitter.com/sarah_federman) call this pattern "compound components" in her talk at the Web Directions Submit conference last year. I had been calling this pattern "composable components" but maybe that name is better reserved for actual composition where a component is used inside of another. While compound components are more about passing in components into "slots", in React this would be children or props.
-
-A compound component is one that is intended to be used with other components. The _Multiselect_ is the **base** component, while the _Option_ and _Group_ components are the composable parts.
-
-```js
+```jsx
 <Multiselect
   selectedValues={[1, 2]}
   onSelectedValuesChange={newValues => /* ... */}/>
@@ -25,43 +21,50 @@ A compound component is one that is intended to be used with other components. T
 </Multiselect>
 ```
 
-<br/>
+It differs from the use of `jsx,{ children }` props where you are not expecting any components in particular.
 
-### Why **would you opt for this pattern?**
+```jsx
+<Box>
+  <Header title="My Work" />
+  <Content>Lots of good stuff</Context>
+</Box>
+```
 
-<br/>
+While the `jsx,<Multiselect />` children will accept any components, having a combination of a _base_ and a specific component like `jsx,<Option />` that is intended to be used with it passes our Compound Component definition.
 
-Take this example of a similar _Multiselect_ Component using props instead of the composable parts in the previous snippet.
+## Why **would you opt for this pattern?**
 
-```js
+The main advantage that the Compound Component pattern version offers is its _flexibility_. Want to make a `<Multiselect />` of people that includes their avatar? Easy.
+
+```jsx
+<Multiselect
+  selectedValues={[1, 2]}
+  onSelectedValuesChange={newValues => /* ... */}/>
+  <PersonOption personId={1}>Jane</Option>
+  <PersonOption personId={2}>John</Option>
+</Multiselect>
+```
+
+We can support many variations without having to change the base components code.
+
+To mirror the same behaviour using strict props we need to start adding _flags_ like `jsx,isPersonOptions`:
+
+```jsx
 <Multiselect
   selectedValues={[1, 2]}
   onSelectedValuesChange={newValues => /* ... */}
+  isPersonOptions={true}
   options={[
-    {display: 'One', value: 1},
-    {
-        groupTitle: 'The best numbers',
-        options: [
-          {display: 'Two', value: 2},
-          {display: 'Three', value: 3},
-        ]
-    }
+    {name: 'Jane', id: 1},
+    {name: 'John', id: 2},
   ]}/>
 </Multiselect>
 ```
 
-In the _props_ example to enable group functionality, I created a nested data structure that has special objects for groups. There are much cleaner ways to achieve this specific functionality with props, but this is just an example to showcase the idea. With props like these, it's hard to separate the data model from the UI, you would need to build your data in a way to suit this props based component.
+More flags will build up over time and the complexity will grow.
 
-The main advantage that the compound component pattern version offers is its _flexibility,_ you can support many variations without having to change the base components code. Want to make a _Multiselect_ of people that shows their profile picture? Easy. Want to place an advertisement in between two groups of options? doable, maybe not the best user experience though.
+## When **should you use it?**
 
-<br/>
+It's when you need _flexibility_. Are you building something that will be widely used?
 
-### When **should you reach for compound components?**
-
-<br/>
-
-It's when you really need that _flexibility_ benefit. Are you building something that you know will need to be used in subtly different ways many times throughout your application(s)? Deciding to go for the compound components pattern needs some forethought.
-
-A stricter approach like props is better for consistency. If you want a component to look and behave the same everywhere that it is used then compound components should not be your first choice.
-
-When you don't know what the future will hold for a component then maybe its best to use stricter props to begin with and then pay the refactoring price later on to transform it into a composable component.
+See [React Component API Design](/article/react-component-api-design) for API design alternatives.
