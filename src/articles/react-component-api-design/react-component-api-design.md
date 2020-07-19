@@ -7,7 +7,7 @@ updated: "2020-07-19"
 featuredImage: "./Flexibility_Spectrum.svg"
 ---
 
-This article will go over some component API design patterns at a high level and without getting into implementation details of specific components.
+This article will go over some component API design patterns at a high level without getting into implementation details of specific components.
 
 A _Component API_ is the props of a component. When we design APIs at the right level of flexibility we reduce refactors, encourage code reuse, and increase UI consistency.
 
@@ -63,11 +63,11 @@ Involves defining specific components to be used with a *base* component:
 </Multiselect>
 ```
 
-The `jsx,<Multiselect />` is the *base* component while the `jsx,<Option />` and `jsx,<Group />` components are the specific components. Find a introduction [here](/article/compound-components-what-why-when).
+The `jsx,<Multiselect />` is the *base* component while the `jsx,<Option />` and `jsx,<Group />` components are the specific components. You can find a introduction to compound components [here](/article/compound-components-what-why-when).
 
 **Pros:** The high flexibility allows you to make variations without having to extend the *base* component.
 
-**Cons:** The high flexibility can be a disadvantage for consistency. It allows yourself and others to use the component in different ways than originally intended, which might go against the reason for componentizing something the first place (consistency).
+**Cons:** The high flexibility can be a disadvantage for consistency. It allows yourself and others to use components in unintended ways, which might go against the reason for componentizing something the first place (consistency).
 
 ## Flexibility Modifiers
 
