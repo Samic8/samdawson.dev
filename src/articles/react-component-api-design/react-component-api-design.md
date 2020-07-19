@@ -3,94 +3,53 @@ title: "React Component API Design"
 slug: react-component-api-design
 techs: ["React"]
 date: "2020-02-15"
+updated: "2020-07-19"
+featuredImage: "./Flexibility_Spectrum.svg"
 ---
 
 This article will go over some component API design patterns at a high level and without getting into implementation details of specific components.
 
-For our case, a "component API" in React is the props that a component accepts. When we design components at the right level of flexibility we reduce future refactors, increase code reuse and potentially increase UI consistency.
+A _Component API_ is the props of a component. When we design APIs at the right level of flexibility we reduce refactors, encourage code reuse, and increase UI consistency.
 
-All components exist somewhere on a flexibility spectrum.
+All components exist somewhere on a flexibility spectrum:
 
 ![Flexibility Spectrum](./Flexibility_Spectrum.svg)
 
-## Picking the right level of flexibility
+## **Strict Props**
 
-For components that you know, won't be used frequently, start with stricter flexibility and accept the price of having to refactor to change it to be more flexible once you know you need it.
+Strict props involves well-defined props. They have input props for data, and use callbacks for output:
 
-For components that you know will be used many times opt for more flexible, to begin with. If you want to lock down specific usages you could create a variant for that case (see base/variants below).
-
-But overall the practice that will get the best results is to [talk first, code later](https://blog.pragmaticengineer.com/talk-first-code-later/). Have a written plan for the props of the component that you can show other coders or designers and see what they think.
-
-## Flexibility Design Patterns
-
-### **Strict Props**
-
-Involves having well-defined types of props.
-
-    <Select options={[1, 2, 3]} selectedOption={1} onSelectedOptionChange={() => /* ... */}/>
-
-In this case the _options_ prop it is an array of values and _selectedOption_ is a single value.
-
-**Advantages**
-
-Best for consistency, this design provides a limited number of ways to use the component.
-
-**Disadvantages**
-
-It can become complex when the component has too many variations with lots of props.
-
-**When to increase the flexibility?**
-
-When your component has lots of props and even worse when most of them are boolean flags e.g "shouldShowGroups" "shouldHaveBoldHeading".
-Too many flags can make extending the component hard because you now need to account for each flag when making changes to ensure you don't break them. See **Base/Variants** for ideas on how to avoid excessive flags.
-
-### **Component Props**
-
-This API design has a few different flavors.
-
-**Slots**: The ability to include JSX within a particular component. The base component then places that included JSX at a particular spot in its component tree.
-
-```js
-<Multiselect
-  header={<h1>Numbers</h1>}
-  options={
-    <ul>
-      <li>One</li>
-      <li>Two</li>
-    </ul>
-  }
+```jsx
+<Select
+  options={[1, 2, 3]}
+  selectedOption={1}
+  onSelectedOptionChange={() => /* ... */}
 />
 ```
 
-**Structured Data:** The component accepts a data structure for a particular prop that has to conform to a specific shape, which includes a component reference (or JSX) somewhere in that structure.
+**Pros:** Best for consistency, there is a limited number of ways to use the component.
+
+**Components:** Complexity can arise with lots of props.
+
+## **Component Props**
+
+Component props involve a data structure which includes a component reference somewhere in that structure:
 
 ```js
-// Component Reference
 <Multiselect
   options={[
-    { title: 1, component: MyOption, text: 'One',  }
-  ]}
-/>
-
-// JSX
-<Multiselect
-  options={[
-    { value: 1, display: <MyOption>One</MyOption> }
+    { title: 1, component: MyOptionComponent, text: "One" }
   ]}
 />
 ```
 
-**Advantages**
+**Pros:** Able to be explicit about what components can be swapped through the base components API.
 
-More flexibility then strict props. In this example, we could change what the multi-select options looked like, but we could not introduce a new concept like groupings without modifying the base components code.
-
-**Disadvantages**
-
-A props data structure for the component might become complex (with lots of nesting) if it's trying to suit too many use cases.
+**Cons:** Complexity can arise if it's trying to suit many use cases, for example, allowing all components to be swapped.
 
 ### **Compound Components**
 
-Involves defining specific components to be used with a **base** component passed to it as props (including children).
+Involves defining specific components to be used with a *base* component:
 
 ```js
 <Multiselect
@@ -104,52 +63,16 @@ Involves defining specific components to be used with a **base** component passe
 </Multiselect>
 ```
 
-In this case, the _Multiselect_ is the **base** component while the _Option_ and _Group_ components are the composable parts. More [in-depth introduction here](https://www.samdawson.dev/article/compound-components-what-why-when).
+The `jsx,<Multiselect />` is the *base* component while the `jsx,<Option />` and `jsx,<Group />` components are the specific components. Find a introduction [here](/article/compound-components-what-why-when).
 
-**Advantages**
+**Pros:** The high flexibility allows you to make variations without having to extend the *base* component.
 
-The high flexibility of this pattern allows the user (another developer) to make variations without having to extend the base component.
-
-**Disadvantages**
-
-The high flexibility can be a disadvantage for consistency. It allows the developer to use the component in different ways than originally intended, which might go against the reason for componentizing something the first place (consistency).
-
-On a similar note, it's easy to break design guidelines. For example, with the multi-select: putting grouped options before un-grouped options.
-
-## Base/Variants (composed components)
-
-This is mostly just the way you normally would build components, by composing other components to make a new component. Deciding to use a base/variant pattern would be a way of formalizing this for a particular component series.
-
-```js
-// Base component
-<Multiselect />
-
-// Variation
-<MultiselectWithSearch />
-```
-
-You may need to implement a more flexible API for the base component so it can be open to extension through variants.
+**Cons:** The high flexibility can be a disadvantage for consistency. It allows yourself and others to use the component in different ways than originally intended, which might go against the reason for componentizing something the first place (consistency).
 
 ## Flexibility Modifiers
 
-Some React specific patterns can help with designing more flexible APIs. They facility **parent to child** and **child to parent** communication. The way you use these factors into how flexible and potentially more complex components can become, so they are worth considering when designing a components API.
+Some React features can help with designing more flexible APIs. They both facility **parent to child** and **child to parent** communication. The API design patterns that we have explored can be used in combination with these modifiers to make your components more flexible.
 
-You can read about how these work in the react documentation. I'm not going to go into depth about what they are here.
+* [Render Props](https://reactjs.org/docs/render-props.html)
 
-### Context
-
-Can share data for parent to child communication
-
-Can share functions for child to parent communication. For example, when an _Option_ component is clicked it can communicate with the base _Multiselect_ component that this happened, through the use of a callback function.
-
-[Documentation](https://reactjs.org/docs/context.html)
-
-### Render Props
-
-Render props are a little less magical than context, though it requires more wiring up code to be written on each usage.
-
-Can share data for parent to child communication.
-
-Can share functions for child to parent communication.
-
-[Documentation](https://reactjs.org/docs/render-props.html)
+* [React Context](https://reactjs.org/docs/context.html)
