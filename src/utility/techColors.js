@@ -8,4 +8,5 @@ export const techToBgColor = {
   Javascript: "bg-blue-300 text-blue-900",
   Productivity: "bg-red-200 text-red-900",
   Jest: "bg-yellow-300 text-yellow-900",
+  GraphQL: "bg-pink-300 text-pink-900",
 }
