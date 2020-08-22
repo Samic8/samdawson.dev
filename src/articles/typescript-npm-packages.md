@@ -3,7 +3,12 @@ title: Compiling NPM packages with typescript
 slug: typescript-npm-packages
 techs: ["Typescript"]
 date: "2019-11-30"
+updated: "2020-08-22"
 ---
+
+> **Update:** You might be better off using [TSDX](https://github.com/formium/tsdx)
+
+> "TSDX is a zero-config CLI that helps you develop, test, and publish modern TypeScript packages with ease"
 
 There are so many options for bundling javascript code for NPM packages. This is the most frustrating part of web development for me at the moment because it involves figuring out what combination of tools and configuration options for those tools you need.
 
