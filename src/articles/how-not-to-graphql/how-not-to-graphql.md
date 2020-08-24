@@ -5,7 +5,7 @@ techs: ["GraphQL"]
 date: "2020-08-23"
 ---
 
-If you're here you're probably second-guessing your usage of GraphQL. It's a great tool but if your not deliberate about your schema design than it can create complexity. A misuse of it can happen in the following way:
+If you're here you're probably second-guessing your usage of GraphQL. It's a great tool but if your not deliberate about your schema design it can create complexity. A misuse of it can happen in the following way:
 
 > **The design of your GraphQL Schema leads to _highly dynamic_ queries**
 
