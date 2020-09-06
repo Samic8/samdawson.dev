@@ -5,8 +5,8 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Sam Dawson's Blog`,
-    description: `Web Frontend Design and Development.`,
+    title: `Sam Dawson`,
+    description: `Web Frontend Design and Development`,
     author: `@sam__dawson`,
     siteUrl: "https://www.samdawson.dev",
   },
@@ -25,12 +25,7 @@ module.exports = {
         printRejected: true,
         develop: false,
         tailwind: true,
-        ignore: [
-          "/src/styles/base.css",
-          "prismjs/",
-          "prism-themes/",
-          "Article.css",
-        ],
+        ignore: ["/src/styles/base.css", "prismjs/", "prism-themes/", "Article.css"],
       },
     },
     `gatsby-plugin-react-helmet`,
