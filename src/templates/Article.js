@@ -70,40 +70,25 @@ export default function Post({ data }) {
         className="my-4 sm:my-10 font-systemFont"
       >
         <input type="hidden" name="form-name" value="feedback" />
-        <input
-          type="hidden"
-          name="article"
-          value={data.markdownRemark.frontmatter.title}
-        />
+        <input type="hidden" name="article" value={data.markdownRemark.frontmatter.title} />
         <div className="flex justify-center items-center mb-3 text-gray-800">
-          <h2
-            id="helpful-question"
-            className="text-md sm:text-lg leading-tight text-center mr-2"
-          >
+          <h2 id="helpful-question" className="text-md sm:text-lg leading-tight text-center mr-2">
             Was this article helpful?
           </h2>
-          <FeedbackButton
-            type="up"
-            activeFor={feedbackClickedFor}
-            onClick={submitFeedback}
-          />
-          <FeedbackButton
-            type="down"
-            activeFor={feedbackClickedFor}
-            onClick={submitFeedback}
-          />
+          <FeedbackButton type="up" activeFor={feedbackClickedFor} onClick={submitFeedback} />
+          <FeedbackButton type="down" activeFor={feedbackClickedFor} onClick={submitFeedback} />
         </div>
       </form>
-      <section className="flex items-center flex-col mt-6 mx-auto max-w-lg">
+      <section className="flex flex-col mt-6 mx-auto max-w-2xl">
         <EmailSubscription
           title={
-            <>
-              I'm writing an ebook called{" "}
-              <Link className="link" to="/robust-ui">
-                <b>Robust UI.</b>
-              </Link>
-              &nbsp;Subscribe to get chapters from it via email
-            </>
+            <div className="">
+              Subscribe to get chapters of{" "}
+              <Link className="link font-bold" to="/robust-ui">
+                Robust UI
+              </Link>{" "}
+              while it's being written
+            </div>
           }
         ></EmailSubscription>
       </section>

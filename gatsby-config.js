@@ -13,13 +13,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-postcss`,
     {
-      resolve: "gatsby-plugin-chakra-ui",
-      options: {
-        isResettingCSS: false,
-        isUsingColorMode: false,
-      },
-    },
-    {
       resolve: `gatsby-plugin-purgecss`,
       options: {
         printRejected: true,
