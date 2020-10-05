@@ -10,7 +10,7 @@ React Context is a tool for designing flexible Component APIs. Let's explore how
 
 This is an example of _implementation_ testing. Which is not ideal, but it might be worth testing anyway to give you confidence in your code.
 
-For further reading checkout [Robust UI](/robust-ui).
+> For further reading check out [Robust UI](/robust-ui).
 
 ## Theming Example
 
