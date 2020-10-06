@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/Layout"
 import WiggleDownLine from "../svgs/wiggle-down-line.svg"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Book from "../components/Book"
 import XCircleSvg from "../svgs/x-circle.svg"
 import CompassSvg from "../svgs/compass.svg"
@@ -74,25 +74,20 @@ export default function Subscribe({ data }) {
                 <h2 className="font-bold font-header text-gray-900 mb-4">Learn the fundamentals</h2>
                 <ul>
                   <Item>
-                    <LayersSvg className="mr-2 flex-shrink-0" />
-                    Integration tests for testing components and their dependencies
+                    <MousePointerSvg className="mr-2 mt-1 flex-shrink-0" />
+                    How to reap the benefits of Behavioral Testing of components
                   </Item>
                   <Item>
-                    <MaximizeSvg className="mr-2 flex-shrink-0" />
-                    Unit tests that don't accidentally test dependencies
+                    <MaximizeSvg className="mr-2 mt-1 flex-shrink-0" />
+                    How to best use Implementation Testing when it's your only choice
                   </Item>
                   <Item>
-                    <CompassSvg className="mr-2 flex-shrink-0" />
+                    <CompassSvg className="mr-2 mt-1 flex-shrink-0" />
                     How to best leverage mocks and spies to test your components
                   </Item>
                   <Item>
-                    <MousePointerSvg className="mr-2 flex-shrink-0" />
-                    How to test behavior instead of implementation to allow some flexibility in your
-                    code and ensure it does what users want
-                  </Item>
-                  <Item>
-                    <XCircleSvg className="mr-2 flex-shrink-0" />
-                    How best to test component implementation when it's your only choice
+                    <LayersSvg className="mr-2 mt-1 flex-shrink-0" />
+                    How to write component tests that are easy to maintain
                   </Item>
                 </ul>
               </section>
@@ -102,24 +97,27 @@ export default function Subscribe({ data }) {
                 </h2>
                 <ul>
                   <Item>
-                    <BarChartSvg className="mr-2 flex-shrink-0" />
+                    <SendSvg className="mr-2 mt-1 flex-shrink-0" />
+                    Behavioral testing of&nbsp;
+                    <Link className="link" to="/article/compound-components-what-why-when">
+                      Compound Components
+                    </Link>
+                  </Item>
+                  <Item>
+                    <BarChartSvg className="mr-2 mt-1 flex-shrink-0" />
                     Strategies for testing visual graphs made with SVG
                   </Item>
                   <Item>
-                    <CheckCircleSvg className="mr-2 flex-shrink-0" />
+                    <CheckCircleSvg className="mr-2 mt-1 flex-shrink-0" />
                     Testing with Redux connected components
                   </Item>
                   <Item>
-                    <SendSvg className="mr-2 flex-shrink-0" />
-                    Testing with components using Apollo
-                  </Item>
-                  <Item>
-                    <LogInSvg className="mr-2 flex-shrink-0" />
+                    <LogInSvg className="mr-2 mt-1 flex-shrink-0" />
                     Testing components that use common third party libraries without reinventing the
                     wheel
                   </Item>
                   <Item>
-                    <MinimizeSvg className="mr-2 flex-shrink-0" />
+                    <MinimizeSvg className="mr-2 mt-1 flex-shrink-0" />
                     Strategies for automated visual testing of components
                   </Item>
                 </ul>
