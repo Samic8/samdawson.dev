@@ -10,8 +10,6 @@ React Context is a tool for designing flexible Component APIs. Let's explore how
 
 This is an example of _implementation_ testing. Which is not ideal, but it might be worth testing anyway to give you confidence in your code.
 
-> For further reading check out [Robust UI](/robust-ui).
-
 ## Theming Example
 
 Instead of "prop drilling" where we pass a theme prop into every component, we can create a `ThemeContext` which will be consumed by many components:

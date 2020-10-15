@@ -14,8 +14,6 @@ Like all code, graphs can become complex over time as more and more features are
 
 You've heard it a million times "don't reinvent the wheel". There are great open-source libraries for graphs but eventually you might out-grow them. Tests give you the flexibility to swap out libraries in the future or write your own with lower-level libraries like [D3](https://d3js.org/).
 
-> For further reading check out [Robust UI](/robust-ui).
-
 ## Writing tests for a bar graph
 
 Let's take my own advice and start with a charting library. We are going to be using [recharts](https://github.com/recharts/recharts) to create a simple bar chart. For the future ability to swap out libraries, we are also going to wrap the chart in our own custom component.
