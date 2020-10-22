@@ -3,45 +3,68 @@ title: "How to test React Context"
 slug: react-context-testing
 techs: ["React", "Jest"]
 date: "2020-07-17"
+updated: "2020-10-22"
 # featuredImage: ""
 ---
 
-React Context is a tool for designing flexible Component APIs. Let's explore how to write unit tests for components that use it.
+React Context is a tool for designing flexible Component APIs. How we test it depends on the situation, we are going to explore some of the situations you might find yourself in and the best way to write maintainable tests for each of them.
 
-This is an example of _implementation_ testing. Which is not ideal, but it might be worth testing anyway to give you confidence in your code.
+The best way to test Context is to make our tests unaware of its existence and avoiding mocks. We want to test our components in the same way that developer would use them (behavioural testing) and mimic the way they would run in a our applications (integration testing).
 
-## Theming Example
+## Theming example
 
-Instead of "prop drilling" where we pass a theme prop into every component, we can create a `ThemeContext` which will be consumed by many components:
+Let's setup our example which we will then explore how to test. We might choose Context to avoid "prop drilling" where we pass a theme prop into every component. To do this we can create a `ThemeContext`:
 
-GITHUB-EMBED https://github.com/Samic8/robust-ui-examples/blob/922369fe5a14ebb1e2fe7306fc4abfa6f1a58f18/src/components/context-mocks/ThemeContext.js jsx GITHUB-EMBED
+GITHUB-EMBED https://github.com/Samic8/robust-ui-examples/blob/52e6ba5033d9aa34dcc35a7af4670a6c3b2d2058/src/components/context-mocks-behavioural/ThemeContext.js#L1 jsx GITHUB-EMBED
 
-The source of truth for the active theme is the `theme` property, and the `onThemeChange` function allows any component to change the theme.
+To make `ThemeContext` useful we need to wrap components that need access to the theme in a Provider:
 
-To get any value from `ThemeContext` we need to wrap any components that need to access the theme:
+GITHUB-EMBED https://github.com/Samic8/robust-ui-examples/blob/52e6ba5033d9aa34dcc35a7af4670a6c3b2d2058/src/components/context-mocks/Page.js jsx GITHUB-EMBED
 
-GITHUB-EMBED https://github.com/Samic8/robust-ui-examples/blob/922369fe5a14ebb1e2fe7306fc4abfa6f1a58f18/src/components/context-mocks/Page.js jsx GITHUB-EMBED
+The source of truth for the active theme is the `theme` property and the `onThemeChange` function allows any component to change the theme.
 
 We can then make use of the `ThemeContext` in the `jsx,<BlogPost />` component. It both reads the theme value and updates it through the `onThemeChanged` callback:
 
-GITHUB-EMBED https://github.com/Samic8/robust-ui-examples/blob/922369fe5a14ebb1e2fe7306fc4abfa6f1a58f18/src/components/context-mocks/BlogPost.js jsx GITHUB-EMBED
+GITHUB-EMBED https://github.com/Samic8/robust-ui-examples/blob/52e6ba5033d9aa34dcc35a7af4670a6c3b2d2058/src/components/context-mocks-behavioural/BlogPost.js jsx GITHUB-EMBED
 
-### Testing The Consumer
+## Behavioural testing approaches
 
-Components can either be a Consumer or Provider of context, not both. `jsx,<BlogPost />` is a Consumer, lets write tests for it:
+> The best way to test Context is to make our tests unaware of its existence
 
-GITHUB-EMBED https://github.com/Samic8/robust-ui-examples/blob/922369fe5a14ebb1e2fe7306fc4abfa6f1a58f18/src/components/context-mocks/BlogPost.test.js jsx GITHUB-EMBED
+### Testing the Provider and Consumer Together
+
+This type of test is available if the both the provider and consumer are used within the component that you want to test such as in the case of `jsx, <Page />`. This allows us to write our tests without any mention of Context:
+
+GITHUB-EMBED https://github.com/Samic8/robust-ui-examples/blob/52e6ba5033d9aa34dcc35a7af4670a6c3b2d2058/src/components/context-mocks-behavioural/Page.test.js jsx GITHUB-EMBED
+
+If we decided we no longer wanted to use Context and change the implementation our tests would still pass.
+
+### Testing a Component with children that consume Context
+
+This is a common pattern often used in [compound components](/article/compound-components-what-why-when) where the children components are able to consume Context provided by the _base_ component. In this example we have modified our `<Page />` component to accept children in this way:
+
+GITHUB-EMBED https://github.com/Samic8/robust-ui-examples/blob/52e6ba5033d9aa34dcc35a7af4670a6c3b2d2058/src/components/context-mocks-behavioural-children-props/Page.js jsx GITHUB-EMBED
+
+To test that Context is doing it's job we can pass in a component that consumes the Context and test the functionality that Context enables for it:
+
+GITHUB-EMBED https://github.com/Samic8/robust-ui-examples/blob/52e6ba5033d9aa34dcc35a7af4670a6c3b2d2058/src/components/context-mocks-behavioural-children-props/Page.test.js jsx GITHUB-EMBED
+
+Once again this type of test does not couple us to the implementation detail that is our usage of Context.
+
+## Implementation Testing Approaches
+
+Use these with caution as they will make test files hard to maintain and read!
+
+This is an example of _implementation_ testing. Which is not ideal, but it might be worth doing in some situations to give you confidence in your code.
+
+### Testing a Consumer without a Provider
+
+It's going to be easier to maintain our tests if we choose to test the [provider and consumer together](/article/react-context-testing#testing-the-provider-and-consumer-together) instead of testing individual components. But if we wanted to test a component individually that relies on consuming Context we need to provide that Context:
+
+GITHUB-EMBED https://github.com/Samic8/robust-ui-examples/blob/52e6ba5033d9aa34dcc35a7af4670a6c3b2d2058/src/components/context-mocks/BlogPost.test.js jsx GITHUB-EMBED
 
 Notice here we don't have 100% code coverage of `jsx,<BlogPost />`, we are missing tests for the dynamic classes: `css,.light-theme` and `css,dark-theme`. Testing styles is best left to tools like [Storybook](https://storybook.js.org/).
 
-### Testing The Provider
+### Testing The Provider without a Consumer
 
-If the Provider component does not have `js,{ children }` props like `jsx,<Page />`, we can employ a speciality tool: mocking a child component and consume the Context we want to test.
-
-This is a very fragile test as it relies a heavily on the components _implementation_. A false-negative test could happen if the mocked component is removed from the `<Page />` component.
-
-With that warning, here is an example of the speciality tool:
-
-GITHUB-EMBED https://github.com/Samic8/robust-ui-examples/blob/922369fe5a14ebb1e2fe7306fc4abfa6f1a58f18/src/components/context-mocks/Page.test.js jsx GITHUB-EMBED
-
-The `BlogPost.mockImplementation()` is the important and dangerous aspect. We mock a child component of `<Page />` and consume the context which we can run assertions against.
+Don't bother with this trust me. It's possible but it only makes our tests complex and hard to maintain. Instead use the [behavioural testing approaches](/article/react-context-testing#behavioural-testing-approaches)
