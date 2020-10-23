@@ -97,6 +97,10 @@ export default function Subscribe({ data }) {
                 </h2>
                 <ul>
                   <Item>
+                    <CheckCircleSvg className="mr-2 mt-1 flex-shrink-0" />
+                    Sane testing of React Hooks
+                  </Item>
+                  <Item>
                     <SendSvg className="mr-2 mt-1 flex-shrink-0" />
                     Behavioral testing of&nbsp;
                     <Link className="link" to="/article/compound-components-what-why-when">
