@@ -14,6 +14,7 @@ import { getActiveClasses } from "get-active-classes"
 import axios from "axios"
 import { trackCustomEvent } from "gatsby-plugin-google-analytics"
 import EmailSubscription from "../components/EmailSubscription"
+import Book from "../components/Book"
 
 export default function Post({ data }) {
   const [feedbackClickedFor, setFeedbackClickedFor] = useState(null)
@@ -29,11 +30,11 @@ export default function Post({ data }) {
     setFeedbackClickedFor(type)
   }
 
-  const onEbookClick = () => {
+  const onBannerClick = () => {
     trackCustomEvent({
       category: "Robust UI",
       action: "Clicked",
-      label: "Article large e-book",
+      label: "Article ad e-book",
     })
   }
 
@@ -56,6 +57,17 @@ export default function Post({ data }) {
         timeToRead={data.markdownRemark.timeToRead}
       ></ArticleHeader>
       <Content>
+        <Link
+          to="/robust-ui"
+          onClick={onBannerClick}
+          className="banner font-header flex-col hover:underline z-40 text-gray-900 font-semibold p-6 mx-auto text-xsm sm:text-sm hidden xl:inline-flex items-center justify-center rounded mb-10 absolute right-0 max-w-sm"
+          style={{ top: "1000px" }}
+        >
+          <Book />
+          <span className="mt-4 flex text-center">
+            Skill up your React testing <br /> with Robust UI
+          </span>
+        </Link>
         <article
           className={"article text-sm sm:text-base text-black"}
           dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
@@ -83,11 +95,10 @@ export default function Post({ data }) {
         <EmailSubscription
           title={
             <div className="">
-              Subscribe to get chapters of{" "}
+              Skill up in React testing with&nbsp;
               <Link className="link font-bold" to="/robust-ui">
                 Robust UI
               </Link>{" "}
-              while it's being written
             </div>
           }
         ></EmailSubscription>

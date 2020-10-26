@@ -25,7 +25,7 @@ const Layout = ({ children, showBanner = true }) => {
 
   return (
     <div>
-      {showBanner && (
+      {false && (
         <Link
           to="/robust-ui"
           onClick={onBannerClick}
@@ -35,15 +35,9 @@ const Layout = ({ children, showBanner = true }) => {
           <ArrowRightSvg className="h-6 ml-2" />
         </Link>
       )}
-      <div
-        className={
-          "flex flex-col items-stretch mx-auto max-w-5xl sm:overflow-hidden pb-32"
-        }
-      >
+      <div className={"flex flex-col items-stretch mx-auto max-w-5xl sm:overflow-hidden pb-32"}>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <div
-          className={`font-sans flex flex-shrink flex-grow min-w-0 px-5 pb-10`}
-        >
+        <div className={`font-sans flex flex-shrink flex-grow min-w-0 px-5 pb-10`}>
           <div className={`w-full`}>
             <main>{children}</main>
           </div>
