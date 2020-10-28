@@ -51,7 +51,35 @@ export default function Subscribe({ data }) {
             .
           </p>
         </div>
-        <ul className="text-md max-w-xl mx-auto mt-8 block">
+        <div className="flex justify-center mt-8 max-w-lg mx-auto">
+          <EmailSubscription
+            version={"link under subscribe"}
+            title={
+              <>
+                Get <b>Robust UI</b> chapters via email as it's being written
+              </>
+            }
+          >
+            <>
+              <span className="mt-3 text-xsm sm:text-sm inline-block">
+                Or&nbsp;
+                <a
+                  className="link"
+                  href="https://gum.co/lWvh"
+                  onClick={() => onPreorderClick("link under subscribe")}
+                  target="_blank"
+                >
+                  pre-order
+                </a>
+                &nbsp;with the discount code "pre-order".
+              </span>
+              <div className="mt-2 text-xsm sm:text-sm">
+                When released the discount code and chapters via email will no longer be available.
+              </div>
+            </>
+          </EmailSubscription>
+        </div>
+        <ul className="text-md max-w-xl mx-auto mt-12 block">
           <Item>
             <CheckCircleSvg className="mr-2 mt-1 flex-shrink-0" />
             Prevent the afternoon tap on the shoulder or slack ping about a critical bug in a
@@ -128,35 +156,6 @@ export default function Subscribe({ data }) {
               </section>
             </div>
           </div>
-        </div>
-        <WiggleDownLine className="mx-auto h-24 sm:h-auto mt-6 mb-12" />
-        <div className="text-gray-700 flex justify-center max-w-lg mx-auto font-header uppercase font-bold text-md">
-          To be released in November
-        </div>
-        <div className="flex justify-center mt-12 max-w-lg mx-auto">
-          <EmailSubscription
-            version={"link under subscribe"}
-            title={
-              <>
-                Get <b>Robust UI</b> chapters via email as it's being written
-              </>
-            }
-          >
-            <>
-              <span className="mt-3 text-xsm sm:text-sm inline-block">
-                Or&nbsp;
-                <a
-                  className="link"
-                  href="https://gum.co/lWvh"
-                  onClick={() => onPreorderClick("link under subscribe")}
-                  target="_blank"
-                >
-                  pre-order
-                </a>
-                &nbsp;with the discount code "pre-order"
-              </span>
-            </>
-          </EmailSubscription>
         </div>
       </article>
     </Layout>
