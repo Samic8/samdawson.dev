@@ -62,7 +62,7 @@ export default function Post({ data }) {
           to="/robust-ui"
           onClick={onBannerClick}
           className="banner font-header flex-col hover:underline z-40 text-gray-900 font-semibold p-6 mx-auto text-xsm sm:text-sm hidden xl:inline-flex items-center justify-center rounded mb-10 absolute right-0 max-w-sm"
-          style={{ top: "1000px" }}
+          style={{ top: "200px" }}
         >
           <Book />
           <span className="mt-4 flex text-center">
