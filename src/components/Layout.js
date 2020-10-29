@@ -25,13 +25,13 @@ const Layout = ({ children, showBanner = true }) => {
 
   return (
     <div>
-      {false && (
+      {showBanner && (
         <Link
           to="/robust-ui"
           onClick={onBannerClick}
           className="banner font-header bg-indigo-600 relative hover:underline z-40 text-white font-bold h-10 text-xsm sm:text-sm left-0 right-0 flex items-center justify-center"
         >
-          <span>I'm writing an e-book! Check it out</span>
+          <span>Enhance your React Testing with Robust UI</span>
           <ArrowRightSvg className="h-6 ml-2" />
         </Link>
       )}
