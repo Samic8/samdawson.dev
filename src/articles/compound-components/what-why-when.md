@@ -8,7 +8,7 @@ updated: "2020-07-18"
 
 ## What **are _Compound Components_?**
 
-It's a base component that expects to be combined with other specific components. Below the `jsx,<Multiselect />` is the _base_ component and the `jsx,<Option />` and `jsx,<Group />` components are the _specific_ components.
+It's a _base_ component that expects to be combined with other component _parts_. Below the `jsx,<Multiselect />` is the _base_ component and the `jsx,<Option />` and `jsx,<Group />` components are the composable _parts_.
 
 ```jsx
 <Multiselect
@@ -31,7 +31,7 @@ It differs from the use of `jsx,{ children }` props where you are not expecting 
 </Box>
 ```
 
-While the `jsx,<Multiselect />` children will accept any components, having a combination of a _base_ and a specific component like `jsx,<Option />` that is intended to be used with it passes our Compound Component definition.
+While the `jsx,<Multiselect />` children will accept any components, having a combination of a _base_ and a _part_ component like `jsx,<Option />` that is intended to be used with it passes our Compound Component definition.
 
 ## Why **would you opt for this pattern?**
 
