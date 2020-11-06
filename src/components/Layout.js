@@ -25,7 +25,7 @@ const Layout = ({ children, showBanner = true }) => {
 
   return (
     <div>
-      {false && (
+      {showBanner && (
         <Link
           to="/robust-ui"
           onClick={onBannerClick}

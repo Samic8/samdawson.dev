@@ -14,7 +14,6 @@ import { getActiveClasses } from "get-active-classes"
 import axios from "axios"
 import { trackCustomEvent } from "gatsby-plugin-google-analytics"
 import EmailSubscription from "../components/EmailSubscription"
-import Book from "../components/Book"
 
 export default function Post({ data }) {
   const [feedbackClickedFor, setFeedbackClickedFor] = useState(null)
@@ -57,18 +56,6 @@ export default function Post({ data }) {
         timeToRead={data.markdownRemark.timeToRead}
       ></ArticleHeader>
       <Content>
-        <Link
-          aria-hidden
-          to="/robust-ui"
-          onClick={onBannerClick}
-          className="banner font-header flex-col hover:underline z-40 text-gray-900 font-semibold p-6 mx-auto text-xsm sm:text-sm hidden xl:inline-flex items-center justify-center rounded mb-10 absolute right-0 max-w-sm"
-          style={{ top: "200px" }}
-        >
-          <Book />
-          <span className="mt-4 flex text-center">
-            Skill up your React testing <br /> with Robust UI
-          </span>
-        </Link>
         <article
           className={"article text-sm sm:text-base text-black"}
           dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
