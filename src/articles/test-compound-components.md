@@ -43,11 +43,6 @@ describe("Multiselect", () => {
 })
 ```
 
-With controlled components like this one, the component does not handle its own
-internal state, so clicking on an item only runs a callback. We have chosen to
-write the tests mostly from the user's point of view and the onChange callback
-assertion from the developer's point of view.
-
 Testing with developer behaviour means mimicking how developers will use the component. With a compound component they will use multiple _part_ components often passing them into a parent _base_ component.
 
 ```jsx
