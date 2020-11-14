@@ -39,7 +39,7 @@ Readability is subjective, but you get the point. We can break a component into 
 
 <!-- TODO link to compound component section -->
 
-To explore this idea with hooks let's look at this `<Option />` component, which is part of [compound component](https://www.samdawson.dev/).
+To explore this idea with hooks let's look at this `<Option />` component, which is part of a [compound component](https://www.samdawson.dev/).
 
 GITHUB-EMBED https://github.com/Samic8/robust-ui-examples/blob/f11fc66565cc241d37f422451d4697dc1c29f4dd/src/components/hooks/included-logic/Option.js jsx GITHUB-EMBED
 
