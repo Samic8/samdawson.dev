@@ -14,6 +14,6 @@ Pairing one of the categories with an ineffective style of testing is not a prob
 ## Chapters
 
 1. [Hooks for Code Organization](how-to-test-react-hooks-2)
-2. Hooks for code reuse - Coming soon
+2. [Hooks for code reuse](how-to-test-react-hooks-2)
 3. Hooks for mass consumption - Coming soon
 4. Conclusion - Coming soon

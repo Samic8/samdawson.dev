@@ -1,11 +1,11 @@
 ---
-title: "Testing Hooks - Code organization"
+title: "Testing Hooks - Hooks for code organization"
 slug: how-to-test-react-hooks-2
 techs: ["React", "Jest"]
 date: "2020-11-14"
 ---
 
-This is a part of a series on [Testing Hooks](how-to-test-react-hooks).
+> This is a part one in a series on [Testing Hooks](how-to-test-react-hooks)
 
 The first category of hook usage is code organization to make our code easier to read. This is usually in the form of breaking a component into smaller parts, just like we might do with a regular non-React function.
 
