@@ -5,7 +5,7 @@ techs: ["React", "Jest"]
 date: "2020-11-15"
 ---
 
-> This is a part two in a series on [Testing Hooks](how-to-test-react-hooks)
+> This is part two in a series on [Testing Hooks](how-to-test-react-hooks)
 
 In the last section where we shuffled around some code to make it more readable, we were not taking full advantage of the benefits of hooks which is to share stateful logic between components.
 
@@ -31,3 +31,5 @@ We then add tests for the `<PersonOption />` component. In this example of the c
 GITHUB-EMBED https://github.com/Samic8/robust-ui-examples/blob/f11fc66565cc241d37f422451d4697dc1c29f4dd/src/components/hooks/abstracted-public-hook/Multiselect.test.js jsx 1-42,76-110,144 GITHUB-EMBED
 
 Because both of our components that use our hook now have tests and combined they both test the complete functionality of the hook. There is no confidence to be gained by testing the hook independently, and doing so would only lead to extra tests that need to be maintained and a loss of time in the present to write them.
+
+[**Continue to Part 3**](/article/how-to-test-react-hooks-4)

@@ -5,7 +5,7 @@ techs: ["React", "Jest"]
 date: "2020-11-14"
 ---
 
-> This is a part one in a series on [Testing Hooks](how-to-test-react-hooks)
+> This is part one in a series on [Testing Hooks](how-to-test-react-hooks)
 
 The first category of hook usage is code organization to make our code easier to read. This is usually in the form of breaking a component into smaller parts, just like we might do with a regular non-React function.
 
@@ -54,3 +54,5 @@ For this category of hook, it's most effective to write tests in a way where the
 GITHUB-EMBED https://github.com/Samic8/robust-ui-examples/blob/f11fc66565cc241d37f422451d4697dc1c29f4dd/src/components/hooks/abstracted-private-logic/Multiselect.test.js jsx 1-40,75 GITHUB-EMBED
 
 When our tests are written like this it allows us to change the implementation without changing the tests. Both the example without the hook and with the hook will pass the same tests. So when another developer or our future self decides that private hooks are blasphemy, we can refactor without having to make changes to the tests and we will still be confident that the component works as expected.
+
+[**Continue to Part 2**](/article/how-to-test-react-hooks-3)
