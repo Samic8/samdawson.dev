@@ -42,7 +42,7 @@ export const pageQuery = graphql`
 
 const IndexPage = ({ data }) => (
   <Layout center>
-    <SEO />
+    <SEO description="Sam Dawson's blog on everything frontend web design and development" />
     <div className={"absolute top-0 left-0 right-0 overflow-hidden z-0"}>
       <Wave
         className={"relative -mt-1xl sm:-mt-xl md:-mt-1xl"}
@@ -51,16 +51,13 @@ const IndexPage = ({ data }) => (
     </div>
     <div className={"mt-10 sm:mt-16 mb-32 sm:mb-48 z-10 relative font-header"}>
       <div className="max-w-3xl mx-auto">
-        <p
-          className={"text-lg sm:text-xl font-bold text-gray-800 leading-tight"}
-        >
-          Hi, I'm a web designer and builder from Wollongong, Australia. I work
-          for{" "}
+        <p className={"text-lg sm:text-xl font-bold text-gray-800 leading-tight"}>
+          Hi, I'm Sam. A frontend designer from Wollongong Australia. I work at{" "}
           <a
             href="https://www.easyagile.com/careers/?ref=samdawson.dev"
             className={"text-purple-500 hover:text-purple-700"}
           >
-            easy agile
+            Easy Agile
           </a>
           .
         </p>
