@@ -1,5 +1,5 @@
 ---
-title: "CSS grid auto-flow dense and varying image sizes"
+title: "How to make a dynamic interlocking image grid with CSS"
 slug: auto-flow-dense-varying-image-sizes
 techs: ["CSS"]
 date: "2020-05-10"
