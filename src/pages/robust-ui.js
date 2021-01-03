@@ -54,7 +54,8 @@ export default function Subscribe({ data }) {
             version={"link under subscribe"}
             title={
               <>
-                Sign up to my newsletter to get <strong>3 chapters</strong> delivered weekly
+                Sign up to my newsletter to get <strong>3 chapters</strong> (one a week, delivered
+                weekly)
               </>
             }
           >
