@@ -1,9 +1,7 @@
 import React from "react"
 import Layout from "../components/Layout"
-import WiggleDownLine from "../svgs/wiggle-down-line.svg"
 import { graphql, Link } from "gatsby"
 import Book from "../components/Book"
-import XCircleSvg from "../svgs/x-circle.svg"
 import CompassSvg from "../svgs/compass.svg"
 import LayersSvg from "../svgs/layers.svg"
 import MaximizeSvg from "../svgs/maximize.svg"
@@ -56,7 +54,7 @@ export default function Subscribe({ data }) {
             version={"link under subscribe"}
             title={
               <>
-                Get <b>Robust UI</b> chapters via email as it's being written
+                Sign up to my newsletter to get <strong>3 chapters</strong> delivered weekly
               </>
             }
           >
@@ -69,13 +67,10 @@ export default function Subscribe({ data }) {
                   onClick={() => onPreorderClick("link under subscribe")}
                   target="_blank"
                 >
-                  pre-order
+                  purchase the early access
                 </a>
-                &nbsp;with the discount code "pre-order".
+                &nbsp;version of the e-book ($5)
               </span>
-              <div className="mt-2 text-xsm sm:text-sm">
-                When released the discount code and chapters via email will no longer be available.
-              </div>
             </>
           </EmailSubscription>
         </div>
