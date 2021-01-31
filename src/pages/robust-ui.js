@@ -71,7 +71,7 @@ export default function Subscribe({ data }) {
                 blog posts to get productive with component testing.
               </Item>
             </ul>
-            <div className="flex justify-center mt-16 lg:mt-8 max-w-lg mx-auto lg:max-w-full">
+            <div className="flex justify-center mt-16 lg:mt-8 max-w-lg mx-auto lg:mx-0 lg:max-w-full">
               <EmailSubscription
                 version={"link under subscribe"}
                 title={
