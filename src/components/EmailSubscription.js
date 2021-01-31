@@ -27,15 +27,15 @@ export default function EmailSubscription({ title, children }) {
 
   return (
     <section
-      className="border border-gray-400 inline-block p-4 sm:p-8 rounded-md w-full"
+      className="inline-block p-4 sm:p-8 rounded-md w-full"
       style={{ backgroundColor: "#f7f7f8" }}
     >
-      <h2 className="font-header text-gray-800 text-md sm:text-lg leading-tight mx-auto text-center">
+      <h2 className="font-header text-gray-900 text-md sm:text-mdlg leading-tight mx-auto">
         {title}
       </h2>
       <form
         onSubmit={handleSubmit}
-        className="h-16 flex mx-auto mt-8 border border-gray-200 rounded focus-within:border-gray-500 bg-white"
+        className="h-16 flex mx-auto mt-4 border border-gray-200 rounded focus-within:border-gray-500 bg-white"
       >
         <input
           className="flex-grow flex-shrink min-w-0 pl-4 text-gray-800 outline-none rounded placeholder-gray-700"

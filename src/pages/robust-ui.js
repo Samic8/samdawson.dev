@@ -54,8 +54,8 @@ export default function Subscribe({ data }) {
             version={"link under subscribe"}
             title={
               <>
-                Sign up to my newsletter to get <strong>3 chapters</strong> (one a week, delivered
-                weekly)
+                Subscribe to get <strong>3 chapters</strong> free
+                <div className="text-sm">(one a week, delivered weekly)</div>
               </>
             }
           >
@@ -70,7 +70,7 @@ export default function Subscribe({ data }) {
                 >
                   purchase the early access
                 </a>
-                &nbsp;version of the e-book ($5)
+                &nbsp;version of the e-book ($7)
               </span>
             </>
           </EmailSubscription>
@@ -95,24 +95,24 @@ export default function Subscribe({ data }) {
           <div className="max-w-lg mx-auto mt-16">
             <div className="mx-auto text-sm">
               <section>
-                <h2 className="font-bold font-header text-gray-900 mb-4">Learn the fundamentals</h2>
+                <h2 className="font-bold font-header text-gray-900 mb-4">Learn general tools</h2>
                 <ul>
-                  <Item>
-                    <MousePointerSvg className="mr-2 mt-1 flex-shrink-0" />
-                    How to reap the benefits of Behavioral Testing of components
-                  </Item>
-                  <Item>
-                    <MaximizeSvg className="mr-2 mt-1 flex-shrink-0" />
-                    How to best use Implementation Testing when it's your only choice
-                  </Item>
-                  <Item>
-                    <CompassSvg className="mr-2 mt-1 flex-shrink-0" />
-                    How to best leverage mocks and spies to test your components
-                  </Item>
-                  <Item>
-                    <LayersSvg className="mr-2 mt-1 flex-shrink-0" />
+                  <FeatureItem>
+                    <MaximizeSvg className="mr-2 flex-shrink-0" />
+                    How to structure your tests in a maintainable way
+                  </FeatureItem>
+                  <FeatureItem>
+                    <CompassSvg className="mr-2 flex-shrink-0" />
+                    Know when to use mocks to test your components
+                  </FeatureItem>
+                  <FeatureItem>
+                    <LayersSvg className="mr-2 flex-shrink-0" />
                     How to write component tests that are easy to maintain
-                  </Item>
+                  </FeatureItem>
+                  <FeatureItem>
+                    <MousePointerSvg className="mr-2 flex-shrink-0" />
+                    Why writing tests that mimic interaction pays off
+                  </FeatureItem>
                 </ul>
               </section>
               <section className="mt-12">
@@ -120,34 +120,30 @@ export default function Subscribe({ data }) {
                   Then learn strategies for specific contexts
                 </h2>
                 <ul>
-                  <Item>
-                    <CheckCircleSvg className="mr-2 mt-1 flex-shrink-0" />
+                  <FeatureItem>
+                    <CheckCircleSvg className="mr-2 flex-shrink-0" />
                     Sane testing of React Hooks
-                  </Item>
-                  <Item>
-                    <SendSvg className="mr-2 mt-1 flex-shrink-0" />
+                  </FeatureItem>
+                  <FeatureItem>
+                    <SendSvg className="mr-2 flex-shrink-0" />
                     Behavioral testing of&nbsp;
                     <Link className="link" to="/article/compound-components-what-why-when">
                       Compound Components
                     </Link>
-                  </Item>
-                  <Item>
-                    <BarChartSvg className="mr-2 mt-1 flex-shrink-0" />
+                  </FeatureItem>
+                  <FeatureItem>
+                    <BarChartSvg className="mr-2 flex-shrink-0" />
                     Strategies for testing visual graphs made with SVG
-                  </Item>
-                  <Item>
-                    <CheckCircleSvg className="mr-2 mt-1 flex-shrink-0" />
-                    Testing with Redux connected components
-                  </Item>
-                  <Item>
-                    <LogInSvg className="mr-2 mt-1 flex-shrink-0" />
+                  </FeatureItem>
+                  <FeatureItem>
+                    <LogInSvg className="mr-2 flex-shrink-0" />
                     Testing components that use common third party libraries without reinventing the
                     wheel
-                  </Item>
-                  <Item>
-                    <MinimizeSvg className="mr-2 mt-1 flex-shrink-0" />
-                    Strategies for automated visual testing of components
-                  </Item>
+                  </FeatureItem>
+                  <FeatureItem>
+                    <MinimizeSvg className="mr-2 flex-shrink-0" />
+                    Strategies for visual testing of components with Storybook
+                  </FeatureItem>
                 </ul>
               </section>
             </div>
@@ -160,6 +156,14 @@ export default function Subscribe({ data }) {
 
 function Item({ children }) {
   return <li className="flex mt-4">{children}</li>
+}
+
+function FeatureItem({ children }) {
+  return (
+    <li className="flex mt-2 p-3 rounded shadow-inner" style={{ backgroundColor: "#f7f7f8" }}>
+      {children}
+    </li>
+  )
 }
 
 export const pageQuery = graphql`
