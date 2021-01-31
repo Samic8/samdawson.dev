@@ -35,62 +35,70 @@ export default function Subscribe({ data }) {
       ></SEO>
       <article className="pt-12 pb-20 mt-4 text-black" id="footer">
         <h1 className="sr-only">Robust UI e-book</h1>
-        <div className="max-w-lg flex justify-center flex-col items-center justify-center mx-auto">
-          <Book />
-          <p className="text-lg font-bold mb-4 mt-6 font-header text-gray-900">
-            A toolkit of strategies for testing React components with&nbsp;
-            <a className="link" href="https://jestjs.io/">
-              Jest
-            </a>{" "}
-            and{" "}
-            <a className="link" href="https://testing-library.com/docs/react-testing-library/intro">
-              React Testing Library
-            </a>
-            .
-          </p>
+        <div className="lg:flex">
+          <div className="max-w-lg flex flex-col items-center mx-auto">
+            <Book />
+            <p className="text-lg font-bold mb-4 mt-6 font-header text-gray-900">
+              A toolkit of strategies for testing React components with&nbsp;
+              <a className="link" href="https://jestjs.io/">
+                Jest
+              </a>{" "}
+              and{" "}
+              <a
+                className="link"
+                href="https://testing-library.com/docs/react-testing-library/intro"
+              >
+                React Testing Library
+              </a>
+              .
+            </p>
+          </div>
+          <div className="flex flex-col ml-10">
+            <ul className="text-md max-w-xl mx-auto block">
+              <Item>
+                <CheckCircleSvg className="mr-2 mt-1 flex-shrink-0" />
+                Prevent the afternoon tap on the shoulder or slack ping about a critical bug in a
+                feature you released last week.
+              </Item>
+              <Item>
+                <CheckCircleSvg className="mr-2 mt-1 flex-shrink-0" />
+                Avoid the dread you feel when a new feature needs to be added to that part of the
+                code.
+              </Item>
+              <Item>
+                <CheckCircleSvg className="mr-2 mt-1 flex-shrink-0" />
+                Everything you need in one place so you don't have to scrounge around 20 different
+                blog posts to get productive with component testing.
+              </Item>
+            </ul>
+            <div className="flex justify-center mt-16 lg:mt-8 max-w-lg mx-auto lg:max-w-full">
+              <EmailSubscription
+                version={"link under subscribe"}
+                title={
+                  <>
+                    Subscribe to get <strong>3 chapters</strong> free
+                    <div className="text-sm">(one a week, delivered weekly)</div>
+                  </>
+                }
+              >
+                <>
+                  <span className="mt-3 text-xsm sm:text-sm inline-block">
+                    Or&nbsp;
+                    <a
+                      className="link"
+                      href="https://gum.co/lWvh"
+                      onClick={() => onPreorderClick("link under subscribe")}
+                      target="_blank"
+                    >
+                      purchase the early access
+                    </a>
+                    &nbsp;version of the e-book ($7)
+                  </span>
+                </>
+              </EmailSubscription>
+            </div>
+          </div>
         </div>
-        <div className="flex justify-center mt-8 max-w-lg mx-auto">
-          <EmailSubscription
-            version={"link under subscribe"}
-            title={
-              <>
-                Subscribe to get <strong>3 chapters</strong> free
-                <div className="text-sm">(one a week, delivered weekly)</div>
-              </>
-            }
-          >
-            <>
-              <span className="mt-3 text-xsm sm:text-sm inline-block">
-                Or&nbsp;
-                <a
-                  className="link"
-                  href="https://gum.co/lWvh"
-                  onClick={() => onPreorderClick("link under subscribe")}
-                  target="_blank"
-                >
-                  purchase the early access
-                </a>
-                &nbsp;version of the e-book ($7)
-              </span>
-            </>
-          </EmailSubscription>
-        </div>
-        <ul className="text-md max-w-xl mx-auto mt-12 block">
-          <Item>
-            <CheckCircleSvg className="mr-2 mt-1 flex-shrink-0" />
-            Prevent the afternoon tap on the shoulder or slack ping about a critical bug in a
-            feature you released last week.
-          </Item>
-          <Item>
-            <CheckCircleSvg className="mr-2 mt-1 flex-shrink-0" />
-            Avoid the dread you feel when a new feature needs to be added to that part of the code.
-          </Item>
-          <Item>
-            <CheckCircleSvg className="mr-2 mt-1 flex-shrink-0" />
-            Everything you need in one place so you don't have to scrounge around 20 different blog
-            posts to get productive with component testing.
-          </Item>
-        </ul>
         <div className="px-6">
           <div className="max-w-lg mx-auto mt-16">
             <div className="mx-auto text-sm">
@@ -159,11 +167,7 @@ function Item({ children }) {
 }
 
 function FeatureItem({ children }) {
-  return (
-    <li className="flex mt-2 p-3 rounded shadow-inner" style={{ backgroundColor: "#f7f7f8" }}>
-      {children}
-    </li>
-  )
+  return <li className="flex mt-2 p-3 rounded">{children}</li>
 }
 
 export const pageQuery = graphql`
