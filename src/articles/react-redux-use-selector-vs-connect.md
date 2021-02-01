@@ -3,7 +3,7 @@ title: "useSelector vs connect (react-redux)"
 slug: react-redux-use-selector-vs-connect
 techs: ["React", "Jest"]
 date: "2019-12-24"
-updated: "2020-05-25"
+updated: "2021-02-01"
 featuredImage: "./seperation-concerns-redux.svg"
 ---
 
@@ -99,7 +99,39 @@ I am using the word _nudge_ here again because it does not force us to test comp
 
 ## Better performance optimizations by default
 
-`js,connect()` won't re-render the component passed to it unless the props change. Components using Redux hooks can achieve the same functionality by making use of the [React.memo](https://reactjs.org/docs/react-api.html#reactmemo).
+The connected component will re-render only when the properties returned from mapStateToProps changes.
+
+```jsx
+const mapStateToProps = state => {
+  const count = selectCount(state)
+
+  return {
+    count,
+  }
+}
+
+export default connect(mapStateToProps)(CounterComponent)
+```
+
+We must be careful not to create new objects because `connect` uses strict equality (`jsx,===`) on each of the properties.
+
+```jsx
+const mapStateToProps = state => {
+  const count = selectCount(state)
+  const history = [...selectPreviousNumbers(state), count]
+
+  return {
+    count,
+    history,
+  }
+}
+
+export default connect(mapStateToProps)(CounterComponent)
+```
+
+In this example, the `history` value will create a new array (arrays are objects too!) each time causing the connected component to re-render every time the state changes. If you do need to return objects [reselect](https://github.com/reduxjs/reselect) can help memorize and return the same reference when the data has not changed.
+
+Components using Redux hooks can achieve the same functionality by making use of the [React.memo](https://reactjs.org/docs/react-api.html#reactmemo).
 
 ```jsx
 function CounterUseSelector({ allowValueChange }) {
@@ -111,7 +143,7 @@ function CounterUseSelector({ allowValueChange }) {
 export default React.memo(CounterUseSelector)
 ```
 
-`js,useSelector()` will cause re-renders if the value it produces has changed. When returning an object be aware that unless it's the same object by reference equality the component will re-render even if the objects properties are the same. You can get around this by always returning the same object.
+`js,useSelector()` will cause re-renders if the value it produces has changed. When returning an object be aware that unless it's the same object by reference equality the component will re-render even if the properties of the object are the same. You can get around this by always returning the same object.
 
 What approach truly give your app better performance is best left decided to [actual testing](/article/js-perf-assumptions).
 
