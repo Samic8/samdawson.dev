@@ -95,7 +95,7 @@ export default function Subscribe({ data }) {
           <div className="max-w-lg mx-auto mt-16">
             <div className="mx-auto text-sm">
               <section>
-                <h2 className="font-bold font-header text-gray-900 mb-4">Learn general tools</h2>
+                <h2 className="font-bold font-header text-gray-900 mb-4">Robust UI Covers</h2>
                 <ul>
                   <FeatureItem>
                     <MaximizeSvg className="mr-2 flex-shrink-0" />
@@ -103,42 +103,22 @@ export default function Subscribe({ data }) {
                   </FeatureItem>
                   <FeatureItem>
                     <CompassSvg className="mr-2 flex-shrink-0" />
-                    Know when to use mocks to test your components
+                    When mocking is appropriate for component tests
                   </FeatureItem>
                   <FeatureItem>
                     <LayersSvg className="mr-2 flex-shrink-0" />
-                    How to write component tests that are easy to maintain
+                    How to write component tests for component variations
                   </FeatureItem>
-                  <FeatureItem>
-                    <MousePointerSvg className="mr-2 flex-shrink-0" />
-                    Why writing tests that mimic interaction pays off
-                  </FeatureItem>
-                </ul>
-              </section>
-              <section className="mt-12">
-                <h2 className="font-bold font-header text-gray-900 mb-4">
-                  Then learn strategies for specific contexts
-                </h2>
-                <ul>
                   <FeatureItem>
                     <CheckCircleSvg className="mr-2 flex-shrink-0" />
                     Sane testing of React Hooks
                   </FeatureItem>
                   <FeatureItem>
-                    <SendSvg className="mr-2 flex-shrink-0" />
-                    Behavioral testing of&nbsp;
+                    <BarChartSvg className="mr-2 flex-shrink-0" />
+                    Strategies for testing&nbsp;
                     <Link className="link" to="/article/compound-components-what-why-when">
                       Compound Components
                     </Link>
-                  </FeatureItem>
-                  <FeatureItem>
-                    <BarChartSvg className="mr-2 flex-shrink-0" />
-                    Strategies for testing visual graphs made with SVG
-                  </FeatureItem>
-                  <FeatureItem>
-                    <LogInSvg className="mr-2 flex-shrink-0" />
-                    Testing components that use common third party libraries without reinventing the
-                    wheel
                   </FeatureItem>
                   <FeatureItem>
                     <MinimizeSvg className="mr-2 flex-shrink-0" />
