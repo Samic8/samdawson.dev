@@ -4,7 +4,7 @@ import ArrowRightSvg from "../svgs/arrow-right.svg"
 import Header from "./Header"
 import { trackCustomEvent } from "gatsby-plugin-google-analytics"
 
-const Layout = ({ children, showBanner = true }) => {
+const Layout = ({ children, showBanner = false }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
