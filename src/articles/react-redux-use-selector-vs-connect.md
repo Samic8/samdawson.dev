@@ -13,26 +13,27 @@ React-redux hooks like `js,useSelector()` and the `js,connect()` can have the sa
 
 <table>
   <thead>
-    <th class="mobile-table">Hooks (useSelector etc)</th>
-    <th class="mobile-table-header">Connect</th>
+    <th class="mobile-table text-left">Hooks (useSelector)</th>
+    <th class="mobile-table-header text-left">Connect</th>
   </thead>
   <tbody>
     <tr>
-      <td style="padding: 5px; vertical-align: top" class="mobile-table">
-        <li><a href="#less-boilerplate">Less boilerplate</a></li>
-        <li><a href="#hooks-testing">Couples components to redux</a></li>
-        <li><a href="#hooks-testing">Components are more effort to test</a></li>
-        <li><a href="#hooks-testing"><i>Nudged</i> to have more test coverage</a></li>
-        <li><a href="#unit-testing-and-separation-of-concerns">Less separation of concerns</a></li>
-        <li><a href="#the-zombie-children-problem">Potential "Zombie Children" problem</a></li>
+      <td style="vertical-align: top" class="mobile-table sm:w-1/2">
+        <div class="mt-3"><a href="#less-boilerplate">Less boilerplate</a></div>
+        <div class="mt-3"><a href="#hooks-testing">Couples components to redux</a></div>
+        <div class="mt-3"><a href="#hooks-testing">Components are more effort to test</a></div>
+        <div class="mt-3"><a href="#hooks-testing"><i>Nudged</i> to have more test coverage</a></div>
+        <div class="mt-3"><a href="#unit-testing-and-separation-of-concerns">Less separation of concerns</a></div>
+        <div class="mt-3"><a href="#the-zombie-children-problem">Potential "Zombie Children" problem</a></div>
+        <div class="mt-3"><a href="#redux-recommended">Style-guide recommended</a></div>
       </td>
-      <td style="padding: 5px; vertical-align: top" class="mobile-table">
-        <li class="mobile-table-header-replace" style="text-align: center; font-weight: bold">Connect</li>
-        <li><a href="#connect-function-testing">More boiler plate</a></li>
-        <li><a href="#connect-function-testing"><i>Nudged</i> to have less test coverage</a></li>
-        <li><a href="#connect-function-testing">"Inner" components themselves are simpler and easier to test</a></li>
-        <li><a href="#connect-function-testing">Option to include redux in your component tests</a></li>
-        <li><a href="#better-performance-optimizations-by-default">Better performance optimizations by default</a></li>
+      <td style="vertical-align: top" class="mobile-table sm:w-1/2">
+        <div class="mobile-table-header-replace mt-8 font-bold">Connect</div>
+        <div class="mt-3"><a href="#connect-function-testing">More boiler plate</a></div>
+        <div class="mt-3"><a href="#connect-function-testing"><i>Nudged</i> to have less test coverage</a></div>
+        <div class="mt-3"><a href="#connect-function-testing">"Inner" components themselves are simpler and easier to test</a></div>
+        <div class="mt-3"><a href="#connect-function-testing">Option to include redux in your component tests</a></div>
+        <div class="mt-3"><a href="#better-performance-optimizations-by-default">Better performance optimizations by default</a></div>
       </td>
     </tr>
 
@@ -158,6 +159,10 @@ This article provides a framework to compare the approaches through the theme of
 ### The "Zombie Children" problem
 
 The docs go into [detail about a problem](https://react-redux.js.org/api/hooks#stale-props-and-zombie-children) that can arise through Redux hook usage. The docs have a lot of information on this issue but it's hard to grasp exactly how it would affect your code. [Let me know](https://twitter.com/sam__dawson) if you would like a video tutorial on this problem.
+
+## Redux Recommended
+
+The [redux style-guide](https://redux.js.org/style-guide/style-guide#use-the-react-redux-hooks-api) now recommends using the hooks API. When this article was first written there was no official recommendation.
 
 ## Conclusion
 
