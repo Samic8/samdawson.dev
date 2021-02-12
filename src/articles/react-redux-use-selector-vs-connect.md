@@ -18,22 +18,22 @@ React-redux hooks like `js,useSelector()` and the `js,connect()` can have the sa
   </thead>
   <tbody>
     <tr>
-      <td style="vertical-align: top" class="mobile-table sm:w-1/2">
-        <div class="mt-3"><a href="#less-boilerplate">Less boilerplate</a></div>
-        <div class="mt-3"><a href="#hooks-testing">Couples components to redux</a></div>
-        <div class="mt-3"><a href="#hooks-testing">Components are more effort to test</a></div>
-        <div class="mt-3"><a href="#hooks-testing"><i>Nudged</i> to have more test coverage</a></div>
-        <div class="mt-3"><a href="#unit-testing-and-separation-of-concerns">Less separation of concerns</a></div>
-        <div class="mt-3"><a href="#the-zombie-children-problem">Potential "Zombie Children" problem</a></div>
-        <div class="mt-3"><a href="#redux-recommended">Style-guide recommended</a></div>
+      <td style="vertical-align: top" class="mobile-table">
+        <div class="mobile-table-row"><a href="#less-boilerplate">Less boilerplate</a></div>
+        <div class="mobile-table-row"><a href="#hooks-testing">Couples components to redux</a></div>
+        <div class="mobile-table-row"><a href="#hooks-testing">Components are more effort to test</a></div>
+        <div class="mobile-table-row"><a href="#hooks-testing"><i>Nudged</i> to have more test coverage</a></div>
+        <div class="mobile-table-row"><a href="#unit-testing-and-separation-of-concerns">Less separation of concerns</a></div>
+        <div class="mobile-table-row"><a href="#the-zombie-children-problem">Potential "Zombie Children" problem</a></div>
+        <div class="mobile-table-row"><a href="#redux-recommended">Style-guide recommended</a></div>
       </td>
-      <td style="vertical-align: top" class="mobile-table sm:w-1/2">
-        <div class="mobile-table-header-replace mt-8 font-bold">Connect</div>
-        <div class="mt-3"><a href="#connect-function-testing">More boiler plate</a></div>
-        <div class="mt-3"><a href="#connect-function-testing"><i>Nudged</i> to have less test coverage</a></div>
-        <div class="mt-3"><a href="#connect-function-testing">"Inner" components themselves are simpler and easier to test</a></div>
-        <div class="mt-3"><a href="#connect-function-testing">Option to include redux in your component tests</a></div>
-        <div class="mt-3"><a href="#better-performance-optimizations-by-default">Better performance optimizations by default</a></div>
+      <td style="vertical-align: top" class="mobile-table">
+        <div class="mobile-table-header-replace">Connect</div>
+        <div class="mobile-table-row"><a href="#connect-function-testing">More boiler plate</a></div>
+        <div class="mobile-table-row"><a href="#connect-function-testing"><i>Nudged</i> to have less test coverage</a></div>
+        <div class="mobile-table-row"><a href="#connect-function-testing">"Inner" components themselves are simpler and easier to test</a></div>
+        <div class="mobile-table-row"><a href="#connect-function-testing">Option to include redux in your component tests</a></div>
+        <div class="mobile-table-row"><a href="#better-performance-optimizations-by-default">Better performance optimizations by default</a></div>
       </td>
     </tr>
 

@@ -156,6 +156,16 @@
     }
   }
 
+  @screen sm {
+    .mobile-table {
+      @apply w-1/2;
+    }
+  }
+
+  .mobile-table-row {
+    margin-top: 8px;
+  }
+
   /* Use selector article table TODO replace with mdx for better table solution */
   .mobile-table-header-replace {
     display: none;
@@ -171,6 +181,7 @@
 
     .mobile-table-header-replace {
       display: block;
+      @apply mt-8 font-bold;
     }
   }
 }
