@@ -81,11 +81,11 @@ export default function Post({ data }) {
         </div>
       </form>
       <section className="mt-6 mx-auto max-w-2xl bg-gray-100 p-8 rounded font-header">
-        <Link className="flex font-bold text-lg" to="/robust-ui">
-          <Book />
-          <div className="ml-10">
+        <Link className="sm:flex font-bold text-md sm:text-lg" to="/robust-ui">
+          <Book className="hidden sm:flex" />
+          <div className="sm:ml-10 text-md sm:text-lg">
             <h2 className="bg-purple-500 px-4 py-2 text-white rounded">Robust UI</h2>
-            <p className="text-lg font-bold mb-4 mt-2 font-header text-gray-900 leading-snug">
+            <p className="font-bold mb-4 mt-2 font-header text-gray-900 leading-snug">
               A toolkit of strategies for testing React components with&nbsp;Jest and React Testing
               Library .
             </p>
