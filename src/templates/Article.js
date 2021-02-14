@@ -14,6 +14,7 @@ import { getActiveClasses } from "get-active-classes"
 import axios from "axios"
 import { trackCustomEvent } from "gatsby-plugin-google-analytics"
 import EmailSubscription from "../components/EmailSubscription"
+import Book from "../components/Book"
 
 export default function Post({ data }) {
   const [feedbackClickedFor, setFeedbackClickedFor] = useState(null)
@@ -61,7 +62,7 @@ export default function Post({ data }) {
           dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
         />
       </Content>
-      <WiggleDownLine className="mx-auto sm:mt-10 h-24 sm:h-auto" aria-hidden />
+      {/* <WiggleDownLine className="mx-auto sm:mt-10 h-24 sm:h-auto" aria-hidden /> */}
       <form
         name="feedback"
         method="post"
@@ -79,17 +80,17 @@ export default function Post({ data }) {
           <FeedbackButton type="down" activeFor={feedbackClickedFor} onClick={submitFeedback} />
         </div>
       </form>
-      <section className="flex flex-col mt-6 mx-auto max-w-2xl">
-        <EmailSubscription
-          title={
-            <div className="">
-              Skill up in React testing with&nbsp;
-              <Link className="link font-bold" to="/robust-ui">
-                Robust UI
-              </Link>{" "}
-            </div>
-          }
-        ></EmailSubscription>
+      <section className="mt-6 mx-auto max-w-2xl bg-gray-100 p-8 rounded font-header">
+        <Link className="flex font-bold text-lg" to="/robust-ui">
+          <Book />
+          <div className="ml-10">
+            <h2 className="bg-purple-500 px-4 py-2 text-white rounded">Robust UI</h2>
+            <p className="text-lg font-bold mb-4 mt-2 font-header text-gray-900 leading-snug">
+              A toolkit of strategies for testing React components with&nbsp;Jest and React Testing
+              Library .
+            </p>
+          </div>
+        </Link>
       </section>
       <ExternalLinks className="flex justify-center mt-12" />
     </Layout>
