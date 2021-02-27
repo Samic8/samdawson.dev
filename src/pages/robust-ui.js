@@ -84,9 +84,12 @@ export default function Subscribe({ data }) {
                   onClick={() => onPreorderClick("link under subscribe")}
                   target="_blank"
                 >
-                  purchase the early access
+                  purchase early access
                 </a>
-                &nbsp;version of the e-book ($7)
+                &nbsp;version for
+                <span className="py-1 px-2 inline-block border ml-2 border-grey-100">
+                  <span className="font-bold">$7</span> <span className="line-through">$40</span>
+                </span>
               </span>
             </>
           </EmailSubscription>
