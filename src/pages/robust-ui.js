@@ -68,31 +68,8 @@ export default function Subscribe({ data }) {
         <div className="flex justify-center mt-16 max-w-lg mx-auto">
           <EmailSubscription
             version={"link under subscribe"}
-            title={
-              <>
-                Subscribe to get <strong>3 chapters</strong> free
-                <div className="text-sm">(one a week, delivered weekly)</div>
-              </>
-            }
-          >
-            <>
-              <span className="mt-3 text-xsm sm:text-sm inline-block">
-                Or&nbsp;
-                <a
-                  className="link"
-                  href="https://gum.co/lWvh"
-                  onClick={() => onPreorderClick("link under subscribe")}
-                  target="_blank"
-                >
-                  purchase early access
-                </a>
-                &nbsp;version for
-                <span className="py-1 px-2 inline-block border ml-2 border-grey-100">
-                  <span className="font-bold">$7</span> <span className="line-through">$40</span>
-                </span>
-              </span>
-            </>
-          </EmailSubscription>
+            title={<>Get an early access copy for free</>}
+          ></EmailSubscription>
         </div>
         <div className="px-6">
           <div className="max-w-lg mx-auto mt-16">

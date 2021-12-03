@@ -48,7 +48,7 @@ export default function EmailSubscription({ title, children }) {
             type="submit"
             className="bg-purple-500 hover:bg-purple-400 text-white uppercase text-xsm tracking-wide m-1 rounded px-4"
           >
-            Get Chapters
+            Get a free copy
           </button>
         )}
         {loading && (
@@ -58,7 +58,8 @@ export default function EmailSubscription({ title, children }) {
         )}
         {success && (
           <span className="bg-green-500 text-white uppercase text-xsm tracking-wide m-1 rounded px-5 flex items-center justify-center">
-            Success <ThumbsUpSvg className="flex-shrink-0 ml-2 mb-1" />
+            You will receive an email with a code{" "}
+            <ThumbsUpSvg className="flex-shrink-0 ml-2 mb-1" />
           </span>
         )}
       </form>
