@@ -1,7 +1,7 @@
 ---
 title: "Testing Hooks - Hooks for code reuse"
 slug: how-to-test-react-hooks-3
-techs: ["React", "Jest"]
+techs: ["React", "Testing"]
 date: "2020-11-15"
 ---
 

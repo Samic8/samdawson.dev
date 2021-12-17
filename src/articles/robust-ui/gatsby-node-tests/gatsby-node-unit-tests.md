@@ -1,7 +1,7 @@
 ---
 title: "How to test gatsby-node"
 slug: gatsby-node-unit-tests
-techs: ["Gatsby", "Jest"]
+techs: ["Gatsby", "Testing"]
 date: "2020-06-21"
 featuredImage: "./gatsby-node-unit-tests.png"
 ---

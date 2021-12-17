@@ -1,7 +1,7 @@
 ---
 title: "How to test React Hooks"
 slug: how-to-test-react-hooks
-techs: ["React", "Jest"]
+techs: ["React", "Testing"]
 date: "2020-11-13"
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "The snapshot testing tool"
 slug: the-snapshot-testing-tool
-techs: ["Jest"]
+techs: ["Testing"]
 date: "2020-04-17"
 ---
 

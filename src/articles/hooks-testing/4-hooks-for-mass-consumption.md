@@ -1,7 +1,7 @@
 ---
 title: "Testing Hooks - Hooks for mass consumption"
 slug: how-to-test-react-hooks-4
-techs: ["React", "Jest"]
+techs: ["React", "Testing"]
 date: "2020-11-23"
 ---
 

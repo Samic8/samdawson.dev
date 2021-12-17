@@ -1,7 +1,7 @@
 ---
 title: "How to test Compound Components"
 slug: how-to-test-compound-components
-techs: ["React", "Jest"]
+techs: ["React", "Testing"]
 date: "2020-11-11"
 ---
 

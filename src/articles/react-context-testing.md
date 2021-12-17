@@ -1,7 +1,7 @@
 ---
 title: "How to test React Context"
 slug: react-context-testing
-techs: ["React", "Jest"]
+techs: ["React", "Testing"]
 date: "2020-07-17"
 updated: "2020-10-22"
 # featuredImage: ""

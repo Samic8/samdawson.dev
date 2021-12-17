@@ -1,7 +1,7 @@
 ---
 title: "How to test SVG Graphs"
 slug: svg-graph-testing
-techs: ["React", "Jest"]
+techs: ["React", "Testing"]
 date: "2020-06-13"
 featuredImage: "./bar-graph.png"
 ---

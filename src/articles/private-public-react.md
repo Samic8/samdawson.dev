@@ -1,7 +1,7 @@
 ---
 title: "Private and public functions in React"
 slug: private-and-public-functions-in-react
-techs: ["React", "Jest"]
+techs: ["React", "Testing"]
 date: "2021-10-02"
 draft: true
 ---
