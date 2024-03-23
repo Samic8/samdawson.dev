@@ -14,9 +14,9 @@ export default function ExternalLinks({ className }) {
         className={
           "pr-2 text-gray-700 border-r-2 border-gray-200 hover:text-gray-700 hover:underline dark:text-slate-400"
         }
-        href="https://twitter.com/sam__dawson"
+        href="https://x.com/sam__dawson"
       >
-        TWITTER
+        X
       </a>
       <a
         className={
