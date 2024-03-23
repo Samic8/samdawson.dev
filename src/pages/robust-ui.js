@@ -37,7 +37,7 @@ export default function Subscribe({ data }) {
         <h1 className="sr-only">Robust UI e-book</h1>
         <div className="max-w-lg flex flex-col items-center mx-auto">
           <Book />
-          <p className="text-lg font-bold mb-4 mt-6 font-header text-gray-900">
+          <p className="text-lg font-bold mb-4 mt-6 font-header text-gray-900 dark:text-slate-200">
             A toolkit of strategies for testing React components with&nbsp;
             <a className="link" href="https://jestjs.io/">
               Jest
@@ -49,7 +49,7 @@ export default function Subscribe({ data }) {
             .
           </p>
         </div>
-        <ul className="text-md max-w-xl mx-auto block">
+        <ul className="text-md max-w-xl mx-auto block dark:text-slate-200">
           <Item>
             <CheckCircleSvg className="mr-2 mt-1 flex-shrink-0" />
             Prevent the afternoon tap on the shoulder or slack ping about a critical bug in a
@@ -72,10 +72,10 @@ export default function Subscribe({ data }) {
           ></EmailSubscription>
         </div>
         <div className="px-6">
-          <div className="max-w-lg mx-auto mt-16">
+          <div className="max-w-lg mx-auto mt-16 dark:text-slate-200">
             <div className="mx-auto text-sm">
               <section>
-                <h2 className="font-bold font-header text-gray-900 mb-4">Robust UI Covers</h2>
+                <h2 className="font-bold font-header text-gray-900 dark:text-slate-200 mb-4">Robust UI Covers</h2>
                 <ul>
                   <FeatureItem>
                     <MaximizeSvg className="mr-2 flex-shrink-0" />

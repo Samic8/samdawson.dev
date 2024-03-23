@@ -17,7 +17,7 @@ const Header = () => {
     <nav className={"z-10"}>
       <div
         className={
-          "block flex px-5 border-b h-16 border-gray-100 justify-between relative font-header"
+          "block flex px-5 border-b h-16 border-gray-100 dark:border-slate-600 justify-between relative font-header"
         }
       >
         <Link
@@ -30,7 +30,7 @@ const Header = () => {
         </Link>
         <div
           className={
-            "sm:border-l border-gray-100 my-3 flex items-center tracking-wide text-gray-700 pl-6 font-bold text-xsm"
+            "sm:border-l border-gray-100 dark:border-slate-600 my-3 flex items-center tracking-wide text-gray-700 pl-6 font-bold text-xsm dark:text-slate-300"
           }
         >
           <Link

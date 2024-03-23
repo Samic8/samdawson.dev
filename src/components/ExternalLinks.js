@@ -12,7 +12,7 @@ export default function ExternalLinks({ className }) {
     >
       <a
         className={
-          "pr-2 text-gray-700 border-r-2 border-gray-200 hover:text-gray-700 hover:underline"
+          "pr-2 text-gray-700 border-r-2 border-gray-200 hover:text-gray-700 hover:underline dark:text-slate-400"
         }
         href="https://twitter.com/sam__dawson"
       >
@@ -20,7 +20,7 @@ export default function ExternalLinks({ className }) {
       </a>
       <a
         className={
-          "px-2 border-r-2 border-gray-200 text-gray-700 hover:text-gray-700 hover:underline"
+          "px-2 border-r-2 border-gray-200 text-gray-700 hover:text-gray-700 hover:underline dark:text-slate-400"
         }
         href="https://github.com/samic8"
       >
@@ -28,7 +28,7 @@ export default function ExternalLinks({ className }) {
       </a>
       <a
         className={
-          "text-gray-700 border-r-2 border-gray-200 hover:text-gray-700 px-2 hover:underline"
+          "text-gray-700 border-r-2 border-gray-200 hover:text-gray-700 px-2 hover:underline dark:text-slate-400"
         }
         href="https://codepen.io/Samic8/"
       >

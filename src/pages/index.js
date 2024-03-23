@@ -43,13 +43,15 @@ const IndexPage = ({ data }) => (
     <SEO description="Sam Dawson's blog on everything frontend web design and development" />
     <div className={"absolute top-0 left-0 right-0 overflow-hidden z-0"}>
       <Wave
-        className={"relative -mt-1xl sm:-mt-xl md:-mt-1xl"}
+        className={"relative -mt-1xl sm:-mt-xl md:-mt-1xl dark:text-slate-800 text-gray-50"}
         style={{ left: "50%", marginLeft: "-110rem" }}
       />
     </div>
     <div className={"mt-10 sm:mt-16 mb-32 sm:mb-48 z-10 relative font-header"}>
       <div className="max-w-3xl mx-auto">
-        <p className={"text-lg sm:text-xl font-bold text-gray-800 leading-tight"}>
+        <p
+          className={"text-lg sm:text-xl font-bold text-gray-800 leading-tight dark:text-slate-200"}
+        >
           Hi, I'm Sam. A frontend engineer from Wollongong Australia. I work at{" "}
           <a
             href="https://www.easyagile.com/careers/?ref=samdawson.dev"

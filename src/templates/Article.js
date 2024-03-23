@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/Layout"
 import ArticleHeader from "../components/ArticleHeader"
-import "prism-themes/themes/prism-base16-ateliersulphurpool.light.css"
+import "prism-themes/themes/prism-material-dark.css"
 import "./Article.css"
 import SEO from "../components/SEO"
 import Content from "../components/Content"
@@ -58,7 +58,7 @@ export default function Post({ data }) {
       ></ArticleHeader>
       <Content>
         <article
-          className={"article text-sm sm:text-base text-black"}
+          className={"article text-sm sm:text-base text-black dark:text-slate-200"}
           dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
         />
       </Content>
@@ -73,25 +73,13 @@ export default function Post({ data }) {
         <input type="hidden" name="form-name" value="feedback" />
         <input type="hidden" name="article" value={data.markdownRemark.frontmatter.title} />
         <div className="flex justify-center items-center mb-3 text-gray-800">
-          <h2 id="helpful-question" className="text-md sm:text-lg leading-tight text-center mr-2">
+          <h2 id="helpful-question" className="text-md sm:text-lg leading-tight text-center mr-2 dark:text-slate-200">
             Was this article helpful?
           </h2>
           <FeedbackButton type="up" activeFor={feedbackClickedFor} onClick={submitFeedback} />
           <FeedbackButton type="down" activeFor={feedbackClickedFor} onClick={submitFeedback} />
         </div>
       </form>
-      <section className="mt-6 mx-auto max-w-2xl bg-gray-100 p-8 rounded font-header">
-        <Link className="sm:flex font-bold text-md sm:text-lg" to="/robust-ui">
-          <Book className="hidden sm:flex" />
-          <div className="sm:ml-10 text-md sm:text-lg">
-            <h2 className="bg-purple-500 px-4 py-2 text-white rounded">Robust UI</h2>
-            <p className="font-bold mb-4 mt-2 font-header text-gray-900 leading-snug">
-              A toolkit of strategies for testing React components with&nbsp;Jest and React Testing
-              Library .
-            </p>
-          </div>
-        </Link>
-      </section>
       <ExternalLinks className="flex justify-center mt-12" />
     </Layout>
   )

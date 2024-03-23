@@ -10,7 +10,7 @@ export default function Button({ children, className, size, ...props }) {
   return (
     <GatsbyLink
       className={getActiveClasses(
-        `inline-block text-white rounded-sm font-bold capitalize cursor-pointer`,
+        `inline-block rounded-sm font-bold capitalize cursor-pointer`,
         sizes[size],
         className
       )}

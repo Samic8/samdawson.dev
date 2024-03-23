@@ -24,7 +24,7 @@ const PostRow = ({ post, className }) => (
         <div className={"flex flex-col sm:flex-row z-10 relative"}>
           <div>
             <div className={"font-header mb-1"}>
-              <h1 className="font-bold underline text-md sm:text-lg text-gray-900 leading-tight font-extrabold">
+              <h1 className="font-bold underline text-md sm:text-lg text-gray-900 leading-tight font-extrabold dark:text-slate-200">
                 <Link
                   to={`/article/${post.frontmatter.slug}`}
                   className="hover:text-purple-700"
@@ -54,7 +54,7 @@ const PostRow = ({ post, className }) => (
                 </ul>
               </div>
             </div>
-            <p className="text-sm leading-tight text-gray-800">
+            <p className="text-sm leading-tight text-gray-800 dark:text-slate-50">
               {post.excerpt}
             </p>
           </div>

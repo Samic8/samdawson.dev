@@ -24,7 +24,7 @@ const Layout = ({ children, showBanner = false }) => {
   }
 
   return (
-    <div>
+    <div className="dark:bg-slate-900 min-h-svh">
       {showBanner && (
         <Link
           to="/robust-ui"
