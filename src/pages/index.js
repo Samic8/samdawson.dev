@@ -22,9 +22,7 @@ export const pageQuery = graphql`
           dateTime: date(formatString: "YYYY-MM-DD")
           featuredImage {
             childImageSharp {
-              fluid(maxWidth: 240) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(width: 240, layout: CONSTRAINED)
             }
           }
         }
@@ -33,8 +31,8 @@ export const pageQuery = graphql`
     }
   }
 
-  query {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+  {
+    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
       ...ArticleList
     }
   }

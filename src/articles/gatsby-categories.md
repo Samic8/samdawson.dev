@@ -101,7 +101,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     reporter.info(`Creating page: category/${category}`)
     createPage({
       path: `category/${category}`,
-      component: require.resolve("./src/templates/CategoryList.js"),
+      component: path.resolve("./src/templates/CategoryList.js"),
       // Create props for our CategoryList.js component
       context: {
         category,
@@ -123,19 +123,14 @@ In **src/templates/CategoryList.js** a file that we referenced in the **createPa
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-const CategoryList = ({
-  pageContext: { category },
-  data: { allMarkdownRemark },
-}) => (
+const CategoryList = ({ pageContext: { category }, data: { allMarkdownRemark } }) => (
   <div>
     <h1>{category} Articles</h1>
     <ul>
       {allMarkdownRemark.edges.map(({ node }) => {
         return (
           <li key={node.frontmatter.title}>
-            <Link to={`article/${node.frontmatter.slug}`}>
-              {node.frontmatter.title}
-            </Link>
+            <Link to={`article/${node.frontmatter.slug}`}>{node.frontmatter.title}</Link>
             <div>
               <time>{node.frontmatter.date}</time>
             </div>

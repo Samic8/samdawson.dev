@@ -122,14 +122,10 @@ function FeatureItem({ children }) {
   return <li className="flex mt-2 p-3 rounded">{children}</li>
 }
 
-export const pageQuery = graphql`
-  query {
-    hexImage: file(relativePath: { eq: "hex.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+export const pageQuery = graphql`{
+  hexImage: file(relativePath: {eq: "hex.png"}) {
+    childImageSharp {
+      gatsbyImageData(width: 300, layout: CONSTRAINED)
     }
   }
-`
+}`

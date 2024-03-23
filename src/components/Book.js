@@ -1,21 +1,17 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 import GridSvg from "../svgs/grid.svg"
 import { getActiveClasses } from "get-active-classes"
 
 export default function Book({ className }) {
-  const { hexImage } = useStaticQuery(graphql`
-    query {
-      hexImage: file(relativePath: { eq: "hex.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
+  const { hexImage } = useStaticQuery(graphql`{
+  hexImage: file(relativePath: {eq: "hex.png"}) {
+    childImageSharp {
+      gatsbyImageData(width: 300, layout: CONSTRAINED)
     }
-  `)
+  }
+}`)
 
   return (
     <div
@@ -37,7 +33,7 @@ export default function Book({ className }) {
         </div>
       </div>
       <div className="top-0 bottom-0 left-0 right-0 z-0 absolute">
-        <Img fluid={hexImage.childImageSharp.fluid} />
+        <GatsbyImage image={hexImage.childImageSharp.gatsbyImageData} />
       </div>
       <div className="border-gray-700 border-2 border-solid h-3 absolute bottom-0 left-0 right-0 flex flex-col justify-evenly overflow-hidden bg-white rounded-t-sm rounded-bl-md">
         <div className="border-gray-200 border-t border-solid w-full"></div>
@@ -48,5 +44,5 @@ export default function Book({ className }) {
         <div className="border-gray-200 border-t border-solid w-full"></div>
       </div>
     </div>
-  )
+  );
 }

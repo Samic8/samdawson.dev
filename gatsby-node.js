@@ -1,12 +1,13 @@
 const { dedupeTechs } = require("./src/utility/data")
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const path = require("path")
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
   const result = await graphql(`
     query {
-      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+      allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
         edges {
           node {
             id
@@ -33,7 +34,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       reporter.info(`Creating category/${tech}`)
       createPage({
         path: `category/${tech}`,
-        component: require.resolve("./src/templates/CategoryList.js"),
+        component: path.resolve("./src/templates/CategoryList.js"),
         context: {
           tech,
           ids: getIdsFromEdges(
@@ -50,7 +51,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     reporter.info(`Creating articles`)
     createPage({
       path: `articles`,
-      component: require.resolve("./src/templates/CategoryList.js"),
+      component: path.resolve("./src/templates/CategoryList.js"),
       context: {
         tech: "All Articles",
         ids: getIdsFromEdges(allMarkdownRemark.edges),
@@ -63,7 +64,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       reporter.info(`Creating article: ${node.frontmatter.slug}`)
       createPage({
         path: `article/${node.frontmatter.slug}`,
-        component: require.resolve("./src/templates/Article.js"),
+        component: path.resolve("./src/templates/Article.js"),
         context: {
           id: node.id,
         },

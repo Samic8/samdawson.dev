@@ -30,10 +30,7 @@ const CategoryListTemplate = ({
 
 export const query = graphql`
   query CategoryListQuery($ids: [String]!) {
-    allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { id: { in: $ids } }
-    ) {
+    allMarkdownRemark(sort: { frontmatter: { date: DESC } }, filter: { id: { in: $ids } }) {
       ...ArticleList
     }
     allArticles: allMarkdownRemark {

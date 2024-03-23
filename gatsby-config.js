@@ -48,12 +48,8 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        // CommonMark mode (default: true)
-        commonmark: true,
         // Footnotes mode (default: true)
         footnotes: true,
-        // Pedantic mode (default: true)
-        pedantic: true,
         // GitHub Flavored Markdown mode (default: true)
         gfm: true,
         // Plugins configs
@@ -182,10 +178,45 @@ module.exports = {
     {
       resolve: `gatsby-plugin-feed`,
       options: {
-        custom_namespaces: { webfeeds: "http://webfeeds.org/rss/1.0" },
-        custom_elements: [
-          { "webfeeds:icon": "https://samdawson.dev/icon.png" },
-          { "webfeeds:cover": "https://samdawson.dev/icon.png" },
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  date: edge.node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + edge.node.frontmatter.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.frontmatter.slug,
+                  custom_elements: [
+                    { "content:encoded": edge.node.html },
+                    { "webfeeds:icon": "https://samdawson.dev/icon.png" },
+                    { "webfeeds:cover": "https://samdawson.dev/icon.png" },
+                  ],
+                })
+              })
+            },
+            query: `
+              {
+                allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
+                  edges {
+                    node {
+                      id
+                      frontmatter {
+                        slug
+                        techs
+                        title
+                        date(formatString: "MMM D, YYYY")
+                        dateTime: date(formatString: "YYYY-MM-DD")
+                      }
+                      excerpt(pruneLength: 200)
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/rss.xml",
+            title: "Sam Dawson's Blog",
+          },
         ],
       },
     },
