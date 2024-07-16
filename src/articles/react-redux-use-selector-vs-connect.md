@@ -1,7 +1,7 @@
 ---
 title: "useSelector vs connect (react-redux)"
 slug: react-redux-use-selector-vs-connect
-techs: ["React", "Testing"]
+techs: ["React", "Redux", "Testing"]
 date: "2019-12-24"
 updated: "2021-02-01"
 featuredImage: "./seperation-concerns-redux.svg"
@@ -103,7 +103,7 @@ I am using the word _nudge_ here again because it does not force us to test comp
 The connected component will re-render only when the properties returned from mapStateToProps changes.
 
 ```jsx
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   const count = selectCount(state)
 
   return {
@@ -117,7 +117,7 @@ export default connect(mapStateToProps)(CounterComponent)
 We must be careful not to create new objects because `connect` uses strict equality (`jsx,===`) on each of the properties.
 
 ```jsx
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   const count = selectCount(state)
   const history = [...selectPreviousNumbers(state), count]
 

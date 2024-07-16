@@ -1,6 +1,7 @@
 export const techToBgColor = {
   CSS: "bg-brown-200 text-brown-900 dark:bg-brown-900 dark:text-slate-300",
   React: "bg-teal-200 text-teal-900 dark:bg-teal-900 dark:text-slate-300",
+  Redux: "bg-purple-200 text-purple-900 dark:bg-purple-900 dark:text-slate-300",
   Gatsby: "bg-purple-300 text-purple-900 dark:bg-purple-900 dark:text-slate-300",
   Tailwind: "bg-green-200 text-green-900 dark:bg-green-900 dark:text-slate-300",
   Git: "bg-pink-300 text-pink-900 dark:bg-pink-900 dark:text-slate-300",
